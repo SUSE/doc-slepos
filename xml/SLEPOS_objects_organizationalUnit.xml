@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<table id="SLEPOS_generated_organizationalUnit">
+  <title>organizationalUnit</title>
+  <tgroup cols="3">
+    <thead>
+      <row>
+        <entry>
+          <para>Name</para>
+        </entry>
+        <entry>
+          <para>Type</para>
+        </entry>
+        <entry>
+          <para>Description</para>
+        </entry>
+      </row>
+    </thead>
+    <tbody>
+      <row>
+        <entry>
+          <para>
+            <systemitem>ou</systemitem>
+          </para>
+        </entry>
+        <entry>
+          <para>must</para>
+        </entry>
+        <entry>
+          <para>name of organizational unit</para>
+        </entry>
+      </row>
+      <row>
+        <entry>
+          <para>
+            <systemitem>description</systemitem>
+          </para>
+        </entry>
+        <entry>
+          <para>may</para>
+        </entry>
+        <entry>
+          <para><systemitem>description</systemitem> of the organizational unit</para>
+        </entry>
+      </row>
+    </tbody>
+  </tgroup>
+</table>

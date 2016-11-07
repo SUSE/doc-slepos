@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<table id="SLEPOS_generated_scRefObjectContainer">
+  <title>scRefObjectContainer</title>
+  <tgroup cols="3">
+    <thead>
+      <row>
+        <entry>
+          <para>Name</para>
+        </entry>
+        <entry>
+          <para>Type</para>
+        </entry>
+        <entry>
+          <para>Description</para>
+        </entry>
+      </row>
+    </thead>
+    <tbody>
+      <row>
+        <entry>
+          <para>
+            <systemitem>cn</systemitem>
+          </para>
+        </entry>
+        <entry>
+          <para>must</para>
+        </entry>
+        <entry>
+          <para>Name for <systemitem>scRefObjectContainer</systemitem></para>
+        </entry>
+      </row>
+      <row>
+        <entry>
+          <para>
+            <systemitem>description</systemitem>
+          </para>
+        </entry>
+        <entry>
+          <para>may</para>
+        </entry>
+        <entry>
+          <para>container <systemitem>description</systemitem></para>
+        </entry>
+      </row>
+    </tbody>
+  </tgroup>
+</table>

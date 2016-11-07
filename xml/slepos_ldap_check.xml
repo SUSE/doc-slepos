@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
+ [
+ <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
+ <!ENTITY % entities SYSTEM "entity-decl.ent">
+ %entities;
+]>
+<sect1 id="ldap_validation">
+ <title>LDAP Validation and Checking</title>
+ <para>
+  SLEPOS contains LDAP validation and checking tools.
+  Simple validation and checking is automatically performed during
+  each <command>posAdmin</command> addition or modification call.
+  Full validation is performed during SLEPOS XML import or on
+  demand via the following command:
+ </para>
+ <screen>posAdmin --validate</screen>
+ <para>
+  There is an important difference between LDAP validation during XML import
+  and validation invoked by the <command>posAdmin --validate</command>
+  command. If important LDAP objects are found missing during the XML import,
+  the missing objects are reported, but the import continues without a
+  failure. In contrast, calling <command>posAdmin --validate</command>
+  returns an error the first time a file is missing and stops
+  validation.
+ </para>
+ <para>
+  Additionally, XML and LDIF files can be validated against the
+  SLEPOS database. LDIF files can be validated using the following
+  command:
+ </para>
+ <screen>posAdmin --validateLDIF --file <replaceable>filename</replaceable></screen>
+ <para>
+  XML can be validated using the following command:
+ </para>
+ <screen>posAdmin --validateXML --file <replaceable>filename</replaceable></screen>
+</sect1>

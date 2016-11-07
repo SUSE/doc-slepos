@@ -1,0 +1,30 @@
+<!DOCTYPE preface PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
+[
+  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+  %entities;
+]>
+<preface id="pre.slepos_about">
+ <title>About this Guide</title>
+ <para>
+  This guide contains instructions on how to install, manage and deploy
+  &sleposreg;. Learn which components constitute a &slepos; environment and
+  how to configure the individual servers and terminals. The guide is intended
+  mainly for system administrators.
+ </para>
+ <para>
+  Many chapters in this manual contain links to additional documentation
+  resources, available either on the system or on the Internet.
+ </para>
+ <para>
+  For an overview of the documentation available for your product (and the
+  latest documentation updates), refer to <ulink url="http://www.suse.com/documentation/"/>
+  or to the following section.
+ </para>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="common_intro_available_doc_i.xml"/>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="common_intro_feedback_i.xml"/>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="common_intro_typografie_i.xml"/>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" os="osuse" href="common_intro_making_i.xml"/>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" os="osuse" href="common_intro_source_code_i.xml"/>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" os="osuse" href="common_intro_acknowl_i.xml"/>
+</preface>

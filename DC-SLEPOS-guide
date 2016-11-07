@@ -1,0 +1,23 @@
+## ---------------------------- 
+## Doc Config File for SLEPOS
+## SUSE Linux Enterprise Point of Service Guide
+## ----------------------------
+##
+## Basics
+MAIN="MAIN.SLEPOS.xml"
+ROOTID="book.slepos"
+
+## Profiling
+PROFOS="slepos"
+PROFARCH="x86;amd64;em64t"
+
+## Provo
+HTMLROOT="slepos11"
+
+## stylesheet location
+STYLEROOT="/usr/share/xml/docbook/stylesheet/suse"
+#HTML_CSS="/usr/share/xml/docbook/stylesheet/suse/html/susebooks.css"
+#EPUB_CSS="/usr/share/xml/docbook/stylesheet/suse/epub/susebooks.css"
+
+## enable sourcing
+export DOCCONF=$BASH_SOURCE

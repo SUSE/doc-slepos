@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<table id="SLEPOS_generated_scRamDisk">
+  <title>scRamDisk</title>
+  <tgroup cols="3">
+    <thead>
+      <row>
+        <entry>
+          <para>Name</para>
+        </entry>
+        <entry>
+          <para>Type</para>
+        </entry>
+        <entry>
+          <para>Description</para>
+        </entry>
+      </row>
+    </thead>
+    <tbody>
+      <row>
+        <entry>
+          <para>
+            <systemitem>cn</systemitem>
+          </para>
+        </entry>
+        <entry>
+          <para>must</para>
+        </entry>
+        <entry>
+          <para>Common Name</para>
+        </entry>
+      </row>
+      <row>
+        <entry>
+          <para>
+            <systemitem>scDevice</systemitem>
+          </para>
+        </entry>
+        <entry>
+          <para>must,multivalue</para>
+        </entry>
+        <entry>
+          <para>The name of the device. E.g. <literal>eth0</literal> <literal>/dev/hda</literal> <literal>/dev/hda1</literal> ...</para>
+        </entry>
+      </row>
+    </tbody>
+  </tgroup>
+</table>

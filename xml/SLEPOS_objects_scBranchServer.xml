@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<table id="SLEPOS_generated_scBranchServer">
+  <title>scBranchServer</title>
+  <tgroup cols="3">
+    <thead>
+      <row>
+        <entry>
+          <para>Name</para>
+        </entry>
+        <entry>
+          <para>Type</para>
+        </entry>
+        <entry>
+          <para>Description</para>
+        </entry>
+      </row>
+    </thead>
+    <tbody>
+      <row>
+        <entry>
+          <para>
+            <systemitem>cn</systemitem>
+          </para>
+        </entry>
+        <entry>
+          <para>must</para>
+        </entry>
+        <entry>
+          <para>hostname of the server</para>
+        </entry>
+      </row>
+      <row>
+        <entry>
+          <para>
+            <systemitem>scPubKey</systemitem>
+          </para>
+        </entry>
+        <entry>
+          <para>may,singlevalue</para>
+        </entry>
+        <entry>
+          <para>Public key stored at server for the SSH client</para>
+        </entry>
+      </row>
+      <row>
+        <entry>
+          <para>
+            <systemitem>scRefServerDn</systemitem>
+          </para>
+        </entry>
+        <entry>
+          <para>may,singlevalue</para>
+        </entry>
+        <entry>
+          <para>DN of a scRefServer</para>
+        </entry>
+      </row>
+    </tbody>
+  </tgroup>
+</table>

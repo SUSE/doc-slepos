@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
+          [
+          <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
+          <!ENTITY % entities SYSTEM "entity-decl.ent">
+          %entities;
+]>
+<chapter id="cha.slepos_migration">
+ <title>Migration from Older Versions</title>
+ <para>
+  This section covers migration from NLPOS9 and SLEPOS10 systems to
+  SLEPOS11.
+ </para>
+ <sect1>
+  <title>Migration from NLPOS9 to SLEPOS11</title>
+  <para>
+   Migrating from NLPOS9 to SLEPOS11 consists of two steps. The first step
+   is performed by using the <command>nlpos9_backup_data.sh</command> script
+   to collect all the NLPOS9 configuration data, including the LDAP database
+   and images. The second step is the installation of a new SLES11 system
+   with the SLEPOS11 Add-On and the migration of the collected NLPOS9 data.
+  </para>
+  <sect2>
+   <title>NLPOS9 Migration Script</title>
+   <para>
+    The migration script <command>nlpos9_backup_data.sh</command> is needed
+    for preparing migration data. This script is distributed with &slepos; 11 CD in the
+    <filename>migration/</filename> directory on the product CD.
+   </para>
+   <para></para>
+   <table id="FIXME">
+    <title><command>nlpos9_backup_data.sh</command> Options</title>
+    <tgroup cols="2">
+     <colspec colnum="1" colname="1"/>
+     <colspec colnum="2" colname="2"/>
+     <thead>
+      <row rowsep="1">
+       <entry colname="1">
+        <para>
+         Option
+        </para>
+       </entry>
+       <entry colname="2">
+        <para>
+         Description
+        </para>
+       </entry>
+      </row>
+     </thead>
+     <tbody>
+      <row rowsep="0">
+       <entry colname="1">
+        <para>
+         <option>--cn</option>
+        </para>
+       </entry>
+       <entry colname="2">
+        <para>
+         must
+        </para>
+       </entry>
+      </row>
+      <row rowsep="0">
+       <entry colname="1">
+        <para>
+         <option>--scCashRegisterName</option>
+        </para>
+       </entry>
+       <entry colname="2">
+        <para>
+         must
+        </para>
+       </entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </table><remark>emap: not much description here to justify a table. One might just call the two options must options.</remark>
+   <para>
+    Options: -f, --file=&lt;FILE.tar.gz|bzip2&gt; save migration data to
+    file (supported .tar, .tgz, .tar.gz, .tar.bz2); -d,
+    --directory=&lt;DIRECTORY&gt; save migration data to existing directory;
+    --force force product version checking; -q, --quiet provide less detailed
+    output; -v, --verbose provide more detailed output; -V, --version print
+    the version of script being used; -h, --help show this help message
+    --usage display brief usage message.<remark>emap: Here a table or list would be helpful.</remark>
+   </para>
+  </sect2>
+
+  <sect2>
+   <title>Migration Procedure</title>
+   <procedure>
+    <step>
+     <para>
+      Install a new SLES11 system. The
+      SLEPOS11 Add-On can either be installed during the SLES11 installation
+      or afterward using the YaST Add-On Installer.
+     </para>
+    </step>
+    <step>
+     <para>
+      When installing SLEPOS11 Add-On, you will be asked for the
+      migration file. Provide the path to the backup file you have created.
+      The migration will be performed.
+     </para>
+     <note>
+      <title>Network Interfaces</title>
+      <para>
+       During the installation of SLES11, set up your network interfaces as
+       specified in the SLEPOS10 LDAP database.<remark>emap: Here it's an upgrade from SLEPOS10 in the next para it's NLPOS9 again. A bit confusing, even if it may be the same procedure.</remark>
+      </para>
+     </note>
+    </step>
+    <step>
+     <para>
+      Installation will ask for a confirmation of detected installations
+      (&admserv;, &branchserv;, Image Server) and will perform a new
+      configuration of SLEPOS11 based on your NLPOS9 configuration.
+     </para>
+    </step>
+    <step>
+     <para>
+      If the &branchserv; migration fails because of a wrong configuration of
+      the DNS or IP address or unavailibility of the &admserv;, migration
+      can be completed manually after the SLES11 installation with the command:
+     </para>
+<screen>posInitBranchserver --noninteractive --reinitialize=/etc/SLEPOS/branchserver.conf</screen>
+    </step>
+   </procedure>
+  </sect2>
+
+  <sect2>
+   <title>Post-Migration Procedures</title>
+   <para></para>
+   <sect3 id="fwmigration">
+    <title>Firewall Configuration</title>
+    <para>
+     Firewall settings are not migrated by SLES11 upgrade. The firewall has to
+     be manually configured after the installation and the migration process
+     are completed.
+    </para>
+    <para>
+     On the &admserv; SLEPOS11 SP2 uses:
+    </para>
+    <itemizedlist>
+     <listitem>
+      <para>
+       ldap/389 or ldaps/636 (tcp),
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       rsync/873 (tcp).
+      </para>
+     </listitem>
+    </itemizedlist>
+    <para>
+     On the &branchserv; (on the network interface where terminals are
+     connected), SLEPOS11 SP2 uses:
+    </para>
+    <itemizedlist>
+     <listitem>
+      <para>
+       tftp/69 (udp),
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       dns/53 (udp,tcp),
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       dhcp/67 (udp).
+      </para>
+     </listitem>
+    </itemizedlist>
+    <para>
+     On the &branchserv; (on the network interface where terminals are
+     connected), SLEPOS11 SP2 optionally uses (if FTP is configured):
+    </para>
+    <itemizedlist>
+     <listitem>
+      <para>
+       ftp/21,
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       ftp passive port range (default 30000:30400)
+       must match the pure-ftp configuration in
+       <filename>/etc/SLEPOS/template/pure-ftpd.conf.template</filename>.
+      </para>
+     </listitem>
+    </itemizedlist>
+   </sect3>
+   <sect3>
+    <title>ScHarddisk LDAP Entry</title>
+    <para>
+     Many disk drives available in
+     <filename>/dev/hd<replaceable>X</replaceable></filename> in SLEPOS10<remark>emap: changed SLEPOS9 to SLEPOS10, if incorrect, please rename to NLPOS9)</remark> are
+     available in <filename>/dev/sd<replaceable>X</replaceable></filename>
+     in SLEPOS11. This can cause problems after migration.
+    </para>
+    <para>
+     For example, if there is a <systemitem>scCashRegister</systemitem>
+     object with <systemitem>scHarddisk</systemitem>
+     <filename>/dev/hda</filename> in the SLEPOS10 LDAP database, migrating
+     to SLEPOS11 with old images and an old kernel works correctly. The old
+     images contain an old kernel with the naming scheme used in SLEPOS10.
+     But when you assign newly-built SLEPOS11 images to the
+     <systemitem>scCashRegister</systemitem> object, you have to change
+     <systemitem>scHarddisk</systemitem> accordingly.
+    </para>
+   </sect3>
+   <sect3>
+    <title>Using NLPOS9 Images Under SLEPOS11</title>
+    <para>
+     After migrating the &admserv; and rebuilding the boot image (initrd
+     file <filename>initrd.gz</filename> and kernel file
+     <filename>linux</filename>), the NLPOS9 images requiring the NLPOS9
+     kernel will fail to boot.
+    </para>
+    <para>
+     You have to manually create a new
+     <systemitem>scDistributionContainer</systemitem>, rename the old NLPOS9
+     <filename>initrd.gz</filename> and <filename>linux</filename> file to
+     something else and insert their new names as
+     <systemitem>scInitrdName</systemitem> and <systemitem>
+     scKernelName</systemitem>. Also ensure that these files are located in
+     the <filename>/srv/tftpboot/boot</filename> directory, and that those
+     transferred images are properly referenced in all relevant
+     <systemitem>scCashRegister</systemitem> or
+     <systemitem>scWorkstation</systemitem> objects.
+    </para>
+    <para>
+     The <command>posleases2ldap</command> command will create a correct,
+     terminal-specific configuration during registration (or the
+     <command>pos dump-all</command> command will create
+     this configuration for already registered terminals).
+    </para>
+    <para>
+     Please note, that during the first boot when the registration takes
+     place, the terminal using the NLPOS9 image will freeze after the image
+     upload since the NLPOS9 image will be deployed to the default
+     SLEPOS11 boot kernel. After reboot however, everything will work
+     correctly since from that time on, the above mentioned specific
+     configuration will be used during each start-up process.
+    </para>
+   </sect3>
+  </sect2>
+ </sect1>
+ <sect1>
+  <title>Migration from SLEPOS10 to SLEPOS11</title>
+
+  <para>
+   Migrating SLEPOS10 to SLEPOS11 is done during SLES10 upgrade to SLES11.
+   No pre-migration actions are required, but backing up of the SLEPOS10
+   system is recommended.
+  </para>
+
+  <sect2>
+   <title>Pre-Requisites</title>
+   <itemizedlist>
+    <listitem>
+     <para>
+      Installed and configured SLEPOS10 system,
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      SLES11 media,
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      SLEPOS11 Add-On product.
+     </para>
+    </listitem>
+   </itemizedlist>
+  </sect2>
+
+  <sect2>
+   <title>Pre-Migration Backup</title>
+   <para>
+    It is highly recommended to back up your SLEPOS10 configuration before
+    upgrading. On the &admserv;, backup configuration files are stored in
+    the <filename>/etc/SLEPOS</filename> directory and the LDAP database.
+    The LDAP database can be backed up by saving output of
+    the <command>slapcat</command> command or the content of the
+    <filename>/var/lib/ldap</filename> directory.
+   </para>
+   <para>
+    On the &branchserv;, only the <filename>branchserver.conf</filename>
+    configuration file is affected by the migration procedure.
+   </para>
+  </sect2>
+
+  <sect2>
+   <title>Migration Procedure</title>
+   <procedure>
+    <step>
+     <para>
+      Start the installation of SLES11 as an upgrade from your current
+      SLES10 and SLEPOS10 system. When asked for the installation add-on,
+      provide the path to your SLEPOS11 add-on.
+     </para>
+     <note>
+      <title>Network Interfaces</title>
+      <para>
+       During the installation of SLES11, set up your network interfaces as
+       specified in the SLEPOS10 LDAP database.
+      </para>
+     </note>
+    </step>
+    <step>
+     <para>
+      During the installation of the SLEPOS11 add-on, the previous SLEPOS10
+      installation is detected automatically. You will be asked to confirm
+      the detected components or to make adjustments.
+     </para>
+    </step>
+    <step>
+     <para>
+      After confirming the installation, SLEPOS11 will be installed and
+      configured according to the existing SLEPOS10 installation.
+     </para>
+    </step>
+    <step>
+     <para>
+      If the &branchserv; migration fails because of a wrong configuration of
+      DNS or the IP address or unavailibility of the &admserv;, migration can be
+      completed manually after the SLES11 installation with the command:
+     </para>
+<screen>posInitBranchserver --noninteractive --reinitialize=/etc/SLEPOS/branchserver.conf</screen>
+    </step>
+   </procedure>
+   <note>
+    <title>Log Files Related to Migration</title>
+    <para>
+     In case of any problems during migration, please see
+     <filename>/var/log/YaST2/y2log</filename> and the
+     <filename>/var/log/messages</filename> log files.
+    </para>
+   </note>
+  </sect2>
+
+  <sect2>
+   <title>Post-Migration Procedures</title>
+   <para></para>
+   <sect3>
+    <title>Firewall Configuration</title>
+    <para>
+     Firewall settings are migrated by the SLES11 upgrade.<remark>emap: Earlier it was said that firewall settings are NOT migrated. Which is true?</remark> In case some
+     firewall problems occur, consult the Post-migration procedures
+     chapter under NLPOS9 migration.
+<!--FIXME link-->
+    </para>
+   </sect3>
+   <sect3>
+    <title>ScHarddisk LDAP Entry</title>
+    <para>
+     Many disk drives available in
+     <filename>/dev/hd<replaceable>X</replaceable></filename> in SLEPOS9<remark>emap: See above, no such product.</remark> are
+     available in <filename>/dev/sd<replaceable>X</replaceable></filename>
+     in SLEPOS11. This can cause problems after migration.
+    </para>
+    <para>
+     For example, if there is a <systemitem>scCashRegister</systemitem>
+     object with <systemitem>scHarddisk</systemitem>
+     <filename>/dev/hda</filename> in the SLEPOS10 LDAP database, migrating
+     to SLEPOS11 with old images and an old kernel works correctly. The old
+     images contain an old kernel with the naming scheme used in SLEPOS10.
+     But when you assign newly-built SLEPOS11 images to the
+     <systemitem>scCashRegister</systemitem> object, you have to change
+     <systemitem>scHarddisk</systemitem> accordingly.<remark>emap: Nothing new here. Is the earlier "Post-Migration" section needed? Redundant info can be convenient sometimes but this is extreme: identical text in the same chapter after a short time.</remark>
+    </para>
+   </sect3>
+  </sect2>
+ </sect1>
+ <sect1>
+  <title>Manual Conversion of Image Configurations for SLEPOS 11 SP2</title>
+  <para>
+   Image configurations created in SLEPOS 11 or SLEPOS 11 SP1 must be
+   converted for use in SLEPOS 11 SP2. This conversion is done automatically
+   in Image Creator. If you want to use old configurations directly in &kiwi;,
+   convert the configurations using <command>xsltproc</command> and
+   the stylesheet provided in <filename>/usr/share/kiwi/xsl/convertSleposSp1toSp2.xsl</filename>.
+  </para>
+  <para>
+   The following example assumes default paths and overwrites the old configuration file
+   with the new one. To keep the old configuration and save the output to a different file,
+   change the <option>-o</option> parameter:
+  </para>
+<screen>
+ xsltproc -o /var/lib/SLEPOS/system/<replaceable>image_name</replaceable>/config.xml \
+             /usr/share/kiwi/xsl/convertSleposSp1toSp2.xsl \
+             /var/lib/SLEPOS/system/<replaceable>image_name</replaceable>/config.xml
+</screen>
+ </sect1>
+ <sect1 id="migr11sp1-11sp2">
+  <title>Migration from SLEPOS11 SP1 to SLEPOS11 SP2</title>
+
+  <para>
+   No pre-migration actions are required.
+  </para>
+
+  <sect2>
+   <title>Pre-Requisites</title>
+   <itemizedlist>
+    <listitem>
+     <para>
+      Installed and configured SLEPOS11 SP2 system
+      with latest updates,
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      available SMT service.
+     </para>
+    </listitem>
+   </itemizedlist>
+  </sect2>
+  <sect2>
+   <title>Migration Procedure</title>
+  <procedure>
+   <step>
+    <para>
+     Save the content of the LDAP database on the SLEPOS11 SP1 &admserv; to an ldif file:
+    </para>
+<screen>slapcat &gt;sp1.ldif</screen>
+   </step>
+   <step>
+    <para>
+     On the SLEPOS11 SP1 &admserv;, save system and boot images excluding pxe and kiwi files:
+    </para>
+<screen>find /srv/SLEPOS/boot /srv/SLEPOS/image  \! -type d \! -path "*pxelinux*"  \
+-print |tar czf sp1-images.tar.gz -T-</screen>
+   </step>
+   <step>
+    <para>
+     Move the <filename>sp1.ldif</filename> and <filename>sp1-images.tar.gz</filename> to a freshly
+     installed SLEPOS11 SP2 FP2 &admserv;. Make sure the fix for bnc#775040 is installed.
+    </para>
+   </step>
+   <step>
+    <para>
+     Unpack the <filename>sp1-images.tar.gz</filename> file to the root directory (<filename>/</filename>).
+    </para>
+   </step>
+   <step>
+    <para>
+     Run <command>posInitAdminserver</command>. The organisation and country must be the same as
+     on the original installation. It is possible to change password or encryption.
+    </para>
+   </step>
+   <step>
+    <para>
+     Delete the preconfigured image, which might conflict with the migrated one:
+    </para>
+     <screen>posAdmin --remove --recursive --DN cn=default,cn=global,o=myorg,c=us</screen>
+   </step>
+   <step>
+    <para>
+     Import the ldif file:
+    </para>
+    <screen>posAdmin --import --type LDIF --file sp1.ldif</screen>
+    <para>
+     There will be warnings that the organisation objects already exist.
+     It is normal.
+    </para>
+   </step>
+   <step>
+    <para>
+     Validate the LDAP database:
+    </para>
+    <screen>posAdmin -v info --validate</screen>
+   </step>
+   <step>
+    <para>
+     Reinstall &branchserv;s.<remark>emap: maybe add reference to install instructions?</remark>
+    </para>
+   </step>
+   <step>
+    <para>
+     Run <command>posInitBranchserver</command> on every &branchserv;.
+    </para>
+    <para>
+     Append <option>--enable-pos-services</option> option to <command>posInitBranchserver</command>
+     call if you had <command>posleases2ldap</command> and <command>posASWatch</command> running on the &branchserv;.
+    </para>
+   </step>
+   <step>
+    <para>
+     Regenerate <filename>config.MAC</filename> and other files on every &branchserv;:
+    </para>
+    <screen>pos dump-all</screen>
+   </step>
+   <step>
+    <para>
+     Boot the terminals.
+    </para>
+   </step>
+  </procedure>
+ </sect2>
+</sect1>
+ <sect1 id="migr11sp2tosp3">
+  <title>Migration from SLEPOS11 SP2 to SLEPOS11 SP3</title>
+  <para>
+   The migration consist of three steps:
+  </para>
+  <procedure>
+   <step>
+    <para>
+     Collect the old data from the &admserv;.
+    </para>
+    <para>
+     Use the SLEPOS backup tool <command>slepos_backup_data.sh</command>
+     to collect the old configuration, LDAP and images. To use this tool,
+     make sure you have installed the <systemitem>POS_Migration</systemitem>
+     package from SLEPOS11 SP3 on your old system:
+    </para>
+    <screen>/usr/lib/SLEPOS/migration/slepos_backup_data.sh -f <replaceable>backup_file_name.tgz</replaceable></screen>
+   </step>
+   <step>
+    <para>Migrate the data to SLEPOS11 SP3 &admserv;</para>
+    <para>
+     Transfer the collected backup to your SLEPOS11 SP3 server
+     (make sure the <systemitem>POS_Migration</systemitem> package is installed)
+     and call <command>slepos_migrate.sh</command> tool:
+    </para>
+<screen>
+ /usr/lib/SLEPOS/migration/slepos_migrate.sh --deploy_type=AS -f <replaceable>backup_file_name.tgz</replaceable>
+</screen>
+    <para>
+     After the migration is completed, call
+     <command>posAdmin --validate</command>
+     to make sure the LDAP database was correctly imported.
+    </para>
+   </step>
+   <step>
+    <para>Reinitialize &branchserv;s</para>
+    <para>&branchserv;s are not migrated, they are always initialized as new. After a &branchserv; is
+     (re)initialized, call <command>pos dump-all</command> to regenerate configuration files for cash
+     registers.
+    </para>
+   </step>
+  </procedure>
+  <para>
+   Note, that it is possible to use SLEPOS11 SP2 images with SLEPOS11 SP3
+   servers.
+  </para>
+ </sect1>
+</chapter>
