@@ -1,41 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl"
-                 type="text/xml" 
-                 title="Profiling step"?>
-<!DOCTYPE book PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN"
-                      "novdocx.dtd"
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book
 [
   <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
+    %entities;
 ]>
+<!-- Converted by suse-upgrade version 1.1 -->
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl"
+                 type="text/xml"
+                 title="Profiling step"?>
 <?provo dirname="slepos11/"?>
-
-<book lang="en" id="book.slepos">
- <bookinfo>
-  <title>&slepos; Guide</title><productname>&slepos;</productname>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en" xml:id="book.slepos">
+ <title>&slepos; Guide</title>
+ <info><productname>&slepos;</productname>
   <productnumber>11 SP3</productnumber><date>
-  <?dbtimestamp format="B d, Y" ?></date>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="common_copyright_gfdl.xml"/>
- </bookinfo>
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_intro.xml"/>
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_overview.xml"/>
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_install.xml"/>
- <!-- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_wireless.xml"/>-->
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_imageserv.xml"/>
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_adminserv.xml"/>
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_branchserv.xml"/>
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_terminals.xml"/>
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_management.xml"/>
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_imagebuilding.xml"/>
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_customization.xml"/>
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_ldap.xml"/>
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_migration.xml"/>
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_troubleshooting.xml"/>
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_lastchanges.xml"/>
-
- <!--APPENDIX:-->
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_a_directorystructure.xml"/>
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_a_servercommands.xml"/>
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_a_deprecated.xml"/>
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="common_legal.xml"/>
+<?dbtimestamp format="B d, Y" ?></date>
+  <xi:include href="common_copyright_gfdl.xml" parse="xml"/>
+ </info>
+ <xi:include href="slepos_intro.xml" parse="xml"/>
+ <xi:include href="slepos_overview.xml" parse="xml"/>
+ <xi:include href="slepos_install.xml" parse="xml"/>
+<!-- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_wireless.xml"/>-->
+ <xi:include href="slepos_imageserv.xml" parse="xml"/>
+ <xi:include href="slepos_adminserv.xml" parse="xml"/>
+ <xi:include href="slepos_branchserv.xml" parse="xml"/>
+ <xi:include href="slepos_terminals.xml" parse="xml"/>
+ <xi:include href="slepos_management.xml" parse="xml"/>
+ <xi:include href="slepos_imagebuilding.xml" parse="xml"/>
+ <xi:include href="slepos_customization.xml" parse="xml"/>
+ <xi:include href="slepos_ldap.xml" parse="xml"/>
+ <xi:include href="slepos_migration.xml" parse="xml"/>
+ <xi:include href="slepos_troubleshooting.xml" parse="xml"/>
+ <xi:include href="slepos_lastchanges.xml" parse="xml"/>
+<!--APPENDIX:-->
+ <xi:include href="slepos_a_directorystructure.xml" parse="xml"/>
+ <xi:include href="slepos_a_servercommands.xml" parse="xml"/>
+ <xi:include href="slepos_a_deprecated.xml" parse="xml"/>
+ <xi:include href="common_legal.xml" parse="xml"/>
 </book>

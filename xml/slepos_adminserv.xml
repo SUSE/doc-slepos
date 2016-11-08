@@ -1,42 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
-          [
-          <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
-          <!ENTITY % entities SYSTEM "entity-decl.ent">
-          %entities;
+<!DOCTYPE chapter
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
 ]>
-<chapter id="cha.slepos_adminserv">
+<!-- Converted by suse-upgrade version 1.1 -->
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.slepos_adminserv">
  <title>Setting Up the &admserv;</title>
+ <info/>
  <para>
   The &admserv; is the central administration point for &sleposreg;. All
-  system information (system structure, the configuration and deployment
-  method for each &branchserv; and &pos; terminal, image information, and so
-  forth) is stored in an LDAP directory on the &admserv;. The &admserv; is
-  also the central distribution point for the images required to boot and
-  configure &pos; terminals, and can run the utilities required to build those
-  images. Set up an &admserv; either with or without the image building
-  software.
+  system information (system structure, the configuration and deployment method
+  for each &branchserv; and &pos; terminal, image information, and so
+  forth) is stored in an LDAP directory on the &admserv;. The &admserv;
+  is also the central distribution point for the images required to boot and
+  configure &pos; terminals, and can run the utilities required to build
+  those images. Set up an &admserv; either with or without the image
+  building software.
  </para>
  <note>
   <title>Creating an &imgserv;</title>
   <para>
    The utilities required to build &pos; images can be installed with the
-   &admserv; or on a dedicated image building server. For more information, see
-   <xref linkend="cha.slepos_imgserv"/>.
+   &admserv; or on a dedicated image building server. For more information,
+   see <xref linkend="cha.slepos_imgserv"/>.
   </para>
  </note>
  <note>
   <title>Meeting the System Requirements</title>
   <para>
-   For a list of system requirements to set up an &admserv;,
-   refer to <xref linkend="sec.sysreq.admin"/>.
+   For a list of system requirements to set up an &admserv;, refer to
+   <xref linkend="sec.sysreq.admin"/>.
   </para>
  </note>
- <sect1 id="sec.adminserv.config">
+ <sect1 xml:id="sec.adminserv.config">
   <title>&admserv; Configuration</title>
+
   <para>
-   To configure the &admserv;, follow these steps:  
+   To configure the &admserv;, follow these steps:
   </para>
+
   <procedure>
    <step>
     <para>
@@ -46,10 +49,10 @@
      <xref linkend="cha.slepos_inst"/>.
     </para>
     <para>
-     If you want to use the &admserv; to build &pos; images, also select the
-     <systemitem>Image Server</systemitem> and <systemitem>Images</systemitem>
-     patterns. If you want to use a standalone &imgserv;, these patterns are
-     not needed.
+     If you want to use the &admserv; to build &pos; images, also select
+     the <systemitem>Image Server</systemitem> and
+     <systemitem>Images</systemitem> patterns. If you want to use a standalone
+     &imgserv;, these patterns are not needed.
     </para>
    </step>
    <step>
@@ -64,7 +67,7 @@
     <para>
      Initialize the LDAP database on the &admserv;:
     </para>
-    <substeps>
+    <substeps performance="required">
      <step>
       <para>
        Use the <command>posAdmin</command> command to add an
@@ -75,8 +78,8 @@
      <step>
       <para>
        Use the <command>posAdmin</command> command to add an
-       <systemitem>scLocation</systemitem> object as described in <xref
-        linkend="ad_bsxkk8v"/>.
+       <systemitem>scLocation</systemitem> object as described in
+       <xref linkend="ad_bsxkk8v"/>.
       </para>
       <important>
        <title>The New <option>--userPassword</option> Attribute</title>
@@ -91,8 +94,8 @@
       <para>
        Use the <command>posAdmin</command> command to add an
        <literal>scServerContainer</literal> and
-       <literal>scBranchServer</literal> objects as described in <xref
-        linkend="ad_bsxlcvy"/>.
+       <literal>scBranchServer</literal> objects as described in
+       <xref linkend="ad_bsxlcvy"/>.
       </para>
      </step>
     </substeps>
@@ -100,9 +103,9 @@
    <step>
     <para>
      Make sure the rsync port (usually 873) is open on the &admserv;. The
-     rsync port is not open in the default SLES11 installation. You have to
-     add its number in the &yast; <guimenu>Firewall</guimenu>
-     module under <menuchoice> <guimenu>Allowed Services</guimenu>
+     rsync port is not open in the default SLES11 installation. You have to add
+     its number in the &yast; <guimenu>Firewall</guimenu> module under
+     <menuchoice> <guimenu>Allowed Services</guimenu>
      <guimenu>Advanced</guimenu> <guimenu>TCP Ports</guimenu> </menuchoice>.
     </para>
    </step>
@@ -116,41 +119,41 @@
    </step>
   </procedure>
 
-  <sect2 id="sec.adminserv.config.passwd">
+  <sect2 xml:id="sec.adminserv.config.passwd">
    <title>Changing the &admserv; Password</title>
    <para>
     To change the &admserv; password, edit
     <filename>/etc/openldap/slapd.conf</filename> and replace both lines
     containing <option>rootpw</option>
-    <replaceable>old_hashed_password</replaceable> with a new hashed
-    password. You can get the new hashed password with the
-    <command>slappasswd</command> command. Change the password by
-    entering the following commands in the command line:
+    <replaceable>old_hashed_password</replaceable> with a new hashed password.
+    You can get the new hashed password with the <command>slappasswd</command>
+    command. Change the password by entering the following commands in the
+    command line:
    </para>
    <procedure>
     <step>
      <para>
-      <command>rcldap <option>stop</option></command>
+      <command>rcldap</command> <option>stop</option>
      </para>
     </step>
     <step>
      <para>
       <command>sed</command> <option>-i -e</option>
-      <literal>'s;rootpw.*$;rootpw '`slappasswd</literal>
-      <option>-c</option> "<replaceable>new_password</replaceable>"`';'
+      <literal>'s;rootpw.*$;rootpw '`slappasswd</literal> <option>-c</option>
+      "<replaceable>new_password</replaceable>"`';'
       <option>/etc/openldap/slapd.conf</option>:x
      </para>
     </step>
     <step>
      <para>
-      <command>rcldap <option>start</option></command>
+      <command>rcldap</command> <option>start</option>
      </para>
     </step>
    </procedure>
    <para>
     The password stored in <filename>/etc/SLEPOS/adminserver.conf</filename>
-    needs to be changed and reencoded as well. Enter the following command
-    in the command line to change it:
+    needs to be changed and reencoded as well. Enter the following command in
+    the command line to change it:
    </para>
    <para>
     <command>sed</command> <option>-i -e</option>
@@ -162,25 +165,30 @@
    </para>
   </sect2>
  </sect1>
- <sect1 id="sec.adminserv.ldapinit">
+ <sect1 xml:id="sec.adminserv.ldapinit">
   <title>Initializing the LDAP Directory with <command>posInitAdminserver</command></title>
+
   <para>
-   All system information (system structure, the configuration and
-   deployment method for each &branchserv;, available system images, and
-   &pos; terminal types) is stored in an LDAP directory on the &admserv;.
+   All system information (system structure, the configuration and deployment
+   method for each &branchserv;, available system images, and &pos;
+   terminal types) is stored in an LDAP directory on the &admserv;.
   </para>
+
   <para>
    &slepos; uses the OpenLDAP directory service. The
    <command>posInitAdminserver</command> command defines the LDAP directory
-   schema and the initial records for OpenLDAP. <!--Since &slepos; 11 SP3,-->
-   SLEPOS LDAP directory can coexists with other OpenLDAP directories.
-   Certain limitations however still apply. For limitations, see
-   <xref linkend="ldaplimitations" />.
+   schema and the initial records for OpenLDAP.
+<!--Since &slepos; 11 SP3,-->
+   SLEPOS LDAP directory can coexists with other OpenLDAP directories. Certain
+   limitations however still apply. For limitations, see
+   <xref linkend="ldaplimitations"/>.
   </para>
+
   <para>
    To create the &slepos; LDAP directory for OpenLDAP:
   </para>
-  <procedure id="pro.adminserv.ldapinit.posinitldap">
+
+  <procedure xml:id="pro.adminserv.ldapinit.posinitldap">
    <step>
     <para>
      After installing the &admserv;, log in as &rootuser;.
@@ -189,8 +197,8 @@
    <step>
     <para>
      Configure the firewall running on the &admserv; to allow traffic on the
-     LDAP and LDAPs ports, 389 TCP/UDP and 636 TCP/UDP, respectively. Do
-     this by using the &yast; Firewall module (<command>yast2
+     LDAP and LDAPs ports, 389 TCP/UDP and 636 TCP/UDP, respectively. Do this
+     by using the &yast; Firewall module (<command>yast2
      firewall</command>).
     </para>
    </step>
@@ -207,12 +215,15 @@
    </step>
    <step>
     <para>
-     Specify the two-letter code of your country, <literal>de</literal> for Germany, <literal>us</literal> for United States, <literal>uk</literal> for United Kingdom, and so forth.
+     Specify the two-letter code of your country, <literal>de</literal> for
+     Germany, <literal>us</literal> for United States, <literal>uk</literal>
+     for United Kingdom, and so forth.
     </para>
    </step>
    <step>
     <para>
-     Specify the alphanumeric LDAP administrator password. The &branchserv; uses this account to access the LDAP directory and to run
+     Specify the alphanumeric LDAP administrator password. The &branchserv;
+     uses this account to access the LDAP directory and to run
      <command>posAdmin</command> for adding objects to the LDAP directory.
     </para>
    </step>
@@ -221,7 +232,7 @@
      Determine if you want to use SSL when the &branchserv; connects to the
      LDAP directory on the &admserv;. By default, SSL is used.
     </para>
-    <itemizedlist>
+    <itemizedlist mark="bullet" spacing="normal">
      <listitem>
       <para>
        Select <keycap>Y</keycap> to use an SSL connection when the
@@ -242,26 +253,28 @@
      </para>
     </important>
     <para>
-     <!--Since &slepos; 11 SP3 -->&admserv; uses YaST CA Management interface for
-     issuing and managing SSL certificates. This provides standardized SLES
-     interface to SSL management and allows viewing and modification of
-     SLEPOS SSL certificates in YaST CA Management module.
+<!--Since &slepos; 11 SP3 -->
+     &admserv; uses YaST CA Management interface for issuing and managing
+     SSL certificates. This provides standardized SLES interface to SSL
+     management and allows viewing and modification of SLEPOS SSL certificates
+     in YaST CA Management module.
     </para>
     <note>
      <title>Changing CA Certificate</title>
      <para>
       When CA certificate is changed, public part must be redistributed to
       individual &branchserv;s and all LDAP servers (on the &admserv; and
-      individual &branchserv;s) must be restarted to accommodate this change.
+      individual &branchserv;s) must be restarted to accommodate this
+      change.
      </para>
     </note>
     <para>
      The keys and certificates are located in the
-     <filename>/etc/SLEPOS/keys</filename> directory on both the
-     Administration and &branchserv;s.
+     <filename>/etc/SLEPOS/keys</filename> directory on both the Administration
+     and &branchserv;s.
     </para>
    </step>
-   <!--<step>
+<!--<step>
     <para>
      To initialize SUSE Manager integration, <command>posInitAdminserver</command>
      must be run, then 'Enable SUSE Manager integration' must be confirmed (type 'yes' or 'Y',
@@ -271,30 +284,37 @@
    </step>-->
    <step>
     <para>
-     To initialize SUSE Manager integration, confirm <literal>Enable SUSE Manager integration</literal>
-     when asked. After that, SUSE Manager host address, SUSE Manager user name and SUSE Manager password
-     can be entered. The password and user for &admserv; is stored in <filename>adminserver.conf</filename>
+     To initialize SUSE Manager integration, confirm <literal>Enable SUSE
+     Manager integration</literal> when asked. After that, SUSE Manager host
+     address, SUSE Manager user name and SUSE Manager password can be entered.
+     The password and user for &admserv; is stored in
+     <filename>adminserver.conf</filename>
     </para>
     <para>
-     The SUSE Manager password for branch users is given by <systemitem>userPassword</systemitem>
-     attribute in the appropriate <systemitem>scLocation</systemitem>. The user name is derived
-     form its dn path by changing <literal>',cn='</literal> and similar to <literal>'.'</literal>,
-     for example <literal>cn=mybranch1,ou=myorgunit1,o=myorg,c=us</literal> becomes
-     <literal>mybranch1.myorgunit1.myorg.us</literal>. The SUSE Manager hostname is stored in
-     the <systemitem>scSUSEManager</systemitem> attribute of <systemitem>scHardware</systemitem>.
+     The SUSE Manager password for branch users is given by
+     <systemitem>userPassword</systemitem> attribute in the appropriate
+     <systemitem>scLocation</systemitem>. The user name is derived form its dn
+     path by changing <literal>',cn='</literal> and similar to
+     <literal>'.'</literal>, for example
+     <literal>cn=mybranch1,ou=myorgunit1,o=myorg,c=us</literal> becomes
+     <literal>mybranch1.myorgunit1.myorg.us</literal>. The SUSE Manager
+     hostname is stored in the <systemitem>scSUSEManager</systemitem> attribute
+     of <systemitem>scHardware</systemitem>.
     </para>
     <para>
      Note that terminal images used with SUSE Manager must include the
-     <systemitem>suse_manager_client_registration</systemitem> package.
-     In the default <filename>config.xml</filename> it is commented out.
+     <systemitem>suse_manager_client_registration</systemitem> package. In the
+     default <filename>config.xml</filename> it is commented out.
     </para>
    </step>
    <step>
     <para>
-     If there is an existing Open LDAP database, <command>posInitAdminserver</command> asks
-     for password to configuration database for existing OpenLDAP directory. If existing
-     OpenLDAP configuration should not be preserved, enter empty string. The
-     <command>posInitAdminserver</command> script will ask for confirmation in this case.
+     If there is an existing Open LDAP database,
+     <command>posInitAdminserver</command> asks for password to configuration
+     database for existing OpenLDAP directory. If existing OpenLDAP
+     configuration should not be preserved, enter empty string. The
+     <command>posInitAdminserver</command> script will ask for confirmation in
+     this case.
     </para>
    </step>
    <step>
@@ -304,72 +324,82 @@
      <keycap function="enter"/>.
     </para>
     <para>
-     If there is something wrong with the input data, abort the installation
-     by pressing
+     If there is something wrong with the input data, abort the installation by
+     pressing
      <keycombo><keycap function="control"/><keycap>C</keycap></keycombo>.
     </para>
    </step>
    <step>
     <para>
      The command initializes the basic LDAP database structure and performs
-     some tests, then displays a summary of the configuration and test
-     results. When the tests are successfully completed, the command displays
-     a confirmation alert.
+     some tests, then displays a summary of the configuration and test results.
+     When the tests are successfully completed, the command displays a
+     confirmation alert.
     </para>
    </step>
   </procedure>
-  <note id="ldaplimitations">
+
+  <note xml:id="ldaplimitations">
    <title>Limitations of Shared OpenLDAP Service</title>
    <para>
-    <!--Since &slepos; 11 SP3, -->SLEPOS LDAP directory does not require custom OpenLDAP configuration
-    and can add itself as separate directory. However, the following limitations apply:
+<!--Since &slepos; 11 SP3, -->
+    SLEPOS LDAP directory does not require custom OpenLDAP configuration and
+    can add itself as separate directory. However, the following limitations
+    apply:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      OpenLDAP directory must use configuration database (<systemitem>cn=config</systemitem>) as primary
-      configuration (does not use static <filename>/etc/openldap/slapd.conf</filename> configuration file).
-      It is not sufficient to just enable configuration database as ACLs for individual branch locations
-      will not survive OpenLDAP service restart. They can be however recreated by running
-      <command>posAdmin --refresh</command>.
+      OpenLDAP directory must use configuration database
+      (<systemitem>cn=config</systemitem>) as primary configuration (does not
+      use static <filename>/etc/openldap/slapd.conf</filename> configuration
+      file). It is not sufficient to just enable configuration database as ACLs
+      for individual branch locations will not survive OpenLDAP service
+      restart. They can be however recreated by running <command>posAdmin
+      --refresh</command>.
      </para>
     </listitem>
     <listitem>
      <para>
-      If the existing OpenLDAP configuration is not set to use SSL, SLEPOS can not work with SSL
-      and vice versa. The <command>posInitAdminserver</command> script will however detect and use
-      the right CA certificate when SSL is used and it will distribute the certificate to branch
-      locations.
+      If the existing OpenLDAP configuration is not set to use SSL, SLEPOS can
+      not work with SSL and vice versa. The
+      <command>posInitAdminserver</command> script will however detect and use
+      the right CA certificate when SSL is used and it will distribute the
+      certificate to branch locations.
      </para>
     </listitem>
     <listitem>
      <para>
-      Existing LDAP directories can not use the same suffix as SLEPOS LDAP directory.
-      SLEPOS use <literal>o=&lt;organization&gt;,c=&lt;country&gt;</literal> by default.
+      Existing LDAP directories can not use the same suffix as SLEPOS LDAP
+      directory. SLEPOS use
+      <literal>o=&lt;organization&gt;,c=&lt;country&gt;</literal>
+      by default.
      </para>
     </listitem>
    </itemizedlist>
   </note>
+
   <note>
    <title>Unresolvable Hostname</title>
    <para>
-    When <command>posInitAdminserver</command> detects that &admserv;'s hostname
-    is unresolvable, the script automatically adds it to <filename>/etc/hosts</filename>
-    as <literal>127.0.0.1</literal>.
+    When <command>posInitAdminserver</command> detects that &admserv;'s
+    hostname is unresolvable, the script automatically adds it to
+    <filename>/etc/hosts</filename> as <literal>127.0.0.1</literal>.
    </para>
   </note>
+
   <para>
-   After you run <command>posInitAdminserver</command>, the LDAP directory
-   is initialized on the &admserv; and the LDAP service is available. At
-   this point, you should have a basic tree structure with a root, a Country
+   After you run <command>posInitAdminserver</command>, the LDAP directory is
+   initialized on the &admserv; and the LDAP service is available. At this
+   point, you should have a basic tree structure with a root, a Country
    container, and an Organization container.
   </para>
 
   <para>
    You can verify that the LDAP structure is accessible via the
    <command>ldapsearch</command> command. Use a syntax similar to the first
-   example when using SSL. For setups without SSL, use a syntax similar to
-   the second example.
+   example when using SSL. For setups without SSL, use a syntax similar to the
+   second example.
   </para>
 
 <screen>ldapsearch -x -H ldaps://<replaceable>administration_server_name</replaceable> -b &dnorg; -s base -D cn=admin,&dnorg; -w <replaceable>password</replaceable>
@@ -381,34 +411,37 @@
   <tip>
    <title>Setting the LDAP Debugging Level</title>
    <para>
-    Turn on a more verbose output for the <command>ldapsearch</command>
-    command by enabling the debug option with <option>-d1</option>.
+    Turn on a more verbose output for the <command>ldapsearch</command> command
+    by enabling the debug option with <option>-d1</option>.
    </para>
   </tip>
  </sect1>
-  <sect1 id="sec.adminserv.imagecreating">
+ <sect1 xml:id="sec.adminserv.imagecreating">
   <title>Creating &pos; Images</title>
+
   <para>
    Before you can deploy &pos; terminals, you must first create image files
-   that contain the operating system and application files required to boot
-   the terminals.
+   that contain the operating system and application files required to boot the
+   terminals.
   </para>
-   <para>
+
+  <para>
    &slepos; provides image templates that can be customized and generated
-   using the &imgcreat; tool. If you select the Image Server pattern during the
-   &admserv; installation, the image creation utilities (&imgcreat; and &kiwi;
-   ) are installed on the &admserv; along with all the files and directories
-   required to create &pos; images. For a detailed, step-by-step introduction
-   to building &slepos; images using &imgcreat;, refer to <xref
-    linkend="cha.slepos_imgcreator"/>.
+   using the &imgcreat; tool. If you select the Image Server pattern during
+   the &admserv; installation, the image creation utilities (&imgcreat;
+   and &kiwi; ) are installed on the &admserv; along with all the files
+   and directories required to create &pos; images. For a detailed,
+   step-by-step introduction to building &slepos; images using
+   &imgcreat;, refer to <xref linkend="cha.slepos_imgcreator"/>.
   </para>
+
   <para>
    After you have created the images required for your &pos; terminals, you
    must copy the images to the appropriate directories on the &admserv; so
    that the rsync service can transmit the images to the &branchserv;.
    Depending on whether the &admserv; and the &imgserv; are on the same
-   machine (or whether the images are built on a dedicated &imgserv;),
-   use the different copy procedures outlined in
+   machine (or whether the images are built on a dedicated &imgserv;), use
+   the different copy procedures outlined in
    <xref linkend="sec.adminserv.systemimagecopying"/>.
 <!--FIXME BOGOID-->
   </para>
@@ -421,55 +454,59 @@
   <procedure>
    <step>
     <para>
-     Build new images as described in
-     <xref linkend="cha.slepos_imgcreator" />.
+     Build new images as described in <xref linkend="cha.slepos_imgcreator"/>.
     </para>
    </step>
    <step>
     <para>
      Deploy boot images as decribed in
-     <xref linkend="sec.adminserv.bootimagecopying" />.
+     <xref linkend="sec.adminserv.bootimagecopying"/>.
     </para>
    </step>
    <step>
     <para>
      Deploy system images as decribed in
-     <xref linkend="sec.adminserv.systemimagecopying" />.
+     <xref linkend="sec.adminserv.systemimagecopying"/>.
     </para>
    </step>
    <step>
     <para>
      Synchronize with the &branchserv; via the
-     <command>possyncimages</command> command (see <xref
-      linkend="image_activation" /> for more information).
+     <command>possyncimages</command> command (see
+     <xref linkend="image_activation"/> for more information).
     </para>
    </step>
   </procedure>
  </sect1>
- <sect1 id="sec.adminserv.bootimagecopying">
+ <sect1 xml:id="sec.adminserv.bootimagecopying">
   <title>Copying the Boot Image Files</title>
+
   <para>
    This section explains how to copy the default boot images (initrd and the
    Linux kernel file) to the appropriate directories on the &admserv;, so
    they are ready to be transferred to the &branchserv;s.
   </para>
+
   <para>
    If the images have been built on the same machine, use the
-   <command>registerImages</command> command to copy and register them
-   in LDAP.
+   <command>registerImages</command> command to copy and register them in LDAP.
   </para>
+
   <para>
    If the images have been built on a dedicated &imgserv;, use the following
-   command on the &admserv; to copy the images:
-   <command>registerImages --include-boot <replaceable>user@imageserver</replaceable>:/var/lib/SLEPOS/system/images/<replaceable>image_name</replaceable>/</command>.
-   For more information, see <xref linkend="registerimages" />.
+   command on the &admserv; to copy the images: <command>registerImages
+   --include-boot</command>
+   <replaceable>user@imageserver</replaceable>:/var/lib/SLEPOS/system/images/<replaceable>image_name</replaceable>/.
+   For more information, see <xref linkend="registerimages"/>.
   </para>
+
   <para>
    Alternativelly, you can copy the images manually using the
-   <command>cp</command> command or your favorite file browser, or,
-   if built on a dedicated &imgserv;, <command>scp</command>.
+   <command>cp</command> command or your favorite file browser, or, if built on
+   a dedicated &imgserv;, <command>scp</command>.
   </para>
-  <!--<para>
+
+<!--<para>
    If the images have been built on a dedicated &imgserv;, use the
    <command>scp</command> command or the remote copy option of your file
    browser:
@@ -494,6 +531,7 @@
     </screen>
    </step>
   </procedure>-->
+
   <sect2>
    <title>Deploying Boot Images with a New Kernel Version</title>
    <para>
@@ -505,41 +543,44 @@
     Alternatively, you can copy the new kernel and initrd to
     <filename>/srv/SLEPOS/boot</filename> with new file names (for example
     <literal>initrd-2.6.27.25.gz</literal> and
-    <literal>linux-2.6.27.25</literal>). In such a case, you must create a
-    new <systemitem>scDistributionContainer</systemitem> object (see
-    <xref
-    linkend="scDistributionContainer" />) and add a new
+    <literal>linux-2.6.27.25</literal>). In such a case, you must create a new
+    <systemitem>scDistributionContainer</systemitem> object (see
+    <xref linkend="scDistributionContainer"/>) and add a new
     <systemitem>scPosImage</systemitem> object to it (see
-    <xref linkend="sec.newimages" />).
+    <xref linkend="sec.newimages"/>).
    </para>
   </sect2>
  </sect1>
- <sect1 id="sec.adminserv.systemimagecopying">
+ <sect1 xml:id="sec.adminserv.systemimagecopying">
   <title>Copying the System Image Files</title>
+
   <para>
-   System images must be located in the
-   <filename>/srv/SLEPOS/image</filename> directory on the &admserv;. The
-   boot image must be located in <filename>/srv/SLEPOS/boot</filename>. The
-   &branchserv;s can then download the image files and deploy them on &pos;
-   terminals.
+   System images must be located in the <filename>/srv/SLEPOS/image</filename>
+   directory on the &admserv;. The boot image must be located in
+   <filename>/srv/SLEPOS/boot</filename>. The &branchserv;s can then
+   download the image files and deploy them on &pos; terminals.
   </para>
+
   <para>
    If the images have been built on the same machine, use the
-   <command>registerImages</command> command to copy and register them
-   in LDAP.
+   <command>registerImages</command> command to copy and register them in LDAP.
   </para>
+
   <para>
    If the images have been built on a dedicated &imgserv;, use the following
-   command on the &admserv; to copy the images:
-   <command>registerImages --include-boot <replaceable>user@imageserver</replaceable>:/var/lib/SLEPOS/system/images/<replaceable>image_name</replaceable>/</command>.
-   For more information, see <xref linkend="registerimages" />.
+   command on the &admserv; to copy the images: <command>registerImages
+   --include-boot</command>
+   <replaceable>user@imageserver</replaceable>:/var/lib/SLEPOS/system/images/<replaceable>image_name</replaceable>/.
+   For more information, see <xref linkend="registerimages"/>.
   </para>
+
   <para>
    Alternativelly, you can copy the images manually using the
-   <command>cp</command> command or your favorite file browser, or,
-   if built on a dedicated &imgserv;, <command>scp</command>.
+   <command>cp</command> command or your favorite file browser, or, if built on
+   a dedicated &imgserv;, <command>scp</command>.
   </para>
-  <!--<para>
+
+<!--<para>
    If the images have been built on a dedicated &imgserv;, use the
    <command>scp</command> command or the remote copy option of your file
    browser:
@@ -564,7 +605,7 @@
    </step>
   </procedure>-->
 
-  <sect2 id="sec.newimages">
+  <sect2 xml:id="sec.newimages">
    <title>Deploying New Versions of System Images</title>
    <para>
     If you build new system images, you can preserve old file names and
@@ -578,62 +619,60 @@
     via the <literal>scPosImageVersion</literal> attribute of the
     <systemitem>scPosImage</systemitem> object or via a new
     <systemitem>scImageVersion</systemitem> object. (for more information, see
-    <xref linkend="image_activation" />).
+    <xref linkend="image_activation"/>).
    </para>
    <para>
     You can also use a new name and version number. In such a case, you must
-    create a new <systemitem>scPosImage</systemitem> (see <xref
-     linkend="sec.slepos_term.ldap.posimage" />). If the new image uses a
+    create a new <systemitem>scPosImage</systemitem> (see
+    <xref linkend="sec.slepos_term.ldap.posimage"/>). If the new image uses a
     different kernel version, the new <systemitem>scPosImage</systemitem> must
     be added to the corresponding
     <systemitem>scDistributionContainer</systemitem>.
    </para>
   </sect2>
  </sect1>
-<sect1>
+ <sect1>
   <title>Creating the Required LDAP Structure</title>
 
   <para>
-   The necessary LDAP objects for branches, terminals, and global roles must
-   be created.
+   The necessary LDAP objects for branches, terminals, and global roles must be
+   created.
   </para>
 
-  <sect2 id="sec.branchserv.ldapobjects">
+  <sect2 xml:id="sec.branchserv.ldapobjects">
    <title>Creating &branchserv; Objects in LDAP</title>
    <para>
     Before you can configure and deploy a &branchserv;, you must first
     create the necessary objects in the LDAP directory stored on the
-    &admserv;. All <command>posAdmin</command> calls must be executed on
-    the &admserv;. These objects include:
+    &admserv;. All <command>posAdmin</command> calls must be executed on the
+    &admserv;. These objects include:
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      One or more <emphasis>organizationalUnit</emphasis> objects
-      (see <xref linkend="ad_bsxk4te"
-     />) to represent your organizational
-      structure.
+      One or more <emphasis>organizationalUnit</emphasis> objects (see
+      <xref linkend="ad_bsxk4te"/>) to represent your organizational structure.
      </para>
     </listitem>
     <listitem>
      <para>
-      An <emphasis>scLocation</emphasis> object
-      (see <xref linkend="ad_bsxkk8v"/>) for each site where a &branchserv; is
+      An <emphasis>scLocation</emphasis> object (see
+      <xref linkend="ad_bsxkk8v"/>) for each site where a &branchserv; is
       located.
      </para>
     </listitem>
     <listitem>
      <para>
-      An <emphasis>scServerContainer</emphasis>
-      (see <xref linkend="ad_butk81t"/>) to contain all the &branchserv; objects
+      An <emphasis>scServerContainer</emphasis> (see
+      <xref linkend="ad_butk81t"/>) to contain all the &branchserv; objects
       for a given site.
      </para>
     </listitem>
     <listitem>
      <para>
-      An <emphasis>scBranchServer</emphasis> object
-      (see <xref linkend="ad_bsxlcvy"/>) and its associated configuration
-      objects for each &branchserv; in your system.
+      An <emphasis>scBranchServer</emphasis> object (see
+      <xref linkend="ad_bsxlcvy"/>) and its associated configuration objects
+      for each &branchserv; in your system.
      </para>
     </listitem>
     <listitem>
@@ -646,13 +685,13 @@
    <note>
     <title>LDAP Object Attributes</title>
     <para>
-     Each LDAP object has two types of attributes: must and may attributes.
-     The must attributes are required for an object; the may attributes are
-     optional. The tables in this section list only those may attributes
-     that are relevant to &slepos;.
+     Each LDAP object has two types of attributes: must and may attributes. The
+     must attributes are required for an object; the may attributes are
+     optional. The tables in this section list only those may attributes that
+     are relevant to &slepos;.
     </para>
    </note>
-   <sect3 id="ad_bsxk4te">
+   <sect3 xml:id="ad_bsxk4te">
     <title>Creating organizationalUnit Objects</title>
     <para>
      In a &slepos; system, Organizational Unit
@@ -687,21 +726,20 @@
      <literal>&dnunit;</literal> directory.
     </para>
    </sect3>
-   <sect3 id="ad_bsxkk8v">
+   <sect3 xml:id="ad_bsxkk8v">
     <title>Adding an <literal>scLocation</literal> Object</title>
     <para>
      An <literal>scLocation</literal> object is typically used to represent a
      branch office (a site where a &branchserv; and &pos; terminals are
      located). <literal>scLocation</literal> containers are used to store
-     information about the deployed &branchserv;s and &pos; terminals. This
-     and all other information, which can be modified on the &branchserv;, should
-     be stored or referenced in the Location containers to limit the need to
-     grant write privileges to subtrees.
+     information about the deployed &branchserv;s and &pos; terminals.
+     This and all other information, which can be modified on the
+     &branchserv;, should be stored or referenced in the Location containers
+     to limit the need to grant write privileges to subtrees.
     </para>
     <para>
-     <xref linkend="ad_b58oz2j" /> summarizes the
-     posAdmin command options for <literal>scLocation</literal> object
-     attributes.
+     <xref linkend="ad_b58oz2j"/> summarizes the posAdmin command options for
+     <literal>scLocation</literal> object attributes.
     </para>
     <para>
      Here is the <command>posAdmin</command> command syntax to add an
@@ -722,28 +760,28 @@
     <replaceable>branchpassword</replaceable></screen>
     <para>
      The following command adds an <literal>scLocation</literal> named
-     <literal>harbor</literal> to the LDAP directory (type the command all
-     on one line):
+     <literal>harbor</literal> to the LDAP directory (type the command all on
+     one line):
     </para>
 <screen>posAdmin
---base &dnunit; --add --scLocation --cn <replaceable>harbor</replaceable>  
---ipNetworkNumber <replaceable>192.168.1.0</replaceable> --ipNetmaskNumber <replaceable>255.255.255.0</replaceable> 
---scDhcpRange <replaceable>192.168.1.10</replaceable>,<replaceable>192.168.1.54</replaceable> 
---scDhcpFixedRange <replaceable>192.168.1.55</replaceable>,<replaceable>192.168.1.88</replaceable> 
---scDefaultGw <replaceable>192.168.1.1</replaceable>  
---scDynamicIp <replaceable>TRUE</replaceable>  --scDhcpExtern <replaceable>FALSE</replaceable> 
+--base &dnunit; --add --scLocation --cn <replaceable>harbor</replaceable>
+--ipNetworkNumber <replaceable>192.168.1.0</replaceable> --ipNetmaskNumber <replaceable>255.255.255.0</replaceable>
+--scDhcpRange <replaceable>192.168.1.10</replaceable>,<replaceable>192.168.1.54</replaceable>
+--scDhcpFixedRange <replaceable>192.168.1.55</replaceable>,<replaceable>192.168.1.88</replaceable>
+--scDefaultGw <replaceable>192.168.1.1</replaceable>
+--scDynamicIp <replaceable>TRUE</replaceable>  --scDhcpExtern <replaceable>FALSE</replaceable>
 --scWorkstationBaseName <replaceable>CR</replaceable> --scEnumerationMask <replaceable>000</replaceable>
 --userPassword <replaceable>branchpassword</replaceable></screen>
-   <note>
-    <title>Network Autoconfiguration</title>
-    <para>
-     In case of network autoconfiguration, scDhcpRange and scDhcpFixedRange parameters can be ommited.
-     For autoconfiguration option when defining ipNetworkMask and ipNetworkNumber, see
-     <xref linkend="branch.net"/>.
-    </para>
-   </note>
+    <note>
+     <title>Network Autoconfiguration</title>
+     <para>
+      In case of network autoconfiguration, scDhcpRange and scDhcpFixedRange
+      parameters can be ommited. For autoconfiguration option when defining
+      ipNetworkMask and ipNetworkNumber, see <xref linkend="branch.net"/>.
+     </para>
+    </note>
    </sect3>
-   <sect3 id="ad_bsxlcvy">
+   <sect3 xml:id="ad_bsxlcvy">
     <title>Adding an <literal>scServerContainer</literal> and <literal>scBranchServer</literal> Objects</title>
     <para>
      There must be an <literal>scBranchServer</literal> object for every
@@ -753,44 +791,45 @@
     <para>
      An <literal>scBranchServer</literal> object contains information about
      hardware, at least one defined network card, and services like FTP, TFTP,
-     DNS and DHCP. It is located with an <literal>scLocation</literal>
-     object in the LDAP tree.
+     DNS and DHCP. It is located with an <literal>scLocation</literal> object
+     in the LDAP tree.
     </para>
     <important>
      <title>Defining the &branchserv; Hostname</title>
      <para>
       The location of the <literal>scBranchServer</literal> object in the LDAP
       directory must correspond to the hostname defined for the
-      Admin/&branchserv; during installation. For example, if the hostname is
-      <literal>bs.mybranch.myorgunit.myorg.us</literal>, the <literal>dn</literal>
-      of the <literal>scBranchServer</literal> object would be
+      Admin/&branchserv; during installation. For example, if the hostname
+      is <literal>bs.mybranch.myorgunit.myorg.us</literal>, the
+      <literal>dn</literal> of the <literal>scBranchServer</literal> object
+      would be
       <literal>cn=bs,cn=server,cn=mybranch,ou=myorgunit,o=myorg,c=us</literal>.
      </para>
     </important>
     <para>
-     To add an <literal>scBranchServer</literal> object to the LDAP
-     directory with posAdmin, proceed as follows:
+     To add an <literal>scBranchServer</literal> object to the LDAP directory
+     with posAdmin, proceed as follows:
     </para>
-    <procedure id="ad_b2jlhl3">
-     <step id="ad_butk81t">
+    <procedure xml:id="ad_b2jlhl3">
+     <step xml:id="ad_butk81t">
       <para>
        Before you can add the <literal>scBranchServer</literal> to an
        <literal>scLocation</literal> object, you must define an
        <literal>scServerContainer</literal>, using the
        <command>--scServerContainer</command> and common name
-       (<command>--cn</command>) options. For example (type the command all
-       on one line):
+       (<command>--cn</command>) options. For example (type the command all on
+       one line):
       </para>
 <screen>posAdmin
 --base &dnbranch;
 --add --scServerContainer --cn <replaceable>server</replaceable></screen>
      </step>
-     <step id="ad_butk8rl">
+     <step xml:id="ad_butk8rl">
       <para>
        In the new <literal>scServerContainer</literal>, add a &branchserv;
        object, using the <command>--scBranchServer</command> and common name
-       (<command>--cn</command>) options. For example (type the command all
-       on one line):
+       (<command>--cn</command>) options. For example (type the command all on
+       one line):
       </para>
 <screen>posAdmin
 --base cn=<replaceable>server</replaceable>,&dnbranch;
@@ -801,10 +840,10 @@
        Name) to the global directory.
       </para>
      </step>
-     <step id="ad_butnhri">
+     <step xml:id="ad_butnhri">
       <para>
-       Add a network interface card (with a static IP address from the
-       subnet defined in the <literal>scLocation</literal> object) using the
+       Add a network interface card (with a static IP address from the subnet
+       defined in the <literal>scLocation</literal> object) using the
        <command>--scNetworkcard</command> option and the
        <command>--scDevice</command> and <command>--scIpHostNumber</command>
        attributes. For example (type the command all on one line):
@@ -812,66 +851,60 @@
 <screen>posAdmin --base cn=<replaceable>bs</replaceable>,cn=<replaceable>server</replaceable>,&dnbranch;
 --add --scNetworkcard --scDevice <replaceable>eth0</replaceable> --ipHostNumber <replaceable>192.168.1.1</replaceable></screen>
       <para>
-       <xref linkend="ad_b58oz2k" /> summarizes the
-       posAdmin command options for <literal>scNetworkcard</literal>
-       attributes.
+       <xref linkend="ad_b58oz2k"/> summarizes the posAdmin command options for
+       <literal>scNetworkcard</literal> attributes.
       </para>
      </step>
-     <step id="ad_butnl3a">
+     <step xml:id="ad_butnl3a">
       <para>
        Set up the &branchserv; services. At a minimum, define the required
        DNS, TFTP or FTP, DHCP and posleases services.
       </para>
-       <note>
-  <title>Using FTP or TFTP</title>
-   <para>
-    Most current Wi-Fi networks do not support multicast correctly and switch
-    to the lowest available network speed when multicast TFTP is used. Unless
-    you are using accesspoints supporting high speed multicast over Wi-Fi, it
-    is recommended to use FTP instead of multicast TFTP on such networks.
-   </para>
-  </note>
-
+      <note>
+       <title>Using FTP or TFTP</title>
+       <para>
+        Most current Wi-Fi networks do not support multicast correctly and
+        switch to the lowest available network speed when multicast TFTP is
+        used. Unless you are using accesspoints supporting high speed multicast
+        over Wi-Fi, it is recommended to use FTP instead of multicast TFTP on
+        such networks.
+       </para>
+      </note>
       <para>
-       The following example demonstrate how to add the DNS
-       service
+       The following example demonstrate how to add the DNS service
       </para>
 <screen>posAdmin
 --base cn=<replaceable>bs</replaceable>,cn=<replaceable>server</replaceable>,&dnbranch;
---add --scService --cn <replaceable>dns</replaceable>  --ipHostNumber <replaceable>192.168.1.1</replaceable> 
+--add --scService --cn <replaceable>dns</replaceable>  --ipHostNumber <replaceable>192.168.1.1</replaceable>
 --scDnsName <replaceable>dns</replaceable> --scServiceName dns --scServiceStartScript named
 --scServiceStatus <replaceable>TRUE</replaceable></screen>
       <para>
-       The following example demonstrate how to add the DHCP
-       service:
+       The following example demonstrate how to add the DHCP service:
       </para>
 <screen>posAdmin
 --base cn=<replaceable>bs</replaceable>,cn=<replaceable>server</replaceable>,&dnbranch;
---add --scService --cn <replaceable>dhcp</replaceable>  --ipHostNumber <replaceable>192.168.1.1</replaceable> 
+--add --scService --cn <replaceable>dhcp</replaceable>  --ipHostNumber <replaceable>192.168.1.1</replaceable>
 --scDnsName <replaceable>dhcp</replaceable> --scServiceName dhcp
 --scDhcpDynLeaseTime <replaceable>300</replaceable> --scDhcpFixedLeaseTime <replaceable>14400</replaceable>
 --scServiceStartScript dhcpd --scServiceStatus <replaceable>TRUE</replaceable></screen>
       <para>
-       The following example demonstrate how to add the TFTP
-       service:
+       The following example demonstrate how to add the TFTP service:
       </para>
 <screen>posAdmin
 --base cn=<replaceable>bs</replaceable>,cn=<replaceable>server</replaceable>,&dnbranch;
---add --scService --cn <replaceable>tftp</replaceable>  --ipHostNumber <replaceable>192.168.1.1</replaceable> 
+--add --scService --cn <replaceable>tftp</replaceable>  --ipHostNumber <replaceable>192.168.1.1</replaceable>
 --scDnsName <replaceable>tftp</replaceable>  --scServiceName tftp
 --scServiceStartScript atftpd  --scServiceStatus <replaceable>TRUE</replaceable></screen>
       <para>
-       The following example demonstrate how to add the FTP
-       service:
+       The following example demonstrate how to add the FTP service:
       </para>
 <screen>posAdmin
 --base cn=<replaceable>bs</replaceable>,cn=<replaceable>server</replaceable>,&dnbranch;
---add --scService --cn <replaceable>ftp</replaceable>  --ipHostNumber <replaceable>192.168.1.1</replaceable> 
+--add --scService --cn <replaceable>ftp</replaceable>  --ipHostNumber <replaceable>192.168.1.1</replaceable>
 --scDnsName <replaceable>tftp</replaceable>  --scServiceName ftp
 --scServiceStartScript pure-ftpd  --scServiceStatus <replaceable>TRUE</replaceable></screen>
       <para>
-       The following example demonstrate how to add the posleases
-       service:
+       The following example demonstrate how to add the posleases service:
       </para>
 <screen>posAdmin
 --base cn=<replaceable>bs</replaceable>,cn=<replaceable>server</replaceable>,&dnbranch;
@@ -882,82 +915,80 @@
 --scServiceStatus <replaceable>TRUE</replaceable>
 </screen>
       <para>
-       <xref linkend="ad_b58oz2p"/> summarizes the
-       <command>posAdmin</command> command options for the <literal>scService</literal> object
-       attributes.
+       <xref linkend="ad_b58oz2p"/> summarizes the <command>posAdmin</command>
+       command options for the <literal>scService</literal> object attributes.
       </para>
      </step>
     </procedure>
     <note>
      <title>Ommiting <systemitem>ipHostNumber</systemitem></title>
      <para>
-      <systemitem>ipHostNumber</systemitem> attribute can be omitted if service is using same IP address as &branchserv;.
+      <systemitem>ipHostNumber</systemitem> attribute can be omitted if service
+      is using same IP address as &branchserv;.
      </para>
     </note>
    </sect3>
   </sect2>
 
-  <sect2 id="sec.slepos_term.ldap">
+  <sect2 xml:id="sec.slepos_term.ldap">
    <title>Creating &pos; Terminal Objects in LDAP</title>
    <para>
     The configuration parameters for each &pos; terminal are stored in the
-    central LDAP directory on the &admserv;. Every &pos; terminal has its
-    own Workstation object (<literal>scWorkstation</literal>) in the LDAP
-    tree. The Workstation object is automatically created when a &pos;
-    terminal registers on the &branchserv;.
-    <filename>posleases2ldap</filename> uses information from the
-    Hardware Reference object (<literal>scCashRegister</literal>) and Image
-    Reference object
-    (<link linkend="ad_btxanhv" ><literal>scPosImage</literal></link>) to
-    create the Workstation object. For more information on this process, see
-    <xref linkend="ad_cntrlhw" />.
+    central LDAP directory on the &admserv;. Every &pos; terminal has its own
+    Workstation object (<literal>scWorkstation</literal>) in the LDAP tree.
+    The Workstation object is automatically created when a &pos; terminal
+    registers on the &branchserv;. <filename>posleases2ldap</filename> uses
+    information from the Hardware Reference object
+    (<literal>scCashRegister</literal>) and the Image Reference object
+    (<literal>scPosImage</literal>) to create the Workstation object. For more
+    information on this process, see <xref linkend="ad_cntrlhw"/>.
    </para>
    <para>
-    Before you can boot the &pos; terminals, use
-    <command>posAdmin</command> to create the following objects in the
-    LDAP directory (see also <xref linkend="sect.posadmin"/>):
+    Before you can boot the &pos; terminals, use <command>posAdmin</command>
+    to create the following objects in the LDAP directory (see also
+    <xref linkend="sect.posadmin"/>):
    </para>
-   <itemizedlist>
+   <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      An <link linkend="sec.slepos_term.ldap.cashreg"><literal>scCashRegister</literal></link>
-      object and its associated configuration objects for each type of &pos;
-      terminal in your system:
+      An <literal>scCashRegister</literal> object (see <xref
+      linkend="sec.slepos_term.ldap.cashreg"/>) and its associated
+      configuration objects for each type of &pos; terminal in your system:
      </para>
-     <itemizedlist>
+     <itemizedlist mark="bullet" spacing="normal">
       <listitem>
        <para>
-        <link linkend="sec.slepos_term.ldap.harddisk"><literal>scHarddisk</literal></link>
-        or
-        <link linkend="sec.slepos_term.ldap.ramdisk"
-         ><literal>scRamDisk</literal></link>
+        <literal>scHarddisk</literal> (see <xref
+        linkend="sec.slepos_term.ldap.harddisk"/>) or
+        <literal>scRamDisk</literal> (see <xref
+        linkend="sec.slepos_term.ldap.ramdisk"/>)
        </para>
       </listitem>
       <listitem>
        <para>
-        <link linkend="scPxeFileTemplate"><systemitem>scPxeFileTemplate</systemitem></link>
+        <literal>scPxeFileTemplate</literal> (see <xref
+        linkend="scPxeFileTemplate"/>)
        </para>
       </listitem>
       <listitem>
        <para>
-        <link linkend="sec.slepos_term.ldap.conffiletemp"><literal>scConfigFileTemplate</literal></link>
-        (optional)
+        <literal>scConfigFileTemplate</literal> (see <xref
+        linkend="sec.slepos_term.ldap.conffiletemp"/>) (optional)
        </para>
       </listitem>
       <listitem>
        <para>
-        <link linkend="sec.slepos_term.ldap.conffilesynctemp"><literal>scConfigFileSyncTemplate</literal></link>
-        (optional)
+        <literal>scConfigFileSyncTemplate</literal> (see <xref
+        linkend="sec.slepos_term.ldap.conffilesynctemp"/>) (optional)
        </para>
       </listitem>
      </itemizedlist>
     </listitem>
     <listitem>
      <para>
-      An
-      <link linkend="sec.slepos_term.ldap.posimage"><literal>scPosImage</literal></link>
-      object for each client image file that you want the &branchserv; to
-      distribute to &pos; terminals.
+      An <literal>scPosImage</literal> object (see <xref
+      linkend="sec.slepos_term.ldap.posimage"/>) for each client image file
+      that you want the &branchserv; to distribute to &pos; terminals.
      </para>
      <para>
       Activate the <systemitem>scPosImage</systemitem> objects before you boot
@@ -974,29 +1005,29 @@
     </listitem>
    </itemizedlist>
    <para>
-    With <command>posAdmin</command>, you can add, remove, and modify
-    &pos; terminal hardware assets such as &pos; terminals, hard disks,
-    network interface cards, and configuration files with the use of
-    reference objects in the LDAP directory. Hardware reference objects are
-    typically located in the global container in the LDAP directory.
+    With <command>posAdmin</command>, you can add, remove, and modify &pos;
+    terminal hardware assets such as &pos; terminals, hard disks, network
+    interface cards, and configuration files with the use of reference objects
+    in the LDAP directory. Hardware reference objects are typically located in
+    the global container in the LDAP directory.
    </para>
    <note>
     <title>LDAP Attributes</title>
     <para>
-     Each LDAP object has two types of attributes: must and may attributes.
-     The must attributes are the minimum requirements for an object; the may
+     Each LDAP object has two types of attributes: must and may attributes. The
+     must attributes are the minimum requirements for an object; the may
      attributes are optional.
     </para>
    </note>
-   <sect3 id="sec.slepos_term.ldap.cashreg">
+   <sect3 xml:id="sec.slepos_term.ldap.cashreg">
     <title>Adding an <literal>scCashRegister</literal> Object</title>
     <para>
-     An associated object representing the cash register must exist in the
-     LDAP database. This <systemitem>scCashRegister</systemitem> object can
-     either represent a specific machine or a generic machine. The generic
-     object is used if a specific image is not found for the given machine.
-     In both cases, the <systemitem>scCashRegister</systemitem> must have a
-     hardware subobject like <systemitem>scRamDisk</systemitem> or
+     An associated object representing the cash register must exist in the LDAP
+     database. This <systemitem>scCashRegister</systemitem> object can either
+     represent a specific machine or a generic machine. The generic object is
+     used if a specific image is not found for the given machine. In both
+     cases, the <systemitem>scCashRegister</systemitem> must have a hardware
+     subobject like <systemitem>scRamDisk</systemitem> or
      <systemitem>scHarddisk</systemitem> which specifies where and how the
      image should be deployed.
     </para>
@@ -1004,20 +1035,21 @@
      The name of a machine is located in the uploaded
      <filename>&hwmac;</filename> file under a
      <systemitem>HWTYPE</systemitem> entry. For more information, see
-     <xref linkend="servercommands.core" />.
+     <xref linkend="servercommands.core"/>.
     </para>
     <note>
      <title>Creating Default <systemitem>scCashRegister</systemitem> Objects</title>
      <para>
       To create a default <systemitem>scCashRegister</systemitem> object,
       define the object's <systemitem>scCashRegisterName</systemitem> attribute
-      as <literal>default</literal>. This <systemitem>scCashRegister</systemitem>
-      will then be used to register all machines for which no specific
-      <systemitem>scCashRegister</systemitem> exists.
+      as <literal>default</literal>. This
+      <systemitem>scCashRegister</systemitem> will then be used to register all
+      machines for which no specific <systemitem>scCashRegister</systemitem>
+      exists.
      </para>
      <para>
-      Define only one default <literal>scCashRegister</literal> object in
-      the Global container.
+      Define only one default <literal>scCashRegister</literal> object in the
+      Global container.
      </para>
     </note>
     <para>
@@ -1029,93 +1061,88 @@
      <para>
       A specific system image can be defined in the
       <systemitem>scWorkstation</systemitem> object. The setting in the
-      <systemitem>scWorkstation</systemitem> object overrides the default
-      image defined in the <systemitem>scCashRegister</systemitem> object.
-      For information on this procedure, see <xref linkend="ad_buw3kgj"/>.
+      <systemitem>scWorkstation</systemitem> object overrides the default image
+      defined in the <systemitem>scCashRegister</systemitem> object. For
+      information on this procedure, see <xref linkend="ad_buw3kgj"/>.
      </para>
     </note>
     <para>
-     <xref linkend="ad_b58oz2c" /> summarizes the
-     posAdmin command options for <literal>scCashRegister</literal> object
-     attributes.
+     <xref linkend="ad_b58oz2c"/> summarizes the posAdmin command options for
+     <literal>scCashRegister</literal> object attributes.
     </para>
     <para>
      To add a <systemitem>scCashRegister</systemitem> object for a specific
      machine (for example with a specific <literal>HWTYPE=cshr4152</literal>),
-     use the command (note the <systemitem>scCashRegisterName</systemitem> name and image
-     reference in <option>--scPosImageDn</option>): 
-     </para>
-     <para>
-       <command>posAdmin --base
-     cn=global,&dnorg;
-     --add --scCashRegister --cn <replaceable>cr-test</replaceable>
-     --scCashRegisterName <replaceable>cshr4152</replaceable> --scPosImageDn
-     cn=<replaceable>myGraphical_test</replaceable>,cn=<replaceable>default</replaceable>,cn=global,&dnorg;</command>
-   </para><!--FIXME formatting-->
+     use the command (note the <systemitem>scCashRegisterName</systemitem> name
+     and image reference in <option>--scPosImageDn</option>):
+    </para>
+    <para>
+     <command>posAdmin --base cn=global,&dnorg; --add --scCashRegister
+     --cn</command> <replaceable>cr-test</replaceable> --scCashRegisterName
+     <replaceable>cshr4152</replaceable> --scPosImageDn
+     cn=<replaceable>myGraphical_test</replaceable>,cn=<replaceable>default</replaceable>,cn=global,&dnorg;
+    </para>
+<!--FIXME formatting-->
     <para>
      To add a <systemitem>scCashRegister</systemitem> object for a generic
      machine, use the command (note <systemitem>scCashRegister</systemitem>
      name being <literal>default</literal>):
-     </para>
-     <para>
-     <command>posAdmin --base
-     cn=global,&dnorg;
-     --add --scCashRegister --cn <replaceable>cr-test-default</replaceable>
-     --scCashRegisterName default --scPosImageDn
-     cn=<replaceable>myGraphical_test</replaceable>,cn=<replaceable>default</replaceable>,cn=global,&dnorg;</command>
     </para>
-    <!--FIXME SEPARATE SECTION???-->
     <para>
-     To add a RAID definition to an existing cash register <literal>raidCR</literal>
-     (under a local role, using one disk specified by id and another by device name),
-     use the following command:
+     <command>posAdmin --base cn=global,&dnorg; --add --scCashRegister
+     --cn</command> <replaceable>cr-test-default</replaceable>
+     --scCashRegisterName default --scPosImageDn
+     cn=<replaceable>myGraphical_test</replaceable>,cn=<replaceable>default</replaceable>,cn=global,&dnorg;
     </para>
-    <screen>posAdmin --DN cn=raidCR,cn=myrole,cn=rolecontainer,&dnbranch; --modify --scCashRegister --scRaidScheme '1 /dev/disk/by-id/ata-ST3160815AS_Z4A1ATWL /dev/sdc'</screen>
+<!--FIXME SEPARATE SECTION???-->
+    <para>
+     To add a RAID definition to an existing cash register
+     <literal>raidCR</literal> (under a local role, using one disk specified by
+     id and another by device name), use the following command:
+    </para>
+<screen>posAdmin --DN cn=raidCR,cn=myrole,cn=rolecontainer,&dnbranch; --modify --scCashRegister --scRaidScheme '1 /dev/disk/by-id/ata-ST3160815AS_Z4A1ATWL /dev/sdc'</screen>
    </sect3>
-   <sect3 id="sec.slepos_term.ldap.ramdisk">
+   <sect3 xml:id="sec.slepos_term.ldap.ramdisk">
     <title>Adding an <literal>scRamDisk</literal> Object</title>
     <para>
-     The <literal>scRamDisk</literal> object stores configuration
-     information for a &pos; terminal RAM disk. If no hard disk is
-     available, you must configure a RAM disk for the &pos; terminal.
+     The <literal>scRamDisk</literal> object stores configuration information
+     for a &pos; terminal RAM disk. If no hard disk is available, you must
+     configure a RAM disk for the &pos; terminal.
     </para>
     <para>
-     <xref linkend="ad_b58oz2m"/>, summarizes the
-     posAdmin command options for <literal>scRamDisk</literal> object
-     attributes.
+     <xref linkend="ad_b58oz2m"/>, summarizes the posAdmin command options for
+     <literal>scRamDisk</literal> object attributes.
     </para>
     <para>
      When deploying to the RAM disk of a specific machine, use:
-     <command>posAdmin --base
-     cn=<replaceable>cshr4152</replaceable>,cn=global,&dnorg;
-     --add --scRamDisk --cn <replaceable>ram</replaceable> --scDevice
-     <replaceable>/dev/ram1</replaceable> </command>
+     <command>posAdmin --base cn=</command>
+     <replaceable>cshr4152</replaceable>,cn=global,&dnorg; --add --scRamDisk
+     --cn <replaceable>ram</replaceable> --scDevice
+     <replaceable>/dev/ram1</replaceable>
     </para>
     <para>
      When deploying to the RAM disk of the generic machine of the previous
-     section, use: <command>posAdmin --base
-     cn=<replaceable>cr-test-default</replaceable>,cn=global,&dnorg;
-     --add --scRamDisk --cn <replaceable>ram</replaceable> --scDevice
-     <replaceable>/dev/ram1</replaceable> </command>
+     section, use: <command>posAdmin --base cn=</command>
+     <replaceable>cr-test-default</replaceable>,cn=global,&dnorg; --add
+     --scRamDisk --cn <replaceable>ram</replaceable> --scDevice
+     <replaceable>/dev/ram1</replaceable>
     </para>
     <para>
      The size of the ramdisk is controlled by kernel parameters
-     <systemitem>ramdisk_size</systemitem> (default value 400000)
-     and <systemitem>ramdisk_blocksize</systemitem> (default value
-     4096).
+     <systemitem>ramdisk_size</systemitem> (default value 400000) and
+     <systemitem>ramdisk_blocksize</systemitem> (default value 4096).
     </para>
    </sect3>
-   <sect3 id="sec.slepos_term.ldap.harddisk">
+   <sect3 xml:id="sec.slepos_term.ldap.harddisk">
     <title>Adding an <systemitem>scHarddisk</systemitem> Object</title>
     <para>
      The <systemitem>scHarddisk</systemitem> object stores configuration
-     information for a &pos; terminal hard disk. The attributes of this object
-     are described in <xref linkend="ad_b58oz2g"/>.
+     information for a &pos; terminal hard disk. The attributes of this
+     object are described in <xref linkend="ad_b58oz2g"/>.
     </para>
     <para>
-     When deploying to the harddisk, the partition table
-     must be specified using the <systemitem>scPartition</systemitem>
-     objects:
+     When deploying to the harddisk, the partition table must be specified
+     using the <systemitem>scPartition</systemitem> objects:
     </para>
 <screen>
 posAdmin --base cn=<replaceable>cshr4152</replaceable>,cn=<replaceable>global</replaceable>,&dnorg;
@@ -1131,9 +1158,10 @@ posAdmin --base cn=<replaceable>sda</replaceable>,cn=<replaceable>cshr4152</repl
 --add --scPartition --scPartNum <replaceable>2</replaceable> --scPartType <replaceable>83</replaceable> --scPartMount <replaceable>'/'</replaceable> --scPartSize <replaceable>7000</replaceable>
 </screen>
     <para>
-     Of course, you can also use further attributes of the <systemitem>scPartition</systemitem>
-     object. For example, to add the fourth partition with encryption using password &mypass;
-     and some decription, use:
+     Of course, you can also use further attributes of the
+     <systemitem>scPartition</systemitem> object. For example, to add the
+     fourth partition with encryption using password &mypass; and some
+     decription, use:
     </para>
 <screen>
 posAdmin --base cn=<replaceable>sda</replaceable>,cn=<replaceable>cshr4152</replaceable>,cn=<replaceable>global</replaceable>,&dnorg;
@@ -1144,52 +1172,53 @@ posAdmin --base cn=<replaceable>sda</replaceable>,cn=<replaceable>cshr4152</repl
      Note that the <systemitem>scPartNum</systemitem> attribute is there only
      to define relative order of the partitions (the first partition with
      <systemitem>scPartNum</systemitem> <literal>0</literal>,
-     <systemitem>scPartType</systemitem> <literal>83</literal> and 
-     <systemitem>scPartMount</systemitem> <literal>/srv/SLEPOS</literal>
-     is the service partition).
-    </para>
-  <para>
-   The minimum size of the service partition sufficient for the wireless
-   operation is 200 MB. However, the service partition is also used
-   for downloading compressed images with multicast option and will be
-   used for other purposes in the future. The recommended size of the service
-   partition is 20 GB.
-  </para>
-  <para><!--bnc831399-->
-   If booting from the service partition is required (for example when
-   wireless operation or offline deployment is used),
-   <systemitem>grub</systemitem> must be included in
-   <systemitem>initrd</systemitem>. This can be accomplished by adding
-   <literal>&lt;package name="grub" bootinclude="true"/&gt;</literal>
-   to the <filename>config.xml</filename> file or by adding
-   <systemitem>grub</systemitem> to the list of packages to include
-   in boot in via &imgcreat;.
-  </para>
-  <para>
-   The service partition cannot be encrypted.
-  </para>
-    <para>
-     For more information about the
-     <systemitem>scPartition</systemitem> object and its attributes, see
-     <xref linkend="ad_scpartition"/>. For more information about disk
-     encryption, see <xref linkend="encrypted_partitions"/>.
+     <systemitem>scPartType</systemitem> <literal>83</literal> and
+     <systemitem>scPartMount</systemitem> <literal>/srv/SLEPOS</literal> is the
+     service partition).
     </para>
     <para>
-     When deploying to the hard disk of a generic machine (from example used
-     in <xref linkend="sec.slepos_term.ldap.cashreg" />), simply use
+     The minimum size of the service partition sufficient for the wireless
+     operation is 200 MB. However, the service partition is also used for
+     downloading compressed images with multicast option and will be used for
+     other purposes in the future. The recommended size of the service
+     partition is 20 GB.
+    </para>
+    <para>
+<!--bnc831399-->
+     If booting from the service partition is required (for example when
+     wireless operation or offline deployment is used),
+     <systemitem>grub</systemitem> must be included in
+     <systemitem>initrd</systemitem>. This can be accomplished by adding
+     <literal>&lt;package name="grub" bootinclude="true"/&gt;</literal>
+     to the <filename>config.xml</filename> file or by adding
+     <systemitem>grub</systemitem> to the list of packages to include in boot
+     in via &imgcreat;.
+    </para>
+    <para>
+     The service partition cannot be encrypted.
+    </para>
+    <para>
+     For more information about the <systemitem>scPartition</systemitem> object
+     and its attributes, see <xref linkend="ad_scpartition"/>. For more
+     information about disk encryption, see
+     <xref linkend="encrypted_partitions"/>.
+    </para>
+    <para>
+     When deploying to the hard disk of a generic machine (from example used in
+     <xref linkend="sec.slepos_term.ldap.cashreg"/>), simply use
      <literal>cn=cr-test-default</literal> instead of
      <literal>cn=cshr4152</literal>.
     </para>
    </sect3>
-   <sect3 id="sec.slepos_term.ldap.conffiletemp">
+   <sect3 xml:id="sec.slepos_term.ldap.conffiletemp">
 <!--BEWARE-->
     <title>Adding an <literal>scConfigFileTemplate</literal> Object</title>
     <para>
      <literal>scConfigFileTemplate</literal> objects are used when running
      services, such as the X Window service, that require hardware-dependent
      configuration files. An <literal>scConfigFileTemplate</literal> object
-     contains the configuration file data that a &pos; terminal needs in order
-     to run a given service.
+     contains the configuration file data that a &pos; terminal needs in
+     order to run a given service.
     </para>
     <para>
      To define the <literal>scConfigFileTemplate</literal> object with the
@@ -1201,13 +1230,14 @@ posAdmin --base cn=<replaceable>sda</replaceable>,cn=<replaceable>cshr4152</repl
     </para>
     <para>
      When a &pos; terminal registers with a &branchserv; or when you run
-     <command>pos dump-all</command> or <command>pos dump-ws</command>
-     or force update via <systemitem>scConfigUpdate</systemitem>, the
-     &branchserv; retrieves the configuration data in the
+     <command>pos dump-all</command> or <command>pos dump-ws</command> or force
+     update via <systemitem>scConfigUpdate</systemitem>, the &branchserv;
+     retrieves the configuration data in the
      <literal>scConfigFileTemplate</literal> object to create a configuration
-     file in <filename>/srv/tftpboot/KIWI/<replaceable>MAC</replaceable>/</filename>
-     directories on the &branchserv;. The configuration file name is the same
-     as the <literal>cn</literal> name of the respective LDAP entry.
+     file in
+     <filename>/srv/tftpboot/KIWI/<replaceable>MAC</replaceable>/</filename>
+     directories on the &branchserv;. The configuration file name is the
+     same as the <literal>cn</literal> name of the respective LDAP entry.
     </para>
     <para>
      Using TFTP, the configuration file is then distributed from the
@@ -1217,98 +1247,99 @@ posAdmin --base cn=<replaceable>sda</replaceable>,cn=<replaceable>cshr4152</repl
      <title>Assigning Configuration Files to &pos;s</title>
      <para>
       The <literal>scCashRegister</literal> or <literal>scPosImage</literal>
-      object under which the <literal>scConfigFileTemplate</literal> object
-      is created determines which &pos; terminals receive the configuration
+      object under which the <literal>scConfigFileTemplate</literal> object is
+      created determines which &pos; terminals receive the configuration
       file.
      </para>
      <para>
-      If the <literal>scConfigFileTemplate</literal> object is defined under
-      an <literal>scCashRegister</literal> object, all terminals that
-      correspond to the type defined in the
-      <literal>scCashRegister</literal> object receive the configuration
-      file defined in the <literal>scConfigFileTemplate</literal> object.
-     </para>
-     <para>
-      If the <literal>scConfigFileTemplate</literal> object is defined under
-      an <literal>scPosImage</literal> object, all terminals that load the
-      system image that corresponds to the <literal>scPosImage</literal>
-      object receive the configuration file defined in the
+      If the <literal>scConfigFileTemplate</literal> object is defined under an
+      <literal>scCashRegister</literal> object, all terminals that correspond
+      to the type defined in the <literal>scCashRegister</literal> object
+      receive the configuration file defined in the
       <literal>scConfigFileTemplate</literal> object.
      </para>
      <para>
-      Be aware that in this case the <filename>posAdmin</filename> command
-      does more than just literal insertion of the data specified on the
-      command line. If you want to use some other tool (for example, GQ) to
-      define the <literal>scConfigFileTemplate</literal> object, you must
-      directly add the configuration data as the
-      <literal>scConfigFileData</literal> attribute, not the path to the file
-      containing them. Also keep in mind that the created configuration file
-      name is the <literal>cn</literal> entry of the respective
-      <literal>scConfigFileTemplate</literal> object, so ensure that they are
-      named differently. This can become an issue when, for example, one
-      configuration object is assigned to the scCashRegister and another
+      If the <literal>scConfigFileTemplate</literal> object is defined under an
+      <literal>scPosImage</literal> object, all terminals that load the system
+      image that corresponds to the <literal>scPosImage</literal> object
+      receive the configuration file defined in the
+      <literal>scConfigFileTemplate</literal> object.
+     </para>
+     <para>
+      Be aware that in this case the <filename>posAdmin</filename> command does
+      more than just literal insertion of the data specified on the command
+      line. If you want to use some other tool (for example, GQ) to define the
+      <literal>scConfigFileTemplate</literal> object, you must directly add the
+      configuration data as the <literal>scConfigFileData</literal> attribute,
+      not the path to the file containing them. Also keep in mind that the
+      created configuration file name is the <literal>cn</literal> entry of the
+      respective <literal>scConfigFileTemplate</literal> object, so ensure that
+      they are named differently. This can become an issue when, for example,
+      one configuration object is assigned to the scCashRegister and another
       with the same name to the scPosImage object.
      </para>
     </note>
     <para>
-     <xref linkend="ad_b58oz2d" /> summarizes the
-     posAdmin command options for <literal>scConfigFileTemplate</literal>
-     object attributes.
+     <xref linkend="ad_b58oz2d"/> summarizes the posAdmin command options for
+     <literal>scConfigFileTemplate</literal> object attributes.
     </para>
     <para>
      The following example adds a <literal>scConfigFileTemplate</literal>
-     object below the Hardware Reference object, crtype3 (type the command
-     all on one line):
+     object below the Hardware Reference object, crtype3 (type the command all
+     on one line):
     </para>
 <screen>posAdmin --base cn=<replaceable>crtype3</replaceable>,cn=global,&dnorg;
 --add --scConfigFileTemplate --cn <replaceable>xorg.conf</replaceable>
 --scConfigFile <replaceable>/etc/X11/xorg.conf</replaceable> --scMust <replaceable>TRUE</replaceable>
 --scBsize <replaceable>1024</replaceable> --scConfigFileData <replaceable>/mydata/xorg.conf.1234567</replaceable></screen>
-     <para>
-      Configuration files defined by <systemitem>scConfigFileTemplate</systemitem>
-      and <systemitem>scConfigFileSyncTemplate</systemitem> objects and referenced
-      on the CONF line in the <filename>config.MAC</filename> file are always checked
-      with respect to the list of deployed configuration files on the terminal
-      (in <filename>/etc/KIWI/InstalledConfigFiles</filename>). This ensures that
-      all defined configuration files exist on the terminal and that the configuration files
-      removed from the CONF line are also deleted from the terminal.
-     </para>
-     <para>
-      The content of the configuration files is not checked.
-     </para>
+    <para>
+     Configuration files defined by
+     <systemitem>scConfigFileTemplate</systemitem> and
+     <systemitem>scConfigFileSyncTemplate</systemitem> objects and referenced
+     on the CONF line in the <filename>config.MAC</filename> file are always
+     checked with respect to the list of deployed configuration files on the
+     terminal (in <filename>/etc/KIWI/InstalledConfigFiles</filename>). This
+     ensures that all defined configuration files exist on the terminal and
+     that the configuration files removed from the CONF line are also deleted
+     from the terminal.
+    </para>
+    <para>
+     The content of the configuration files is not checked.
+    </para>
    </sect3>
-   <sect3 id="sec.slepos_term.ldap.conffilesynctemp">
+   <sect3 xml:id="sec.slepos_term.ldap.conffilesynctemp">
     <title>Adding an <literal>scConfigFileSyncTemplate</literal> Object</title>
     <para>
-     <literal>scConfigFileSyncTemplate</literal> objects are used when
-     running services that require hardware-dependent configuration files, for example, the X Window service. The
-     <literal>scConfigFileSyncTemplate</literal> object points to the
-     configuration file that a &pos; terminal needs to run a given service.
-     This object differs from <literal>scConfigFileTemplate</literal>
-     objects because the configuration data is not stored in the object;
-     the object points to a configuration file outside the LDAP directory.
+     <literal>scConfigFileSyncTemplate</literal> objects are used when running
+     services that require hardware-dependent configuration files, for example,
+     the X Window service. The <literal>scConfigFileSyncTemplate</literal>
+     object points to the configuration file that a &pos; terminal needs to
+     run a given service. This object differs from
+     <literal>scConfigFileTemplate</literal> objects because the configuration
+     data is not stored in the object; the object points to a configuration
+     file outside the LDAP directory.
     </para>
     <para>
      When a &pos; terminal registers with a &branchserv;, or you run
-     <command>pos dump-all</command>, or <command>pos dump-ws</command>
-     or force update via <systemitem>scConfigUpdate</systemitem>, the
+     <command>pos dump-all</command>, or <command>pos dump-ws</command> or
+     force update via <systemitem>scConfigUpdate</systemitem>, the
      &branchserv; first uses rsync to synchronize the configuration files in
      the <filename>/srv/SLEPOS/config</filename> directory on the &admserv;
      which the same directory on the &branchserv; and then copies relevant
      configuration files, as specified in the
      <literal>scConfigFileSyncTemplate</literal> objects from the
      <filename>/srv/SLEPOS/config</filename> directory to the <filename>
-      /srv/tftpboot/KIWI/<replaceable>MAC</replaceable>/</filename> directory.
-     The filenames are changed to the respective <literal>cn</literal> names
-     of the corresponding <literal>scConfigFileSyncTemplate</literal> LDAP
+     /srv/tftpboot/KIWI/<replaceable>MAC</replaceable>/</filename> directory.
+     The filenames are changed to the respective <literal>cn</literal> names of
+     the corresponding <literal>scConfigFileSyncTemplate</literal> LDAP
      entries.
     </para>
     <important>
      <title>Location of Configuration Files</title>
      <para>
       Any configuration files referenced in the
-      <literal>scConfigFileSyncTemplate</literal> object must be located in
-      the <filename>/srv/SLEPOS/config/</filename> directory on the &admserv;,
+      <literal>scConfigFileSyncTemplate</literal> object must be located in the
+      <filename>/srv/SLEPOS/config/</filename> directory on the &admserv;,
       otherwise they will not be transferred to the &branchserv;.
      </para>
     </important>
@@ -1320,17 +1351,16 @@ posAdmin --base cn=<replaceable>sda</replaceable>,cn=<replaceable>cshr4152</repl
      <title>Assigning Configuration Files to &pos; Terminals</title>
      <para>
       The <literal>scCashRegister</literal> or <literal>scPosImage</literal>
-      object under which the <literal>scConfigFileSyncTemplate</literal>
-      object is created determines which &pos; terminals receive the
-      configuration file.
+      object under which the <literal>scConfigFileSyncTemplate</literal> object
+      is created determines which &pos; terminals receive the configuration
+      file.
      </para>
      <para>
       If the <literal>scConfigFileSyncTemplate</literal> object is defined
       under an <literal>scCashRegister</literal> object, all terminals that
-      correspond to the type defined in the
-      <literal>scCashRegister</literal> object receive the configuration
-      file designated in the <literal>scConfigFileSyncTemplate</literal>
-      object.
+      correspond to the type defined in the <literal>scCashRegister</literal>
+      object receive the configuration file designated in the
+      <literal>scConfigFileSyncTemplate</literal> object.
      </para>
      <para>
       If the <literal>scConfigFileSyncTemplate</literal> object is defined
@@ -1342,29 +1372,28 @@ posAdmin --base cn=<replaceable>sda</replaceable>,cn=<replaceable>cshr4152</repl
      <para>
       Also keep in mind that the created configuration file name is the
       <literal>cn</literal> entry of the respective
-      <literal>scConfigFileTemplate</literal> object. Make sure they
-      are named. This can become an issue when for example, one
-      configuration object is assigned to the scCashRegister and another
-      with the same name to the scPosImage object.
+      <literal>scConfigFileTemplate</literal> object. Make sure they are named.
+      This can become an issue when for example, one configuration object is
+      assigned to the scCashRegister and another with the same name to the
+      scPosImage object.
      </para>
     </note>
     <para>
-     <xref linkend="ad_b58oz2d"/>, summarizes the
-     posAdmin command options for
+     <xref linkend="ad_b58oz2d"/>, summarizes the posAdmin command options for
      <literal>scConfigFileSyncTemplate</literal> object attributes.
     </para>
     <para>
-     The following example adds an
-     <literal>scConfigFileSyncTemplate</literal> object below the Hardware
-     Reference object, crtype3 (type the command all on one line):
+     The following example adds an <literal>scConfigFileSyncTemplate</literal>
+     object below the Hardware Reference object, crtype3 (type the command all
+     on one line):
     </para>
 <screen>posAdmin
 --base cn=<replaceable>crtype3</replaceable> ,cn=global,&dnorg;
---add --scConfigFileSyncTemplate --cn <replaceable>xorg.conf</replaceable> 
---scConfigFile <replaceable>/etc/X11/xorg.conf</replaceable> --scMust <replaceable>TRUE</replaceable> --scBsize <replaceable>1024</replaceable> 
+--add --scConfigFileSyncTemplate --cn <replaceable>xorg.conf</replaceable>
+--scConfigFile <replaceable>/etc/X11/xorg.conf</replaceable> --scMust <replaceable>TRUE</replaceable> --scBsize <replaceable>1024</replaceable>
     --scConfigFileLocalPath /srv/SLEPOS/config<replaceable>/xorg.conf.cr3</replaceable> </screen>
    </sect3>
-   <sect3 id="sec.slepos_term.ldap.posimage">
+   <sect3 xml:id="sec.slepos_term.ldap.posimage">
     <title>Adding an <literal>scPosImage</literal> Object</title>
     <para>
      All system images that you want to distribute to &pos; terminals must
@@ -1375,39 +1404,38 @@ posAdmin --base cn=<replaceable>sda</replaceable>,cn=<replaceable>cshr4152</repl
     <note>
      <title>Referring to Boot Images</title>
      <para>
-      Boot images do not have <literal>scPosImage</literal> objects; they
-      are referenced in the <literal>scInitrdName</literal> attribute in the
-      <link linkend="ad_btxarm9"
-       ><literal>scDistributionContainer</literal></link>
-      object.
+      Boot images do not have <literal>scPosImage</literal> objects; they are
+      referenced in the <literal>scInitrdName</literal> attribute in the
+      <literal>scDistributionContainer</literal> object (see <xref
+      linkend="ad_btxarm9"/>).
      </para>
     </note>
     <para>
      After the installation and configuration of &slepos;, an
      <systemitem>scPosImage</systemitem> object is automatically added to the
-     Default Distribution Container for the Minimal image. However, this
-     LDAP entry is only intended to serve as an example. You must manually
-     add an <systemitem>scPosImage</systemitem> object for each system image you
-     want to distribute to &pos; terminals.
+     Default Distribution Container for the Minimal image. However, this LDAP
+     entry is only intended to serve as an example. You must manually add an
+     <systemitem>scPosImage</systemitem> object for each system image you want
+     to distribute to &pos; terminals.
     </para>
     <important>
      <para>
       The reference objects for &slepos; images should be created in the
-      Default Distribution Container. It references the current kernel
-      version included and the default booting image in the product and
-      therefore, should store all the <literal>scPosImage</literal> objects
-      for &slepos; images.<!--FIXME!!!-->
+      Default Distribution Container. It references the current kernel version
+      included and the default booting image in the product and therefore,
+      should store all the <literal>scPosImage</literal> objects for
+      &slepos; images.
+<!--FIXME!!!-->
      </para>
     </important>
     <para>
-     <xref linkend="ad_b58oz2l"/>, summarizes the
-     posAdmin command options for <literal>scPosImage</literal> object
-     attributes.
+     <xref linkend="ad_b58oz2l"/>, summarizes the posAdmin command options for
+     <literal>scPosImage</literal> object attributes.
     </para>
     <para>
-     The following commands add a <literal>scPosImage</literal> object into
-     the default container (and set its version via the <systemitem>scImageVersion</systemitem>
-     object):
+     The following commands add a <literal>scPosImage</literal> object into the
+     default container (and set its version via the
+     <systemitem>scImageVersion</systemitem> object):
     </para>
 <screen>posAdmin
 --base cn=<replaceable>default</replaceable>,cn=global,&dnorg; --add --scPosImage --cn <replaceable>myMinimal</replaceable>
@@ -1432,10 +1460,11 @@ posAdmin --base cn=<replaceable>myMinimal</replaceable>,cn=<replaceable>default<
 posAdmin --base cn=<replaceable>myMinimal</replaceable>,cn=<replaceable>anothercontainer</replaceable>,cn=global,&dnorg;
 --add --scImageVersion --scDisabled FALSE --scVersion 3.4.2
 </screen>
-<para><!--CHECKIV-->
+    <para>
+<!--CHECKIV-->
      If you want to add a new image version to an existing
      <systemitem>scPosImage</systemitem> object, see
-     <xref linkend="image_activation" />.
+     <xref linkend="image_activation"/>.
     </para>
    </sect3>
    <sect3>
@@ -1445,10 +1474,9 @@ posAdmin --base cn=<replaceable>myMinimal</replaceable>,cn=<replaceable>anotherc
      Each collection of system images built against a specific kernel and
      initrd must have a corresponding
      <systemitem>scDistributionContainer</systemitem> object in the LDAP
-     dabase. Therefore, if deploying a system image built against a new
-     kernel or initrd version, a new
-     <systemitem>scDistributionContainer</systemitem> object must be
-     created.
+     dabase. Therefore, if deploying a system image built against a new kernel
+     or initrd version, a new <systemitem>scDistributionContainer</systemitem>
+     object must be created.
     </para>
     <para>
 <!--FIXME-->
@@ -1457,26 +1485,26 @@ posAdmin --base cn=<replaceable>myMinimal</replaceable>,cn=<replaceable>anotherc
      appropriate boot images.
     </para>
    </sect3>
-   <sect3 id="image_activation">
+   <sect3 xml:id="image_activation">
     <title>Activating Images</title>
     <para>
-     Each image can be available in several versions. Each image version can
-     be either enabled (active) or disabled (passive). If there are more enabled
+     Each image can be available in several versions. Each image version can be
+     either enabled (active) or disabled (passive). If there are more enabled
      versions of one image, the highest version is used. If there is no enabled
      version of the image, no terminals can download and use the image.
-     <!--FIXME scPosImageVersion under scWorkstation???-->
+<!--FIXME scPosImageVersion under scWorkstation???-->
     </para>
     <para>
-     The version (and activation) data for each image can be stored on
-     two different places in the LDAP database &ndash; in the
+     The version (and activation) data for each image can be stored on two
+     different places in the LDAP database &ndash; in the
      <systemitem>scPosImageVersion</systemitem> attribute of the relevant
      <systemitem>scPosImage</systemitem> object and in the
      <systemitem>scImageVersion</systemitem> objects placed under it. The
      <systemitem>scPosImageVersion</systemitem> attribute can hold information
      about multiple versions, while the <systemitem>scImageVersion</systemitem>
-     object holds information about one version (but it supports more features, such as
-     image encryption). More <systemitem>scImageVersion</systemitem> objects
-     can be created to store information about multiple versions.
+     object holds information about one version (but it supports more features,
+     such as image encryption). More <systemitem>scImageVersion</systemitem>
+     objects can be created to store information about multiple versions.
     </para>
     <para>
      The <systemitem>scPosImageVersion</systemitem> attribute is considered
@@ -1489,19 +1517,20 @@ posAdmin --base cn=<replaceable>myMinimal</replaceable>,cn=<replaceable>anotherc
     </para>
     <para>
      For more information about the <systemitem>scPosImage</systemitem> object
-     and its <systemitem>scPosImageVersion</systemitem> attribute, see <xref
-      linkend="ad_b58oz2l" />. For more information about the
-     <systemitem>scImageVersion</systemitem> object, see <xref
-      linkend="ad_scimageversion" />.
+     and its <systemitem>scPosImageVersion</systemitem> attribute, see
+     <xref linkend="ad_b58oz2l"/>. For more information about the
+     <systemitem>scImageVersion</systemitem> object, see
+     <xref linkend="ad_scimageversion"/>.
     </para>
     <para>
-     A convenient way to add the <systemitem>scImageVersion</systemitem>
-     object offers the <command>registerImages --ldap</command> command.
-     For more information, see <xref linkend="registerimages" />.
+     A convenient way to add the <systemitem>scImageVersion</systemitem> object
+     offers the <command>registerImages --ldap</command> command. For more
+     information, see <xref linkend="registerimages"/>.
     </para>
     <para>
-     To add version <replaceable>2.4.2</replaceable> manually with <command>posAdmin</command>
-     using the <systemitem>scImageVersion</systemitem> object, run the following command:
+     To add version <replaceable>2.4.2</replaceable> manually with
+     <command>posAdmin</command> using the
+     <systemitem>scImageVersion</systemitem> object, run the following command:
     </para>
 <screen>
 posAdmin --base cn=<replaceable>minimal</replaceable>,cn=<replaceable>default</replaceable>,cn=global,o=myorg,c=us
@@ -1512,43 +1541,43 @@ posAdmin --base cn=<replaceable>minimal</replaceable>,cn=<replaceable>default</r
      <command>possyncimage; pos dump-all</command>.
     </para>
     <para>
-     To deactivate an image activated by the <systemitem>scImageVersion</systemitem> object,
-     use the following command:
+     To deactivate an image activated by the
+     <systemitem>scImageVersion</systemitem> object, use the following command:
     </para>
 <screen>posAdmin --modify --scImageVersion --scDisabled TRUE --DN
 scVersion=3.4.2,cn=minimal,cn=default,cn=global,o=myorg,c=us
 </screen>
     <para>
-     To deactivate an image activated by the <systemitem>scPosImageVersion</systemitem>
-     attribute, use the following command:
+     To deactivate an image activated by the
+     <systemitem>scPosImageVersion</systemitem> attribute, use the following
+     command:
     </para>
 <screen>
 posAdmin --modify --multival --scPosImage --scPosImageVersion
-'3.4.2;active=>3.4.2;passive' --DN
+'3.4.2;active=&gt;3.4.2;passive' --DN
 cn=minimal,cn=default,cn=global,o=myorg,c=us
 </screen>
    </sect3>
-   <sect3 id="ad_buw3kgj">
+   <sect3 xml:id="ad_buw3kgj">
     <title>Assigning an Image to a &pos; Terminal</title>
     <para>
      You can manually assign a specific image to a &pos; terminal through
      its <literal>scWorkstation</literal> object.
     </para>
     <para>
-     The following command assigns 'myMinimal' image
-     <literal>2.0.4</literal> to the<literal> CR001</literal>
-     <literal>scWorkstation</literal> object in the <literal>&dnbranch;</literal> location
-     (type the command all on one line):
+     The following command assigns 'myMinimal' image <literal>2.0.4</literal>
+     to the<literal> CR001</literal> <literal>scWorkstation</literal> object in
+     the <literal>&dnbranch;</literal> location (type the command all on one
+     line):
     </para>
 <screen>posAdmin
---modify --scWorkstation 
+--modify --scWorkstation
 --scPosImageDn cn=<replaceable>myMinimal</replaceable>,cn=<replaceable>default</replaceable>,cn=global,&dnorg;
---scPosImageVersion <replaceable>2.0.4</replaceable> 
+--scPosImageVersion <replaceable>2.0.4</replaceable>
 --DN cn=<replaceable>CR001</replaceable>,&dnbranch;</screen>
     <para>
-     When you explicitly assign an image name
-     (<literal>scPosImageDn</literal>) and its version
-     (<literal>scPosImageVersion</literal>) in the
+     When you explicitly assign an image name (<literal>scPosImageDn</literal>)
+     and its version (<literal>scPosImageVersion</literal>) in the
      <literal>scWorkstation</literal> entry, the version and active/passive
      status information in the corresponding <literal>scPosImage</literal>
      image object in the global container is ignored. However, if you only
@@ -1559,50 +1588,54 @@ cn=minimal,cn=default,cn=global,o=myorg,c=us
      The <literal>scWorkstation</literal> object is automatically created in
      the LDAP directory the first time you boot a &pos; terminal. The
      <command>posleases2ldap</command> daemon detects new registration
-     (<filename>hwtype.MAC(.HASH)</filename>) files uploaded by terminals
-     and creates appropriate hardware configuration files (<filename>config.MAC</filename>),
-     along with the corresponding <systemitem>scWorkstation</systemitem> object.
+     (<filename>hwtype.MAC(.HASH)</filename>) files uploaded by terminals and
+     creates appropriate hardware configuration files
+     (<filename>config.MAC</filename>), along with the corresponding
+     <systemitem>scWorkstation</systemitem> object.
     </para>
    </sect3>
-   <sect3 id="sec.slepos_term.ldap.removal">
-    <title>Removing Images</title><!--FIXME-->
+   <sect3 xml:id="sec.slepos_term.ldap.removal">
+    <title>Removing Images</title>
+<!--FIXME-->
     <para>
-     To remove the image assigned to a workstation, run the following
-     command (type the command all on one line):
+     To remove the image assigned to a workstation, run the following command
+     (type the command all on one line):
     </para>
 <screen>posAdmin
---modify --scWorkstation --scPosImageDn --scPosImageVersion  
+--modify --scWorkstation --scPosImageDn --scPosImageVersion
 --DN cn=<replaceable>CR001</replaceable>,&dnbranch;</screen>
-
    </sect3>
   </sect2>
  </sect1>
  <sect1>
   <title>Copying Images to the &admserv; rsync Directory</title>
+
   <para>
    Before the rsync service can transmit the images to the &branchserv;,
-   system image files must be located in the
-   <filename>/srv/SLEPOS</filename> directory on the &admserv;. Client images
-   must be located in the <filename>/srv/SLEPOS/image</filename> directory
-   and the boot images must be located in
-   <filename>/srv/SLEPOS/boot</filename>.
+   system image files must be located in the <filename>/srv/SLEPOS</filename>
+   directory on the &admserv;. Client images must be located in the
+   <filename>/srv/SLEPOS/image</filename> directory and the boot images must be
+   located in <filename>/srv/SLEPOS/boot</filename>.
   </para>
+
   <para>
-   The <command>registerImages</command> command is provided for copying
-   system image files to the <filename>/srv/SLEPOS</filename> directory on the 
+   The <command>registerImages</command> command is provided for copying system
+   image files to the <filename>/srv/SLEPOS</filename> directory on the
    &admserv;. This command also provides functions for compressing the
-   images, adding them to LDAP and installing boot images. These procedures can also be performed manually.
+   images, adding them to LDAP and installing boot images. These procedures can
+   also be performed manually.
   </para>
-  <sect2 id="registerimages">
+
+  <sect2 xml:id="registerimages">
    <title>The <command>registerImages</command> Command</title>
    <para>
-    An image can be registered with the <command>registerImages
-    <replaceable>path/to/image/file</replaceable></command> command. New versions
-    can be installed later using the <command>registerImages --delta
+    An image can be registered with the <command>registerImages</command>
+    <replaceable>path/to/image/file</replaceable> command. New versions can be
+    installed later using the <command>registerImages --delta</command>
     <replaceable>name_of_installed_base_image</replaceable>
-    <replaceable>path/to/image/file</replaceable></command> command. This generates
-    delta files containing only the necessary changes and thus saving
-    bandwidth when images on &branchserv; are updated via <command>possyncimages</command>.
+    <replaceable>path/to/image/file</replaceable> command. This generates delta
+    files containing only the necessary changes and thus saving bandwidth when
+    images on &branchserv; are updated via <command>possyncimages</command>.
    </para>
    <para>
     System image names must follow the kiwi convention:
@@ -1615,36 +1648,39 @@ cn=minimal,cn=default,cn=global,o=myorg,c=us
     command:
    </para>
 <screen>registerImages --ldap --move --gzip
---kernel <replaceable>/var/lib/SLEPOS/system/images/minimal-3.1.5/initrd*.kernel</replaceable> \ 
---initrd <replaceable>/var/lib/SLEPOS/system/images/minimal-3.1.5/initrd*.splash.gz</replaceable> \ 
+--kernel <replaceable>/var/lib/SLEPOS/system/images/minimal-3.1.5/initrd*.kernel</replaceable> \
+--initrd <replaceable>/var/lib/SLEPOS/system/images/minimal-3.1.5/initrd*.splash.gz</replaceable> \
 <replaceable>/var/lib/SLEPOS/system/images/minimal-3.1.5/minimal.i686-3.1.5</replaceable></screen>
    <para>
     You can install a new image and create the appropriate delta later, using
     this command:
    </para>
-   <screen>registerImages --delta <replaceable>minimal.i686-3.1.5</replaceable> --ldap --move <replaceable>/var/lib/SLEPOS/system/images/minimal-3.1.6/minimal.i686-3.1.6</replaceable></screen>
+<screen>registerImages --delta <replaceable>minimal.i686-3.1.5</replaceable> --ldap --move <replaceable>/var/lib/SLEPOS/system/images/minimal-3.1.6/minimal.i686-3.1.6</replaceable></screen>
    <para>
-    For a list of options used by the <command>registerImages</command> command,
-    see <xref linkend="aa_registerimages" />.
+    For a list of options used by the <command>registerImages</command>
+    command, see <xref linkend="aa_registerimages"/>.
    </para>
   </sect2>
+
   <sect2>
-   <title>Using  <command>registerImages</command> with Remote Files and Tarballs</title>
+   <title>Using <command>registerImages</command> with Remote Files and Tarballs</title>
    <para>
-    To use <command>registerImages</command> with remote files, use
-    the following syntax:
+    To use <command>registerImages</command> with remote files, use the
+    following syntax:
    </para>
 <screen>
 registerImages [ --kernel [scp:][user@]host:remote_kernel_file --initrd  [scp:][user@]host:remote_initrd_file ] [scp:][user@]host:temote_image_file
 registerImages [ --kernel http://remote_kernel_file --initrd http://remote_initrd_file ] http//:remote_image_file
 </screen>
-<para>
- <command>ssh</command> will ask for a password. Alternativelly it can be configured to use password-less login. For more information see the ssh documentation.
-</para>
-<para>
- To use <command>registerImages</command> with directories or tarballs (produced by Kiwi or SUSE Studio), use
- the following syntax:
-</para>
+   <para>
+    <command>ssh</command> will ask for a password. Alternativelly it can be
+    configured to use password-less login. For more information see the ssh
+    documentation.
+   </para>
+   <para>
+    To use <command>registerImages</command> with directories or tarballs
+    (produced by Kiwi or SUSE Studio), use the following syntax:
+   </para>
 <screen>
 registerImages [ --include-boot ] local_directory
 registerImages [ --include-boot ] local_tarball
@@ -1652,25 +1688,28 @@ registerImages [ --include-boot ] [scp:][user@]host:remote_directory
 registerImages [ --include-boot ] [scp:][user@]host:remote_tarball
 registerImages [ --include-boot ] http:remote_tarball
 </screen>
-<para>
- With the <option>--include-boot</option> option, the kernel and initrd are extracted directly from the
- tarball or directory (instead of specifying it directly with the <option>--kernel</option> and
- <option>--initrd</option> options).
-</para>
+   <para>
+    With the <option>--include-boot</option> option, the kernel and initrd are
+    extracted directly from the tarball or directory (instead of specifying it
+    directly with the <option>--kernel</option> and <option>--initrd</option>
+    options).
+   </para>
   </sect2>
-  <sect2 id="sec.slepos_term.dist.rsync">
+
+  <sect2 xml:id="sec.slepos_term.dist.rsync">
    <title>Manually Copying Images to the &admserv;'s rsync Directory</title>
    <para>
     The system images can also be copied to the &admserv;'s rsync directory
-    manually.<!-- This was necessary before SLEPOS SP2 if &admserv; and
+    manually.
+<!-- This was necessary before SLEPOS SP2 if &admserv; and
     &imgserv; were installed on different machines.-->
    </para>
-   <sect3 id="sec.slepos_term.dist.rsync.systemimg">
+   <sect3 xml:id="sec.slepos_term.dist.rsync.systemimg">
     <title>Copying System Images to the &admserv;'s rsync Directory</title>
     <para>
      The following example demonstrates how to put a previously extended
-     Graphical system image in the &admserv;'s rsync directory so it can
-     be received, on request, by the &branchserv;:
+     Graphical system image in the &admserv;'s rsync directory so it can be
+     received, on request, by the &branchserv;:
     </para>
     <procedure>
      <step>
@@ -1689,20 +1728,19 @@ registerImages [ --include-boot ] http:remote_tarball
      </step>
     </procedure>
    </sect3>
-   <sect3 id="sec.slepos_term.dist.rsync.bootimg">
+   <sect3 xml:id="sec.slepos_term.dist.rsync.bootimg">
     <title>Copying Boot Images to the &admserv;'s rsync Directory</title>
     <para>
-     The following example demonstrates how to copy the first and second
-     stage boot images to the &admserv;'s rsync directory so they can be
-     received, on request, by the &branchserv;:
+     The following example demonstrates how to copy the first and second stage
+     boot images to the &admserv;'s rsync directory so they can be received,
+     on request, by the &branchserv;:
     </para>
     <note>
      <para>
       &pos; terminals boot two images, a first stage image
       (<filename>initrd.gz</filename>) and a second stage image
       (<filename>linux</filename>). For more information, see
-      <xref
-       linkend="ad_bwlov3w" />.
+      <xref linkend="ad_bwlov3w"/>.
      </para>
     </note>
     <procedure>
@@ -1723,5 +1761,5 @@ registerImages [ --include-boot ] http:remote_tarball
    </sect3>
   </sect2>
  </sect1>
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="slepos_adminserv_gui.xml"/>
+ <xi:include href="slepos_adminserv_gui.xml" parse="xml"/>
 </chapter>

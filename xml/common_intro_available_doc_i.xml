@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sect1 PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
+<!DOCTYPE sect1
 [
-  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
   <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
+    %entities;
 ]>
+<!-- Converted by suse-upgrade version 1.1 -->
 <!--taroth 2009-12-17: 
  check if it really is useful to have xrefs to the other books
  here - in case we need to comment/drop any books after the locdrop this will
  lead to problems
 -->
-<sect1>
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
  <title>Available Documentation</title><indexterm>
 
  <primary>help</primary>
@@ -33,9 +33,9 @@
     <para>
      Guides you through the installation and basic configuration of your
      system. For newcomers, the manual also introduces basic Linux concepts
-     such as the file system, the user concept and access permissions and
-     gives an overview of the features &productname; offers to support
-     mobile computing. Provides help and advice for troubleshooting.
+     such as the file system, the user concept and access permissions and gives
+     an overview of the features &productname; offers to support mobile
+     computing. Provides help and advice for troubleshooting.
     </para>
    </listitem>
   </varlistentry>
@@ -44,7 +44,8 @@
    </term>
    <listitem>
     <para>
-     Introduces the KDE desktop of &productname;. Learn how to effectively use and configure KDE, as default desktop, and to perform key tasks.
+     Introduces the KDE desktop of &productname;. Learn how to effectively
+     use and configure KDE, as default desktop, and to perform key tasks.
     </para>
    </listitem>
   </varlistentry>
@@ -54,9 +55,9 @@
    <listitem>
     <para>
      Introduces the GNOME desktop of &productname;. It guides you through
-     using and configuring the desktop and performing key tasks. It
-     is intended for users who want to make efficient use of
-     GNOME as their default desktop.
+     using and configuring the desktop and performing key tasks. It is intended
+     for users who want to make efficient use of GNOME as their default
+     desktop.
     </para>
    </listitem>
   </varlistentry>
@@ -66,9 +67,9 @@
    <listitem>
     <para>
      Learn how to use and configure key desktop applications on
-     &productname;. This guide introduces browsers and email clients as
-     well as office applications and collaboration tools. It also covers
-     graphics and multimedia applications.
+     &productname;. This guide introduces browsers and email clients as well
+     as office applications and collaboration tools. It also covers graphics
+     and multimedia applications.
     </para>
    </listitem>
   </varlistentry>
@@ -79,11 +80,11 @@
     <para>
      Gives you a general understanding of &productname; and covers advanced
      system administration tasks. It is intended mainly for system
-     administrators and home users with basic system administration
-     knowledge. It provides detailed information about advanced deployment
-     scenarios, administration of your system, the interaction of key system
-     components and the setup of various network and file services
-     &productname; offers.
+     administrators and home users with basic system administration knowledge.
+     It provides detailed information about advanced deployment scenarios,
+     administration of your system, the interaction of key system components
+     and the setup of various network and file services &productname;
+     offers.
     </para>
    </listitem>
   </varlistentry>
@@ -93,8 +94,8 @@
    <listitem>
     <para>
      Shows how to install single or multiple systems and how to exploit the
-     product inherent capabilities for a deployment infrastructure. Choose
-     from various approaches, ranging from a local installation or a network
+     product inherent capabilities for a deployment infrastructure. Choose from
+     various approaches, ranging from a local installation or a network
      installation server to a mass deployment using a remotely controlled,
      highly customized, and automated installation technique.
     </para>
@@ -130,8 +131,8 @@
     <para>
      An administrator's guide for problem detection, resolution and
      optimization. Find how to inspect and optimize your system by means of
-     monitoring tools and how to efficiently manage resources. Also contains
-     an overview of common problems and solutions and of additional help and
+     monitoring tools and how to efficiently manage resources. Also contains an
+     overview of common problems and solutions and of additional help and
      documentation resources.
     </para>
    </listitem>
@@ -154,9 +155,9 @@
    <listitem>
     <para>
      Offers an introduction to virtualization technology of your product. It
-     features an overview of the various fields of application and
-     installation types of each of the platforms supported by &sls; as well
-     as a short description of the installation procedure.
+     features an overview of the various fields of application and installation
+     types of each of the platforms supported by &sls; as well as a short
+     description of the installation procedure.
     </para>
    </listitem>
   </varlistentry>
@@ -193,8 +194,8 @@
    </term>
    <listitem>
     <para>
-     Gives a short introduction to the GNOME desktop and some key
-     applications running on it.
+     Gives a short introduction to the GNOME desktop and some key applications
+     running on it.
     </para>
    </listitem>
   </varlistentry>
@@ -242,8 +243,8 @@
   Find HTML versions of most product manuals in your installed system under
   <filename>/usr/share/doc/manual</filename> or in the help centers of your
   desktop. Find the latest documentation updates at
-  <ulink url="http://www.novell.com/documentation"/>, where you can download
-  PDF or HTML versions of the manuals for your product.
+  <link xlink:href="http://www.novell.com/documentation"/>, where you can
+  download PDF or HTML versions of the manuals for your product.
  </para>
 
 <!-- fs 2009-09-21: No PDFs on media anymore
@@ -259,19 +260,18 @@
  <para os="slepos">
   For more information on the underlying operating system, refer to the
   &sls; documentation, available at
-  <ulink url="http://www.novell.com/documentation/sles11/"></ulink>.
+  <link xlink:href="http://www.novell.com/documentation/sles11/"/>.
  </para>
 
  <para os="slepos">
   For information on securing your applications using AppArmor, refer to the
   &secguide;, available at
-  <ulink
-   url="http://www.novell.com/documentation/sles11/"/>.
+  <link xlink:href="http://www.novell.com/documentation/sles11/"/>.
  </para>
 
  <para os="slepos">
   For an introduction to setting up High Availability environments with
   &sle;, refer to the &haguide;, available at
-  <ulink url="http://www.novell.com/documentation/sles11/"/>.
+  <link xlink:href="http://www.novell.com/documentation/sles11/"/>.
  </para>
 </sect1>

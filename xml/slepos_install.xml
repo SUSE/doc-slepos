@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
-          [
-          <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
-          <!ENTITY % entities SYSTEM "entity-decl.ent">
-          %entities;
+<!DOCTYPE chapter
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
 ]>
-<chapter id="cha.slepos_inst">
+<!-- Converted by suse-upgrade version 1.1 -->
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.slepos_inst">
  <title>&slepos; Installation</title>
+ <info/>
  <para>
   &slepos; is distributed as an add-on product for &sls; 11 systems. To
-  install &slepos; 11, install the &sls; 11 base system first. You
-  can choose to install the &slepos; add-on together with your base system
+  install &slepos; 11, install the &sls; 11 base system first. You can
+  choose to install the &slepos; add-on together with your base system
   during the initial installation process, or you can install the &slepos;
   add-on on top of an already installed base system at any later time.
  </para>
@@ -67,10 +68,11 @@
    <step>
     <para>
      In the <guimenu>Entering Migration Data</guimenu> step of the
-     installation, you can enter SLEPOS migration data. Select the appropriate <guimenu>Path to Archive
-     File</guimenu> or <guimenu>Path to Back-up Directory</guimenu> and
-     click <guimenu>Next</guimenu>. For more information about SLEPOS
-     migration, see <xref linkend="cha.slepos_migration" />.
+     installation, you can enter SLEPOS migration data. Select the appropriate
+     <guimenu>Path to Archive File</guimenu> or <guimenu>Path to Back-up
+     Directory</guimenu> and click <guimenu>Next</guimenu>. For more
+     information about SLEPOS migration, see
+     <xref linkend="cha.slepos_migration"/>.
     </para>
    </step>
    <step>
@@ -83,37 +85,37 @@
      the <guimenu>Image Server (IS)</guimenu> pattern.
     </para>
     <para>
-     You can combine patterns to install a server with multiple
-     functions. For example, for an &admserv; with image building
-     capabilities, select both <guimenu>Admin Server (AS)</guimenu> and
-     <guimenu>Image Server (IS)</guimenu> patterns. For an &admserv; and
-     &branchserv; combination, select both <guimenu>Admin Server
-     (AS)</guimenu> and <guimenu>Branch Server (BS)</guimenu> patterns.
+     You can combine patterns to install a server with multiple functions. For
+     example, for an &admserv; with image building capabilities, select both
+     <guimenu>Admin Server (AS)</guimenu> and <guimenu>Image Server
+     (IS)</guimenu> patterns. For an &admserv; and &branchserv;
+     combination, select both <guimenu>Admin Server (AS)</guimenu> and
+     <guimenu>Branch Server (BS)</guimenu> patterns.
     </para>
    </step>
   </procedure>
  </sect1>
  <sect1>
   <title>Installation On Top of an Already Installed System</title>
+
   <para>
    To install &slepos; on top of an already installed base system, follow
    these steps:
   </para>
+
   <procedure>
    <step>
     <para>
      Start &yast; and select <menuchoice> <guimenu>Software</guimenu>
-     <guimenu>Add-On Products</guimenu> <guimenu>Add</guimenu>
-     </menuchoice>.
+     <guimenu>Add-On Products</guimenu> <guimenu>Add</guimenu> </menuchoice>.
     </para>
    </step>
    <step>
     <para>
      Select media type to be used for installation. If you are installing
      &slepos; from a CD medium, select <guimenu>CD</guimenu> as the source
-     type. If you are installing from a different source, such as NFS or
-     HTTP, choose the appropriate source type. Click
-     <guimenu>Next</guimenu>.
+     type. If you are installing from a different source, such as NFS or HTTP,
+     choose the appropriate source type. Click <guimenu>Next</guimenu>.
     </para>
    </step>
    <step>
@@ -131,12 +133,11 @@
    </step>
    <step>
     <para>
-     In the <guimenu>Entering Migration Data</guimenu>, you can
-     enter SLEPOS migration data. Select the
-     appropriate <guimenu>Path to archive file</guimenu> or <guimenu>Path to
-     backup directory</guimenu> and click <guimenu>Next</guimenu>. For more
-     information about SLEPOS migration, see
-     <xref linkend="cha.slepos_migration" />.
+     In the <guimenu>Entering Migration Data</guimenu>, you can enter SLEPOS
+     migration data. Select the appropriate <guimenu>Path to archive
+     file</guimenu> or <guimenu>Path to backup directory</guimenu> and click
+     <guimenu>Next</guimenu>. For more information about SLEPOS migration, see
+     <xref linkend="cha.slepos_migration"/>.
     </para>
    </step>
    <step>
@@ -149,22 +150,24 @@
      the <guimenu>Image Server (IS)</guimenu> pattern.
     </para>
     <para>
-     You can combine patterns to install a server with multiple
-     functions. For example, for an &admserv; with image building
-     capabilities, select both <guimenu>Admin Server (AS)</guimenu> and
-     <guimenu>Image Server (IS)</guimenu> patterns. For an &admserv; and
-     &branchserv; combination, select both <guimenu>Admin Server
-     (AS)</guimenu> and <guimenu>Branch Server (BS)</guimenu> patterns.
+     You can combine patterns to install a server with multiple functions. For
+     example, for an &admserv; with image building capabilities, select both
+     <guimenu>Admin Server (AS)</guimenu> and <guimenu>Image Server
+     (IS)</guimenu> patterns. For an &admserv; and &branchserv;
+     combination, select both <guimenu>Admin Server (AS)</guimenu> and
+     <guimenu>Branch Server (BS)</guimenu> patterns.
     </para>
    </step>
   </procedure>
  </sect1>
  <sect1>
   <title>Upgrading SLEPOS11 to SLEPOS11 SP2</title>
+
   <para>
    Upgrading SLEPOS11 to SLEPOS11 SP2 consists of two steps:
   </para>
-  <itemizedlist>
+
+  <itemizedlist mark="bullet" spacing="normal">
    <listitem>
     <para>
      upgrading SLES11 to SLES11 SP2,
@@ -176,38 +179,43 @@
     </para>
    </listitem>
   </itemizedlist>
+
   <para>
-   These two steps can be performed either together or separately.
-   For information on SLES11 upgrade, consult SLES11 SP2 Installation
-   Quick Start guide.
+   These two steps can be performed either together or separately. For
+   information on SLES11 upgrade, consult SLES11 SP2 Installation Quick Start
+   guide.
   </para>
+
   <para>
-   If you want to upgrade SLEPOS11 at the same time as SLES11,
-   check the <guimenu>Include Add-On Product from Separate Media</guimenu>
-   option during selection of the installation mode. You will be
-   asked to select the SLEPOS11 SP2 installation source.
+   If you want to upgrade SLEPOS11 at the same time as SLES11, check the
+   <guimenu>Include Add-On Product from Separate Media</guimenu> option during
+   selection of the installation mode. You will be asked to select the SLEPOS11
+   SP2 installation source.
   </para>
+
   <para>
-   If you want to upgrade SLEPOS11 after the SLES11 upgrade, use
-   the &yast; <guimenu>Add-On Products</guimenu> module and
-   add SLEPOS11 SP2 as an add-on. Network upgrade is not
-   supported in this scenario and results in installation failure
-   during the second installation stage because of DNS resolving
-   failure. You can work around this limitation by switching to a
-   second console (<keycombo><keycap>Ctrl</keycap><keycap>F2</keycap></keycombo>),
-   logging in as root and starting DNS server manually with the
-   <command>rcnamed start</command> command.
+   If you want to upgrade SLEPOS11 after the SLES11 upgrade, use the &yast;
+   <guimenu>Add-On Products</guimenu> module and add SLEPOS11 SP2 as an add-on.
+   Network upgrade is not supported in this scenario and results in
+   installation failure during the second installation stage because of DNS
+   resolving failure. You can work around this limitation by switching to a
+   second console
+   (<keycombo><keycap>Ctrl</keycap><keycap>F2</keycap></keycombo>), logging in
+   as root and starting DNS server manually with the <command>rcnamed
+   start</command> command.
   </para>
+
   <para>
-   During the upgrade installation, you will be asked to select
-   a SLEPOS pattern. If you do not want to change the
-   installed pattern, just click <guimenu>Next</guimenu>.
+   During the upgrade installation, you will be asked to select a SLEPOS
+   pattern. If you do not want to change the installed pattern, just click
+   <guimenu>Next</guimenu>.
   </para>
+
   <sect2>
    <title>SLEPOS Configuration After Upgrade</title>
    <para>
-    The &admserv; does not need to be configured after upgrading.
-    Only the &branchserv; needs reconfiguration after an upgrade. The
+    The &admserv; does not need to be configured after upgrading. Only
+    the &branchserv; needs reconfiguration after an upgrade. The
     non-interactive reconfiguration is triggered via the
     <command>posInitBranchserver -r -n</command> command.
    </para>

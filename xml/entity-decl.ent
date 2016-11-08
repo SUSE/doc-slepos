@@ -31,7 +31,7 @@
 <!ENTITY exampleclientIIuucp  "uu&exampleclientII;">
 
 
-<!ENTITY rootuser       '<systemitem class="username">root</systemitem>'>
+<!ENTITY rootuser       '<systemitem class="username" xmlns="http://docbook.org/ns/docbook">root</systemitem>'>
 <!ENTITY grub           "GRUB">
 
 <!-- lilo will become obsolete with code 11 -->
@@ -226,9 +226,9 @@
 
 
 <!ENTITY wypublic          "/srv/www/yast/public/">
-<!ENTITY mac               "<replaceable>MAC</replaceable>">
-<!ENTITY hwmac             "hwtype.<replaceable>MAC</replaceable>.<replaceable>HASH</replaceable>">
-<!ENTITY confmac           "config.<replaceable>MAC</replaceable>">
+<!ENTITY mac               '<replaceable xmlns="http://docbook.org/ns/docbook">MAC</replaceable>'>
+<!ENTITY hwmac             'hwtype.<replaceable xmlns="http://docbook.org/ns/docbook">MAC</replaceable>.<replaceable xmlns="http://docbook.org/ns/docbook">HASH</replaceable>'>
+<!ENTITY confmac           'config.<replaceable xmlns="http://docbook.org/ns/docbook">MAC</replaceable>'>
 
 
 <!-- Additional Entities                                           -->
@@ -240,6 +240,14 @@
 
 <!ENTITY % slepos-entities SYSTEM "slepos-decl.ent">
 %slepos-entities; 
+
+<!ENTITY % sgml.features "IGNORE">
+<!ENTITY % xml.features "INCLUDE">
+<!ENTITY % dbcent PUBLIC "-//OASIS//ENTITIES DocBook Character
+  Entities V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/dbcentx.mod">
+    %dbcent;
+
 <!--                             End of file                       -->
 <!-- ............................................................. -->
 

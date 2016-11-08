@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sect1 PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
- [
- <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
- <!ENTITY % entities SYSTEM "entity-decl.ent">
- %entities;
+<!DOCTYPE sect1
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
 ]>
- <sect1 role="General" id="ad_bt0325q">
-  <title>LDAP Objects Reference</title>
+<!-- Converted by suse-upgrade version 1.1 -->
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" role="General" xml:id="ad_bt0325q">
+ <title>LDAP Objects Reference</title>
 
+ <para>
+  This section provides an alphabetical list of all &slepos; elements
+  represented in the LDAP directory. The must attributes for each element must
+  be defined when creating the element with posAdmin. The may attributes are
+  optional. All elements are structural.
+ </para>
+
+ <sect2 xml:id="b48rav2">
+  <title>organizationalUnit</title>
   <para>
-   This section provides an alphabetical list of all &slepos;
-   elements represented in the LDAP directory. The must attributes for each
-   element must be defined when creating the
-   element with posAdmin. The may attributes are optional. All elements are
-   structural.
+   Organizational Unit (<literal>organizationalUnit</literal>) objects are
+   containers that typically represent regions, divisions, or branches within a
+   company. These objects can be nested to visually represent the structure and
+   organization of your company. Branch location objects are created in
+   <literal>organizationalUnit</literal> containers within the LDAP directory.
   </para>
-  <sect2 id="b48rav2">
-   <title>organizationalUnit</title>
-   <para>
-    Organizational Unit
-     (<literal>organizationalUnit</literal>) objects are containers that
-     typically represent regions, divisions, or branches within a company.
-     These objects can be nested to visually represent the structure and
-     organization of your company. Branch location objects are created in
-     <literal>organizationalUnit</literal> containers within the LDAP
-     directory.
-   </para>
-   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_organizationalUnit.xml"/>
-   <!--
+  <xi:include href="SLEPOS_objects_organizationalUnit.xml" parse="xml"/>
+<!--
     <table>
      <title>Attributes for organizationalUnit Objects</title>
      <tgroup cols="3">
@@ -90,40 +88,39 @@
       </tbody>
      </tgroup>
     </table>-->
-   </sect2>
-  <sect2 id="ad_b58oz2b">
-   <title>scBranchServer</title>
-   <para>
-    The &branchserv; object stores configuration information that is
-    specific to each &branchserv;. There must be a &branchserv; object for
-    every &branchserv; in the &slepos; system. Note that the &admserv; does
-    not have an associated object in the LDAP tree structure.
-   </para>
-   <important>
-    <title>Defining the &branchserv; Hostname</title>
-    <para>
-     The location of the <systemitem>scBranchServer</systemitem> object in the
-     LDAP directory must correspond to the hostname defined for the
-     &branchserv; during installation. For example, if the hostname is
-     <literal>bs.mybranch.myorgunit.myorg.us</literal>, the <literal>dn</literal>
-     of the <systemitem>scBranchServer</systemitem> object is
-     <literal>cn=bs,cn=server,cn=mybranch,ou=myorgunit,o=myorg,c=us</literal>. You
-     must create the <systemitem>scBranchServer</systemitem> object and its
-     supporting organizational structure before you can run
-     <command>posInitBranchserver</command> and deploy the &branchserv;.
-     For information on creating the &branchserv; objects, see
-     <xref
-      linkend="sec.branchserv.ldapobjects"/>.
-    </para>
-   </important>
-   <para>
-    For information on adding this object class to the LDAP directory, see
-    <xref
-     linkend="ad_bsxlcvy"/>.
-   </para>
-   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_scBranchServer.xml"/>
+ </sect2>
 
-   <!--<table>
+ <sect2 xml:id="ad_b58oz2b">
+  <title>scBranchServer</title>
+  <para>
+   The &branchserv; object stores configuration information that is specific
+   to each &branchserv;. There must be a &branchserv; object for every
+   &branchserv; in the &slepos; system. Note that the &admserv; does
+   not have an associated object in the LDAP tree structure.
+  </para>
+  <important>
+   <title>Defining the &branchserv; Hostname</title>
+   <para>
+    The location of the <systemitem>scBranchServer</systemitem> object in the
+    LDAP directory must correspond to the hostname defined for the
+    &branchserv; during installation. For example, if the hostname is
+    <literal>bs.mybranch.myorgunit.myorg.us</literal>, the
+    <literal>dn</literal> of the <systemitem>scBranchServer</systemitem> object
+    is
+    <literal>cn=bs,cn=server,cn=mybranch,ou=myorgunit,o=myorg,c=us</literal>.
+    You must create the <systemitem>scBranchServer</systemitem> object and its
+    supporting organizational structure before you can run
+    <command>posInitBranchserver</command> and deploy the &branchserv;. For
+    information on creating the &branchserv; objects, see
+    <xref linkend="sec.branchserv.ldapobjects"/>.
+   </para>
+  </important>
+  <para>
+   For information on adding this object class to the LDAP directory, see
+   <xref linkend="ad_bsxlcvy"/>.
+  </para>
+  <xi:include href="SLEPOS_objects_scBranchServer.xml" parse="xml"/>
+<!--<table>
     <title>Attributes for scBranchServer Elements</title>
     <tgroup cols="3">
      <thead>
@@ -200,25 +197,26 @@
      </tbody>
     </tgroup>
    </table>-->
-  </sect2>
+ </sect2>
 
-  <sect2 id="ad_b58oz2c">
-   <title>scCashRegister</title>
-   <para>
-    The <systemitem>scCashRegister</systemitem> objects (also called hardware
-    reference objects) store information about specific &pos; hardware.
-   </para>
-   <para>
-    Typically, you should define an <systemitem>scCashRegister</systemitem>
-    object for each type of terminal used on the SLEPOS system. However, if
-    a &pos; terminal does not have a specific <systemitem>scCashRegister</systemitem>
-    object for its specific hardware type, it will use the configuration defined
-    in the default <systemitem>scCashRegister</systemitem> object. For information
-    on adding this object class to the LDAP directory, see
-    <xref linkend="sec.slepos_term.ldap.cashreg"/>.
-   </para>
-     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_scCashRegister.xml"/>
-     <!-- <table>
+ <sect2 xml:id="ad_b58oz2c">
+  <title>scCashRegister</title>
+  <para>
+   The <systemitem>scCashRegister</systemitem> objects (also called hardware
+   reference objects) store information about specific &pos; hardware.
+  </para>
+  <para>
+   Typically, you should define an <systemitem>scCashRegister</systemitem>
+   object for each type of terminal used on the SLEPOS system. However, if a
+   &pos; terminal does not have a specific
+   <systemitem>scCashRegister</systemitem> object for its specific hardware
+   type, it will use the configuration defined in the default
+   <systemitem>scCashRegister</systemitem> object. For information on adding
+   this object class to the LDAP directory, see
+   <xref linkend="sec.slepos_term.ldap.cashreg"/>.
+  </para>
+  <xi:include href="SLEPOS_objects_scCashRegister.xml" parse="xml"/>
+<!-- <table>
     <title>Attributes for scCashRegister Elements</title>
     <tgroup cols="3">
      <thead>
@@ -344,32 +342,31 @@
      </tbody>
     </tgroup>
    </table>-->
-  </sect2>
+ </sect2>
 
-  <sect2 id="ad_b58oz2d">
-   <title>scConfigFileSyncTemplate</title>
-   <para>
-    <systemitem>scConfigFileSyncTemplate</systemitem> objects are used when
-    running services, such as X Windows, which require hardware-dependent
-    configuration files. The <systemitem>scConfigFileSyncTemplate</systemitem>
-    object points to the configuration file that a &pos; terminal needs to
-    run a given service. This object differs from
-    <systemitem>scConfigFileTemplate</systemitem> objects, because the
-    configuration data is not stored in the object; rather, the object
-    points to a configuration file outside the LDAP directory.
-   </para>
-   <para>
-    This element exists under Image Reference objects (class
-    <systemitem>scPosImage</systemitem>), but it can also exist under
-    <systemitem>scCashRegister</systemitem> objects.
-   </para>
-   <para>
-    For information on adding this object class to the LDAP directory, see
-    <xref
-     linkend="sec.slepos_term.ldap.conffilesynctemp" xrefstyle="SectTitleOnPage"/>.
-   </para>
-   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_scConfigFileSyncTemplate.xml"/>
-     <!-- <table>
+ <sect2 xml:id="ad_b58oz2d">
+  <title>scConfigFileSyncTemplate</title>
+  <para>
+   <systemitem>scConfigFileSyncTemplate</systemitem> objects are used when
+   running services, such as X Windows, which require hardware-dependent
+   configuration files. The <systemitem>scConfigFileSyncTemplate</systemitem>
+   object points to the configuration file that a &pos; terminal needs to
+   run a given service. This object differs from
+   <systemitem>scConfigFileTemplate</systemitem> objects, because the
+   configuration data is not stored in the object; rather, the object points to
+   a configuration file outside the LDAP directory.
+  </para>
+  <para>
+   This element exists under Image Reference objects (class
+   <systemitem>scPosImage</systemitem>), but it can also exist under
+   <systemitem>scCashRegister</systemitem> objects.
+  </para>
+  <para>
+   For information on adding this object class to the LDAP directory, see
+   <xref linkend="sec.slepos_term.ldap.conffilesynctemp" xrefstyle="SectTitleOnPage"/>.
+  </para>
+  <xi:include href="SLEPOS_objects_scConfigFileSyncTemplate.xml" parse="xml"/>
+<!-- <table>
     <title>Attributes for scConfigFileSyncTemplate Elements</title>
     <tgroup cols="3">
      <thead>
@@ -522,25 +519,24 @@
      </tbody>
     </tgroup>
    </table>-->
-  </sect2>
+ </sect2>
 
-  <sect2 id="ad_b58oz2e">
-   <title>scConfigFileTemplate</title>
-   <para>
-    <systemitem>scConfigFileTemplate</systemitem> objects are used when running
-    services, such as the X Window service, that require hardware-dependent
-    configuration files. An <systemitem>scConfigFileTemplate</systemitem> object
-    contains the configuration file data that a &pos; terminal needs to run
-    a given service. This element can also exist under
-    <systemitem>scCashRegister</systemitem> objects.
-   </para>
-   <para>
-    For information on adding this object class to the LDAP directory, see
-    <xref
-     linkend="sec.slepos_term.ldap.conffiletemp" xrefstyle="SectTitleOnPage"/>.
-   </para>
-      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_scConfigFileTemplate.xml"/>
-      <!--<table>
+ <sect2 xml:id="ad_b58oz2e">
+  <title>scConfigFileTemplate</title>
+  <para>
+   <systemitem>scConfigFileTemplate</systemitem> objects are used when running
+   services, such as the X Window service, that require hardware-dependent
+   configuration files. An <systemitem>scConfigFileTemplate</systemitem> object
+   contains the configuration file data that a &pos; terminal needs to run a
+   given service. This element can also exist under
+   <systemitem>scCashRegister</systemitem> objects.
+  </para>
+  <para>
+   For information on adding this object class to the LDAP directory, see
+   <xref linkend="sec.slepos_term.ldap.conffiletemp" xrefstyle="SectTitleOnPage"/>.
+  </para>
+  <xi:include href="SLEPOS_objects_scConfigFileTemplate.xml" parse="xml"/>
+<!--<table>
     <title>Attributes for scConfigFileTemplate Elements</title>
     <tgroup cols="3">
      <thead>
@@ -729,10 +725,10 @@
      </tbody>
     </tgroup>
    </table>-->
-  </sect2>
-  <sect2 id="scPxeFileTemplate">
-   <title>scPxeFileTemplate</title>
+ </sect2>
 
+ <sect2 xml:id="scPxeFileTemplate">
+  <title>scPxeFileTemplate</title>
   <para>
    The <systemitem>scPxeFileTemplate</systemitem> object is used to specify
    command line options for selected terminals. This object can be placed in
@@ -741,9 +737,8 @@
    <systemitem>scCashRegister</systemitem> object). It has the following
    attributes:
   </para>
-   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_scPxeFileTemplate.xml"/>
-
-   <!--<table>
+  <xi:include href="SLEPOS_objects_scPxeFileTemplate.xml" parse="xml"/>
+<!--<table>
    <title>Attributes for <systemitem>scPxeFileTemplate</systemitem> Object</title>
    <tgroup cols="3">
     <thead>
@@ -838,18 +833,19 @@
     </tbody>
    </tgroup>
   </table>-->
-  </sect2>
-  <sect2 id="scDistributionContainer">
-   <title>scDistributionContainer</title>
-   <para>
-    An <systemitem>scDistributionContainer</systemitem> is a container for
-    the distribution of sets of images. A distribution set is a collection
-    of images designed for &pos; terminals on a given version of the Linux
-    kernel. The Default distribution container references the current
-    version of the kernel included in &slepos;.
-   </para>
-   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_scDistributionContainer.xml"/>
-   <!--<table>
+ </sect2>
+
+ <sect2 xml:id="scDistributionContainer">
+  <title>scDistributionContainer</title>
+  <para>
+   An <systemitem>scDistributionContainer</systemitem> is a container for the
+   distribution of sets of images. A distribution set is a collection of images
+   designed for &pos; terminals on a given version of the Linux kernel. The
+   Default distribution container references the current version of the kernel
+   included in &slepos;.
+  </para>
+  <xi:include href="SLEPOS_objects_scDistributionContainer.xml" parse="xml"/>
+<!--<table>
     <title>Attributes for <systemitem>scDistributionContainer</systemitem> Elements</title>
     <tgroup cols="3">
      <thead>
@@ -980,26 +976,26 @@
      </tbody>
     </tgroup>
    </table>-->
-   <para>
-    The default <systemitem>scDistributionContainer</systemitem> has <literal>scKernelName=linux</literal>
-    and <literal>scInitrdName=initrd.gz</literal>. If a distribution container is created with either one
-    of those two names different, a specific pxe file is then created under
-    <filename>/srv/tftpboot/boot/pxelinux.cfg</filename> when a terminal registers.
-    (See also <xref linkend="terminal_kernel_options" />.)
-    This ensures that the specific kernel and initrd get properly loaded.
-   </para>
-  </sect2>
-
-  <sect2 id="ad_b58oz2g">
-   <title>scHarddisk</title>
-   <para>
-    An <systemitem>scHarddisk</systemitem> object describes the configuration of
-    the hard disk of a &pos; terminal. For information on adding this object
-    class, refer to <xref linkend="sec.slepos_term.ldap.harddisk"
-    />.
+  <para>
+   The default <systemitem>scDistributionContainer</systemitem> has
+   <literal>scKernelName=linux</literal> and
+   <literal>scInitrdName=initrd.gz</literal>. If a distribution container is
+   created with either one of those two names different, a specific pxe file is
+   then created under <filename>/srv/tftpboot/boot/pxelinux.cfg</filename> when
+   a terminal registers. (See also <xref linkend="terminal_kernel_options"/>.)
+   This ensures that the specific kernel and initrd get properly loaded.
   </para>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_scHarddisk.xml"/>
-  <!--<table>
+ </sect2>
+
+ <sect2 xml:id="ad_b58oz2g">
+  <title>scHarddisk</title>
+  <para>
+   An <systemitem>scHarddisk</systemitem> object describes the configuration of
+   the hard disk of a &pos; terminal. For information on adding this object
+   class, refer to <xref linkend="sec.slepos_term.ldap.harddisk"/>.
+  </para>
+  <xi:include href="SLEPOS_objects_scHarddisk.xml" parse="xml"/>
+<!--<table>
     <title>Attributes for scHarddisk Elements</title>
     <tgroup cols="3">
      <thead>
@@ -1131,15 +1127,15 @@
      </tbody>
     </tgroup>
    </table>-->
-  </sect2>
+ </sect2>
 
-  <sect2 id="ad_b58oz2h">
-   <title>scHardware</title>
-   <para>
-    Reference standard PC hardware type and server hardware.
-   </para>
-   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_scHardware.xml"/>
-   <!--<table>
+ <sect2 xml:id="ad_b58oz2h">
+  <title>scHardware</title>
+  <para>
+   Reference standard PC hardware type and server hardware.
+  </para>
+  <xi:include href="SLEPOS_objects_scHardware.xml" parse="xml"/>
+<!--<table>
     <title>Attributes for scHardware Elements</title>
     <tgroup cols="3">
      <thead>
@@ -1267,25 +1263,24 @@
      </tbody>
     </tgroup>
    </table>-->
-  </sect2>
+ </sect2>
 
-  <sect2 id="ad_b58oz2j">
-   <title>scLocation</title>
-   <para>
-    An scLocation object represents a branch office, which is a site where a
-    &branchserv; and &pos; terminals are located. Location containers are
-    used to store information about the deployed &pos; terminals and the
-    &branchserv;s. This and all other information that can be modified at
-    the &branchserv; should be stored or referenced in the Location
-    containers to limit the need to grant write privileges to subtrees.
-   </para>
-   <para>
-    For information on adding this object class to the LDAP directory, see
-    <xref
-     linkend="ad_bsxkk8v"/>.
-   </para>
-   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_scLocation.xml"/>
-   <!--
+ <sect2 xml:id="ad_b58oz2j">
+  <title>scLocation</title>
+  <para>
+   An scLocation object represents a branch office, which is a site where a
+   &branchserv; and &pos; terminals are located. Location containers are
+   used to store information about the deployed &pos; terminals and the
+   &branchserv;s. This and all other information that can be modified at the
+   &branchserv; should be stored or referenced in the Location containers to
+   limit the need to grant write privileges to subtrees.
+  </para>
+  <para>
+   For information on adding this object class to the LDAP directory, see
+   <xref linkend="ad_bsxkk8v"/>.
+  </para>
+  <xi:include href="SLEPOS_objects_scLocation.xml" parse="xml"/>
+<!--
    <table>
     <title>Attributes for <systemitem>scLocation</systemitem> elements</title>
     <tgroup cols="3">
@@ -1680,15 +1675,16 @@
       </tbody>
     </tgroup>
    </table>-->
-  </sect2>
-  <sect2 id="ad_b58oz2k">
-   <title>scNetworkcard</title>
-   <para>
-    An <systemitem>scNetworkcard</systemitem> object stores the configuration for
-    a &branchserv; network interface card.
-   </para>
-   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_scNetworkcard.xml"/>
-   <!--<table>
+ </sect2>
+
+ <sect2 xml:id="ad_b58oz2k">
+  <title>scNetworkcard</title>
+  <para>
+   An <systemitem>scNetworkcard</systemitem> object stores the configuration
+   for a &branchserv; network interface card.
+  </para>
+  <xi:include href="SLEPOS_objects_scNetworkcard.xml" parse="xml"/>
+<!--<table>
     <title>Attributes for scNetworkcard Elements</title>
     <tgroup cols="3">
      <thead>
@@ -1822,18 +1818,18 @@
      </tbody>
     </tgroup>
    </table>-->
-  </sect2>
+ </sect2>
 
-  <sect2 id="ad_b58oz2l">
-   <title>scPosImage</title>
-   <para>
-    The Image Reference object stores information about an image stored on
-    the &admserv;. By default, an Image Reference object is created for the
-    Minimal client image. For information on adding this object class to the
-    LDAP directory, see <xref linkend="sec.slepos_term.ldap.posimage"/>.
-   </para>
-   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_scPosImage.xml"/>
-   <!--<table>
+ <sect2 xml:id="ad_b58oz2l">
+  <title>scPosImage</title>
+  <para>
+   The Image Reference object stores information about an image stored on the
+   &admserv;. By default, an Image Reference object is created for the
+   Minimal client image. For information on adding this object class to the
+   LDAP directory, see <xref linkend="sec.slepos_term.ldap.posimage"/>.
+  </para>
+  <xi:include href="SLEPOS_objects_scPosImage.xml" parse="xml"/>
+<!--<table>
     <title>Attributes for scPosImage Elements</title>
     <tgroup cols="3">
      <thead>
@@ -2040,21 +2036,20 @@
      </tbody>
     </tgroup>
    </table>-->
-  </sect2>
+ </sect2>
 
-  <sect2 id="ad_b58oz2m">
-   <title>scRamDisk</title>
-   <para>
-    An scRamDisk object represents the configuration of a &pos; terminal RAM
-    disk.
-   </para>
-   <para>
-    For information on adding this object class to the LDAP directory, see
-    <xref
-     linkend="sec.slepos_term.ldap.ramdisk"/>.
-   </para>
-   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_scRamDisk.xml"/>
-   <!--<table>
+ <sect2 xml:id="ad_b58oz2m">
+  <title>scRamDisk</title>
+  <para>
+   An scRamDisk object represents the configuration of a &pos; terminal RAM
+   disk.
+  </para>
+  <para>
+   For information on adding this object class to the LDAP directory, see
+   <xref linkend="sec.slepos_term.ldap.ramdisk"/>.
+  </para>
+  <xi:include href="SLEPOS_objects_scRamDisk.xml" parse="xml"/>
+<!--<table>
     <title>Attributes for scRamDisk Elements</title>
     <tgroup cols="3">
      <thead>
@@ -2142,34 +2137,34 @@
      </tbody>
     </tgroup>
    </table>-->
-  </sect2>
+ </sect2>
 
-  <sect2 id="ad_b58oz2n">
-   <title>scRefObjectContainer</title>
-   <para>
-    <option>Global</option> (scRefObjectContainer, cn=global): All globally
-    valid information for a chain or company&mdash;that is server hardware,
-    &pos; hardware, or client images&mdash;is stored in the Global container
-    of the class <systemitem>scRefObjectContainer</systemitem> in the form of
-    reference objects. These reference objects are linked to the actual
-    entries for the &pos; terminals and servers in the branches using unique
-    names.
-   </para>
-   <para>
-    The initial LDAP structure after installation includes only one
-    <systemitem>scRefObjectContainer</systemitem> named <option>global</option>
-    under the directory root. Other <systemitem>scRefObjectContainer</systemitem>
-    objects can be added as needed. However, the
-    <systemitem>scRefObjectContainer</systemitem> container objects should always
-    have <option>cn=global</option> and appear only once per directory
-    level. This provides great flexibility. For example, each server can be
-    assigned by its own reference objects and therefore by its own hardware
-    types. On the other hand, if all the servers have the same hardware, a
-    unified standard can be defined in the global container on the regional
-    or organizational level.
-   </para>
-   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_scRefObjectContainer.xml"/>
-   <!--<table>
+ <sect2 xml:id="ad_b58oz2n">
+  <title>scRefObjectContainer</title>
+  <para>
+   <option>Global</option> (scRefObjectContainer, cn=global): All globally
+   valid information for a chain or company&mdash;that is server hardware,
+   &pos; hardware, or client images&mdash;is stored in the Global
+   container of the class <systemitem>scRefObjectContainer</systemitem> in the
+   form of reference objects. These reference objects are linked to the actual
+   entries for the &pos; terminals and servers in the branches using unique
+   names.
+  </para>
+  <para>
+   The initial LDAP structure after installation includes only one
+   <systemitem>scRefObjectContainer</systemitem> named <option>global</option>
+   under the directory root. Other
+   <systemitem>scRefObjectContainer</systemitem> objects can be added as
+   needed. However, the <systemitem>scRefObjectContainer</systemitem> container
+   objects should always have <option>cn=global</option> and appear only once
+   per directory level. This provides great flexibility. For example, each
+   server can be assigned by its own reference objects and therefore by its own
+   hardware types. On the other hand, if all the servers have the same
+   hardware, a unified standard can be defined in the global container on the
+   regional or organizational level.
+  </para>
+  <xi:include href="SLEPOS_objects_scRefObjectContainer.xml" parse="xml"/>
+<!--<table>
     <title>Attributes for scRefObjectContainer Elements</title>
     <tgroup cols="3">
      <thead>
@@ -2212,26 +2207,25 @@
      </tbody>
     </tgroup>
    </table>-->
-  </sect2>
+ </sect2>
 
-  <sect2 id="ad_b58oz2o">
-   <title>scServerContainer</title>
-   <para>
-    <option>Server Container </option>(scServerContainer): A container for
-    all the &branchserv; objects for a given site. The information
-    pertaining to the &branchserv;s is stored in the Server container.
-   </para>
-   <para>
-    To provide system redundancy and failover, there can be multiple
-    &branchserv;s for each site.
-   </para>
-   <para>
-    For information on adding this object class to the LDAP directory, see
-    <xref
-     linkend="ad_bsxlcvy" xrefstyle="SectTitleOnPage"/>.
-   </para>
-      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_scServerContainer.xml"/>
-      <!--<table>
+ <sect2 xml:id="ad_b58oz2o">
+  <title>scServerContainer</title>
+  <para>
+   <option>Server Container </option>(scServerContainer): A container for all
+   the &branchserv; objects for a given site. The information pertaining to
+   the &branchserv;s is stored in the Server container.
+  </para>
+  <para>
+   To provide system redundancy and failover, there can be multiple
+   &branchserv;s for each site.
+  </para>
+  <para>
+   For information on adding this object class to the LDAP directory, see
+   <xref linkend="ad_bsxlcvy" xrefstyle="SectTitleOnPage"/>.
+  </para>
+  <xi:include href="SLEPOS_objects_scServerContainer.xml" parse="xml"/>
+<!--<table>
     <title>Attributes for scServerContainer Elements</title>
     <tgroup cols="3">
      <thead>
@@ -2274,20 +2268,20 @@
      </tbody>
     </tgroup>
    </table>-->
-  </sect2>
+ </sect2>
 
-  <sect2 id="ad_b58oz2p">
-   <title>scService</title>
-   <para>
-    <systemitem>scService</systemitem> contains the configuration for 
-    &branchserv; services like DNS, TFTP, or DHCP.
-   </para>
-   <para>
-    For information on adding this object class to the LDAP directory, see
-    <xref linkend="ad_bsxlcvy"/>.
-   </para>
-   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_scService.xml"/>
-   <!--
+ <sect2 xml:id="ad_b58oz2p">
+  <title>scService</title>
+  <para>
+   <systemitem>scService</systemitem> contains the configuration for
+   &branchserv; services like DNS, TFTP, or DHCP.
+  </para>
+  <para>
+   For information on adding this object class to the LDAP directory, see
+   <xref linkend="ad_bsxlcvy"/>.
+  </para>
+  <xi:include href="SLEPOS_objects_scService.xml" parse="xml"/>
+<!--
    <table>
     <title>Attributes for scService Elements</title>
     <tgroup cols="3">
@@ -2529,31 +2523,31 @@
      </tbody>
     </tgroup>
    </table>-->
-   <note>
-    <title>IP address of TFTP service</title>
-    <para>
-     During &branchserv; initialization, the tftp configuration file
-     (<filename>/etc/sysconfig/atftpd</filename>) correctly assumes
-     IP address of the TFTP service from the <systemitem>ipHostNumber</systemitem>
-     of the tftp <systemitem>scService</systemitem> object), and not simply
-     the IP address of the &branchserv;.
-    </para>
-   </note>
-  </sect2>
-
-  <sect2 id="ad_b58oz2q">
-   <title>scWorkstation</title>
+  <note>
+   <title>IP address of TFTP service</title>
    <para>
-    The Workstation object stores information for a specific &pos; terminal.
-    Using information from the Hardware Reference object
-    (<systemitem>scCashRegister</systemitem>) and Image Reference object
-    (<systemitem>scPosImage</systemitem>), <command>posleases2ldap</command>
-    automatically creates a Workstation object in the LDAP directory for
-    every &pos; terminal that registers on the &branchserv;. For information
-    on this process, see <xref linkend="ad_cntrlhw"/>.
+    During &branchserv; initialization, the tftp configuration file
+    (<filename>/etc/sysconfig/atftpd</filename>) correctly assumes IP address
+    of the TFTP service from the <systemitem>ipHostNumber</systemitem> of the
+    tftp <systemitem>scService</systemitem> object), and not simply the IP
+    address of the &branchserv;.
    </para>
-   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_scWorkstation.xml"/>
-   <!--<table>
+  </note>
+ </sect2>
+
+ <sect2 xml:id="ad_b58oz2q">
+  <title>scWorkstation</title>
+  <para>
+   The Workstation object stores information for a specific &pos; terminal.
+   Using information from the Hardware Reference object
+   (<systemitem>scCashRegister</systemitem>) and Image Reference object
+   (<systemitem>scPosImage</systemitem>), <command>posleases2ldap</command>
+   automatically creates a Workstation object in the LDAP directory for every
+   &pos; terminal that registers on the &branchserv;. For information on
+   this process, see <xref linkend="ad_cntrlhw"/>.
+  </para>
+  <xi:include href="SLEPOS_objects_scWorkstation.xml" parse="xml"/>
+<!--<table>
     <title>Attributes for scWorkstation Elements</title>
     <tgroup cols="3">
      <thead>
@@ -2982,16 +2976,16 @@
      </tbody>
     </tgroup>
    </table>-->
-  </sect2>
-  <sect2 id="ad_scrole">
-   <title>scRole</title>
-   <para>
-    The <systemitem>scRole</systemitem> object stores information about
-    specific roles.
-   </para>
-   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_scRole.xml"/>
+ </sect2>
 
-   <!--<table>
+ <sect2 xml:id="ad_scrole">
+  <title>scRole</title>
+  <para>
+   The <systemitem>scRole</systemitem> object stores information about specific
+   roles.
+  </para>
+  <xi:include href="SLEPOS_objects_scRole.xml" parse="xml"/>
+<!--<table>
     <title>Attributes for scRole Elements</title>
     <tgroup cols="3">
      <thead>
@@ -3086,19 +3080,19 @@
      </tbody>
     </tgroup>
    </table>-->
-  </sect2>
-  <sect2 id="ad_scimageversion">
-   <title>scImageVersion</title>
-   <para>
-    The <systemitem>scImageVersion</systemitem> object replaces
-    the <systemitem>scPosImageVersion</systemitem> attribute
-    of the <systemitem>scPosImage</systemitem> object.
-    The <systemitem>scImageVersion</systemitem> supports
-    more features, such as encrypted images.
-   </para>
-      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_scImageVersion.xml"/>
+ </sect2>
 
-   <!--<table>
+ <sect2 xml:id="ad_scimageversion">
+  <title>scImageVersion</title>
+  <para>
+   The <systemitem>scImageVersion</systemitem> object replaces the
+   <systemitem>scPosImageVersion</systemitem> attribute of the
+   <systemitem>scPosImage</systemitem> object. The
+   <systemitem>scImageVersion</systemitem> supports more features, such as
+   encrypted images.
+  </para>
+  <xi:include href="SLEPOS_objects_scImageVersion.xml" parse="xml"/>
+<!--<table>
     <title>Attributes for scImageVersion Elements</title>
     <tgroup cols="3">
      <thead>
@@ -3187,19 +3181,19 @@
      </tbody>
     </tgroup>
    </table>-->
+ </sect2>
 
-  </sect2>
-  <sect2 id="ad_scpartition">
-   <title>scPartition</title>
-   <para>
-    The <systemitem>scPartition</systemitem> replaces
-    the <systemitem>scPartitionsTable</systemitem> attribute
-    of the <systemitem>scHarddisk</systemitem> object.
-    The <systemitem>scPartition</systemitem> supports
-    more features, such as encrypted partitions.
-   </para>
-   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="SLEPOS_objects_scPartition.xml"/>
-   <!--
+ <sect2 xml:id="ad_scpartition">
+  <title>scPartition</title>
+  <para>
+   The <systemitem>scPartition</systemitem> replaces the
+   <systemitem>scPartitionsTable</systemitem> attribute of the
+   <systemitem>scHarddisk</systemitem> object. The
+   <systemitem>scPartition</systemitem> supports more features, such as
+   encrypted partitions.
+  </para>
+  <xi:include href="SLEPOS_objects_scPartition.xml" parse="xml"/>
+<!--
    <table>
     <title>Attributes for scPartition Elements</title>
     <tgroup cols="3">

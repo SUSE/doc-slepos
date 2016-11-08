@@ -12,11 +12,11 @@
 <!ENTITY mysou2   "mysuborgunit2">
 <!ENTITY mybranch "mybranch">
 
-<!ENTITY dnorg    "o=<replaceable>&myo;</replaceable>,c=<replaceable>&myc;</replaceable>">
-<!ENTITY dnunit   "ou=<replaceable>&myou;</replaceable>,&dnorg;">
-<!ENTITY dnbranch "cn=<replaceable>&mybranch;</replaceable>,&dnunit;">
+<!ENTITY dnorg    "o=<replaceable xmlns='http://docbook.org/ns/docbook'>&myo;</replaceable>,c=<replaceable xmlns='http://docbook.org/ns/docbook'>&myc;</replaceable>">
+<!ENTITY dnunit   "ou=<replaceable xmlns='http://docbook.org/ns/docbook'>&myou;</replaceable>,&dnorg;">
+<!ENTITY dnbranch "cn=<replaceable xmlns='http://docbook.org/ns/docbook'>&mybranch;</replaceable>,&dnunit;">
 
-<!ENTITY mypass    "<replaceable>mypassword</replaceable>">
+<!ENTITY mypass    "<replaceable xmlns='http://docbook.org/ns/docbook'>mypassword</replaceable>">
 
 
 
