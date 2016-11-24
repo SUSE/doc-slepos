@@ -25,7 +25,8 @@
  <xi:include href="slepos_branchserv.xml" parse="xml"/>
  <xi:include href="slepos_terminals.xml" parse="xml"/>
  <xi:include href="slepos_management.xml" parse="xml"/>
- <xi:include href="slepos_imagebuilding.xml" parse="xml"/>
+ <xi:include href="slepos_imagebuilding_sle11.xml" parse="xml"/>
+ <xi:include href="slepos_imagebuilding_sle12.xml" parse="xml"/>
  <xi:include href="slepos_customization.xml" parse="xml"/>
  <xi:include href="slepos_ldap.xml" parse="xml"/>
  <xi:include href="slepos_migration.xml" parse="xml"/>
