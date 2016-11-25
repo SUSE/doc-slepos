@@ -9,7 +9,7 @@
  <title>Building Images with &kiwi;</title>
 
  <para>
-  &kiwi; is a full-blown imaging suite that allows you to configure, build,
+  &kiwi; is a complete imaging suite that allows you to configure, build,
   and deploy your own operating system images. The &kiwi; workflow is
   divided into three distinct stages:
  </para>
@@ -70,9 +70,6 @@
 
  <sect2 xml:id="sec.kiwi.config">
   <title>Understanding the &kiwi; Configuration</title>
-  <remark condition="clarity"> 2007-11-15 - jjaeger: LATER - to make this really fly, we should
-   include a definition of system and boot images and the different template options available with
-   SLEPOS. Not possible this release, though. </remark>
   <para>
    &kiwi; configurations as used in &slepos; should always reside in
    <filename>/var/lib/SLEPOS/system/<replaceable>image_name</replaceable></filename>.
@@ -119,8 +116,6 @@
       created. It removes files that are only needed while the physical extend
       exists.
      </para>
-     <remark condition="clarity"> 2007-11-13 - jjaeger: whatever these files are ... the current
-      SLEPOS script doesn't do much. </remark>
     </listitem>
    </varlistentry>
    <varlistentry>
@@ -199,7 +194,7 @@
     &lt;specification&gt;POS image builder software - configuraton for graphical image&lt;/specification&gt;
   &lt;/description&gt;
   &lt;preferences&gt;<co xml:id="co.kiwi.pref"/>
-    &lt;type checkprebuilt="true" boot="netboot/suse-SLES11" fsnocheck="true" filesystem="ext3" compressed="true" image="pxe"&gt;
+    &lt;type checkprebuilt="true" boot="netboot/suse-SLES12" fsnocheck="true" filesystem="ext3" compressed="true" image="pxe"&gt;
       &lt;pxedeploy server="192.168.100.2" blocksize="4096"&gt;
         &lt;partitions device="/dev/sda"&gt;
           &lt;partition type="82" number="1" size="5"/&gt;
@@ -207,8 +202,8 @@
         &lt;/partitions&gt;
       &lt;/pxedeploy&gt;
     &lt;/type&gt;
-    &lt;type boot="isoboot/suse-SLES11" image="iso"/&gt;
-    &lt;type boot="oemboot/suse-SLES11" filesystem="ext3" installiso="true" image="oem"/&gt;
+    &lt;type boot="isoboot/suse-SLES12" image="iso"/&gt;
+    &lt;type boot="oemboot/suse-SLES12" filesystem="ext3" installiso="true" image="oem"/&gt;
     &lt;version&gt;4.0.0&lt;/version&gt;
     &lt;packagemanager&gt;zypper&lt;/packagemanager&gt;
     &lt;rpm-check-signatures&gt;false&lt;/rpm-check-signatures&gt;
@@ -250,16 +245,16 @@
     &lt;package name="glibc-locale"/&gt;
   &lt;/packages&gt;
   &lt;repository type="rpm-md"&gt;<co xml:id="co.kiwi.repo"/>
-    &lt;source path="{SLEPOS 11 SP3 i386}"/&gt;
+    &lt;source path="{SLEPOS 12 SP2 x86_64}"/&gt;
   &lt;/repository&gt;
   &lt;repository type="rpm-md"&gt;
-    &lt;source path="{SLES 11 SP3 Updates i386}"/&gt;
+    &lt;source path="{SLES 12 SP2 Updates x86_64}"/&gt;
   &lt;/repository&gt;
   &lt;repository type="rpm-md"&gt;
-    &lt;source path="{SLEPOS 11 SP3 Updates i386}"/&gt;
+    &lt;source path="{SLEPOS 12 SP2 Updates x86_64}"/&gt;
   &lt;/repository&gt;
   &lt;repository type="rpm-md"&gt;
-    &lt;source path="{SLES 11 SP3 i386}"/&gt;
+    &lt;source path="{SLES 12 SP2 x86-64}"/&gt;
   &lt;/repository&gt;
   &lt;!--begin wireless support
         &lt;drivers type="drivers"&gt;<co xml:id="co.kiwi.drivers"/>
@@ -554,20 +549,6 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
   </para>
   <remark>taroth 090629: see fate #305870 - need to check again with
    postadal</remark>
-  <note>
-   <title>Building &sle; 10 Images</title>
-   <para>
-    For building &sle; 10 images, we recommend using a &sle; 10 build
-    machine. However, you can also build &sle; 10 images with the &kiwi;
-    version included in &sle; 11, if needed. In this case, make sure to add
-    the following option when running the image command
-   </para>
-<screen>--fs-inodesize 128</screen>
-   <para>
-    This is necessary because the file system tools in &sle; 11 use a
-    different inode size than in &sle; 10.
-   </para>
-  </note>
  </sect2>
 
  <sect2 xml:id="sec.kiwi.specimages">
@@ -649,7 +630,7 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
    </para>
 <screen>
  cd /var/lib/SLEPOS/system/images/<replaceable>minimal-3.4.0</replaceable>
- kiwi --bootusb <replaceable>initrd-netboot-suse-SLES11.i686-2.1.1.splash.gz</replaceable>
+ kiwi --bootusb <replaceable>initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.gz</replaceable>
 </screen>
    <para>
     The resulting image can be used for booting from an USB stick or it can be
@@ -694,7 +675,6 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
   </sect3>
   <sect3 xml:id="sec.kiwi.specimages.bootcdwosys">
    <title>Building Bootable CD Images Without a System Image</title>
-   <remark>mdejmek: this is exactly the same as in slepos_imagecreation; maybe reference it to avoid redundancy?</remark>
    <para>
     If the terminals are not able to boot from network over PXE but network is
     present, CDs without a system image can be used for booting the client
@@ -760,13 +740,13 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
      <para>
       Create the bootusb image:
      </para>
-<screen>kiwi --bootusb initrd-netboot-suse-SLES11.i686-2.1.1.splash.gz</screen>
+<screen>kiwi --bootusb initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.gz</screen>
     </step>
     <step>
      <para>
       Add 1 GB of free space to the image:
      </para>
-<screen>dd if=/dev/zero bs=1M count=1024 &gt;&gt; initrd-netboot-suse-SLES11.i686-2.1.1.splash.raw</screen>
+<screen>dd if=/dev/zero bs=1M count=1024 &gt;&gt; initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.raw</screen>
     </step>
     <step>
      <para>
@@ -774,7 +754,7 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
       defaults to whole disk):
      </para>
 <screen>
-fdisk initrd-netboot-suse-SLES11.i686-2.1.1.splash.raw &lt;&lt;EOT
+fdisk initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.raw &lt;&lt;EOT
 d
 n
 p
@@ -788,7 +768,7 @@ EOT</screen>
      <para>
       Set up the partition device:
      </para>
-<screen>DEV=/dev/mapper/`kpartx -s -v -a initrd-netboot-suse-SLES11.i686-2.1.1.splash.raw |cut -f 3 -d ' '`</screen>
+<screen>DEV=/dev/mapper/`kpartx -s -v -a initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.raw |cut -f 3 -d ' '`</screen>
     </step>
     <step>
      <para>
@@ -830,11 +810,11 @@ resize2fs $DEV</screen>
       Unmount everything:
      </para>
 <screen>umount /mnt
-kpartx -d initrd-netboot-suse-SLES11.i686-2.1.1.splash.raw</screen>
+kpartx -d initrd-netboot-suse-SLES11.x86_64-2.1.1.splash.raw</screen>
     </step>
     <step>
      <para>
-      The <filename>initrd-netboot-suse-SLES11.i686-2.1.1.splash.raw</filename>
+      The <filename>initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.raw</filename>
       image is now ready.
      </para>
     </step>
@@ -844,7 +824,7 @@ kpartx -d initrd-netboot-suse-SLES11.i686-2.1.1.splash.raw</screen>
     manually. This is an example:
    </para>
 <screen>
-IMAGE=/dev/sda3;minimal.i686;3.4.0;192.168.124.254;8192
+IMAGE=/dev/sda3;minimal.x86_64;3.4.0;192.168.124.254;8192
 PART=3000;83;/srv/SLEPOS,1000;82;swap,3000;83;/
 DISK=/dev/disk/by-id/pci-0000:00:1f.2-scsi-0:0:0:0
 POS_KERNEL=linux
@@ -855,8 +835,8 @@ fd24053b74a07aa4
    <para>
     The partition must contain the referenced files, i.e.:
    </para>
-<screen>image/minimal.i686-3.4.0
-image/minimal.i686-3.4.0.md5
+<screen>image/minimal.x86_64-3.4.0
+image/minimal.x86_64-3.4.0.md5
 boot/linux
 boot/linux.md5
 boot/initrd.gz
