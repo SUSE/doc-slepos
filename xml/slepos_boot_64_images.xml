@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+]>
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.slepos_boot_64_images">
+ <title>Booting 64-Bit Client Images</title>
+ <para>
+   Branches that only use either 64-bit or 32-bit images require no additional
+  configuration.
+</para>
+<para>Mixed branches are configured as described in <xref linkend="sec.adminserv.newkernel"/>.</para>
+
+<para>The default <systemitem>scDistributionContainer</systemitem> object is used for the first boot of terminals with undetermined architecture. This the object must contain the 32-bit SLE11 kernel that can be booted on both 32-bit and 64-bit clients.</para>
+
+<para>If the terminal fails to boot the default 32-bit SLE11 image, the initial boot can be done via USB using a special image (see <xref linkend="sec.kiwi.wireless"/> for further info):</para>
+
+<screen>cd /var/lib/SLEPOS/system/images/minimal-3.4.0 
+kiwi --bootusb initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.gz</screen>
+
+<para>Alternatively, it is possible to manually create an <systemitem>scWorkstation</systemitem> object in the LDAP database prior to the first boot. The <systemitem>scWorkstation</systemitem> entry must point to the 64-bit SLE12 image in the non-default <systemitem>scDistributionContainer</systemitem> object.</para>
+
+<para>The boot process with the non-default <systemitem>scDistributionContainer</systemitem> object consists of the following steps.</para>
+
+<procedure>
+<step>
+<para>
+The terminal boots the 32-bit SLE11 boot image.
+</para>
+</step>
+<step>
+<para>
+The terminal is registered. This creates the <systemitem>scWorkstation</systemitem> object in the LDAP database and the <systemitem>config.mac</systemitem> file.
+</para>
+</step>
+<step>
+<para>
+The generated config.mac file points to the 64-bit SLE12 image in the non-default <systemitem>scDistributionContainer object</systemitem>
+</para>
+</step>
+<step>
+<para>
+The system image is downloaded.
+</para>
+</step>
+<step>
+<para>
+Kernel parameters (including version) are compared, and the terminal is then rebooted. If the <systemitem>/srv/SLEPOS</systemitem> service partition is configured, the new boot image is started via kexec.
+</para>
+</step>
+<step>
+<para>
+The client boots the 64-bit SLE12 boot image.
+</para>
+</step>
+<step>
+<para>
+The SLE12 system image is activated and booted.
+</para>
+</step>
+</procedure>
+</sect1>
