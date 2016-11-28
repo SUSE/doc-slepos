@@ -343,14 +343,14 @@
      <para>
       The section, marked in <filename>config.xml</filename> by
       <literal>begin/end SUSE Manager support</literal>, contains the package
-      needed for SUSE Manager integration.
+      needed for SUSE Manager integration. Note that SUSE Manager Client is a separate module that is not part of SLES. To install the module, add the appropriate repository to the image configuration.
      </para>
     </callout>
     <callout arearefs="co.kiwi.repo">
      <para>
       The <literal>repository</literal> element references any package sources
       used in building this image. Repositories are referenced using repository
-      aliases, for example <literal>{SLES 11 SP3 i386}</literal>. These aliases
+      aliases, for example <literal>{SLES 12 SP2 x86_64}</literal>. These aliases
       are mapped to repository urls via the
       <filename>/etc/kiwi/repoalias</filename> file. You also need to specify
       the <literal>type</literal> of the repository, in this case
@@ -364,6 +364,14 @@
     </callout>
    </calloutlist>
   </example>
+
+  <note>
+    <title>SLEPOS Client as Salt Minion</title>
+    <para>
+      Although the Salt minion packages are available in the &slepos; 12 repository, they are not included in the image templates by default. Thus they must be added manually to the configuration file, if needed.
+     </para>
+    </note>
+    
  </sect2>
 
  <sect2 xml:id="sec.kiwi.createconfig">
@@ -810,7 +818,7 @@ resize2fs $DEV</screen>
       Unmount everything:
      </para>
 <screen>umount /mnt
-kpartx -d initrd-netboot-suse-SLES11.x86_64-2.1.1.splash.raw</screen>
+kpartx -d initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.raw</screen>
     </step>
     <step>
      <para>
