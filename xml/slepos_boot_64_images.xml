@@ -12,16 +12,16 @@
 </para>
 <para>Mixed branches are configured as described in <xref linkend="sec.adminserv.newkernel"/>.</para>
 
-<para>The default <systemitem>scDistributionContainer</systemitem> object is used for the first boot of terminals with undetermined architecture. This the object must contain the 32-bit SLE11 kernel that can be booted on both 32-bit and 64-bit clients.</para>
+<para>The default <systemitem>scDistributionContainer</systemitem> LDAP object is used for the first boot of terminals with undetermined architecture. This object must contain the 32-bit SLE11 kernel that can be booted on both 32-bit and 64-bit clients.</para>
 
 <para>If the terminal fails to boot the default 32-bit SLE11 image, the initial boot can be done via USB using a special image (see <xref linkend="sec.kiwi.wireless"/> for further info):</para>
 
 <screen>cd /var/lib/SLEPOS/system/images/minimal-3.4.0 
 kiwi --bootusb initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.gz</screen>
 
-<para>Alternatively, it is possible to manually create an <systemitem>scWorkstation</systemitem> object in the LDAP database prior to the first boot. The <systemitem>scWorkstation</systemitem> entry must point to the 64-bit SLE12 image in the non-default <systemitem>scDistributionContainer</systemitem> object.</para>
+<para>Alternatively, it is possible to manually create an <systemitem>scWorkstation</systemitem> object in the LDAP database prior to the first boot. The <systemitem>scWorkstation</systemitem> entry must point to the 64-bit SLE12 image in the custom <systemitem>scDistributionContainer</systemitem> LDAP object.</para>
 
-<para>The boot process with the non-default <systemitem>scDistributionContainer</systemitem> object consists of the following steps.</para>
+<para>The boot process with the custom <systemitem>scDistributionContainer</systemitem> LDAP object consists of the following steps:</para>
 
 <procedure>
 <step>
@@ -36,7 +36,7 @@ The terminal is registered. This creates the <systemitem>scWorkstation</systemit
 </step>
 <step>
 <para>
-The generated config.mac file points to the 64-bit SLE12 image in the non-default <systemitem>scDistributionContainer object</systemitem>
+The generated config.mac file points to the 64-bit SLE12 image in the custom <systemitem>scDistributionContainer LDAP object</systemitem>
 </para>
 </step>
 <step>

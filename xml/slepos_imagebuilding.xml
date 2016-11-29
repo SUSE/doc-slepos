@@ -14,6 +14,6 @@
   &kiwi; for easy image building. It is recommended to use this graphical
   front-end to build system images.
  </para>
- <xi:include href="slepos_imagebuilding_creator_sle11.xml" parse="xml"/>
- <xi:include href="slepos_imagebuilding_kiwi_sle11.xml" parse="xml"/>
+ <xi:include href="slepos_imagebuilding_creator.xml" parse="xml"/>
+ <xi:include href="slepos_imagebuilding_kiwi.xml" parse="xml"/>
 </chapter>

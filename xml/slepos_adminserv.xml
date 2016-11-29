@@ -532,7 +532,7 @@
    </step>
   </procedure>-->
 
-  <sect2>
+  <sect2 xml:id="sec.adminserv.newkernel">
    <title>Deploying Boot Images with a New Kernel Version</title>
    <para>
     If you build images with a new kernel version, you can preserve old file
