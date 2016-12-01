@@ -14,29 +14,29 @@
 
 <para>The default <systemitem>scDistributionContainer</systemitem> LDAP object is used for the first boot of terminals with undetermined architecture. This object must contain the 32-bit SLE11 kernel that can be booted on both 32-bit and 64-bit clients.</para>
 
-<para>If the terminal fails to boot the default 32-bit SLE11 image, the initial boot can be done via USB using a special image (see <xref linkend="sec.kiwi.wireless"/> for further info):</para>
+<para>If the terminal fails to boot the default 32-bit SLE11-based image, the initial boot can be done via USB using a special image (see <xref linkend="sec.kiwi.wireless"/> for further info):</para>
 
 <screen>cd /var/lib/SLEPOS/system/images/minimal-3.4.0 
 kiwi --bootusb initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.gz</screen>
 
-<para>Alternatively, it is possible to manually create an <systemitem>scWorkstation</systemitem> object in the LDAP database prior to the first boot. The <systemitem>scWorkstation</systemitem> entry must point to the 64-bit SLE12 image in the custom <systemitem>scDistributionContainer</systemitem> LDAP object.</para>
+<para>Alternatively, it is possible to manually create an <systemitem>scWorkstation</systemitem> object in the LDAP database prior to the first boot. The <systemitem>scWorkstation</systemitem> entry must point to the 64-bit SLE12-based image in the custom <systemitem>scDistributionContainer</systemitem> LDAP object.</para>
 
 <para>The boot process with the custom <systemitem>scDistributionContainer</systemitem> LDAP object consists of the following steps:</para>
 
 <procedure>
 <step>
 <para>
-The terminal boots the 32-bit SLE11 boot image.
+The terminal boots the 32-bit SLE11-based boot image.
 </para>
 </step>
 <step>
 <para>
-The terminal is registered. This creates the <systemitem>scWorkstation</systemitem> object in the LDAP database and the <systemitem>config.mac</systemitem> file.
+The terminal is registered. This creates the <systemitem>scWorkstation</systemitem> object in the LDAP database and the <systemitem>config.<replaceable>MAC</replaceable></systemitem> file.
 </para>
 </step>
 <step>
 <para>
-The generated config.mac file points to the 64-bit SLE12 image in the custom <systemitem>scDistributionContainer LDAP object</systemitem>
+The generated <systemitem>config.<replaceable>MAC</replaceable></systemitem> file points to the 64-bit SLE12-based image in the custom <systemitem>scDistributionContainer</systemitem> LDAP object.
 </para>
 </step>
 <step>
@@ -46,17 +46,17 @@ The system image is downloaded.
 </step>
 <step>
 <para>
-Kernel parameters (including version) are compared, and the terminal is then rebooted. If the <systemitem>/srv/SLEPOS</systemitem> service partition is configured, the new boot image is started via kexec.
+Kernel parameters (including version) are compared, and the terminal is then rebooted. If the <systemitem>/srv/SLEPOS</systemitem> service partition is configured, the new boot image is started via Kexec.
 </para>
 </step>
 <step>
 <para>
-The client boots the 64-bit SLE12 boot image.
+The client boots the 64-bit SLE12-based boot image.
 </para>
 </step>
 <step>
 <para>
-The SLE12 system image is activated and booted.
+The SLE12-based system image is activated and booted.
 </para>
 </step>
 </procedure>

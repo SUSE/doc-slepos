@@ -20,7 +20,7 @@
  <para>
   To install a dedicated &imgserv;, select the <guimenu>Image Server
   (IS)</guimenu> pattern during installation, but not the <guimenu>Admin Server
-  (AS)</guimenu> pattern. For more information about the installation process,
+  (AS)</guimenu> pattern. For a SLE12-based installation, select the <guimenu>SLEPOS_Image_Server</guimenu> pattern. For more information about the installation process,
   see <xref linkend="cha.slepos_inst"/>.
  </para>
  <sect1 xml:id="imagetypes">
