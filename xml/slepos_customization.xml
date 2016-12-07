@@ -1060,14 +1060,14 @@ Enter the DN of the LDAP user for administration tasks [default: cn=admin,&dnorg
     object, see <xref linkend="ad_scimageversion"/>.
    </para>
 
-   <important>
+   <note>
      <title>Encrypting the System Partition</title>
      <para>
       In order to enable encryption for the system partition, you must use an encrypted client image. It can be created in KIWI by specifying the <systemitem>luks="<replaceable>PASSWORD</replaceable>"</systemitem> attribute in the <systemitem>config.xml</systemitem> configuration file. For example:</para>
 <screen>&lt;type checkprebuilt="true" boot="netboot/suse-SLES12" fsnocheck="true"
 filesystem="ext3" compressed="true" image="pxe" luks="linux"&gt;
 </screen>
-     </important>
+     </note>
      
    <para>
     To enable encryption for a data partition, define the partition via the

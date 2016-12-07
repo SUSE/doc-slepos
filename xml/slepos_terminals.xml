@@ -1606,12 +1606,12 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
     </step>
    </procedure>
 
-   <important>
+   <warning>
      <title>Kexec Limitations</title>
      <para>
       Kexec cannot be used for booting a SLE12-based system image from a SLE11-based boot image, as the latter cannot generate a SLE12-compatible  initrd   and  grub2   configuration. 64-bit kernels may required different arguments. In mixed 32-bit and 64-bit branches, the arguments can be added to a specific image as the <systemitem>scPxeFileTemplate</systemitem> LDAP object. 
       </para>
-     </important>
+     </warning>
   </sect2>
 
   <sect2>
