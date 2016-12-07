@@ -60,4 +60,32 @@ The SLE12-based system image is activated and booted.
 </para>
 </step>
 </procedure>
+<sect2 xml:id="cha.slepos_boot_troubleshoot">
+<title>Dealing with Boot-Related Issues</title>
+<para>
+If the terminal fails to boot the default kernel, it must be configured to use specific kernel before the first boot. To do this, create a USB boot image with the correct kernel as shown in the following example:
+</para>
+
+<screen>cd /var/lib/SLEPOS/system/images/minimal-3.4.0
+kiwi --bootusb initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.gz</screen>
+
+<para>
+Use then the created image for the initial boot of the terminal. For further information about creating a boot image, refer to <xref linkend="sec.kiwi.wireless"/>.
+</para>
+
+<para>In cases when the MAC and hwtype properties of the terminal are known and external DHCP is not used, you can use the following command to prepare a MAC-specific PXE configuration that points to terminal-specific kernel and initrd:</para>
+
+<screen>echo "HWTYPE=<replaceable>&lt;string&gt;</replaceable>" > /srv/tftpboot/upload/hwtype.<replaceable>&lt;MAC&gt;</replaceable>.HASH</screen>
+
+<para>
+The <replaceable>&lt;string&gt;</replaceable> refers to the machine name as reported by BIOS (for example, IBM4852526),The <replaceable>HASH</replaceable> value is optional, and it's used to prevent file conflicts (see <xref linkend="ad_cntrlhw"/>). Since no conflicts should occur before the initial registration, the HASH value can be omitted:
+</para>
+
+<screen>echo "HWTYPE=<replaceable>&lt;string&gt;</replaceable>" > /srv/tftpboot/upload/hwtype.<replaceable>&lt;MAC&gt;</replaceable></screen>
+
+<para>
+If booting the POS client failed with an error message stating that the <systemitem>vga=0x314</systemitem> option is deprecated, there are two ways to fix the problem. For the SLE12-based branch, remove the <systemitem>vga=0x314</systemitem> kernel parameter from the <systemitem>posdefaults</systemitem> object in the LDAP database using the <systemitem>posAdmin</systemitem> tool. For mixed branches, the <systemitem>vga=0x314</systemitem> kernel parameter should be removed from the <systemitem>posdefaults</systemitem> object and added to each SLE11-based boot image via the <systemitem>scDistributionContainer</systemitem> object.
+</para>
+
+</sect2>
 </sect1>

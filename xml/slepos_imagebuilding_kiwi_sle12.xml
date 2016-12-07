@@ -9,7 +9,7 @@
  <title>Building Images with &kiwi;</title>
 
  <para>
-  &kiwi; is a complete imaging suite that allows you to configure, build,
+  &kiwi; is an imaging suite that allows you to configure, build,
   and deploy your own operating system images. The &kiwi; workflow is
   divided into three distinct stages:
  </para>
