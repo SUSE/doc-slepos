@@ -9,7 +9,7 @@
  <title>Setting Up an &imgserv;</title>
  <info/>
  <para>
-  &imgserv; is the machine used for building custom image files for &pos;
+  The &imgserv; is the machine used for building custom image files for &pos;
   systems. It is possible to combine the functions of &admserv; and
   &imgserv; on a single machine. However, if you have a large system and
   want to offload the image building function from the &admserv;, you can
@@ -56,7 +56,7 @@
        are downloaded to terminals using TFTP.
       </para>
       <para>
-       This is the only type of image that supports all SLEPOS features
+       This is the only type of image that supports all &slepos; features
        including the wireless support and encryption.
       </para>
      </listitem>
@@ -164,7 +164,7 @@
       <para>
        The <filename>Branchserver</filename> image is a specialized image which
        can be used for deploying a &branchserv; instead of using the
-       standard method (installing SLES with the SLEPOS addon and manual
+       standard method (installing &sls; with the &slepos; add-on and manual
        configuration of the &branchserv;).
       </para>
       <para>
@@ -258,13 +258,13 @@
   <title>Preparing Source Repositories</title>
 
   <para>
-<!--In SLEPOS 11 SP1 and earlier versions, <command>poscdtool</command> and
+<!--In &slepos; 11 SP1 and earlier versions, <command>poscdtool</command> and
     <command>poscopytool</command> were used to copy SLEPOS and SLES media and
     prepare source repositories for image building. Starting with SLEPOS 11
     SP2,-->
    The default package repository for image building is provided by a SUSE SMT
-   server. SLEPOS is already preconfigured for an SMT server running on the
-   same machine as the SLEPOS &imgserv;. Once the connection to the SUSE
+   server. &slepos; is already preconfigured for an SMT server running on the
+   same machine as the &slepos; &imgserv;. Once the connection to the SUSE
    package and update server has been set up, image building will work out of
    the box.
   </para>
@@ -282,7 +282,7 @@
    repository aliases, for example <literal>{SLES 11 SP3 i386}</literal>. These
    aliases are mapped to repository urls via the
    <filename>/etc/kiwi/repoalias</filename> file. It is also possible to use
-   the repository URLs directly without aliasing, as in the previous SLEPOS
+   the repository URLs directly without aliasing, as in the previous &slepos;
    releases. The repository URLs must point to a repository of rpm-md type.
    <filename>/etc/kiwi/repoalias</filename> has the following format for
    describing URL aliases:
@@ -303,7 +303,7 @@
   <sect2 xml:id="smt_on_imgserv">
    <title>Running SMT on the &imgserv;</title>
    <para>
-    SLEPOS is already preconfigured for an SMT server running on the
+    &slepos; is already preconfigured for an SMT server running on the
     &imgserv; machine. Once the connection to the SUSE package and update
     server has been set up, image building will work out of the box. No special
     configuration is necessary.
@@ -380,9 +380,9 @@
   </sect2>
 
   <sect2>
-   <title>Using SLES and SLEPOS Media Directly to Create an SMT Repository</title>
+   <title>Using &sls; and &slepos; Media Directly to Create an SMT Repository</title>
    <para>
-    It is possible to use the SLES and SLEPOS media directly to create an SMT
+    It is possible to use the &sls; and &slepos; media directly to create an SMT
     repository. The media can be mounted to a directory or copied. The
     following example of the image configuration should be changed to point to
     the used directories. The repository type should be set to
