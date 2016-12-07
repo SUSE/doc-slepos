@@ -23,9 +23,10 @@
  <para>
   If you intend to set up a high-availability &branchserv;, check out the
   &haguide;, available from
-  <link xlink:href="http://www.novell.com/documentation/sles11/"/>.
+  <link xlink:href="http://www.suse.com/documentation/sles11/"/>.
  </para>
- <note>
+ 
+ <!--<note>
   <title>Setting Up a POSBranch Server</title>
   <para>
    In the NLPOS9, a specialized POSBranch image was needed to setup a
@@ -33,7 +34,8 @@
    specialized POSBranch image now. The &branchserv; can now be directly
    installed on POS hardware.
   </para>
- </note>
+  </note>-->
+ 
  <note>
   <title>System Requirements</title>
   <para>
@@ -50,7 +52,7 @@
    <para>
     The <systemitem>&branchserv;</systemitem> pattern must be installed on
     the machine to be configured. If it is missing, install it. For more
-    information about SLEPOS11 installation, see
+    information about the &slepos; 11 installation, see
     <xref linkend="cha.slepos_inst"/>.
    </para>
   </listitem>
@@ -76,7 +78,7 @@
   <title>&branchserv; Network Configuration</title>
 
   <para>
-   SLEPOS offers three ways to configure the network on a &branchserv;:
+   &slepos; offers three ways to configure the network on a &branchserv;:
   </para>
 
   <orderedlist spacing="normal">
@@ -174,7 +176,7 @@
   <sect2>
    <title>Predefined Network Configuration</title>
    <para>
-    The &branchserv;'s NICs are configured according to the SLEPOS defaults.
+    The &branchserv;'s NICs are configured according to the &slepos; defaults.
     This mode is selected when all of the following conditions are met:
    </para>
    <orderedlist spacing="normal">
@@ -201,7 +203,7 @@
    <para>
     When basically no information about the network is set,
     <command>posInitBranchServer</command> configures NICs and updates LDAP
-    databases with a configuration based on SLEPOS defaults:
+    databases with a configuration based on &slepos; defaults:
    </para>
 <screen>
 scLocation attributes:
@@ -228,7 +230,7 @@ scNetworkcard attribute
    <title>Online &branchserv; Configuration</title>
    <para>
     The following procedure describes the installation process of a
-    &slepos;11 &branchserv; if an Internet connection to the &admserv;
+    &slepos; 11 &branchserv; if an Internet connection to the &admserv;
     is used:
    </para>
    <procedure>
@@ -309,7 +311,7 @@ scNetworkcard attribute
       The script asks if you want to create and use a local branch LDAP
       database on the &branchserv;. It contains a copy of the subtree from
       the &admserv; LDAP database which corresponds to this &branchserv;.
-      This is part of the &slepos;11 offline functionality feature. The
+      This is part of the &slepos; 11 offline functionality feature. The
       recommended default setting is <literal>yes</literal>.
      </para>
      <para>
@@ -364,7 +366,7 @@ scNetworkcard attribute
    <title>Offline &branchserv; Configuration</title>
    <para>
     The following procedure describes the installation process of a
-    &slepos;11 &branchserv; if no Internet connection to the &admserv;
+    &slepos; 11 &branchserv; if no Internet connection to the &admserv;
     is used:
    </para>
    <procedure>
@@ -418,7 +420,7 @@ scNetworkcard attribute
       The script asks if you want to create and use a local branch LDAP
       database on the &branchserv;. It contains a copy of the subtree from
       the &admserv; LDAP database which corresponds to this &branchserv;.
-      This is a part of the &slepos;11 offline functionality feature. The
+      This is a part of the &slepos; 11 offline functionality feature. The
       recommended default setting is <literal>yes</literal>.
      </para>
      <para>
@@ -765,7 +767,7 @@ scNetworkcard attribute
 
   <para>
    Instead of installing &branchserv;s using the standard method (installing
-   SLES with the SLEPOS addon and manual configuration of the &branchserv;),
+   &sls; with the &slepos; add-on and manual configuration of the &branchserv;),
    it is possible to build a &branchserv; image using Image Creator or KIWI.
   </para>
 
