@@ -38,7 +38,7 @@
  </figure>
 
  <note>
-  <title>Logging in as &rootuser; User</title>
+  <title>Login in as &rootuser; User</title>
   <para>
    In order to be able to log in as &rootuser; on the terminal, you need to
    create the &rootuser; user and assign a password to it in the
@@ -50,7 +50,7 @@
   <title>Creating Images from Scratch</title>
   <para>
    Only image templates shipped with &slepos; are supported. If you want to
-   prepare your own image from scratch, the SLE-11-SDK product must be used and
+   prepare your own image from scratch, the &sle; 11 Software Development Kit (SLE-11-SDK) product must be used and
    the <systemitem>kiwi-desc-*</systemitem> packages installed. There is no L3
    support available for the SLE-11-SDK product.
   </para>
@@ -59,9 +59,9 @@
  <important>
   <title>Building 32-bit Images on 64-bit Machines</title>
   <para>
-   SLEPOS terminals need 32bit images. If you want to build 32bit images on a
+   Terminals based on &slepos; 11 need 32bit images. If you want to build 32bit images on a
    64bit machine, the Subscription Management Tool (SMT) must be used for
-   repository management. It is also recommended to use SMT for SLE update
+   repository management. It is also recommended to use SMT for &sle; update
    repositories (SLES-11-Updates, SLE-11-POS-Updates). For SMT configuration,
    see &smtguide;.
   </para>
