@@ -9,10 +9,10 @@
  <title>Simple Administration GUI</title>
 
  <para>
-  SLEPOS11 SP2 introduces a simple administration GUI,
-  <command>posAdmin-GUI</command>. Goal of the <command>posAdmin-GUI</command>
+  &slepos;11 SP2 introduced a simple administration GUI,
+  <command>posAdmin-GUI</command>. The goal of the <command>posAdmin-GUI</command>
   is to help with the creation of &branchserv;, role, image and cashregister
-  objects. Using posAdmin-GUI, the administrator can avoid typing long
+  objects. Using the posAdmin-GUI, the administrator can avoid typing long
   <command>posAdmin</command> commands and benefit from a nicer user interface
   and check data immediately.
  </para>
@@ -23,25 +23,25 @@
  </para>
 
  <para>
-  To start posAdmin-GUI, use the <command>posAdmin-GUI</command> command. If
+  To start the the posAdmin-GUI, use the <command>posAdmin-GUI</command> command. If
   you start it on an already configured &admserv;, the
   <filename>adminserver.conf</filename> configuration file is parsed and used
   to fill organization and country entries. You can also start posAdmin-GUI
   with the <command>posAdmin-GUI</command>
-  <replaceable>slepos-xml-file</replaceable> command. The provided SLEPOS XML
+  <replaceable>slepos-xml-file</replaceable> command. The provided &slepos; XML file
   is parsed and all available data are loaded.
  </para>
 
  <note>
   <title>posAdmin-GUI Limitations</title>
   <para>
-   posAdmin-GUI can only be used for importing new objects into the LDAP
+   The posAdmin-GUI can only be used for importing new objects into the LDAP
    database. It does not allow any modification of existing objects and it is
    not possible to rename existing objects or to add, remove, or change their
    attributes. Only creating new objects is supported.
   </para>
   <para>
-   posAdmin-GUI does not load data from the existing LDAP database.
+   The posAdmin-GUI does not load data from the existing LDAP database.
   </para>
  </note>
 
@@ -76,7 +76,7 @@
  </para>
 
  <sect2>
-  <title>BranchServer Configuration</title>
+  <title>Branch Server Configuration</title>
   <para>
    The <guimenu>BranchServer Configuration</guimenu> tab defines all
    &branchserv;-related data. The values defined on this tab are used for
@@ -119,7 +119,7 @@
    <title>BranchServer Network Configuration</title>
   </sect3>-->
   <sect3 xml:id="gui.branch.services">
-   <title>BranchServer Services Configuration</title>
+   <title>Branch Server Services Configuration</title>
    <para>
     To configure &branchserv; services, click the <guimenu>BranchServer
     Services Configuration</guimenu> button.
@@ -166,9 +166,9 @@ scPosleasesChecktime=40
    </note>
   </sect3>
   <sect3 xml:id="gui.branch.network">
-   <title>BranchServer Network Configuration</title>
+   <title>Branch Server Network Configuration</title>
    <para>
-    To configure &branchserv; network, click the <guimenu>BranchServer
+    To configure the &branchserv; network, click the <guimenu>BranchServer
     Network Configuration</guimenu> button.
    </para>
    <para>
@@ -233,7 +233,7 @@ services, images, etc..-->
  </sect2>
 
  <sect2>
-  <title>CashRegisters Configuration</title>
+  <title>Cash Registers Configuration</title>
   <para>
    The <guimenu>CashRegisters Configuration</guimenu> tab lists all known local
    and global POS terminals (CashRegisters), as well as terminals defined by
@@ -272,7 +272,7 @@ services, images, etc..-->
   <title>Finalization</title>
   <para>
    Use the <guimenu>Generate configuration</guimenu> button to create the
-   SLEPOS XML file. Before generating the file, the configured data are
+   &slepos; XML file. Before generating the file, the configured data are
    checked. You will be asked where to save the generated XML file.
   </para>
   <para>
