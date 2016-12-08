@@ -8,8 +8,13 @@
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.slepos_imageserv_sle12">
  <title>Setting Up a &sle; 12-Based &imgserv;</title>
 
- <para>
-It is recommended to use a dedicated machine for setting up a &sle; 12-based &imgsrv;. &slepos; 12 &imgsrv; is delivered as an extension to &sls; 12 SP2. There are two options for installing the &imgsrv;:</para>
+<para>
+It is recommended to use a dedicated machine for setting up a &sle; 12-based &imgsrv;. For a list of system requirements, refer to the &sls; 12 documentation at <link xlink:href="https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_x86_sysreqs.html"/>.
+</para>
+
+<para>
+&slepos; 12 &imgsrv; is delivered as an extension to &sls; 12 SP2. There are two options for installing the &imgsrv;:
+</para>
 
 <itemizedlist>
 <listitem>
