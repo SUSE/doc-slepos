@@ -9,16 +9,16 @@
  <title>LDAP Validation and Checking</title>
 
  <para>
-  SLEPOS contains LDAP validation and checking tools. Simple validation and
+  &slepos; contains LDAP validation and checking tools. Simple validation and
   checking is automatically performed during each <command>posAdmin</command>
-  addition or modification call. Full validation is performed during SLEPOS XML
+  addition or modification call. Full validation is performed during &slepos; XML
   import or on demand via the following command:
  </para>
 
 <screen>posAdmin --validate</screen>
 
  <para>
-  There is an important difference between LDAP validation during XML import
+  There is an important difference between LDAP validation during the XML import
   and validation invoked by the <command>posAdmin --validate</command> command.
   If important LDAP objects are found missing during the XML import, the
   missing objects are reported, but the import continues without a failure. In
@@ -27,7 +27,7 @@
  </para>
 
  <para>
-  Additionally, XML and LDIF files can be validated against the SLEPOS
+  Additionally, XML and LDIF files can be validated against the &slepos;
   database. LDIF files can be validated using the following command:
  </para>
 
