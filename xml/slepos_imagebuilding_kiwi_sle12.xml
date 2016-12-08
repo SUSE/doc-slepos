@@ -366,7 +366,7 @@
   </example>
 
   <note>
-    <title>SLEPOS Client as Salt Minion</title>
+    <title>&slepos; Client as Salt Minion</title>
     <para>
       Although the Salt minion packages are available in the &slepos; 12 repository, they are not included in the image templates by default. Thus they must be added manually to the configuration file, if needed.
      </para>
@@ -637,7 +637,7 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
     same directory and follow the same naming convention. For example:
    </para>
 <screen>
- cd /var/lib/SLEPOS/system/images/<replaceable>minimal-3.4.0</replaceable>
+ cd /var/lib/SLEPOS/system/images/<replaceable>jeos-5.0.0</replaceable>
  kiwi --bootusb <replaceable>initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.gz</replaceable>
 </screen>
    <para>

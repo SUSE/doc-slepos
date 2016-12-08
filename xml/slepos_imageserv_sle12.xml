@@ -9,6 +9,22 @@
  <title>Setting Up a &sle; 12-Based &imgserv;</title>
 
  <para>
- &slepos; 12 &imgserv; is delivered as an extension to &sls; 12 SP2. There two ways to install the &imgserv;. During the installation of &sls;, select &imgserv; from the list of extensions. If &sls; is already installed, you can use the &yast; registration module. In both cases, make sure to install the <guimenu>SLEPOS_Image_Server</guimenu> pattern. If necessary, install also one of the available template patterns. For further information, refer to the &sls; 12 documentation.
+It is recommended to use a dedicated machine for setting up a &sle; 12-based &imgsrv;. &slepos; 12 &imgsrv; is delivered as an extension to &sls; 12 SP2. There are two options for installing the &imgsrv;:</para>
+
+<itemizedlist>
+<listitem>
+  <para>
+   When performing a new &sls; installation, select <guimenu>&imgsrv;</guimenu> from the list of extensions.
+   </para>
+  </listitem>
+  <listitem>
+    <para>
+      If &sls; is already installed, you can use the &yast; registration module to install the &imgsrv;.
+     </para>
+    </listitem>
+</itemizedlist>
+
+<para>
+In both cases, make sure to install the <guimenu>SLEPOS_Image_Server</guimenu> pattern. For further information, refer to the &sls; 12 documentation at <link xlink:href="https://www.suse.com/documentation/sles-12/index.html"/>.
  </para>
 </sect1>

@@ -12,21 +12,21 @@
 </para>
 <para>Mixed branches are configured as described in <xref linkend="sec.adminserv.newkernel"/>.</para>
 
-<para>The default <systemitem>scDistributionContainer</systemitem> LDAP object is used for the first boot of terminals with undetermined architecture. This object must contain the 32-bit SLE11 kernel that can be booted on both 32-bit and 64-bit clients.</para>
+<para>The default <systemitem>scDistributionContainer</systemitem> LDAP object is used for the first boot of terminals with undetermined architecture. This object must contain the 32-bit &sle; 11 kernel that can be booted on both 32-bit and 64-bit clients.</para>
 
-<para>If the terminal fails to boot the default 32-bit SLE11-based image, the initial boot can be done via USB using a special image (see <xref linkend="sec.kiwi.wireless"/> for further info):</para>
+<para>If the terminal fails to boot the default 32-bit &sle; 11-based image, the initial boot can be done via USB using a special image (see <xref linkend="sec.kiwi.wireless"/> for further info):</para>
 
-<screen>cd /var/lib/SLEPOS/system/images/minimal-3.4.0 
+<screen>cd /var/lib/SLEPOS/system/images/jeos-5.0.0 
 kiwi --bootusb initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.gz</screen>
 
-<para>Alternatively, it is possible to manually create an <systemitem>scWorkstation</systemitem> object in the LDAP database prior to the first boot. The <systemitem>scWorkstation</systemitem> entry must point to the 64-bit SLE12-based image in the custom <systemitem>scDistributionContainer</systemitem> LDAP object.</para>
+<para>Alternatively, it is possible to manually create an <systemitem>scWorkstation</systemitem> object in the LDAP database prior to the first boot. The <systemitem>scWorkstation</systemitem> entry must point to the 64-bit &sle; 12-based image in the custom <systemitem>scDistributionContainer</systemitem> LDAP object.</para>
 
 <para>The boot process with the custom <systemitem>scDistributionContainer</systemitem> LDAP object consists of the following steps:</para>
 
 <procedure>
 <step>
 <para>
-The terminal boots the 32-bit SLE11-based boot image.
+The terminal boots the 32-bit &sle; 11-based boot image.
 </para>
 </step>
 <step>
@@ -36,7 +36,7 @@ The terminal is registered. This creates the <systemitem>scWorkstation</systemit
 </step>
 <step>
 <para>
-The generated <systemitem>config.<replaceable>MAC</replaceable></systemitem> file points to the 64-bit SLE12-based image in the custom <systemitem>scDistributionContainer</systemitem> LDAP object.
+The generated <systemitem>config.<replaceable>MAC</replaceable></systemitem> file points to the 64-bit &sle; 12-based image in the custom <systemitem>scDistributionContainer</systemitem> LDAP object.
 </para>
 </step>
 <step>
@@ -51,12 +51,12 @@ Kernel parameters (including version) are compared, and the terminal is then reb
 </step>
 <step>
 <para>
-The client boots the 64-bit SLE12-based boot image.
+The client boots the 64-bit &sle; 12-based boot image.
 </para>
 </step>
 <step>
 <para>
-The SLE12-based system image is activated and booted.
+The &sle; 12-based system image is activated and booted.
 </para>
 </step>
 </procedure>
@@ -70,7 +70,7 @@ The SLE12-based system image is activated and booted.
 Solution: The terminal must be configured to use specific kernel before the first boot. To do this, create a USB boot image with the correct kernel as shown in the following example:
 </para>
 
-<screen>cd /var/lib/SLEPOS/system/images/minimal-3.4.0
+<screen>cd /var/lib/SLEPOS/system/images/jeos-5.0.0
 kiwi --bootusb initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.gz</screen>
 
 <para>
@@ -82,7 +82,7 @@ Use then the created image for the initial boot of the terminal. For further inf
 <screen>echo "HWTYPE=<replaceable>&lt;string&gt;</replaceable>" > /srv/tftpboot/upload/hwtype.<replaceable>MAC</replaceable>.<replaceable>HASH</replaceable></screen>
 
 <para>
-The <replaceable>&lt;string&gt;</replaceable> refers to the machine name as reported by BIOS (for example, IBM4852526),The <replaceable>HASH</replaceable> value is optional, and it's used to prevent file conflicts (see <xref linkend="ad_cntrlhw"/>). Since no conflicts should occur before the initial registration, the <systemitem>HASH</systemitem> value can be omitted:
+The <replaceable>&lt;string&gt;</replaceable> refers to the machine name as reported by BIOS (for example, IBM4852526). The optional <replaceable>HASH</replaceable> value is used to prevent file conflicts (see <xref linkend="ad_cntrlhw"/>). Since no conflicts should occur before the initial registration, the <replaceable>HASH</replaceable> value can be omitted:
 </para>
 
 <screen>echo "HWTYPE=<replaceable>&lt;string&gt;</replaceable>" > /srv/tftpboot/upload/hwtype.<replaceable>MAC</replaceable></screen>
@@ -95,7 +95,7 @@ The <replaceable>&lt;string&gt;</replaceable> refers to the machine name as repo
 <varlistentry><term>Problem: Booting the &pos; client fails with the "vga=0x314 option is deprecated" error message</term>
 <listitem>
 <para>
-Solution: For SLE12-based branches, remove the <systemitem>vga=0x314</systemitem> kernel parameter from the <systemitem>posdefaults</systemitem> object in the LDAP database using the <systemitem>posAdmin</systemitem> tool. For mixed branches, the <systemitem>vga=0x314</systemitem> kernel parameter should be removed from the <systemitem>posdefaults</systemitem> object and added to each SLE11-based boot image via the <systemitem>scDistributionContainer</systemitem> object.
+Solution: For &sle; 12-based branches, remove the <systemitem>vga=0x314</systemitem> kernel parameter from the <systemitem>posdefaults</systemitem> object in the LDAP database using the <systemitem>posAdmin</systemitem> tool. For mixed branches, remove the <systemitem>vga=0x314</systemitem> kernel parameter from the <systemitem>posdefaults</systemitem> object and add the parameter to each &sle; 11-based boot image via the <systemitem>scDistributionContainer</systemitem> object.
 </para>
 </listitem>
 </varlistentry>
