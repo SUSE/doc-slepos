@@ -5,25 +5,22 @@
     %entities;
 ]>
 <!-- Converted by suse-upgrade version 1.1 -->
-<table xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="SLEPOS_generated_scWorkstation">
+<table xmlns="http://docbook.org/ns/docbook"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xml:id="SLEPOS_generated_scWorkstation">
  <title>scWorkstation</title>
  <tgroup cols="3">
   <thead>
    <row>
     <entry>
-     <para>
-      Name
-     </para>
+     <para> Name </para>
     </entry>
     <entry>
-     <para>
-      Type
-     </para>
+     <para> Type </para>
     </entry>
     <entry>
-     <para>
-      Description
-     </para>
+     <para> Description </para>
     </entry>
    </row>
   </thead>
@@ -35,14 +32,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      must
-     </para>
+     <para> must </para>
     </entry>
     <entry>
-     <para>
-      name of the workstation
-     </para>
+     <para> name of the workstation </para>
     </entry>
    </row>
    <row>
@@ -52,14 +45,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may
-     </para>
+     <para> may </para>
     </entry>
     <entry>
-     <para>
-      assigned IP address
-     </para>
+     <para> assigned IP address </para>
     </entry>
    </row>
    <row>
@@ -69,15 +58,11 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,multivalue
-     </para>
+     <para> may,multivalue </para>
     </entry>
     <entry>
-     <para>
-      MAC address in maximal, colon separated hex notation, eg.
-      00:00:92:90:EE:F2
-     </para>
+     <para> MAC address in maximal, colon separated hex notation, eg.
+      00:00:92:90:EE:F2 </para>
     </entry>
    </row>
    <row>
@@ -87,14 +72,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,multivalue
-     </para>
+     <para> may,multivalue </para>
     </entry>
     <entry>
-     <para>
-      DNs of allowed roles. If empty, all roles are permitted
-     </para>
+     <para> DNs of allowed roles. If empty, all roles are permitted </para>
     </entry>
    </row>
    <row>
@@ -104,17 +85,13 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,multivalue
-     </para>
+     <para> may,multivalue </para>
     </entry>
     <entry>
-     <para>
-      Reference for a configuration type object
-      (<systemitem>scConfigFileTemplate</systemitem>,
-      <systemitem>scConfigFileSyncTemplate</systemitem>,
-      <systemitem>scPxeFileTemplate</systemitem>)
-     </para>
+     <para> Reference for a configuration type object
+       (<systemitem>scConfigFileTemplate</systemitem>,
+       <systemitem>scConfigFileSyncTemplate</systemitem>,
+       <systemitem>scPxeFileTemplate</systemitem>) </para>
     </entry>
    </row>
    <row>
@@ -124,15 +101,11 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,singlevalue
-     </para>
+     <para> may,singlevalue </para>
     </entry>
     <entry>
-     <para>
-      Indicate configuration files should be updated on the next boot.
-      (<literal>TRUE</literal> or <literal>FALSE</literal>)
-     </para>
+     <para> Indicate configuration files should be updated on the next
+      boot. (<literal>TRUE</literal> or <literal>FALSE</literal>) </para>
     </entry>
    </row>
    <row>
@@ -142,14 +115,11 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,singlevalue
-     </para>
+     <para> may,singlevalue </para>
     </entry>
     <entry>
-     <para>
-      Turn on disk journaling. This will only occur on diskfull systems.
-      (<literal>TRUE</literal> or <literal>FALSE</literal>)
+     <para> Turn on disk journaling. This will only occur on diskfull
+      systems. (<literal>TRUE</literal> or <literal>FALSE</literal>)
      </para>
     </entry>
    </row>
@@ -160,14 +130,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,multivalue
-     </para>
+     <para> may,multivalue </para>
     </entry>
     <entry>
-     <para>
-      Contains ID assigned to the Point Of Service terminal
-     </para>
+     <para> Contains ID assigned to the Point Of Service terminal </para>
     </entry>
    </row>
    <row>
@@ -177,13 +143,11 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,singlevalue
-     </para>
+     <para> may,singlevalue </para>
     </entry>
     <entry>
-     <para>
-      Image version in format <replaceable>yyyymmddserial</replaceable>
+     <para> Image version in format
+       <replaceable>yyyymmddserial</replaceable>
      </para>
     </entry>
    </row>
@@ -194,14 +158,11 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,singlevalue
-     </para>
+     <para> may,singlevalue </para>
     </entry>
     <entry>
-     <para>
-      Linux time of last time when terminal boot was detected by Branch Server
-     </para>
+     <para> Linux time of last time when terminal boot was detected by
+      Branch Server </para>
     </entry>
    </row>
    <row>
@@ -211,16 +172,12 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,multivalue
-     </para>
+     <para> may,multivalue </para>
     </entry>
     <entry>
-     <para>
-      Contains image and version, the time of notification, and md5sum of the
-      associated <systemitem>config.MAC</systemitem> file separated by
-      semicolons
-     </para>
+     <para> Contains image and version, the time of notification, and
+      md5sum of the associated <systemitem>config.MAC</systemitem> file
+      separated by semicolons </para>
     </entry>
    </row>
    <row>
@@ -230,14 +187,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,multivalue,deprecated
-     </para>
+     <para> may,multivalue,deprecated </para>
     </entry>
     <entry>
-     <para>
-      DN of delta image for a Point Of Service terminal
-     </para>
+     <para> DN of delta image for a Point Of Service terminal </para>
     </entry>
    </row>
    <row>
@@ -247,14 +200,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,multivalue,deprecated
-     </para>
+     <para> may,multivalue,deprecated </para>
     </entry>
     <entry>
-     <para>
-      DN of a CR group.
-     </para>
+     <para> DN of a CR group. </para>
     </entry>
    </row>
    <row>
@@ -264,15 +213,11 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,singlevalue
-     </para>
+     <para> may,singlevalue </para>
     </entry>
     <entry>
-     <para>
-      The DN of the default system image defined for this Point of Service
-      terminal type
-     </para>
+     <para> The DN of the default system image defined for this Point Of
+      Service terminal type </para>
     </entry>
    </row>
    <row>
@@ -282,16 +227,12 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,multivalue,deprecated in favor of scImageVersion
-     </para>
+     <para> may,multivalue,deprecated in favor of scImageVersion </para>
     </entry>
     <entry>
-     <para>
-      The version number of the system image, followed by the flag passive or
-      active; i.e., 2.0.4; active. The version number and the flag are
-      semicolon-separated (;)
-     </para>
+     <para> The version number of the system image, followed by the flag
+      passive or active; i.e., 2.0.4; active. The version number and the
+      flag are semicolon-separated (;) </para>
     </entry>
    </row>
    <row>
@@ -301,14 +242,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,singlevalue
-     </para>
+     <para> may,singlevalue </para>
     </entry>
     <entry>
-     <para>
-      BIOS version of a Point Of Service terminal
-     </para>
+     <para> BIOS version of a Point Of Service terminal </para>
     </entry>
    </row>
    <row>
@@ -318,13 +255,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,singlevalue
-     </para>
+     <para> may,singlevalue </para>
     </entry>
     <entry>
-     <para>
-      Cash Register type associated with Point Of Service terminal
+     <para> Cash Register type associated with Point Of Service terminal
      </para>
     </entry>
    </row>
@@ -335,14 +269,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,singlevalue
-     </para>
+     <para> may,singlevalue </para>
     </entry>
     <entry>
-     <para>
-      DN to PC hardware type
-     </para>
+     <para> DN to PC hardware type </para>
     </entry>
    </row>
    <row>
@@ -352,15 +282,11 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,singlevalue
-     </para>
+     <para> may,singlevalue </para>
     </entry>
     <entry>
-     <para>
-      The Point Of Service terminal use roles. (<literal>TRUE</literal> or
-      <literal>FALSE</literal>)
-     </para>
+     <para> The Point Of Service terminal use roles.
+       (<literal>TRUE</literal> or <literal>FALSE</literal>) </para>
     </entry>
    </row>
    <row>
@@ -370,13 +296,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,multivalue
-     </para>
+     <para> may,multivalue </para>
     </entry>
     <entry>
-     <para>
-      DN of the role assigned to the Point Of Service terminal
+     <para> DN of the role assigned to the Point Of Service terminal
      </para>
     </entry>
    </row>
@@ -387,14 +310,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,singlevalue,deprecated
-     </para>
+     <para> may,singlevalue,deprecated </para>
     </entry>
     <entry>
-     <para>
-      Serial number of the used workstation
-     </para>
+     <para> Serial number of the used workstation </para>
     </entry>
    </row>
    <row>
@@ -404,14 +323,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,multivalue,deprecated
-     </para>
+     <para> may,multivalue,deprecated </para>
     </entry>
     <entry>
-     <para>
-      Name of the standard printer
-     </para>
+     <para> Name of the standard printer </para>
     </entry>
    </row>
    <row>
@@ -421,13 +336,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,singlevalue,deprecated
-     </para>
+     <para> may,singlevalue,deprecated </para>
     </entry>
     <entry>
-     <para>
-      DN of the standard printer for a location or workstation
+     <para> DN of the standard printer for a location or workstation
      </para>
     </entry>
    </row>
@@ -438,9 +350,7 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may
-     </para>
+     <para> may </para>
     </entry>
     <entry>
      <para/>
