@@ -5,25 +5,22 @@
     %entities;
 ]>
 <!-- Converted by suse-upgrade version 1.1 -->
-<table xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="SLEPOS_generated_scLocation">
+<table xmlns="http://docbook.org/ns/docbook"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xml:id="SLEPOS_generated_scLocation">
  <title>scLocation</title>
  <tgroup cols="3">
   <thead>
    <row>
     <entry>
-     <para>
-      Name
-     </para>
+     <para> Name </para>
     </entry>
     <entry>
-     <para>
-      Type
-     </para>
+     <para> Type </para>
     </entry>
     <entry>
-     <para>
-      Description
-     </para>
+     <para> Description </para>
     </entry>
    </row>
   </thead>
@@ -35,14 +32,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      must
-     </para>
+     <para> must </para>
     </entry>
     <entry>
-     <para>
-      Name of the Location or Branch
-     </para>
+     <para> Name of the Location or Branch </para>
     </entry>
    </row>
    <row>
@@ -52,14 +45,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      must
-     </para>
+     <para> must </para>
     </entry>
     <entry>
-     <para>
-      Local network mask
-     </para>
+     <para> Local network mask </para>
     </entry>
    </row>
    <row>
@@ -69,14 +58,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      must
-     </para>
+     <para> must </para>
     </entry>
     <entry>
-     <para>
-      Local network number
-     </para>
+     <para> Local network number </para>
     </entry>
    </row>
    <row>
@@ -86,15 +71,11 @@
      </para>
     </entry>
     <entry>
-     <para>
-      must,multivalue
-     </para>
+     <para> must,multivalue </para>
     </entry>
     <entry>
-     <para>
-      IP address of default gateway for location. This is normally a router to
-      the corporate wide area network.
-     </para>
+     <para> IP address of default gateway for location. This is normally a
+      router to the corporate wide area network. </para>
     </entry>
    </row>
    <row>
@@ -104,16 +85,12 @@
      </para>
     </entry>
     <entry>
-     <para>
-      must,singlevalue
-     </para>
+     <para> must,singlevalue </para>
     </entry>
     <entry>
-     <para>
-      Allow an external DHCP server to be used instead of setting up own on the
-      Branch Server (<literal>TRUE</literal> or <literal>FALSE</literal>,
-      default <literal>FALSE</literal>)
-     </para>
+     <para> Allow an external DHCP server to be used instead of setting up
+      own on the Branch Server (<literal>TRUE</literal> or
+       <literal>FALSE</literal>, default <literal>FALSE</literal>) </para>
     </entry>
    </row>
    <row>
@@ -123,16 +100,12 @@
      </para>
     </entry>
     <entry>
-     <para>
-      must,singlevalue
-     </para>
+     <para> must,singlevalue </para>
     </entry>
     <entry>
-     <para>
-      The fixed IP address range of the DHCP server reserved for the Point of
-      Service terminals. Comma-separated value pair, e.g. 192.168.1.55,
-      192.168.1.88.
-     </para>
+     <para> The fixed IP address range of the DHCP server reserved for the
+      Point of Service terminals. Comma-separated value pair, e.g.
+      192.168.1.55, 192.168.1.88. </para>
     </entry>
    </row>
    <row>
@@ -142,16 +115,12 @@
      </para>
     </entry>
     <entry>
-     <para>
-      must,singlevalue
-     </para>
+     <para> must,singlevalue </para>
     </entry>
     <entry>
-     <para>
-      The dynamic IP address range of the DHCP server. This is needed to
-      register the Point of Service terminals. Comma-separated value pair, e.g.
-      192.168.1.10, 192.168.1.54.
-     </para>
+     <para> The dynamic IP address range of the DHCP server. This is needed
+      to register the Point of Service terminals. Comma-separated value
+      pair, e.g. 192.168.1.10, 192.168.1.54. </para>
     </entry>
    </row>
    <row>
@@ -161,17 +130,13 @@
      </para>
     </entry>
     <entry>
-     <para>
-      must,singlevalue
-     </para>
+     <para> must,singlevalue </para>
     </entry>
     <entry>
-     <para>
-      Enable or disable registration of new terminals on the Branch Server when
-      <systemitem>scDhcpExtern</systemitem> is set to <literal>FALSE</literal>.
-      (<literal>TRUE</literal> or <literal>FALSE</literal>, default
-      <literal>TRUE</literal>)
-     </para>
+     <para> Enable or disable registration of new terminals on the Branch
+      Server when <systemitem>scDhcpExtern</systemitem> is set to
+       <literal>FALSE</literal>. (<literal>TRUE</literal> or
+       <literal>FALSE</literal>, default <literal>TRUE</literal>) </para>
     </entry>
    </row>
    <row>
@@ -181,15 +146,11 @@
      </para>
     </entry>
     <entry>
-     <para>
-      must,singlevalue
-     </para>
+     <para> must,singlevalue </para>
     </entry>
     <entry>
-     <para>
-      Enumaration mask for Point Of Service terminals and printers, e.g. 000 or
-      00 (default 000)
-     </para>
+     <para> Enumaration mask for Point Of Service terminals and printers,
+      e.g. 000 or 00 (default 000) </para>
     </entry>
    </row>
    <row>
@@ -199,17 +160,13 @@
      </para>
     </entry>
     <entry>
-     <para>
-      must,singlevalue
-     </para>
+     <para> must,singlevalue </para>
     </entry>
     <entry>
-     <para>
-      The base name of the Point of Service terminals to create a unique name
-      for each terminal. Used in combination with the
-      <systemitem>scDhcpFixedRange</systemitem> attribute and
-      <systemitem>scEnumerationMask</systemitem> (default CR)
-     </para>
+     <para> The base name of the Point of Service terminals to create a
+      unique name for each terminal. Used in combination with the
+       <systemitem>scDhcpFixedRange</systemitem> attribute and
+       <systemitem>scEnumerationMask</systemitem> (default CR) </para>
     </entry>
    </row>
    <row>
@@ -219,14 +176,11 @@
      </para>
     </entry>
     <entry>
-     <para>
-      must
-     </para>
+     <para> must </para>
     </entry>
     <entry>
-     <para>
-      Branch access password to central LDAP database and/or SUSE Manager
-     </para>
+     <para> Branch access password to central LDAP database and/or SUSE
+      Manager </para>
     </entry>
    </row>
    <row>
@@ -236,14 +190,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may
-     </para>
+     <para> may </para>
     </entry>
     <entry>
-     <para>
-      DNS domain name
-     </para>
+     <para> DNS domain name </para>
     </entry>
    </row>
    <row>
@@ -253,15 +203,11 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,singlevalue
-     </para>
+     <para> may,singlevalue </para>
     </entry>
     <entry>
-     <para>
-      Allow roles outside of this branch. (<literal>TRUE</literal> or
-      <literal>FALSE</literal>, default <literal>FALSE</literal>)
-     </para>
+     <para> Allow roles outside of this branch. (<literal>TRUE</literal> or
+       <literal>FALSE</literal>, default <literal>FALSE</literal>) </para>
     </entry>
    </row>
    <row>
@@ -271,21 +217,18 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,singlevalue
-     </para>
+     <para> may,singlevalue </para>
     </entry>
     <entry>
-     <para>
-      If <literal>TRUE</literal> and
-      <systemitem>scAllowGlobalRoles</systemitem> is <literal>TRUE</literal>,
-      the role-based mode and all roles are enabled. If <literal>TRUE</literal>
-      and <systemitem>scAllowGlobalRoles</systemitem> is
-      <literal>FALSE</literal>, the role-based mode is enabled, but only roles
-      under this branch are used. If <literal>FALSE</literal>, roles are not
-      enabled. (<literal>TRUE</literal> or <literal>FALSE</literal>,
-      <literal>FALSE</literal>)
-     </para>
+     <para> If <literal>TRUE</literal> and
+       <systemitem>scAllowGlobalRoles</systemitem> is
+       <literal>TRUE</literal>, the role-based mode and all roles are
+      enabled. If <literal>TRUE</literal> and
+       <systemitem>scAllowGlobalRoles</systemitem> is
+       <literal>FALSE</literal>, the role-based mode is enabled, but only
+      roles under this branch are used. If <literal>FALSE</literal>, roles
+      are not enabled. (<literal>TRUE</literal> or
+      <literal>FALSE</literal>, <literal>FALSE</literal>) </para>
     </entry>
    </row>
    <row>
@@ -295,14 +238,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,multivalue
-     </para>
+     <para> may,multivalue </para>
     </entry>
     <entry>
-     <para>
-      DN of a scRefServer
-     </para>
+     <para> DN of a scRefServer </para>
     </entry>
    </row>
    <row>
@@ -312,14 +251,12 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,multivalue
-     </para>
+     <para> may,multivalue </para>
     </entry>
     <entry>
-     <para>
-      DNS mapping function (<literal>NONE</literal> | <literal>DIRECT</literal>
-      | <literal>TRANSFORM</literal>:<replaceable>regexp</replaceable>)
+     <para> DNS mapping function (<literal>NONE</literal> |
+       <literal>DIRECT</literal> |
+       <literal>TRANSFORM</literal>:<replaceable>regexp</replaceable>)
      </para>
     </entry>
    </row>
@@ -330,14 +267,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,multivalue
-     </para>
+     <para> may,multivalue </para>
     </entry>
     <entry>
-     <para>
-      Set of possible Point Of Service terminal IDs
-     </para>
+     <para> Set of possible Point Of Service terminal IDs </para>
     </entry>
    </row>
    <row>
@@ -347,14 +280,12 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,multivalue
-     </para>
+     <para> may,multivalue </para>
     </entry>
     <entry>
-     <para>
-      IP mapping function (<literal>NONE</literal> | <literal>DIRECT</literal>
-      | <literal>TRANSFORM</literal>:<replaceable>regexp</replaceable>)
+     <para> IP mapping function (<literal>NONE</literal> |
+       <literal>DIRECT</literal> |
+       <literal>TRANSFORM</literal>:<replaceable>regexp</replaceable>)
      </para>
     </entry>
    </row>
@@ -365,14 +296,10 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,multivalue
-     </para>
+     <para> may,multivalue </para>
     </entry>
     <entry>
-     <para>
-      DN of a scRefServer
-     </para>
+     <para> DN of a scRefServer </para>
     </entry>
    </row>
    <row>
@@ -382,14 +309,11 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,singlevalue,deprecated
-     </para>
+     <para> may,singlevalue,deprecated </para>
     </entry>
     <entry>
-     <para>
-      0 or time when DB was locked, is set by SLEPOS tools, DO NOT set manually
-     </para>
+     <para> 0 or time when DB was locked, is set by SUSE Linux Enterprise
+      Point of Service tools, DO NOT set manually </para>
     </entry>
    </row>
    <row>
@@ -399,17 +323,13 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,singlevalue,deprecated
-     </para>
+     <para> may,singlevalue,deprecated </para>
     </entry>
     <entry>
-     <para>
-      The base name of the Point of Service printers to create a unique name
-      for each printer. It is used in combination with the
-      <systemitem>scDhcpFixedRange</systemitem> attribute and
-      scEnumerationMask.
-     </para>
+     <para> The base name of the Point of Service printers to create a
+      unique name for each printer. It is used in combination with the
+       <systemitem>scDhcpFixedRange</systemitem> attribute and
+      scEnumerationMask. </para>
     </entry>
    </row>
    <row>
@@ -419,15 +339,11 @@
      </para>
     </entry>
     <entry>
-     <para>
-      may,multivalue
-     </para>
+     <para> may,multivalue </para>
     </entry>
     <entry>
-     <para>
-      Images and CashRegister DN to be automatically synchronized from the
-      Administration Server
-     </para>
+     <para> Images and CashRegister DN to be automatically synchronized
+      from the Administration Server </para>
     </entry>
    </row>
   </tbody>
