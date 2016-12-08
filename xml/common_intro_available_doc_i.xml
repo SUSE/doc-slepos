@@ -20,12 +20,12 @@
  <primary>Novell/&suse; manuals</primary></indexterm>
 
  <para>
-  We provide HTML and PDF versions of our books in different languages.
-  <phrase os="osuse;sled;sles">The following manuals for users and
-  administrators are available on this product:</phrase>
+  We provide HTML, single HTML, ePub and PDF versions of our books in different languages.
+  <!--<phrase os="osuse;sled;sles">The following manuals for users and
+  administrators are available on this product:</phrase>-->
  </para>
 
- <variablelist os="osuse;sles;sled">
+ <!--<variablelist os="osuse;sles;sled">
   <varlistentry os="osuse">
    <term><xref linkend="book.opensuse.startup"/>
    </term>
@@ -136,7 +136,7 @@
      documentation resources.
     </para>
    </listitem>
-  </varlistentry>
+  </varlistentry>-->
 <!--taroth 081119: commenting HA Guide as no longer part of SLES -->
 <!--<varlistentry os="sles">
    <term><xref linkend="book.heartbeat"/>
@@ -149,7 +149,7 @@
     </para>
    </listitem>
   </varlistentry>-->
-  <varlistentry os="sles;sled">
+  <!--<varlistentry os="sles;sled">
    <term><xref linkend="book.xen"/>
    </term>
    <listitem>
@@ -161,19 +161,19 @@
     </para>
    </listitem>
   </varlistentry>
-  <varlistentry os="sles">
+  <varlistentry os="sles">-->
 <!--taroth 081027: can't use xref here as this deliverable is not
     included in our set-->
-   <term>&storage;</term>
+   <!--<term>&storage;</term>
    <listitem>
     <para>
      Provides information about how to manage storage devices on a &sls;.
     </para>
    </listitem>
   </varlistentry>
- </variablelist>
+ </variablelist>-->
 
- <para os="osuse;sles;sled">
+ <!--<para os="osuse;sles;sled">
   In addition to the comprehensive manuals, several quick start guides are
   available:
  </para>
@@ -238,12 +238,12 @@
    </listitem>
   </varlistentry>
  </variablelist>
-
+-->
  <para>
   Find HTML versions of most product manuals in your installed system under
   <filename>/usr/share/doc/manual</filename> or in the help centers of your
   desktop. Find the latest documentation updates at
-  <link xlink:href="http://www.novell.com/documentation"/>, where you can
+  <link xlink:href="http://www.suse.com/documentation"/>, where you can
   download PDF or HTML versions of the manuals for your product.
  </para>
 
@@ -260,18 +260,18 @@
  <para os="slepos">
   For more information on the underlying operating system, refer to the
   &sls; documentation, available at
-  <link xlink:href="http://www.novell.com/documentation/sles11/"/>.
+  <link xlink:href="https://www.suse.com/documentation/sles11/index.html"/>.
  </para>
 
  <para os="slepos">
-  For information on securing your applications using AppArmor, refer to the
+  For information on securing your applications, refer to the
   &secguide;, available at
-  <link xlink:href="http://www.novell.com/documentation/sles11/"/>.
+  <link xlink:href="https://www.suse.com/documentation/sles11/index.html"/>.
  </para>
 
  <para os="slepos">
   For an introduction to setting up High Availability environments with
   &sle;, refer to the &haguide;, available at
-  <link xlink:href="http://www.novell.com/documentation/sles11/"/>.
+  <link xlink:href="https://www.suse.com/documentation/sles11/index.html"/>.
  </para>
 </sect1>

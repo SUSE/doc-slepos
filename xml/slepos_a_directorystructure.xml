@@ -23,7 +23,7 @@
       The <filename>LDAP</filename> directory contains the LDAP server
       configuration database files which should not be edited directly. For
       modification, use the <command>ldapmodify</command> with DN
-      <literal>cn=admin,cn=config</literal> and your SLEPOS administration
+      <literal>cn=admin,cn=config</literal> and your &slepos; administration
       password.
      </para>
     </listitem>
@@ -50,8 +50,8 @@
       and &branchserv;.
      </para>
      <para>
-      During installation of the &admserv;, SLEPOS may automatically create
-      and install custom SLEPOS CA and generate self-signed certificates to
+      During installation of the &admserv;, &slepos; may automatically create
+      and install custom CA and generate self-signed certificates to
       secure communication between &admserv; and &branchserv;. For more
       information on setting up LDAP SSL, see
       <xref linkend="sec.adminserv.ldapinit"/>.
@@ -239,7 +239,7 @@
     </term>
     <listitem>
      <para>
-      This is the XSL template for visualizing SLEPOS validation template in a
+      This is the XSL template for visualizing the &slepos; validation template in a
       web browser.
      </para>
     </listitem>
@@ -260,7 +260,7 @@
     </term>
     <listitem>
      <para>
-      This is the validation template for SLEPOS XML v0.1.
+      This is the validation template for &slepos; XML v0.1.
      </para>
     </listitem>
    </varlistentry>
@@ -437,7 +437,7 @@
     </term>
     <listitem>
      <para>
-      Contains the current slepos DHCP configuration for registered terminals
+      Contains the current &slepos; DHCP configuration for registered terminals
       (with fixed ip).
      </para>
     </listitem>
@@ -501,7 +501,7 @@
     <listitem>
      <para>
       This file contains a randomly generated key used for password obfuscation
-      in SLEPOS configuration files.
+      in the configuration files.
      </para>
     </listitem>
    </varlistentry>
@@ -513,11 +513,11 @@
       This file contains the template for <filename>pxelinux.cfg</filename>
       files. The <filename>pxelinux.cfg</filename> files are stored on the
       &branchserv;. They indicate which kernel and RAM disk to load for the
-      POS terminal. These files enable the &branchserv; to distribute SLEPOS
+      POS terminal. These files enable the &branchserv; to distribute &slepos;
       images.
      </para>
      <para>
-      SLEPOS automatically creates the <filename>pxelinux.cfg</filename> files
+      &slepos; automatically creates the <filename>pxelinux.cfg</filename> files
       based on the distribution container configurations in the LDAP directory.
      </para>
     </listitem>
@@ -816,7 +816,7 @@
     </term>
     <listitem>
      <para>
-      This directory contains SLEPOS image templates, which are used for
+      This directory contains &slepos; image templates, which are used for
       creating customized image configurations. They are stored in single
       subdirectories
       <filename><replaceable>template_name</replaceable>-<replaceable>version</replaceable></filename>.
@@ -870,7 +870,7 @@
      <para>
       The <filename>images.sh</filename> file contains an optional
       configuration script, executed at the beginning of the image creation
-      process. It is still supported, but not used in SLEPOS images version 4
+      process. It is still supported, but not used in &slepos; images version 4
       and later. It is now recommended to use
       <filename>usr/share/kiwi/image/SLEPOS/<replaceable>template-version</replaceable>/root/build-custom</filename>
       for this purpose.
@@ -907,7 +907,7 @@
     <listitem>
      <para>
       This directory was used as the repository containing RPM packages
-      directly accessible in &imgcreat;. It is no longer used in SLEPOS
+      directly accessible in &imgcreat;. It is no longer used in &slepos;
       images version 4 and later. The functionality can be however restored by
       creating the directory and adding the following to the
       <filename>config.xml</filename>:

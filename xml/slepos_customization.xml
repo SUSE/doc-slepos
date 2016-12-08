@@ -6,7 +6,7 @@
 ]>
 <!-- Converted by suse-upgrade version 1.1 -->
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.custom">
- <title>SLEPOS Customization</title>
+ <title>&slepos; Customization</title>
  <info/>
  <para></para>
  <sect1 xml:id="cha.ids">
@@ -547,7 +547,7 @@ posAdmin --DN &dnbranch; --modify --multival
   <note>
    <title>Hooks Used by Netboot Images</title>
    <para>
-    Certain &kiwi; hooks are used by SLEPOS netboot images therefore they
+    Certain &kiwi; hooks are used by &slepos; netboot images therefore they
     can't be used for customization. The following hooks are used by netboot:
    </para>
 <screen>
@@ -1001,7 +1001,7 @@ Enter the DN of the LDAP user for administration tasks [default: cn=admin,&dnorg
     profiles, use the &yast; &aa; tools to generate new profiles. To
     learn more about &aa;, refer to the &aa; documentation included in
     the &secguide; available at
-    <link xlink:href="http://www.novell.com/documentation/sles11/"/>.
+    <link xlink:href="http://www.suse.com/documentation/sles11/"/>.
    </para>
   </sect2>
 
@@ -1266,7 +1266,7 @@ echo "luks_sda3 /dev/sda3 /usb_key/keyfile luks" &gt;/etc/crypttab
     initialization by <command>posInitBranchserver</command>.
    </para>
    <para>
-    SLEPOS uses some standard default pxe parameters (from the
+    &slepos; uses some standard default pxe parameters (from the
     <systemitem>TFTP_DEFAULT_KERNEL_PARAMETERS</systemitem> line in the default
     configuration file), which are appended under
     <systemitem>scLocation</systemitem> during the initialization of the
@@ -1286,7 +1286,7 @@ echo "luks_sda3 /dev/sda3 /usb_key/keyfile luks" &gt;/etc/crypttab
   <title>Configure &kiwi; to Use the FTP Protocol</title>
 
   <para>
-<!--On SLEPOS 11 SP1 tftp was the only supported download protocol.
+<!--On &slepos; 11 SP1 tftp was the only supported download protocol.
   However,-->
    &kiwi; needs atftp only for loading the kernel and initrd. For
    downloading the actual image the ftp protocol can be used.

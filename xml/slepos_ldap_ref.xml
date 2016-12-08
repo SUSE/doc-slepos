@@ -10,8 +10,8 @@
 
  <para>
   This section provides an alphabetical list of all &slepos; elements
-  represented in the LDAP directory. The must attributes for each element must
-  be defined when creating the element with posAdmin. The may attributes are
+  represented in the LDAP directory. The <emphasis role="strong">must</emphasis> attributes for each element must
+  be defined when creating the element with posAdmin. The <emphasis role="strong">may</emphasis> attributes are
   optional. All elements are structural.
  </para>
 
@@ -207,7 +207,7 @@
   </para>
   <para>
    Typically, you should define an <systemitem>scCashRegister</systemitem>
-   object for each type of terminal used on the SLEPOS system. However, if a
+   object for each type of terminal used on the &slepos; system. However, if a
    &pos; terminal does not have a specific
    <systemitem>scCashRegister</systemitem> object for its specific hardware
    type, it will use the configuration defined in the default

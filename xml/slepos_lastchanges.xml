@@ -25,13 +25,13 @@
   </listitem>
   <listitem>
    <para>
-    A new chapter describes the migration procedure from SLEPOS11 SP1 to
-    SLEPOS11 SP2. See <xref linkend="migr11sp1-11sp2"/>. (2012-10-02)
+    A new chapter describes the migration procedure from &slepos; 11 SP1 to
+    &slepos; 11 SP2. See <xref linkend="migr11sp1-11sp2"/>. (2012-10-02)
    </para>
   </listitem>
   <listitem>
    <para>
-    The description of the SLEPOS XML format has been updated. See
+    The description of the &slepos; XML format has been updated. See
     <xref linkend="slepos_xml_format"/>. (2012-10-02)
    </para>
   </listitem>
@@ -51,8 +51,8 @@
   </listitem>
   <listitem>
    <para>
-    The section on initializing LDAP database has been updated. SLEPOS can now
-    coexist with existing LDAP databases. AdminServer now uses YaST CA
+    The section on initializing LDAP database has been updated. &slepos; can now
+    coexist with existing LDAP databases. &admserv; now uses YaST CA
     Management interface for issuing and managing SSL See
     <xref linkend="sec.adminserv.ldapinit"/>. (2013-05-07)
    </para>

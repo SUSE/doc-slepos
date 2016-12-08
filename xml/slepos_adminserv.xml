@@ -15,7 +15,7 @@
   forth) is stored in an LDAP directory on the &admserv;. The &admserv;
   is also the central distribution point for the images required to boot and
   configure &pos; terminals, and can run the utilities required to build
-  those images. Set up an &admserv; either with or without the image
+  those images. You can set up an &admserv; either with or without the image
   building software.
  </para>
  <note>
@@ -43,7 +43,7 @@
   <procedure>
    <step>
     <para>
-     Check if the <systemitem>SLEPOS &admserv;</systemitem> pattern is
+     Check if the <systemitem>&slepos; &admserv;</systemitem> pattern is
      installed on the machine to be configured. If it is missing, install it.
      For more information about installation, see
      <xref linkend="cha.slepos_inst"/>.
@@ -85,7 +85,7 @@
        <title>The New <option>--userPassword</option> Attribute</title>
        <para>
         The new mandatory attribute <option>--userPassword</option> has been
-        introduced in SLEPOS11. This password is needed when configuring a
+        introduced in &slepos;11. This password is needed when configuring a
         &branchserv;.
        </para>
       </important>
@@ -179,7 +179,7 @@
    <command>posInitAdminserver</command> command defines the LDAP directory
    schema and the initial records for OpenLDAP.
 <!--Since &slepos; 11 SP3,-->
-   SLEPOS LDAP directory can coexists with other OpenLDAP directories. Certain
+   The &slepos; LDAP directory can coexists with other OpenLDAP directories. Certain
    limitations however still apply. For limitations, see
    <xref linkend="ldaplimitations"/>.
   </para>
@@ -254,10 +254,10 @@
     </important>
     <para>
 <!--Since &slepos; 11 SP3 -->
-     &admserv; uses YaST CA Management interface for issuing and managing
-     SSL certificates. This provides standardized SLES interface to SSL
-     management and allows viewing and modification of SLEPOS SSL certificates
-     in YaST CA Management module.
+     The &admserv; uses the YaST CA Management interface for issuing and managing
+     SSL certificates. This provides the standardized &sls; interface to SSL
+     management and allows viewing and modification of the &slepos; SSL certificates
+     in the YaST CA Management module.
     </para>
     <note>
      <title>Changing CA Certificate</title>
@@ -343,7 +343,7 @@
    <title>Limitations of Shared OpenLDAP Service</title>
    <para>
 <!--Since &slepos; 11 SP3, -->
-    SLEPOS LDAP directory does not require custom OpenLDAP configuration and
+    The &slepos; LDAP directory does not require custom OpenLDAP configuration and
     can add itself as separate directory. However, the following limitations
     apply:
    </para>
@@ -361,7 +361,7 @@
     </listitem>
     <listitem>
      <para>
-      If the existing OpenLDAP configuration is not set to use SSL, SLEPOS can
+      If the existing OpenLDAP configuration is not set to use SSL, &slepos; can
       not work with SSL and vice versa. The
       <command>posInitAdminserver</command> script will however detect and use
       the right CA certificate when SSL is used and it will distribute the
@@ -370,8 +370,8 @@
     </listitem>
     <listitem>
      <para>
-      Existing LDAP directories can not use the same suffix as SLEPOS LDAP
-      directory. SLEPOS use
+      Existing LDAP directories can not use the same suffix as the &slepos; LDAP
+      directory. &slepos; uses
       <literal>o=&lt;organization&gt;,c=&lt;country&gt;</literal>
       by default.
      </para>
@@ -1322,7 +1322,7 @@ posAdmin --base cn=<replaceable>sda</replaceable>,cn=<replaceable>cshr4152</repl
     <para>
      When a &pos; terminal registers with a &branchserv;, or you run
      <command>pos dump-all</command>, or <command>pos dump-ws</command> or
-     force update via <systemitem>scConfigUpdate</systemitem>, the
+     you force an update via <systemitem>scConfigUpdate</systemitem>, the
      &branchserv; first uses rsync to synchronize the configuration files in
      the <filename>/srv/SLEPOS/config</filename> directory on the &admserv;
      which the same directory on the &branchserv; and then copies relevant

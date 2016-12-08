@@ -9,9 +9,9 @@
  <title>Migration from Older Versions</title>
  <info/>
  <para>
-  This section covers migration from NLPOS9 and SLEPOS10 systems to SLEPOS11.
+  This section covers the migration from &slepos; 10 systems to &slepos; 11 systems.
  </para>
- <sect1>
+ <!--<sect1>
   <title>Migration from NLPOS9 to SLEPOS11</title>
 
   <para>
@@ -253,13 +253,14 @@
     </para>
    </sect3>
   </sect2>
- </sect1>
+ </sect1>-->
+ 
  <sect1>
-  <title>Migration from SLEPOS10 to SLEPOS11</title>
+  <title>Migration from &slepos; 10 to &slepos; 11</title>
 
   <para>
-   Migrating SLEPOS10 to SLEPOS11 is done during SLES10 upgrade to SLES11. No
-   pre-migration actions are required, but backing up of the SLEPOS10 system is
+   Migrating &slepos; 10 to &slepos; 11 is done during &sls; 10 upgrade to &sls; 11. No
+   pre-migration actions are required, but backing up of the &slepos; 10 system is
    recommended.
   </para>
 
@@ -268,17 +269,17 @@
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      Installed and configured SLEPOS10 system,
+      Installed and configured &slepos; 10 system,
      </para>
     </listitem>
     <listitem>
      <para>
-      SLES11 media,
+      &sls; 11 media,
      </para>
     </listitem>
     <listitem>
      <para>
-      SLEPOS11 Add-On product.
+      &slepos; 11 Add-On product.
      </para>
     </listitem>
    </itemizedlist>
@@ -287,7 +288,7 @@
   <sect2>
    <title>Pre-Migration Backup</title>
    <para>
-    It is highly recommended to back up your SLEPOS10 configuration before
+    It is highly recommended to back up your &slepos; 10 configuration before
     upgrading. On the &admserv;, backup configuration files are stored in
     the <filename>/etc/SLEPOS</filename> directory and the LDAP database. The
     LDAP database can be backed up by saving output of
@@ -305,36 +306,36 @@
    <procedure>
     <step>
      <para>
-      Start the installation of SLES11 as an upgrade from your current SLES10
-      and SLEPOS10 system. When asked for the installation add-on, provide the
-      path to your SLEPOS11 add-on.
+      Start the installation of &sls; 11 as an upgrade from your current &sls; 10
+      and &slepos; 10 system. When asked for the installation add-on, provide the
+      path to your &slepos; 11 add-on.
      </para>
      <note>
       <title>Network Interfaces</title>
       <para>
-       During the installation of SLES11, set up your network interfaces as
-       specified in the SLEPOS10 LDAP database.
+       During the installation of &sls; 11, set up your network interfaces as
+       specified in the &slepos; 10 LDAP database.
       </para>
      </note>
     </step>
     <step>
      <para>
-      During the installation of the SLEPOS11 add-on, the previous SLEPOS10
+      During the installation of the &slepos; 11 add-on, the previous &slepos; 10
       installation is detected automatically. You will be asked to confirm the
       detected components or to make adjustments.
      </para>
     </step>
     <step>
      <para>
-      After confirming the installation, SLEPOS11 will be installed and
-      configured according to the existing SLEPOS10 installation.
+      After confirming the installation, &slepos; 11 will be installed and
+      configured according to the existing &slepos; 10 installation.
      </para>
     </step>
     <step>
      <para>
       If the &branchserv; migration fails because of a wrong configuration
-      of DNS or the IP address or unavailibility of the &admserv;, migration
-      can be completed manually after the SLES11 installation with the command:
+      of DNS or the IP address or unavailibility of the &admserv;, the migration
+      can be completed manually after the &sls; 11 installation with the command:
      </para>
 <screen>posInitBranchserver --noninteractive --reinitialize=/etc/SLEPOS/branchserver.conf</screen>
     </step>
@@ -355,10 +356,10 @@
    <sect3>
     <title>Firewall Configuration</title>
     <para>
-     Firewall settings are migrated by the SLES11 upgrade.
+     Firewall settings are migrated by the &sls; 11 upgrade.
      <remark>emap: Earlier it was said that firewall settings are NOT migrated. Which is true?</remark>
-     In case some firewall problems occur, consult the Post-migration
-     procedures chapter under NLPOS9 migration.
+     <!--In case some firewall problems occur, consult the Post-migration
+     procedures chapter under NLPOS9 migration.-->
 <!--FIXME link-->
     </para>
    </sect3>
@@ -366,17 +367,17 @@
     <title>ScHarddisk LDAP Entry</title>
     <para>
      Many disk drives available in
-     <filename>/dev/hd<replaceable>X</replaceable></filename> in SLEPOS9
+     <filename>/dev/hd<replaceable>X</replaceable></filename> in &slepos; 10
      <remark>emap: See above, no such product.</remark>
      are available in <filename>/dev/sd<replaceable>X</replaceable></filename>
-     in SLEPOS11. This can cause problems after migration.
+     in &slepos; 11. This can cause problems after migration.
     </para>
     <para>
      For example, if there is a <systemitem>scCashRegister</systemitem> object
      with <systemitem>scHarddisk</systemitem> <filename>/dev/hda</filename> in
-     the SLEPOS10 LDAP database, migrating to SLEPOS11 with old images and an
+     the &slepos; 10 LDAP database, migrating to &slepos; 11 with old images and an
      old kernel works correctly. The old images contain an old kernel with the
-     naming scheme used in SLEPOS10. But when you assign newly-built SLEPOS11
+     naming scheme used in &slepos; 10. But when you assign newly-built &slepos; 11
      images to the <systemitem>scCashRegister</systemitem> object, you have to
      change <systemitem>scHarddisk</systemitem> accordingly.
      <remark>emap: Nothing new here. Is the earlier "Post-Migration" section needed? Redundant info can be convenient sometimes but this is extreme: identical text in the same chapter after a short time.</remark>
@@ -385,11 +386,11 @@
   </sect2>
  </sect1>
  <sect1>
-  <title>Manual Conversion of Image Configurations for SLEPOS 11 SP2</title>
+  <title>Manual Conversion of Image Configurations for &slepos; 11 SP2</title>
 
   <para>
-   Image configurations created in SLEPOS 11 or SLEPOS 11 SP1 must be converted
-   for use in SLEPOS 11 SP2. This conversion is done automatically in Image
+   Image configurations created in &slepos; 11 or &slepos; 11 SP1 must be converted
+   for use in &slepos; 11 SP2. This conversion is done automatically in Image
    Creator. If you want to use old configurations directly in &kiwi;,
    convert the configurations using <command>xsltproc</command> and the
    stylesheet provided in
@@ -409,7 +410,7 @@
 </screen>
  </sect1>
  <sect1 xml:id="migr11sp1-11sp2">
-  <title>Migration from SLEPOS11 SP1 to SLEPOS11 SP2</title>
+  <title>Migration from &slepos; 11 SP1 to &slepos; 11 SP2</title>
 
   <para>
    No pre-migration actions are required.
@@ -420,12 +421,12 @@
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      Installed and configured SLEPOS11 SP2 system with latest updates,
+      Installed and configured &slepos; 11 SP2 system with latest updates
      </para>
     </listitem>
     <listitem>
      <para>
-      available SMT service.
+      Available SMT service
      </para>
     </listitem>
    </itemizedlist>
@@ -436,14 +437,14 @@
    <procedure>
     <step>
      <para>
-      Save the content of the LDAP database on the SLEPOS11 SP1 &admserv; to
+      Save the content of the LDAP database on the &slepos; 11 SP1 &admserv; to
       an ldif file:
      </para>
 <screen>slapcat &gt;sp1.ldif</screen>
     </step>
     <step>
      <para>
-      On the SLEPOS11 SP1 &admserv;, save system and boot images excluding
+      On the &slepos; 11 SP1 &admserv;, save system and boot images excluding
       pxe and kiwi files:
      </para>
 <screen>find /srv/SLEPOS/boot /srv/SLEPOS/image  \! -type d \! -path "*pxelinux*"  \
@@ -452,7 +453,7 @@
     <step>
      <para>
       Move the <filename>sp1.ldif</filename> and
-      <filename>sp1-images.tar.gz</filename> to a freshly installed SLEPOS11
+      <filename>sp1-images.tar.gz</filename> to a freshly installed &slepos; 11
       SP2 FP2 &admserv;. Make sure the fix for bnc#775040 is installed.
      </para>
     </step>
@@ -494,7 +495,7 @@
     </step>
     <step>
      <para>
-      Reinstall &branchserv;s.
+      Reinstall the &branchserv;s.
       <remark>emap: maybe add reference to install instructions?</remark>
      </para>
     </step>
@@ -524,8 +525,9 @@
    </procedure>
   </sect2>
  </sect1>
+ 
  <sect1 xml:id="migr11sp2tosp3">
-  <title>Migration from SLEPOS11 SP2 to SLEPOS11 SP3</title>
+  <title>Migration from &slepos; 11 SP2 to &slepos; 11 SP3</title>
 
   <para>
    The migration consist of three steps:
@@ -537,19 +539,19 @@
      Collect the old data from the &admserv;.
     </para>
     <para>
-     Use the SLEPOS backup tool <command>slepos_backup_data.sh</command> to
+     Use the &slepos; backup tool <command>slepos_backup_data.sh</command> to
      collect the old configuration, LDAP and images. To use this tool, make
      sure you have installed the <systemitem>POS_Migration</systemitem> package
-     from SLEPOS11 SP3 on your old system:
+     from &slepos; 11 SP3 on your old system:
     </para>
 <screen>/usr/lib/SLEPOS/migration/slepos_backup_data.sh -f <replaceable>backup_file_name.tgz</replaceable></screen>
    </step>
    <step>
     <para>
-     Migrate the data to SLEPOS11 SP3 &admserv;
+     Migrate the data to the &slepos; 11 SP3 &admserv;
     </para>
     <para>
-     Transfer the collected backup to your SLEPOS11 SP3 server (make sure the
+     Transfer the collected backup to your &slepos; 11 SP3 server (make sure the
      <systemitem>POS_Migration</systemitem> package is installed) and call
      <command>slepos_migrate.sh</command> tool:
     </para>
@@ -564,7 +566,7 @@
    </step>
    <step>
     <para>
-     Reinitialize &branchserv;s
+     Reinitialize the &branchserv;s
     </para>
     <para>
      &branchserv;s are not migrated, they are always initialized as new.
@@ -574,9 +576,10 @@
    </step>
   </procedure>
 
-  <para>
-   Note, that it is possible to use SLEPOS11 SP2 images with SLEPOS11 SP3
+  <note> 
+   <title> &slepos; 11 SP2 Images</title>
+   It is possible to use &slepos; 11 SP2 images with &slepos; 11 SP3
    servers.
-  </para>
+  </note>
  </sect1>
 </chapter>

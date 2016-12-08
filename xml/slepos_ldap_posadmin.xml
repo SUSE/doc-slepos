@@ -188,11 +188,11 @@
      <para>
       Before you boot the &pos; terminals, you must create the
       <systemitem>scPosImage</systemitem> objects in the LDAP database. The
-      images must be activated before you boot the &pos; terminals.
-      Terminals require an activated <literal>scPosImage</literal> object
+      images must be activated before you boot the &pos; terminals. 
+      The terminals require an activated <literal>scPosImage</literal> object
       before they can download the corresponding physical image from the
       &branchserv;. Activate either by setting the
-      <systemitem>scPosImageVersion</systemitem> attribute of the relevant the
+      <systemitem>scPosImageVersion</systemitem> attribute of the relevant
       <systemitem>scPosImage</systemitem> object to <literal>active</literal>
       or by creating a non-disabled <systemitem>scImageVersion</systemitem>
       object. For more information on activating images, see
@@ -683,7 +683,7 @@ posAdmin --DN &dnbranch; --modify --multival
    <command>--scLocation</command> or <command> --scBranchServer</command>,
    and, if desired, an attribute value pair(s). Also, there are the
    <command>--list</command> and <command>--full</command> switches that
-   control how and what data are displayed, with treeview and queried
+   control how and what data is displayed, with treeview and queried
    attributes only as default.
   </para>
   <para>
@@ -917,9 +917,9 @@ posAdmin --query --scCashRegister --scRaidScheme '.*'  --list | grep DN: | cut -
  <sect2 xml:id="posadmin_xml">
   <title>posAdmin XML Interface</title>
   <para>
-   Adding SLEPOS LDAP objects via <command>posAdmin</command> can be a time
+   Adding &slepos; LDAP objects via <command>posAdmin</command> can be a time
    consuming and confusing process prone to errors. To address this
-   inconvenience, SLEPOS is introducing a new XML interface for
+   inconvenience, &slepos; is introducing a new XML interface for
    <command>posAdmin</command>. With the XML interface, it is possible to
    export LDAP data to an XML file and import data from an XML file into the
    LDAP database.
@@ -963,7 +963,7 @@ posAdmin --query --scCashRegister --scRaidScheme '.*'  --list | grep DN: | cut -
   <sect3>
    <title>Importing XML to LDAP Database</title>
    <para>
-    To import the SLEPOS XML file into the LDAP database use:
+    To import the &slepos; XML file into the LDAP database use:
    </para>
 <screen>posAdmin --import --type XML --file <replaceable>filename</replaceable></screen>
    <para>
@@ -977,7 +977,7 @@ posAdmin --query --scCashRegister --scRaidScheme '.*'  --list | grep DN: | cut -
     </listitem>
     <listitem>
      <para>
-      Validation of SLEPOS data with imported data applied (see
+      Validation of &slepos; data with imported data applied (see
       <xref linkend="ldap_validation"/>).
      </para>
     </listitem>
@@ -993,7 +993,7 @@ posAdmin --query --scCashRegister --scRaidScheme '.*'  --list | grep DN: | cut -
   <sect3 xml:id="slepos_xml_datamodif">
    <title>Using XML to Modify LDAP Data</title>
    <para>
-    SLEPOS XML supports four types of modification of LDAP data:
+    &slepos; XML supports four types of modification of LDAP data:
    </para>
 <!--some note on type definition-->
    <variablelist>
@@ -1016,7 +1016,7 @@ posAdmin --query --scCashRegister --scRaidScheme '.*'  --list | grep DN: | cut -
        Use to add new data or to replace existing LDAP data.
       </para>
       <para>
-       If data being added already exist in the LDAP database, LDAP data are
+       If data being added already exist in the LDAP database, LDAP data is
        overwritten. XML must specify all required attributes. If an element
        uses <literal>replace</literal> <option>modifyType</option>, all its
        children must also use <literal>replace</literal>
@@ -1044,7 +1044,7 @@ posAdmin --query --scCashRegister --scRaidScheme '.*'  --list | grep DN: | cut -
        Use to delete LDAP data.
       </para>
       <para>
-       If data do not exist in the LDAP database, the operation is skipped. If
+       If data does not exist in the LDAP database, the operation is skipped. If
        an element uses <literal>delete</literal> <option>modifyType</option>,
        all its children must use <literal>delete</literal>
        <option>modifyType</option>.
@@ -1093,9 +1093,9 @@ posAdmin --query --scCashRegister --scRaidScheme '.*'  --list | grep DN: | cut -
   </sect3>
   <sect3 xml:id="slepos_xml_format">
 <!--FIXME TODO check and fix from here to the end-->
-   <title>SLEPOS XML Format</title>
+   <title>&slepos; XML Format</title>
    <para>
-    Example of <systemitem>scLocation</systemitem> object in SLEPOS XML:
+    Example of <systemitem>scLocation</systemitem> object in &slepos; XML:
    </para>
 <screen>
   &lt;?xml version="1.0" encoding="utf-8" standalone="no"?&gt;
@@ -1128,9 +1128,9 @@ posAdmin --query --scCashRegister --scRaidScheme '.*'  --list | grep DN: | cut -
   &lt;/slepos&gt;
 </screen>
    <para>
-    SLEPOS XML data are always encapsulated by the
+    &slepos; XML data is always encapsulated by the
     <systemitem>&lt;slepos&gt;&lt;/slepos&gt;</systemitem> tags
-    specifying SLEPOS and XInclude namespaces.
+    specifying &slepos; and XInclude namespaces.
    </para>
    <para>
     The <systemitem>&lt;attributes&gt;</systemitem> element must always
@@ -1145,14 +1145,14 @@ posAdmin --query --scCashRegister --scRaidScheme '.*'  --list | grep DN: | cut -
     <option>modifyType</option> defaults to <literal>insert</literal>.
    </para>
    <para>
-    You can find an example of SLEPOS XML configuration for a combined server
+    You can find an example of a &slepos; XML configuration for a combined server
     (&admserv; and &branchserv; on a single machine) in
     <filename>/usr/share/doc/packages/POS_Contrib/SLEPOS-XML/</filename>.
    </para>
    <sect4>
     <title>Specifying LDAP Distinguished Names (DNs)</title>
     <para>
-     In SLEPOS XML, each element representing a LDAP object class has a
+     In &slepos; XML, each element representing a LDAP object class has a
      mandatory attribute DN. The content of the DN attribute depends on the
      position of the element:
     </para>
@@ -1190,9 +1190,9 @@ posAdmin --query --scCashRegister --scRaidScheme '.*'  --list | grep DN: | cut -
     <title>Handling <systemitem>scConfigFileTemplate</systemitem> objects</title>
     <para>
      The <systemitem>scConfigFileTemplate</systemitem> objects in LDAP contain
-     actual data of given configuration files. SLEPOS XML files do not include
+     actual data of given configuration files. &slepos; XML files do not include
      this data directly. The respective configuration files are created during
-     the export in the same directory as the SLEPOS XML file. Their filenames
+     the export in the same directory as the &slepos; XML file. Their filenames
      are in the following format:
      <filename><replaceable>xml_file_name</replaceable>-<replaceable>entry_dn</replaceable>.conf</filename>
      and are written as <systemitem>scConfigFileData</systemitem> attribute to
@@ -1211,23 +1211,23 @@ FIXME -->
    </sect4>
   </sect3>
   <sect3 xml:id="xml_validation">
-   <title>SLEPOS XML validation</title>
+   <title>&slepos; XML validation</title>
    <para>
-    Validation of SLEPOS XML is done via the command:
+    Validation of &slepos; XML is done via the command:
    </para>
 <screen>posAdmin --validateXML --file <replaceable>filename</replaceable> [--schema &lt;filename&gt;]</screen>
    <para>
 <!--FIXME TODO unclear!!-->
-    It performs XML validation against SLEPOS XML RelaxNG schema. If the
+    It performs XML validation against the &slepos; XML RelaxNG schema. If the
     <option>--schema</option> parameter is not specified, the validation schema
-    is generated from the SLEPOS LDAP schema.
+    is generated from the &slepos; LDAP schema.
    </para>
   </sect3>
   <sect3>
    <title>Evaluation of Modifications and Limitations</title>
    <para>
     Modifications are evaluated in the order of the elements in the XML file.
-    This is important when the same data are modified multiple times in one XML
+    This is important when the same data is modified multiple times in one XML
     file. The same rules apply as for adding to LDAP. For example, it is
     allowed to insert and delete the very same data in one XML file, which
     results in no change in LDAP. Inserting two or more elements with the same
@@ -1237,16 +1237,16 @@ FIXME -->
     in children elements.
    </para>
    <para>
-    SLEPOS XML modification currently does not allow moving or renaming of
+    &slepos; XML modification currently does not allow moving or renaming of
     entries (the moddn/modrdn LDAP operation).
    </para>
   </sect3>
   <sect3>
    <title>Compatibility and Converting of Different XML Versions</title>
    <para>
-    In SLEPOS both versions 0.1 and 0.2 of SLEPOS XML are supported. Note that
-    <command>posAdmin</command> XML export produces SLEPOS XML version 0.2.
-    SLEPOS ships with XSL template for converting SLEPOS XML 0.1 to 0.2. This
+    In &slepos;, both versions 0.1 and 0.2 of &slepos; XML are supported. Note that the
+    <command>posAdmin</command> XML export produces &slepos; XML version 0.2.
+    &slepos; ships with XSL template for converting &slepos; XML 0.1 to 0.2. This
     template is stored in
     <filename>/etc/SLEPOS/template/XML/SLEPOSxml0.1to0.2.xslt</filename>.
    </para>
@@ -1260,24 +1260,24 @@ xsltproc -o <replaceable>newXMLFile</replaceable> /etc/SLEPOS/template/XML/SLEPO
  </sect2>
 
  <sect2 xml:id="posadmingui">
-  <title>SLEPOS posAdmin Graphical User Interface</title>
+  <title>&slepos; posAdmin Graphical User Interface</title>
   <para>
-   SLEPOS posAdmin-GUI is graphical tool to ease configuration of branch
+   The &slepos; posAdmin-GUI is a graphical tool to ease the configuration of branch
    servers, images and cash registers. posAdmin-GUI utilizes the &yast;
    graphical library to provide a familiar look and feel. posAdmin GUI is
-   included in the additional SLEPOS package
+   included in the additional &slepos; package
    <systemitem>POS_Server-AdminGUI</systemitem>.
   </para>
   <para>
    The <command>posAdmin-GUI</command> command can be started if the
    <systemitem>POS_Server-AdminGUI</systemitem> package and its requirements
-   are installed. The initialized SLEPOS environment is not a requirement. GUI
+   are installed. The initialized &slepos; environment is not a requirement. GUI
    is started by the <command>posAdmin-GUI</command> command (specifically
    <filename>/usr/sbin/posAdmin-GUI.pl</filename>). The
    <command>posAdmin-GUI</command> command accepts one optional parameter
    containing the filename of the XML file generated by posAdmin-GUI or the XML
    file exported from LDAP. However, posAdmin-GUI works only with one
-   BranchServer (scLocation) object, using exported XML file with more
+   BranchServer (scLocation) object, using the exported XML file with more
    scLocations results in no BranchServer (scLocation) data loaded. Only global
    images (scPosImage), cash registers (scCashRegister) and roles (scRole) are
    loaded.
@@ -1315,7 +1315,7 @@ xsltproc -o <replaceable>newXMLFile</replaceable> /etc/SLEPOS/template/XML/SLEPO
       <para>
        The <guimenu>External DHCP</guimenu> check box sets
        <systemitem>scDhcpExtern</systemitem> attribute to
-       <literal>TRUE</literal> to disable the SLEPOS managed DHCP service.
+       <literal>TRUE</literal> to disable the &slepos; managed DHCP service.
       </para>
       <para>
        To enable the role-based approach, <guimenu>Use roles</guimenu> must be
@@ -1397,16 +1397,16 @@ xsltproc -o <replaceable>newXMLFile</replaceable> /etc/SLEPOS/template/XML/SLEPO
      <term>Configuration of the &branchserv; services and network</term>
      <listitem>
       <para>
-       &branchserv; services configuration usually needs little adjusting.
+       The &branchserv; services configuration usually needs little adjusting.
        It preloads services default configurations which should suit almost all
        use cases. Note: service specific parameters cannot contain arbitrary
        settings. They refer to LDAP attributes, so only attributes present in
-       the SLEPOS LDAP schema can be entered. Usage model is similar to the
+       the &slepos; LDAP schema can be entered. The usage model is similar to the
        Roles and File templates configuration.
       </para>
       <para>
-       The &branchserv; network configuration covers configuration of the
-       network to which workstations are connected (branch internal network).
+       The &branchserv; network configuration covers the configuration of the
+       network to which the workstations are connected (branch internal network).
        There is no need to define network cards facing WAN, VPN, etc. The
        &branchserv; hostname refers to the common name (cn) attribute of the
        <systemitem>scBranchServer</systemitem> object in LDAP and means the
@@ -1438,7 +1438,7 @@ xsltproc -o <replaceable>newXMLFile</replaceable> /etc/SLEPOS/template/XML/SLEPO
       </para>
       <para>
        All values are either imported from the provided XML or filled with
-       SLEPOS defaults.
+       &slepos; defaults.
       </para>
      </listitem>
     </varlistentry>
@@ -1504,13 +1504,13 @@ xsltproc -o <replaceable>newXMLFile</replaceable> /etc/SLEPOS/template/XML/SLEPO
     If posAdmin-GUI is running on a configured &admserv;, the
     <guimenu>Update LDAP database</guimenu> button is enabled together with the
     <guimenu>Create Offline Initialization File after LDAP is updated</guimenu>
-    checkbox. Using this you can directly update the SLEPOS LDAP with the new
+    checkbox. Using this you can directly update the &slepos; LDAP with the new
     configured data and also create the package for offline/automated
-    &branchserv; configuration. If posAdmin-GUI is not running on
+    &branchserv; configuration. If posAdmin-GUI is not running on the
     &admserv; or you don't want to update LDAP immediately, you can export
-    the configured data as a SLEPOS XML file by using the <guimenu>Create XML
+    the configured data as a &slepos; XML file by using the <guimenu>Create XML
     configuration</guimenu> button. This XML file can be edited and imported to
-    SLEPOS LDAP using the <command>posAdmin --import --type XML --file
+    &slepos; LDAP using the <command>posAdmin --import --type XML --file
     &lt;filename&gt;</command> command and/or used as a base for another
     &branchserv; and provided as a start argument to posAdmin-GUI.
    </para>
@@ -1524,7 +1524,7 @@ xsltproc -o <replaceable>newXMLFile</replaceable> /etc/SLEPOS/template/XML/SLEPO
    contain automatically computed values. The posAdmin tool is aware of that
    and it updates all related parts of the database when necessary. However,
    when other tools are used, for example LDAP editors like GQ or JXplorer,
-   they are not aware of such dependencies. posAdmin provides LDAP refresh
+   they are not aware of such dependencies. posAdmin provides an LDAP refresh
    feature which recomputes and updates all dependencies for every entry in the
    LDAP tree:
   </para>
