@@ -140,7 +140,7 @@ Management
   </procedure>
  </sect1>
  <sect1 xml:id="hiavail">
-  <title>&slepos; High-Availabilty Installation Workflow</title>
+  <title>&slepos; High-Availability Installation Workflow</title>
   <para> &slepos; relies on &sle; &hasi; to facilitate an active-passive
    high availability scenario. The following workflow assumes basic
    knowledge of the &sle; &hasi; configuration. For &sle; &hasi; details
