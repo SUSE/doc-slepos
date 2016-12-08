@@ -530,7 +530,7 @@ X:r=/sbin/reboot
    <step xml:id="ad_bw1rixd">
     <para>
      Install the <systemitem>admind-client</systemitem> RPM on the
-     Administration or &branchserv;: Start &yast;, <menuchoice>
+     &admserv; or &branchserv;: Start &yast;, <menuchoice>
      <guimenu>Software</guimenu> <guimenu>Software Management</guimenu>
      </menuchoice>, and select <systemitem>admind-client</systemitem> for
      installation.
