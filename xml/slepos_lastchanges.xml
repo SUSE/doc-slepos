@@ -13,6 +13,16 @@
   documentation.
  </para>
  <itemizedlist mark="bullet" spacing="normal">
+<listitem>
+   <para>
+    Added a chapter on booting 64-bit client images. See <xref linkend="cha.slepos_boot_64_images"/>. (2016-11-15)
+   </para>
+  </listitem>
+ <listitem>
+   <para>
+    Added a chapter on creating 64-bit client images. See <xref linkend="cha.slepos_kiwi"/>. (2016-11-15)
+   </para>
+  </listitem>
   <listitem>
    <para>
     A new chapter describes the migration procedure from SLEPOS11 SP1 to

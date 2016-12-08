@@ -5,11 +5,11 @@
     %entities;
 ]>
 <!-- Converted by suse-upgrade version 1.1 -->
-<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.slepos_kiwi_sle11">
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.slepos_kiwi">
  <title>Building Images with &kiwi;</title>
 
  <para>
-  &kiwi; is a full-blown imaging suite that allows you to configure, build,
+  &kiwi; is an imaging suite that allows you to configure, build,
   and deploy your own operating system images. The &kiwi; workflow is
   divided into three distinct stages:
  </para>
@@ -26,7 +26,7 @@
      (<filename>config.xml</filename>). The resulting infrastructure is
      referred to as the <emphasis>physical extend</emphasis>. For a detailed
      description of the image configuration procedure, refer to
-     <xref linkend="sec.kiwi.createconfig_sle11"/>.
+     <xref linkend="sec.kiwi.createconfig"/>.
     </para>
    </listitem>
   </varlistentry>
@@ -40,7 +40,7 @@
      require user interaction, but can be fine-tuned by modifying the
      <filename>images.sh</filename> script that is called during the creation
      process. For a detailed description of the image creation procedure, refer
-     to <xref linkend="sec.kiwi.commands_sle11"/>.
+     to <xref linkend="sec.kiwi.commands"/>.
     </para>
    </listitem>
   </varlistentry>
@@ -68,11 +68,8 @@
   </para>
  </tip>
 
- <sect2 xml:id="sec.kiwi.config_sle11">
+ <sect2 xml:id="sec.kiwi.config">
   <title>Understanding the &kiwi; Configuration</title>
-  <remark condition="clarity"> 2007-11-15 - jjaeger: LATER - to make this really fly, we should
-   include a definition of system and boot images and the different template options available with
-   SLEPOS. Not possible this release, though. </remark>
   <para>
    &kiwi; configurations as used in &slepos; should always reside in
    <filename>/var/lib/SLEPOS/system/<replaceable>image_name</replaceable></filename>.
@@ -92,7 +89,7 @@
       to build the image, profiles, options, and the package/pattern list. The
       wireless support is also enabled here. For a more detailed example of a
       typical &slepos; <filename>config.xml</filename>, refer to
-      <xref linkend="ex.kiwi.configxml_sle11"/>.
+      <xref linkend="ex.kiwi.configxml"/>.
      </para>
     </listitem>
    </varlistentry>
@@ -119,8 +116,6 @@
       created. It removes files that are only needed while the physical extend
       exists.
      </para>
-     <remark condition="clarity"> 2007-11-13 - jjaeger: whatever these files are ... the current
-      SLEPOS script doesn't do much. </remark>
     </listitem>
    </varlistentry>
    <varlistentry>
@@ -188,18 +183,18 @@
     (Section 1.3 <emphasis>The &kiwi; Image Description</emphasis>).
    </para>
   </tip>
-  <example xml:id="ex.kiwi.configxml_sle11">
+  <example xml:id="ex.kiwi.configxml">
    <title>An Example <filename>config.xml</filename> Image Description</title>
 <screen>
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;image name="POS_Image_Graphical4" displayname="POS_Image_Graphical4" schemaversion="5.2"&gt;<co xml:id="co.kiwi.image_sle11"/>
-  &lt;description type="system"&gt;<co xml:id="co.kiwi.desc_sle11"/>
+&lt;image name="POS_Image_Graphical4" displayname="POS_Image_Graphical4" schemaversion="5.2"&gt;<co xml:id="co.kiwi.image"/>
+  &lt;description type="system"&gt;<co xml:id="co.kiwi.desc"/>
     &lt;author&gt;Admin User&lt;/author&gt;
     &lt;contact&gt;noemail@example.com&lt;/contact&gt;
     &lt;specification&gt;POS image builder software - configuraton for graphical image&lt;/specification&gt;
   &lt;/description&gt;
-  &lt;preferences&gt;<co xml:id="co.kiwi.pref_sle11"/>
-    &lt;type checkprebuilt="true" boot="netboot/suse-SLES11" fsnocheck="true" filesystem="ext3" compressed="true" image="pxe"&gt;
+  &lt;preferences&gt;<co xml:id="co.kiwi.pref"/>
+    &lt;type checkprebuilt="true" boot="netboot/suse-SLES12" fsnocheck="true" filesystem="ext3" compressed="true" image="pxe"&gt;
       &lt;pxedeploy server="192.168.100.2" blocksize="4096"&gt;
         &lt;partitions device="/dev/sda"&gt;
           &lt;partition type="82" number="1" size="5"/&gt;
@@ -207,8 +202,8 @@
         &lt;/partitions&gt;
       &lt;/pxedeploy&gt;
     &lt;/type&gt;
-    &lt;type boot="isoboot/suse-SLES11" image="iso"/&gt;
-    &lt;type boot="oemboot/suse-SLES11" filesystem="ext3" installiso="true" image="oem"/&gt;
+    &lt;type boot="isoboot/suse-SLES12" image="iso"/&gt;
+    &lt;type boot="oemboot/suse-SLES12" filesystem="ext3" installiso="true" image="oem"/&gt;
     &lt;version&gt;4.0.0&lt;/version&gt;
     &lt;packagemanager&gt;zypper&lt;/packagemanager&gt;
     &lt;rpm-check-signatures&gt;false&lt;/rpm-check-signatures&gt;
@@ -219,10 +214,10 @@
     &lt;defaultdestination&gt;/var/lib/SLEPOS/system/images&lt;/defaultdestination&gt;
     &lt;defaultroot&gt;/var/lib/SLEPOS/system/chroot&lt;/defaultroot&gt;
   &lt;/preferences&gt;
-  &lt;users group="root"&gt;<co xml:id="co.kiwi.users_sle11"/>
+  &lt;users group="root"&gt;<co xml:id="co.kiwi.users"/>
     &lt;user name="root" pwd="$1$YjyhKEyu$WWqPoJ1HtqRIyKqcD1KRa." home="/root" shell="/bin/bash"/&gt;
   &lt;/users&gt;
-  &lt;packages type="image" patternType="onlyRequired"&gt;<co xml:id="co.kiwi.packs_sle11"/>
+  &lt;packages type="image" patternType="onlyRequired"&gt;<co xml:id="co.kiwi.packs"/>
     &lt;opensusePattern name="SLEPOS_Template_Graphical"/&gt;
     &lt;package name="haveged" bootinclude="true"/&gt;
     &lt;package name="posbios" bootinclude="true"/&gt;
@@ -233,7 +228,7 @@
     ...
     &lt;archive name="bootsplash.tar" bootinclude="true"/&gt;
     &lt;archive name="gdm.tar"/&gt;
-    &lt;!--begin wireless support<co xml:id="co.kiwi.wireless_sle11"/>
+    &lt;!--begin wireless support<co xml:id="co.kiwi.wireless"/>
         &lt;package name="kernel-firmware" bootinclude="true"/&gt;
         &lt;package name="wpa_supplicant" bootinclude="true"/&gt;
         &lt;package name="wireless-tools" bootinclude="true"/&gt;
@@ -241,7 +236,7 @@
         &lt;package name="grub" bootinclude="true"/&gt;
         &lt;archive name="wlan.tar.gz" bootinclude="true"/&gt;
     end wireless support--&gt;
-    &lt;!--begin SUSE Manager support<co xml:id="co.kiwi.manager_sle11"/>
+    &lt;!--begin SUSE Manager support<co xml:id="co.kiwi.manager"/>
         &lt;package name="suse_manager_client_registration" /&gt;
     end SUSE Manager support--&gt;
   &lt;/packages&gt;
@@ -249,20 +244,20 @@
     &lt;package name="filesystem"/&gt;
     &lt;package name="glibc-locale"/&gt;
   &lt;/packages&gt;
-  &lt;repository type="rpm-md"&gt;<co xml:id="co.kiwi.repo_sle11"/>
-    &lt;source path="{SLEPOS 11 SP3 i386}"/&gt;
+  &lt;repository type="rpm-md"&gt;<co xml:id="co.kiwi.repo"/>
+    &lt;source path="{SLEPOS 12 SP2 x86_64}"/&gt;
   &lt;/repository&gt;
   &lt;repository type="rpm-md"&gt;
-    &lt;source path="{SLES 11 SP3 Updates i386}"/&gt;
+    &lt;source path="{SLES 12 SP2 Updates x86_64}"/&gt;
   &lt;/repository&gt;
   &lt;repository type="rpm-md"&gt;
-    &lt;source path="{SLEPOS 11 SP3 Updates i386}"/&gt;
+    &lt;source path="{SLEPOS 12 SP2 Updates x86_64}"/&gt;
   &lt;/repository&gt;
   &lt;repository type="rpm-md"&gt;
-    &lt;source path="{SLES 11 SP3 i386}"/&gt;
+    &lt;source path="{SLES 12 SP2 x86-64}"/&gt;
   &lt;/repository&gt;
   &lt;!--begin wireless support
-        &lt;drivers type="drivers"&gt;<co xml:id="co.kiwi.drivers_sle11"/>
+        &lt;drivers type="drivers"&gt;<co xml:id="co.kiwi.drivers"/>
             &lt;file name="drivers/net/wireless/*"/&gt;
             &lt;file name="drivers/net/wireless/*/*"/&gt;
         &lt;/drivers&gt;
@@ -270,7 +265,7 @@
 &lt;/image&gt;
 </screen>
    <calloutlist>
-    <callout arearefs="co.kiwi.image_sle11">
+    <callout arearefs="co.kiwi.image">
      <para>
       The <literal>image</literal> element carries all basic information on the
       image description file. The <literal>name</literal> attribute provides
@@ -279,7 +274,7 @@
       the current version of &kiwi;.
      </para>
     </callout>
-    <callout arearefs="co.kiwi.desc_sle11">
+    <callout arearefs="co.kiwi.desc">
      <para>
       The <literal>description</literal> element is used to provide some basic
       information on the creator of the image and a basic description of the
@@ -289,7 +284,7 @@
       description of the image's purpose.
      </para>
     </callout>
-    <callout arearefs="co.kiwi.pref_sle11">
+    <callout arearefs="co.kiwi.pref">
      <para>
       The <literal>preferences</literal> element holds information needed to
       create the logical extend. The <literal>type</literal> element determines
@@ -308,7 +303,7 @@
       option or the <option>root</option> option, respectively.
      </para>
     </callout>
-    <callout arearefs="co.kiwi.users_sle11">
+    <callout arearefs="co.kiwi.users">
      <para>
       The <literal>Users</literal> element lists the users belonging to the
       group specified with the group attribute. At least one user child element
@@ -320,7 +315,7 @@
       default. The default root password is <systemitem>linux</systemitem>.
      </para>
     </callout>
-    <callout arearefs="co.kiwi.packs_sle11">
+    <callout arearefs="co.kiwi.packs">
      <para>
       The <literal>packages</literal> element serves as a container for all the
       <literal>package</literal> elements used to designate the packages to be
@@ -333,7 +328,7 @@
       image.
      </para>
     </callout>
-    <callout arearefs="co.kiwi.wireless_sle11">
+    <callout arearefs="co.kiwi.wireless">
      <para>
       The section, marked in <filename>config.xml</filename> by
       <literal>begin/end wireless support</literal>, contains configuration
@@ -344,34 +339,42 @@
       configuration can be eventually adjusted there.
      </para>
     </callout>
-    <callout arearefs="co.kiwi.manager_sle11">
+    <callout arearefs="co.kiwi.manager">
      <para>
       The section, marked in <filename>config.xml</filename> by
       <literal>begin/end SUSE Manager support</literal>, contains the package
-      needed for SUSE Manager integration.
+      needed for SUSE Manager integration. Note that SUSE Manager Client is a separate module that is not part of SLES. To install the module, add the appropriate repository to the image configuration.
      </para>
     </callout>
-    <callout arearefs="co.kiwi.repo_sle11">
+    <callout arearefs="co.kiwi.repo">
      <para>
       The <literal>repository</literal> element references any package sources
       used in building this image. Repositories are referenced using repository
-      aliases, for example <literal>{SLES 11 SP3 i386}</literal>. These aliases
+      aliases, for example <literal>{SLES 12 SP2 x86_64}</literal>. These aliases
       are mapped to repository urls via the
       <filename>/etc/kiwi/repoalias</filename> file. You also need to specify
       the <literal>type</literal> of the repository, in this case
       <literal>rpm-md</literal>.
      </para>
     </callout>
-    <callout arearefs="co.kiwi.drivers_sle11">
+    <callout arearefs="co.kiwi.drivers">
      <para>
       This section contains drivers needed for the wireless operation.
      </para>
     </callout>
    </calloutlist>
   </example>
+
+  <note>
+    <title>&slepos; Client as Salt Minion</title>
+    <para>
+      Although the Salt minion packages are available in the &slepos; 12 repository, they are not included in the image templates by default. Thus they must be added manually to the configuration file, if needed.
+     </para>
+    </note>
+    
  </sect2>
 
- <sect2 xml:id="sec.kiwi.createconfig_sle11">
+ <sect2 xml:id="sec.kiwi.createconfig">
   <title>Preparing the Image Configuration</title>
   <para>
    To prepare a new image configuration using one of the customized &slepos;
@@ -436,7 +439,7 @@
      <step>
       <para>
        Add any optional configuration or scripts you need for your particular
-       image as described under <xref linkend="sec.kiwi.config_sle11"/>.
+       image as described under <xref linkend="sec.kiwi.config"/>.
       </para>
      </step>
     </substeps>
@@ -502,7 +505,7 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
   </procedure>
  </sect2>
 
- <sect2 xml:id="sec.kiwi.commands_sle11">
+ <sect2 xml:id="sec.kiwi.commands">
   <title>Creating the &kiwi; Image</title>
   <para>
    After the image preparation has finished successfully, proceed with creating
@@ -554,23 +557,9 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
   </para>
   <remark>taroth 090629: see fate #305870 - need to check again with
    postadal</remark>
-  <note>
-   <title>Building &sle; 10 Images</title>
-   <para>
-    For building &sle; 10 images, we recommend using a &sle; 10 build
-    machine. However, you can also build &sle; 10 images with the &kiwi;
-    version included in &sle; 11, if needed. In this case, make sure to add
-    the following option when running the image command
-   </para>
-<screen>--fs-inodesize 128</screen>
-   <para>
-    This is necessary because the file system tools in &sle; 11 use a
-    different inode size than in &sle; 10.
-   </para>
-  </note>
  </sect2>
 
- <sect2 xml:id="sec.kiwi.specimages_sle11">
+ <sect2 xml:id="sec.kiwi.specimages">
   <title>Building Customized &slepos; Images</title>
   <para>
    &slepos; supports building various different types of images suitable for
@@ -578,7 +567,7 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
    &kiwi; commands must be executed. The following sections introduce the
    different image types and their build process.
   </para>
-  <sect3 xml:id="sec.kiwi.specimages.netboot_sle11">
+  <sect3 xml:id="sec.kiwi.specimages.netboot">
    <title>Building Network Boot Images</title>
    <para>
     In environments where the available network infrastructure is suitable to
@@ -591,18 +580,18 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
      <para>
       Select the <literal>pxe</literal> image type in
       <filename>config.xml</filename> as described in
-      <xref linkend="sec.kiwi.config_sle11"/>.
+      <xref linkend="sec.kiwi.config"/>.
      </para>
     </step>
     <step>
      <para>
       Run the <option>--prepare</option> and <option>--create</option> commands
-      of &kiwi; as described in <xref linkend="sec.kiwi.commands_sle11"/>.
+      of &kiwi; as described in <xref linkend="sec.kiwi.commands"/>.
      </para>
     </step>
    </procedure>
   </sect3>
-  <sect3>
+  <sect3 xml:id="sec.kiwi.wireless">
    <title>Creating Images for Wireless Setup</title>
    <para>
     Boot images used for the wireless setup must have wireless setup enabled.
@@ -648,15 +637,15 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
     same directory and follow the same naming convention. For example:
    </para>
 <screen>
- cd /var/lib/SLEPOS/system/images/<replaceable>minimal-3.4.0</replaceable>
- kiwi --bootusb <replaceable>initrd-netboot-suse-SLES11.i686-2.1.1.splash.gz</replaceable>
+ cd /var/lib/SLEPOS/system/images/<replaceable>jeos-5.0.0</replaceable>
+ kiwi --bootusb <replaceable>initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.gz</replaceable>
 </screen>
    <para>
     The resulting image can be used for booting from an USB stick or it can be
     preloaded on the hard drive.
    </para>
   </sect3>
-  <sect3 xml:id="sec.kiwi.specimages.bootcdsys_sle11">
+  <sect3 xml:id="sec.kiwi.specimages.bootcdsys">
    <title>Building Bootable CD Images With a System Image</title>
    <para>
     In environments where no suitable network infrastructure is available to
@@ -669,13 +658,13 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
      <para>
       Select the <literal>isoboot</literal> image type in
       <filename>config.xml</filename> as described in
-      <xref linkend="sec.kiwi.config_sle11"/>.
+      <xref linkend="sec.kiwi.config"/>.
      </para>
     </step>
     <step>
      <para>
       Run the <option>--prepare</option> and <option>--create</option> commands
-      of &kiwi; as described in <xref linkend="sec.kiwi.commands_sle11"/>.
+      of &kiwi; as described in <xref linkend="sec.kiwi.commands"/>.
      </para>
     </step>
     <step>
@@ -692,9 +681,8 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
     </step>
    </procedure>
   </sect3>
-  <sect3 xml:id="sec.kiwi.specimages.bootcdwosys_sle11">
+  <sect3 xml:id="sec.kiwi.specimages.bootcdwosys">
    <title>Building Bootable CD Images Without a System Image</title>
-   <remark>mdejmek: this is exactly the same as in slepos_imagecreation; maybe reference it to avoid redundancy?</remark>
    <para>
     If the terminals are not able to boot from network over PXE but network is
     present, CDs without a system image can be used for booting the client
@@ -706,13 +694,13 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
      <para>
       Select the <literal>pxe</literal> image type in
       <filename>config.xml</filename> as described in
-      <xref linkend="sec.kiwi.config_sle11"/>.
+      <xref linkend="sec.kiwi.config"/>.
      </para>
     </step>
     <step>
      <para>
       Run the <option>--prepare</option> and <option>--create</option> commands
-      of &kiwi; as described in <xref linkend="sec.kiwi.commands_sle11"/>.
+      of &kiwi; as described in <xref linkend="sec.kiwi.commands"/>.
      </para>
     </step>
     <step>
@@ -735,7 +723,7 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
     </step>
    </procedure>
   </sect3>
-  <sect3 xml:id="sec.kiwi.specimages.usb_sle11">
+  <sect3 xml:id="sec.kiwi.specimages.usb">
    <title>Booting Images from USB Stick</title>
    <para>
     The image can be booted from an USB stick. In that case it initializes
@@ -760,13 +748,13 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
      <para>
       Create the bootusb image:
      </para>
-<screen>kiwi --bootusb initrd-netboot-suse-SLES11.i686-2.1.1.splash.gz</screen>
+<screen>kiwi --bootusb initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.gz</screen>
     </step>
     <step>
      <para>
       Add 1 GB of free space to the image:
      </para>
-<screen>dd if=/dev/zero bs=1M count=1024 &gt;&gt; initrd-netboot-suse-SLES11.i686-2.1.1.splash.raw</screen>
+<screen>dd if=/dev/zero bs=1M count=1024 &gt;&gt; initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.raw</screen>
     </step>
     <step>
      <para>
@@ -774,7 +762,7 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
       defaults to whole disk):
      </para>
 <screen>
-fdisk initrd-netboot-suse-SLES11.i686-2.1.1.splash.raw &lt;&lt;EOT
+fdisk initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.raw &lt;&lt;EOT
 d
 n
 p
@@ -788,7 +776,7 @@ EOT</screen>
      <para>
       Set up the partition device:
      </para>
-<screen>DEV=/dev/mapper/`kpartx -s -v -a initrd-netboot-suse-SLES11.i686-2.1.1.splash.raw |cut -f 3 -d ' '`</screen>
+<screen>DEV=/dev/mapper/`kpartx -s -v -a initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.raw |cut -f 3 -d ' '`</screen>
     </step>
     <step>
      <para>
@@ -830,11 +818,11 @@ resize2fs $DEV</screen>
       Unmount everything:
      </para>
 <screen>umount /mnt
-kpartx -d initrd-netboot-suse-SLES11.i686-2.1.1.splash.raw</screen>
+kpartx -d initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.raw</screen>
     </step>
     <step>
      <para>
-      The <filename>initrd-netboot-suse-SLES11.i686-2.1.1.splash.raw</filename>
+      The <filename>initrd-netboot-suse-SLES12.x86_64-2.1.1.splash.raw</filename>
       image is now ready.
      </para>
     </step>
@@ -844,7 +832,7 @@ kpartx -d initrd-netboot-suse-SLES11.i686-2.1.1.splash.raw</screen>
     manually. This is an example:
    </para>
 <screen>
-IMAGE=/dev/sda3;minimal.i686;3.4.0;192.168.124.254;8192
+IMAGE=/dev/sda3;minimal.x86_64;3.4.0;192.168.124.254;8192
 PART=3000;83;/srv/SLEPOS,1000;82;swap,3000;83;/
 DISK=/dev/disk/by-id/pci-0000:00:1f.2-scsi-0:0:0:0
 POS_KERNEL=linux
@@ -855,8 +843,8 @@ fd24053b74a07aa4
    <para>
     The partition must contain the referenced files, i.e.:
    </para>
-<screen>image/minimal.i686-3.4.0
-image/minimal.i686-3.4.0.md5
+<screen>image/minimal.x86_64-3.4.0
+image/minimal.x86_64-3.4.0.md5
 boot/linux
 boot/linux.md5
 boot/initrd.gz
@@ -871,7 +859,7 @@ boot/initrd.md5</screen>
   </sect3>
  </sect2>
 
- <sect2 xml:id="sec.kiwi.deploy_sle11">
+ <sect2 xml:id="sec.kiwi.deploy">
   <title>Deploying &kiwi; Images</title>
   <para>
    The deployment process of available &kiwi; images strongly depends on the

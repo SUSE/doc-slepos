@@ -154,6 +154,7 @@
 <!ENTITY admserv       "Administration Server">
 <!ENTITY branchserv    "Branch Server">
 <!ENTITY imgserv       "Image Building Server">
+<!ENTITY imgsrv       "Image Server">
 <!ENTITY combserv      "Combo Server">
 <!ENTITY posbranchserv "POSBranch Server">
 <!ENTITY pos           "Point of Service">
