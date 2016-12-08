@@ -472,8 +472,8 @@
     <listitem>
      <para>
       NTP, SNMP, logging of syslog output from terminals and other services are
-      not configured using the SLEPOS tools, but can be configured using the
-      standard SLES tools.
+      not configured using the &slepos; tools, but can be configured using the
+      standard &sls; tools.
      </para>
     </listitem>
    </itemizedlist>
@@ -927,13 +927,13 @@
      the terminal has sufficient memory and disk space, it can run some
      applications, if required.
     </para>
-    <para>
+    <!--<para>
      In the NLPOS9, the &posbranchserv; installation required a special
      POSBranch image. There is no need for such a specialized POSBranch image
      any more. Branch servers on &pos; hardware can be installed as a
      standard &branchserv;, by installing &sls; 11 and the &slepos; 11
      add-on directly on a &pos; Machine.
-    </para>
+    </para>-->
     <note>
      <title>Access Rights</title>
      <para>
@@ -966,8 +966,8 @@
     <remark>taroth 071106: commenting
      xsrc wrapper as we won't mention migration topic/old imaging tools for now (see cihlarov's mail
      on doku-intern)</remark>
-    Install the image building tools by selecting the <systemitem>SLEPOS Image
-    Server</systemitem> and the <systemitem>SLEPOS Images</systemitem> software
+    Install the image building tools by selecting the <systemitem>&slepos; Image
+    Server</systemitem> and the <systemitem>&slepos; Images</systemitem> software
     patterns in &yast;.
    </para>
    <para>
@@ -1202,7 +1202,7 @@
         Install a high availability &branchserv; cluster of two nodes in an
         active/passive setup. For general information on how to set up a high
         availability environment, refer to the &haguide;, available from
-        <link xlink:href="http://www.novell.com/documentation/sles11/"/>.
+        <link xlink:href="http://www.suse.com/documentation/sles11/"/>.
        </para>
       </listitem>
       <listitem>
