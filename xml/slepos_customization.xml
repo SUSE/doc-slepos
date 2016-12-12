@@ -808,6 +808,11 @@ preswap.sh
      </para>
     </listitem>
     <listitem>
+      <para>
+	Make sure to enable a strong encryption method like WPA2 when a Wi-Fi connection is used for communication between the terminals and the branch servers or between the servers in the SLEPOS infrastructure.
+      </para>
+    </listitem>
+    <listitem>
      <para>
       Create one single user account via &yast;, namely the &rootuser;
       account.

@@ -655,6 +655,14 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
     The resulting image can be used for booting from an USB stick or it can be
     preloaded on the hard drive.
    </para>
+
+   <important>
+     <title>Wireless Network Encryption</title>
+     <para>
+       Make sure to enable a strong encryption method like WPA2 if the terminals are connected to the branch servers over Wi-Fi.
+      </para>
+     </important>
+
   </sect3>
   <sect3 xml:id="sec.kiwi.specimages.bootcdsys_sle11">
    <title>Building Bootable CD Images With a System Image</title>
