@@ -119,7 +119,7 @@ Management
      more information, see <xref linkend="ad_cntrlhw"/>. </para>
    </step>
    <step xml:id="bsxiogk">
-    <para> See if the Point of Service client is able to boot the second
+    <para> See if the Point of Service client can boot the second
      stage image. This is the system image configured in LDAP (scPosImage)
      and downloaded from the <filename>/srv/tftpboot/image/</filename>
      directory on the Branch Server (for example, the browser-2.0.4 image).
@@ -141,14 +141,14 @@ Management
  </sect1>
  <sect1 xml:id="hiavail">
   <title>&slepos; High-Availability Installation Workflow</title>
-  <para> &slepos; relies on &sle; &hasi; to facilitate an active-passive
+  <para> &slepos; relies on &sle; &hasi; to simplify an active-passive
    high availability scenario. The following workflow assumes basic
    knowledge of the &sle; &hasi; configuration. For &sle; &hasi; details
    see the &sle; &hasi; User Guide. Both primary and secondary nodes are
    assumed to have the &sle; &hasi; and &slepos; extensions installed. </para>
   <para> Before configuring high-availability, it is necessary to prevent
-   all &slepos; services (ldap, dhcp, etc.) from starting via traditional
-   initscripts. All services are handled by the RA (resource agent). The
+   all &slepos; services (LDAP, DHCP, etc.) from starting via traditional
+   init scripts. All services are handled by the RA (resource agent). The
    initialization of services via the traditional way will prevent the RA
    from initialization and can potentially prevent shared storage from
    mounting. </para>
@@ -164,7 +164,7 @@ Management
      the &sle; &hasi; User Guide (RA ocf:hearbeat:IPaddr2). </para>
    </step>
    <step>
-    <para> Configure shared storage (e.g. drbd) as defined in &sle; &hasi;
+    <para> Configure shared storage (for example DRBD) as defined in the &sle; &hasi;
      User Guide. The following directories should be on the shared storage
      and linked back: </para>
     <screen>
@@ -259,7 +259,7 @@ group pos virtual_ip mount_mnt openldap named dhcpd aftp pureftp posaswatch posl
      primary node configuration). </para>
    </step>
    <step>
-    <para> Join the cluster and sync configuration as defined in the &sle; &hasi; user
+    <para> Join the cluster and synchronization configuration as defined in the &sle; &hasi; user
      guide (for example `sleha-join`). </para>
    </step>
   </procedure>
@@ -268,7 +268,7 @@ group pos virtual_ip mount_mnt openldap named dhcpd aftp pureftp posaswatch posl
   <title>Booting Special Images on Terminals</title>
   <para> It is possible to boot special non-&slepos; images on a terminal, for
    example images provided by a hardware vendor to update the BIOS on the terminals. </para>
-  <para> To setup booting of these image files via PXE menu, use the
+  <para> To set up booting of these image files via PXE menu, use the
    following command: </para>
   <screen>pos sync pxe-bootmenu --set --imagespath <replaceable>path</replaceable></screen>
   <para> The optional <option>--imagespath</option> option holds the
