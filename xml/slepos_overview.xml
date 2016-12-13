@@ -86,7 +86,7 @@
   </warning>
 
   <para>
-   &slepos; is broadly scalable so that a small shop with five &pos;
+   &slepos; is broadly scalable. A a small shop with five &pos;
    terminals can be managed just as well as a large chain with a thousand
    branches. For organizations with several &branchserv;s, the link between
    the Branch and &admserv; is maintained over WAN. During execution of
@@ -101,8 +101,8 @@
    &branchserv; provides all the services necessary for the operation and
    management of the &pos; terminals and the LDAP database can be replicated
    on the &branchserv;. Consequently, the &branchserv; and &pos;
-   terminals can function independently of the &admserv; in the event of
-   server failure or downed connection.
+   terminals can function independently of the &admserv; if the
+   server fails or the connection is down.
   </para>
  </sect1>
  <sect1 xml:id="sec.sysreq">
@@ -502,7 +502,7 @@
      configuration files), the &branchserv; must have administrator level
      access to the LDAP directory. This admin account and password are created
      by the <filename>posInitAdminserver</filename> command during the initial
-     configuration of the &admserv;. Once created, this account is not
+     configuration of the &admserv;. When created, this account is not
      accessible in the LDAP tree.
     </para>
     <para>
@@ -908,7 +908,7 @@
      If your system needs to manage a large number of &pos; images, you can
      outsource the image building task to a dedicated &imgserv;. This
      reduces the processor and memory load required to generate images from the
-     &admserv; and protects the &admserv; and LDAP directory from any
+     &admserv;. It also protects the &admserv; and LDAP directory from any
      possible corruption or user errors that might occur while building
      &pos; images.
     </para>
@@ -977,7 +977,7 @@
     forth&mdash;can be compiled into a single image file. This file can then
     be electronically distributed to &pos; terminals over the network.
     Additionally, you can generate an ISO version of the image file that can be
-    burned to a CD or copied to a USB stick for manual distribution.
+    burned to a CD or copied to a USB flash drive for manual distribution.
    </para>
    <para>
     For detailed information on &kiwi; and &imgcreat;, refer to
@@ -1026,9 +1026,9 @@
   </para>
 
   <para>
-   The flexibility of the architecture provides broad scalability
+   The flexibility of the architecture provides broad scalability.
    <remark>emap: changed from saleabilty to scalability. I hope that's what was meant.</remark>
-   so that in large environments components can be distributed to improve
+   In large environments components can be distributed to improve
    system performance, while in smaller environments components can be
    consolidated to maximize the use of system resources.
   </para>
@@ -1208,7 +1208,7 @@
       <listitem>
        <para>
         For stores where the &branchserv; is only running the Point of
-        Service infrastructure (i.e. the &branchserv; is running no
+        Service infrastructure (for example the &branchserv; is running no
         additional applications), the &branchserv; can be installed as a
         control terminal running on Point of Service hardware.
        </para>
@@ -1279,8 +1279,8 @@
      <itemizedlist mark="bullet" spacing="normal">
       <listitem>
        <para>
-        If the &pos; terminals have access to the network, the terminals can
-        PXE boot and download their image files from the &branchserv;. This
+        If the &pos; terminals have access to the network, the terminals can boot 
+        using PXE and download their image files from the &branchserv;. This
         method is typically used for workstations that are not equipped with a
         hard disk. For more information on this process, see
         <xref linkend="ad_bungnpv"/>.
@@ -1289,7 +1289,7 @@
       <listitem>
        <para>
         If the &pos; terminals do not have access to the network, create an
-        isoboot or a oemboot image and deploy the image at the terminal. This
+        isoboot or an oemboot image and deploy the image at the terminal. This
         method can be used for workstations that either are or are not equipped
         with a hard disk, and have a CD drive or a USB port. For information on
         the isoboot process, see <xref linkend="ad_bungoto"/>
@@ -1298,7 +1298,7 @@
       <listitem>
        <para>
         If a &pos; terminal cannot boot from the network or from a CD, it
-        attempts to boot from the hard drive. For more information, see
+        attempts to boot from the hard disk. For more information, see
         <xref linkend="ad_bwlov3w"/>.
        </para>
       </listitem>
