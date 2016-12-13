@@ -10,14 +10,14 @@
  <info/>
  <para>
   The &branchserv; provides the network boot and system management
-  infrastructure for the &sleposreg; terminals as well as a generic system
+  infrastructure for the &sleposreg; terminals and a generic system
   platform for instore applications, such as database systems and back-ends for
   the &pos; applications.
  </para>
  <para>
   The &branchserv; can be installed in two modes, online or offline. The
-  online installation mode requires an internet connection to the &admserv;.
-  If no internet connection to the &admserv; is available, use the offline
+  online installation mode requires an Internet connection to the &admserv;.
+  If no Internet connection to the &admserv; is available, use the offline
   installation mode.
  </para>
  <para>
@@ -66,8 +66,8 @@
   </listitem>
   <listitem>
    <para>
-    Either internet connection to the &admserv; or the offline installation
-    package must be available. If an internet connection is available, follow
+    Either Internet connection to the &admserv; or the offline installation
+    package must be available. If an Internet connection is available, follow
     the procedure described in <xref linkend="sec.branchserv.online"/>. If the
     offline installation package is available, follow the procedure described
     in <xref linkend="sec.branchserv.offline"/>.
@@ -201,7 +201,7 @@
     </listitem>
    </orderedlist>
    <para>
-    When basically no information about the network is set,
+    When no information about the network is set,
     <command>posInitBranchServer</command> configures NICs and updates LDAP
     databases with a configuration based on &slepos; defaults:
    </para>
@@ -243,7 +243,7 @@ scNetworkcard attribute
 <!--a-->
       The <command>posInitBranchserver</command> command asks for the
       installation mode to be used. For the default online installation enter
-      <literal>1</literal> or just press <keycap function="enter"/>.
+      <literal>1</literal> or press <keycap function="enter"/>.
      </para>
     </step>
     <step>
@@ -279,7 +279,7 @@ scNetworkcard attribute
       <title>&admserv;'s rsync Port Must Be Open</title>
       <para>
        Make sure the rsync port (usually 873) is open on the &admserv;. The
-       rsync port is not open in the default SLES11 installation. You have to
+       rsync port is not open in the default SLES11 installation. You need to
        add it by entering its number in the &yast;
        <guimenu>Firewall</guimenu> module under <menuchoice> <guimenu>Allowed
        Services</guimenu> <guimenu>Advanced</guimenu> <guimenu>TCP
@@ -288,14 +288,14 @@ scNetworkcard attribute
      </important>
 <!-- bug #518858 start -->
      <important>
-      <title>&branchserv;'s tftp Port Must Be Open</title>
+      <title>&branchserv;'s TFTP Port Must Be Open</title>
       <para>
-       Make sure the tftp port (usually 69) is open on the &branchserv;.
+       Make sure the TFTP port (usually 69) is open on the &branchserv;.
        This port is not open in the default SLES11 installation. You have to
        add it by adding its number in the &yast; <guimenu>Firewall</guimenu>
        module under <menuchoice> <guimenu>Allowed Services</guimenu>
        <guimenu>Advanced</guimenu> <guimenu>TCP Ports</guimenu> </menuchoice>.
-       If ftp is used, the ftp ports must be open.
+       If FTP is used, the FTP ports must be open.
       </para>
      </important>
 <!-- bug #518858 end -->
@@ -318,7 +318,7 @@ scNetworkcard attribute
 <!--f-->
       If your choice is <literal>yes</literal>, the script initializes a local
       branch LDAP database. If your choice is <literal>no</literal>, enter the
-      hostname or IP address of an already initialized LDAP database.
+      host name or IP address of an already initialized LDAP database.
      </para>
     </step>
     <step>
@@ -427,7 +427,7 @@ scNetworkcard attribute
 <!--f-->
       If you select <literal>yes</literal>, the script initializes a local
       branch LDAP database. If you select <literal>no</literal>, enter the
-      hostname or IP address of an already-initialized LDAP database.
+      host name or IP address of an already-initialized LDAP database.
      </para>
     </step>
     <step>
@@ -632,7 +632,7 @@ scNetworkcard attribute
     <para>
      <command>possyncimages</command> downloads the base images first but later
      prefers downloading the deltas instead of full images. Full images are
-     recreated on the &branchserv; in <filename>/srv/SLEPOS</filename>.
+     re-created on the &branchserv; in <filename>/srv/SLEPOS</filename>.
     </para>
     <para>
      During this process, the TFTP server must be stopped or otherwise
@@ -726,7 +726,7 @@ scNetworkcard attribute
 
   <para>
    The <command>posASWatch</command> command checks if the Administration
-   server is available. It also checks the status of LDAP Sync replication and
+   server is available. It also checks the status of LDAP synchronization replication and
    the <literal>posleases2ldap</literal> core service. The service is started
    with the <command>rcposASWatch start</command> command and stopped with the
    <command>rcposASWatch stop</command> command. To check the service status,
@@ -741,7 +741,7 @@ scNetworkcard attribute
     service after the &branchserv; is restarted. The service is
     <emphasis>NOT</emphasis> configured to start automatically by default. If
     the service is not running and the network connection to the &admserv;
-    is down, the &branchserv; is unable to function properly.
+    is down, the &branchserv; cannot function properly.
    </para>
    <para>
     To ensure that the &branchserv; starts the <command>posASWatch</command>
@@ -773,7 +773,7 @@ scNetworkcard attribute
 
   <para>
    The image building process is the same as for terminal images. The image
-   boot defaults to "oemboot" with the "install_stick" option. The result is an
+   boot defaults to "oemboot" with the "install_stick" option. The result is a
    USB image, which offers installation to a hard disk during first boot. Other
    boot methods can be configured according to the KIWI manual.
   </para>
