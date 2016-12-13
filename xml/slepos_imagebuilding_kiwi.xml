@@ -49,7 +49,7 @@
    <listitem>
     <para>
      The final image can be deployed using various different methods.
-     &slepos; supports PXE net boot, live system images, and USB stick
+     &slepos; supports PXE net boot, live system images, and USB flash drive
      images.
     </para>
    </listitem>
@@ -652,7 +652,7 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
  kiwi --bootusb <replaceable>initrd-netboot-suse-SLES11.i686-2.1.1.splash.gz</replaceable>
 </screen>
    <para>
-    The resulting image can be used for booting from an USB stick or it can be
+    The resulting image can be used for booting from a USB flash drive or it can be
     preloaded on the hard drive.
    </para>
 
@@ -744,10 +744,10 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
    </procedure>
   </sect3>
   <sect3 xml:id="sec.kiwi.specimages.usb_sle11">
-   <title>Booting Images from USB Stick</title>
+   <title>Booting Images from USB Flash Drive</title>
    <para>
-    The image can be booted from an USB stick. In that case it initializes
-    service partition on the hdd device identified by DISK variable in config.
+    The image can be booted from a USB flash drive. In that case it initializes
+    the service partition on the hdd device identified by the DISK variable in config.
     This way, it is possible to setup a shop faster without the need of having
     network connections upfront and without the initial PXE boot cycle to fill
     the system partitions. The resulting partition table should be identical to
@@ -870,11 +870,11 @@ boot/linux.md5
 boot/initrd.gz
 boot/initrd.md5</screen>
    <para>
-    It is recommended to specify DISK device by
+    It is recommended to specify the DISK device by
     <filename>/dev/disk/by-path/</filename> because it avoids problems with
-    random ordering of sda, sdb. This is important especially for booting off
-    usb stick. <filename>/dev/disk/by-path</filename> is however hardware
-    dependent, so it can't be used for generic image.
+    random ordering of sda, sdb. This is important especially for booting from
+    a USB flash drive. <filename>/dev/disk/by-path</filename> is however hardware
+    dependent, so it cannot be used for a generic image.
    </para>
   </sect3>
  </sect2>
