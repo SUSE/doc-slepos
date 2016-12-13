@@ -163,7 +163,7 @@
     <entry>
      <para>
       The version number of the system image, followed by the flag passive or
-      active; i.e., 2.0.4; active. The version number and the flag are
+      active; that is, 2.0.4; active. The version number and the flag are
       semicolon-separated (;)
      </para>
     </entry>
