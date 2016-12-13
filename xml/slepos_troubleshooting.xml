@@ -39,17 +39,17 @@
  </sect1>
  <sect1>
   <title>Collecting &slepos; Data for Bug Reporting</title>
-  <para> For easy collection of &slepos; log files, configuration files and
-   LDAP directory content for bug reporting, the
+  <para> For easy collection of &slepos; log files, configuration files
+   and LDAP directory content for bug reporting, the
     <command>save_poslogs</command> tool is provided. For more information,
    see <xref linkend="save_poslogs"/>. </para>
  </sect1>
  <sect1 role="General" xml:id="ad_bt0n4jj">
   <title>Server Infrastructure</title>
-  <para> The setup and operating procedures for &slepos; servers in most of
-   the cases are easy. However, the distributed nature of the system might
-   provide some challenges. The following section describes frequently
-   encountered difficulties with name resolution. </para>
+  <para> The setup and operating procedures for &slepos; servers in
+   most of the cases are easy. However, the distributed nature of the
+   system might provide some challenges. The following section describes
+   frequently encountered difficulties with name resolution. </para>
   <sect2 xml:id="ad_bt0n6ic">
    <title>Name Resolution</title>
    <para> Care must be taken to ensure that the system can resolve its own
@@ -60,8 +60,8 @@
     interface is the branch network interface, the correct resolution is
     done through the <filename>/etc/hosts</filename> file, where &yast;
     adds the correct entries. Otherwise, add the corresponding line to
-     <filename>/etc/hosts</filename> manually or make sure that DNS is able
-    to resolve the hostname. </para>
+     <filename>/etc/hosts</filename> manually or make sure that DNS can
+    resolve the host name. </para>
    <sect3 xml:id="ad_bswkf42">
     <title>Symptoms</title>
     <para> If the DHCP server configuration file
@@ -71,7 +71,7 @@
 # echo $?
 1</screen>
     <para> If the <filename>dhcpd.conf</filename> file is created properly,
-      <command>poscheckip</command> returns the correct hostname, address,
+      <command>poscheckip</command> returns the correct host name, address,
      netmask and domain as follows: </para>
     <screen># poscheckip
 bs      192.168.150.1   255.255.255.0   Lab.HQ.myorg.us
@@ -89,13 +89,13 @@ bs      192.168.150.1   255.255.255.0   Lab.HQ.myorg.us
         here.</remark></para>
      </listitem>
      <listitem>
-      <para> Add the hostname to <filename>/etc/hosts</filename>. </para>
+      <para> Add the host name to <filename>/etc/hosts</filename>. </para>
      </listitem>
      <listitem>
       <para> When using DHCP to configure the external (WAN) network
        interface of the &branchserv;, set the DHCP client on the
-       &branchserv; to modify <filename>named.conf</filename> instead of
-        <filename>resolv.conf</filename> in
+       &branchserv; to modify <filename>named.conf</filename> instead
+       of <filename>resolv.conf</filename> in
         <filename>/etc/sysconfig/network/config</filename>. The variables
        are <replaceable>MODIFY_RESOLV_CONF_DYNAMICALLY</replaceable> and
         <replaceable>MODIFY_NAMED_CONF_DYNAMICALLY</replaceable>. The
@@ -106,11 +106,11 @@ bs      192.168.150.1   255.255.255.0   Lab.HQ.myorg.us
   </sect2>
   <sect2>
    <title>Problems with Terminals after &branchserv; Change</title>
-   <para> When a &branchserv; is changed or reinstalled, but some terminals
-    are still registered in the LDAP (for example, there are some
+   <para> When a &branchserv; is changed or reinstalled, but some
+    terminals are still registered in the LDAP (for example, there are some
      <literal>scWorkstation</literal> objects under a respective
      <literal>scLocation</literal>), these terminals will not boot
-    correctly. You have to recreate their
+    correctly. You need to re-create their
      <filename>config.&lt;MAC&gt;</filename> files manually. </para>
    <para> To do this, run <command>pos dump-all</command> on the
     &branchserv;. The command will create the needed files for all the
@@ -118,13 +118,13 @@ bs      192.168.150.1   255.255.255.0   Lab.HQ.myorg.us
   </sect2>
   <sect2 xml:id="trouble.passwd">
    <title>Problems with Changing the &branchserv; Password</title>
-   <para> If it is not possible to change the &branchserv; password using
-    the <command>posInitBranchServer -p</command> command, you can change
-    it manually: </para>
+   <para> If it is not possible to change the &branchserv; password
+    using the <command>posInitBranchServer -p</command> command, you can
+    change it manually: </para>
    <para> On the <emphasis>Admin server</emphasis>, change the password in
     the LDAP database. Enter the following command in the command line
-    (replace the &mybranch;, &myou;, &myo; and &myc; variables with your
-    configured values): </para>
+    (replace the &mybranch;, &myou;, &myo; and &myc;
+    variables with your configured values): </para>
    <para>
     <command>ldappasswd</command>
     <option>-x -d</option>
@@ -145,8 +145,8 @@ bs      192.168.150.1   255.255.255.0   Lab.HQ.myorg.us
    difficulties with system operation. </para>
   <sect2>
    <title>Image Building</title>
-   <para> &imgcreator; or &kiwi; cannot determine which user groups (GIDs)
-    are to be created in post-installation scripts by the selected
+   <para> &imgcreator; or &kiwi; cannot determine which user groups
+    (GIDs) are to be created in post-installation scripts by the selected
     packages. If there is a conflict between GIDs added in the user
     configuration and GIDs added by post-installation scripts, image
     building will fail. </para>
@@ -165,9 +165,9 @@ bs      192.168.150.1   255.255.255.0   Lab.HQ.myorg.us
   <sect2 xml:id="ad_bty5plk">
    <title>Image Distribution</title>
    <para> The <command>possyncimages</command> tool distributes the boot
-    and client images from the &admserv; to the &branchserv;. It uses the
-    rsync service to let the &branchserv;s only download the files that
-    need to be updated. </para>
+    and client images from the &admserv; to the &branchserv;. It
+    uses the rsync service to let the &branchserv;s only download the
+    files that need to be updated. </para>
    <para> Enough space should be configured to keep at least two
     generations of image files. This redundancy ensures that there is a
     valid image available at all times. </para>
@@ -177,9 +177,9 @@ bs      192.168.150.1   255.255.255.0   Lab.HQ.myorg.us
    <sect3 xml:id="ad_bswkrit">
     <title>Symptoms</title>
     <para> The error message <literal>rsync: error writing 4 unbuffered
-      bytes -exiting: Broken Pipe</literal> indicates that the &branchserv;
-     does not have enough disk space left to download all the images.
-     Adequate space is required for both the staging area in
+      bytes -exiting: Broken Pipe</literal> indicates that the
+     &branchserv; does not have enough disk space left to download all
+     the images. Adequate space is required for both the staging area in
       <filename>/srv/SLEPOS/</filename> and the service area in
       <filename>/srv/tftpboot</filename>. </para>
    </sect3>
@@ -208,11 +208,11 @@ bs      192.168.150.1   255.255.255.0   Lab.HQ.myorg.us
    <para> The process of registering new Point of Service terminals and
     updating the configuration information usually works without
     administrator intervention; however, it is a complex process. To
-    facilitate this process, you must ensure the &admserv; always has a
+    simplify this process, you must ensure the &admserv; always has a
     valid image configuration. In LDAP, the image versions must be entered
     and made active (see <xref linkend="sec.slepos_term.ldap.posimage"/>
     for details), and the image files must be made available with the right
-    filename (<replaceable>image_name-version</replaceable>) and with the
+    file name (<replaceable>image_name-version</replaceable>) and with the
     right permissions (world-readable). </para>
    <sect3 xml:id="ad_bswkriw">
     <title>Symptoms</title>
@@ -220,8 +220,8 @@ bs      192.168.150.1   255.255.255.0   Lab.HQ.myorg.us
       available</literal> from <command>posleases2ldap</command> or
       <command>pos dump-all</command> means that no valid image file for
      the active version exists. Make sure that the image has been
-     transferred to the &branchserv; and that the version in LDAP has an
-     active flag attached. </para>
+     transferred to the &branchserv; and that the version in LDAP has
+     an active flag attached. </para>
    </sect3>
    <sect3 xml:id="ad_bswkrix">
     <title>Tip</title>
@@ -259,10 +259,10 @@ bs      192.168.150.1   255.255.255.0   Lab.HQ.myorg.us
      </listitem>
      <listitem>
       <para> Do not delete any of the default LDAP objects that are created
-       when you install &slepos;. In particular, do not delete the global
-       default minimal <systemitem>scPosImage</systemitem> object that is
-       created in the default Distribution Container, even if you do not
-       plan to use the minimal image. </para>
+       when you install &slepos;. In particular, do not delete the
+       global default minimal <systemitem>scPosImage</systemitem> object
+       that is created in the default Distribution Container, even if you
+       do not plan to use the minimal image. </para>
      </listitem>
      <listitem>
       <para> Each type of Point of Service terminal hardware must have a
@@ -270,16 +270,17 @@ bs      192.168.150.1   255.255.255.0   Lab.HQ.myorg.us
         <systemitem>scCashRegisterName</systemitem> attribute of the
         <systemitem>scCashRegister</systemitem> object in LDAP. </para>
       <para> If two terminals have the same hardware name defined in their
-       scPosImage objects, neither of them boots successfully, but a HWtype
-       error is displayed on the Branch Server. To resolve the problem,
-       change the <systemitem>scCashRegisterName</systemitem> value for one
-       of the Point of Service terminals. </para>
+       scPosImage objects, neither of them boots successfully, but an
+       HWtype error is displayed on the Branch Server. To resolve the
+       problem, change the <systemitem>scCashRegisterName</systemitem>
+       value for one of the Point of Service terminals. </para>
      </listitem>
      <listitem>
       <para> Check the <filename>boot.kiwi</filename> log file of the
        terminal which failed to boot. This log file is uploaded to the
-       &branchserv; when the terminal fails to boot. The file is located in
-         <filename>upload/boot.kiwi.<replaceable>MAC</replaceable></filename>.
+       &branchserv; when the terminal fails to boot. The file is
+       located in
+        <filename>upload/boot.kiwi.<replaceable>MAC</replaceable></filename>.
        If kiwidebug is enabled, the log file is always uploaded before
        starting the system image. </para>
      </listitem>
@@ -305,7 +306,8 @@ bs      192.168.150.1   255.255.255.0   Lab.HQ.myorg.us
  </sect1>
  <sect1 xml:id="sec.slepos_issues">
   <title>Known Issues</title>
-  <para> This section describes known issues of the &sleposreg; 11 system. </para>
+  <para> This section describes known issues of the &sleposreg; 11
+   system. </para>
   <sect2>
    <!--Bug 594883 - Image creator doesn't verify group name validity-->
    <title>Image Creator Does Not Verify Group Name Validity</title>
