@@ -223,7 +223,7 @@ posAdmin --DN &dnbranch; --modify --multival
     <literal>HWTYPE</literal> of the terminal or default) and uses it to find
     the <systemitem>scPosImage</systemitem> and other releavant data. The
     <systemitem>scCashRegister</systemitem> under
-    <systemitem>scRole</systemitem> has to contain an
+    <systemitem>scRole</systemitem> needs to contain an
     <systemitem>scDevice</systemitem> object as in the legacy case.
    </para>
    <para>
@@ -395,7 +395,7 @@ posAdmin --DN &dnbranch; --modify --multival
 
   <para>
    All communication between the client and the server is performed via the
-   tftp protocol. The terminal is identified by its MAC address to get
+   TFTP protocol. The terminal is identified by its MAC address to get
    information about the current terminal configuration. The client downloads
    the <filename>KIWI/&confmac;</filename> file.
   </para>
@@ -548,7 +548,7 @@ posAdmin --DN &dnbranch; --modify --multival
    <title>Hooks Used by Netboot Images</title>
    <para>
     Certain &kiwi; hooks are used by &slepos; netboot images therefore they
-    can't be used for customization. The following hooks are used by netboot:
+    cannot be used for customization. The following hooks are used by netboot:
    </para>
 <screen>
 init.sh
@@ -606,7 +606,7 @@ preswap.sh
      </term>
      <listitem>
       <para>
-       Path to locally stored config file (the file may be empty).
+       Path to locally stored configuration file (the file may be empty).
       </para>
      </listitem>
     </varlistentry>
@@ -718,7 +718,7 @@ preswap.sh
      <para>
       First and foremost, every server component of the &slepos; setup must
       be secured against unauthorized access. Physically isolating the servers
-      from other machines is just one aspect of providing physical security.
+      from other machines is one aspect of providing physical security.
       For details, refer to <xref linkend="sec.slepos_sec.phys"/>.
      </para>
     </listitem>
@@ -752,7 +752,7 @@ preswap.sh
     <term>Application Security</term>
     <listitem>
      <para>
-      Once physical, network and data security are provided, tighten the
+      When physical, network and data security are provided, tighten the
       security of your setup even further by using &aa;. &aa; profiles
       are used to confine applications and keep them from performing
       unnecessary file or directory accesses and this helps to make sure that
@@ -933,7 +933,7 @@ access to *
       <callout arearefs="co.sec.acl2">
        <para>
         Allow access to any DN matching the regular expression. Using the
-        <literal>$</literal>, you limit the matches to just those strings that
+        <literal>$</literal>, you limit the matches to those strings that
         contain nothing beyond the last character. All DNs matching the regular
         expression are granted write access, and authenticated users may read
         the objects, but not write to them.
@@ -1020,19 +1020,19 @@ Enter the DN of the LDAP user for administration tasks [default: cn=admin,&dnorg
    </para>
    <para>
     There are two possible configurations, with passwords present on
-    &branchserv; only and with passwords stored also on a USB stick.
+    &branchserv; only and with passwords stored also on a USB flash drive.
    </para>
    <para>
     If passwords are stored on the &branchserv; only, the configuration is
     more secure, but network connection to the &branchserv; is needed to
     mount the encrypted partitions and the service partition cannot be
     encrypted. For the best security, do not use the service partition and
-    related features (such as WiFi). If the service partition is used, kernel,
-    initrd, WiFi credentials and other files stored on the service partition
+    related features (such as Wi-Fi). If the service partition is used, kernel,
+    initrd, Wi-Fi credentials and other files stored on the service partition
     are unencrypted.
    </para>
    <para>
-    If the passwords are also stored on a USB disk, the setup is less secure,
+    If the passwords are also stored on a USB flash drive, the setup is less secure,
     manual setup is needed, but booting without network access to the
     &branchserv; is possible. For more information, see
     <xref linkend="usbpasswd"/>
@@ -1068,7 +1068,7 @@ Enter the DN of the LDAP user for administration tasks [default: cn=admin,&dnorg
    <note>
      <title>Encrypting the System Partition</title>
      <para>
-      In order to enable encryption for the system partition, you must use an encrypted client image. It can be created in KIWI by specifying the <systemitem>luks="<replaceable>PASSWORD</replaceable>"</systemitem> attribute in the <systemitem>config.xml</systemitem> configuration file. For example:</para>
+      To enable encryption for the system partition, you must use an encrypted client image. It can be created in KIWI by specifying the <systemitem>luks="<replaceable>PASSWORD</replaceable>"</systemitem> attribute in the <systemitem>config.xml</systemitem> configuration file. For example:</para>
 <screen>&lt;type checkprebuilt="true" boot="netboot/suse-SLES12" fsnocheck="true"
 filesystem="ext3" compressed="true" image="pxe" luks="linux"&gt;
 </screen>
@@ -1124,9 +1124,9 @@ posAdmin --base cn=<replaceable>sda</replaceable>,cn=<replaceable>cshr4152</repl
     </para>
    </note>
    <sect3 xml:id="usbpasswd">
-    <title>Storing Passwords on a USB Stick</title>
+    <title>Storing Passwords on a USB Flash Drive</title>
     <para>
-     It is recommended to create an USB disk to enable local boot with
+     It is recommended to create an USB flash drive to enable local boot with
      encrypted data partition without connection to the &branchserv;. The
      disk should be kept in a secure place. To create the disk, follow these
      steps:
@@ -1134,7 +1134,7 @@ posAdmin --base cn=<replaceable>sda</replaceable>,cn=<replaceable>cshr4152</repl
     <procedure>
      <step>
       <para>
-       Insert a USB flash disk formatted with ext3 when the system is running.
+       Insert a USB flash drive formatted with Ext3 when the system is running.
       </para>
      </step>
      <step>
@@ -1219,7 +1219,7 @@ echo "luks_sda3 /dev/sda3 /usb_key/keyfile luks" &gt;/etc/crypttab
 
   <para>
    After <command>posleases2ldap</command> is run and the machine registered,
-   there should be a specific pxe file in the
+   there should be a specific PXE file in the
    <filename>/srv/tftpboot/boot/pxelinux.cfg</filename> directory. The name of
    the file is derived from the MAC address of the machine, prefixed with
    <literal>01</literal> and with digit pairs separated with
@@ -1231,7 +1231,7 @@ echo "luks_sda3 /dev/sda3 /usb_key/keyfile luks" &gt;/etc/crypttab
    The file should contain the line <literal>'append <replaceable>default
    parameters</replaceable>, vga=785, RELOAD_IMAGE=yes'</literal>, where
    <replaceable>default parameters</replaceable> are the same parameters as
-   those in the default pxe file in the same directory as well as any other
+   those in the default PXE file in the same directory as well as any other
    kernel parameters specified in other
    <systemitem>scPxeFileTemplate</systemitem> objects or created via a specific
    kernel or initrd in the <systemitem>scDistributionContainer</systemitem>.
@@ -1239,7 +1239,7 @@ echo "luks_sda3 /dev/sda3 /usb_key/keyfile luks" &gt;/etc/crypttab
 
   <para>
    The order of parameters is determined by the objects under which they are
-   specified. The linux and initrd are specified first, then parameters from
+   specified. Linux and initrd are specified first, then parameters from
    <systemitem>scPxeFileTemplate</systemitem> objects located under
    <systemitem>scPosImage</systemitem>, <systemitem>scRole</systemitem>,
    <systemitem>scCashRegister</systemitem>,
@@ -1258,7 +1258,7 @@ echo "luks_sda3 /dev/sda3 /usb_key/keyfile luks" &gt;/etc/crypttab
     <literal>cn=default</literal>). To specify kernel parameters for all
     terminals on a single branch, place the
     <systemitem>scPxeFileTemplate</systemitem> under
-    <systemitem>scLocation</systemitem> or under the tftp service object of
+    <systemitem>scLocation</systemitem> or under the TFTP service object of
     this branch.
    </para>
    <para>
@@ -1267,11 +1267,11 @@ echo "luks_sda3 /dev/sda3 /usb_key/keyfile luks" &gt;/etc/crypttab
     all terminals on the given &branchserv;. ata
     <remark>emap: Should this read Data?</remark>
     in this file are regenerated during each main cycle of
-    <command>posleases2ldap</command> and also during the &branchserv;
+    <command>posleases2ldap</command> and during the &branchserv;
     initialization by <command>posInitBranchserver</command>.
    </para>
    <para>
-    &slepos; uses some standard default pxe parameters (from the
+    &slepos; uses some standard default PXE parameters (from the
     <systemitem>TFTP_DEFAULT_KERNEL_PARAMETERS</systemitem> line in the default
     configuration file), which are appended under
     <systemitem>scLocation</systemitem> during the initialization of the
@@ -1280,8 +1280,8 @@ echo "luks_sda3 /dev/sda3 /usb_key/keyfile luks" &gt;/etc/crypttab
     <literal>posdefaults</literal>.
    </para>
    <para>
-    If a terminal also uses a specific pxe parameter object and a specific pxe
-    file (01-M-A-C..) is generated, the default parameters from the default pxe
+    If a terminal also uses a specific PXE parameter object and a specific PXE
+    file (01-M-A-C..) is generated, the default parameters from the default PXE
     are also present there. However, they have lower priority (they are written
     before the specific parameters).
    </para>
@@ -1294,11 +1294,11 @@ echo "luks_sda3 /dev/sda3 /usb_key/keyfile luks" &gt;/etc/crypttab
 <!--On &slepos; 11 SP1 tftp was the only supported download protocol.
   However,-->
    &kiwi; needs atftp only for loading the kernel and initrd. For
-   downloading the actual image the ftp protocol can be used.
+   downloading the actual image the FTP protocol can be used.
   </para>
 
   <para>
-   To enable ftp, follow these steps:
+   To enable FTP, follow these steps:
   </para>
 
   <procedure>
@@ -1325,14 +1325,14 @@ echo "luks_sda3 /dev/sda3 /usb_key/keyfile luks" &gt;/etc/crypttab
    <step>
     <para>
      Make sure that the needed ports are open on the network interface, where
-     terminals are connected. The ftp/21 port must be open. The open passive
-     port range (default 30000:30400) must match the pure-ftp configuration in
+     terminals are connected. The FTP/21 port must be open. The open passive
+     port range (default 30000:30400) must match the pure-FTP configuration in
      <filename>/etc/SLEPOS/template/pure-ftpd.conf.template</filename>.
     </para>
    </step>
    <step>
     <para>
-     Reinitialize the &branchserv; if the pure-ftp server has not yet been
+     Reinitialize the &branchserv; if the pure-FTP server has not yet been
      initialized.
     </para>
    </step>
@@ -1366,7 +1366,7 @@ echo "luks_sda3 /dev/sda3 /usb_key/keyfile luks" &gt;/etc/crypttab
     </step>
     <step xml:id="bww8g0q">
      <para>
-      In the &yast; Control Center, select <menuchoice>
+      In the &yast; control center, select <menuchoice>
       <guimenu>System</guimenu> <guimenu>Choose Language</guimenu>
       </menuchoice>.
      </para>
@@ -1394,7 +1394,7 @@ echo "luks_sda3 /dev/sda3 /usb_key/keyfile luks" &gt;/etc/crypttab
    <procedure xml:id="b4cc1yi">
     <step xml:id="bww8g0s">
      <para>
-      In the &yast; Control Center, select <guimenu> Software
+      In the &yast; control center, select <guimenu> Software
       Management</guimenu>.
      </para>
      <para>
