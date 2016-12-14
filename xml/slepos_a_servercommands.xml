@@ -187,7 +187,7 @@
          </para>
         </entry>
         <entry colname="2">
-         <para> If more NICs are present on the &branchserv;, choose the NIC with a name equal
+         <para> If more NICs exist on the &branchserv;, choose the NIC with a name equal
           to the device. </para>
         </entry>
        </row>
@@ -256,7 +256,7 @@
       <filename>/etc/named.d/ldap_generated/dns-zonefile.header</filename>. The posldap2dns script
      then configures the rest of the DNS system. Proper DNS forwarder mode is set in Netconfig and
      the DNS service is started if enabled in LDAP. </para>
-    <para> DHCP service is only configured when the appropriate service is present in LDAP. After
+    <para> DHCP service is only configured when the appropriate service is available in LDAP. After
      preparing <filename>dhcp.conf.header</filename> file, posldap2dhcp configures the rest of the
      DHCP service. Sysconfig is used to set the DHCP listening interface and chroot settings. Then
      the DHCP service is started if enabled in LDAP. </para>
@@ -272,7 +272,7 @@
      <title>Registration of Terminals After &branchserv; Change</title>
      <para> When the &branchserv; is changed (for example reinstalled) and terminals are still
       registered in LDAP, but no longer have the associated
-       <filename>/srv/tftpboot/KIWI/config.MAC</filename> files present, these terminals will be
+       <filename>/srv/tftpboot/KIWI/config.MAC</filename> files available, these terminals will be
       reregistered by <command>posleases2ldap</command> when they upload the
        <filename>hwtype.MAC.hash</filename> file. Alternatively, you can use
        <command>posldap2crconfig --dumpall</command> to re-create all <filename>config.MAC</filename>
