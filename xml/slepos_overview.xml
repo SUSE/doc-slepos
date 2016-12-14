@@ -86,7 +86,7 @@
   </warning>
 
   <para>
-   &slepos; is broadly scalable. A a small shop with five &pos;
+   &slepos; is broadly scalable. A small shop with five &pos;
    terminals can be managed just as well as a large chain with a thousand
    branches. For organizations with several &branchserv;s, the link between
    the Branch and &admserv; is maintained over WAN. During execution of
