@@ -1081,14 +1081,14 @@ xsltproc -o <replaceable>newXMLFile</replaceable> /etc/SLEPOS/template/XML/SLEPO
        service. </para>
       <para> To enable the role-based approach, <guimenu>Use
         roles</guimenu> must be checked. Checking only <guimenu>Use global
-        roles</guimenu> does not enable roles at all. If <guimenu>Use
+        roles</guimenu> does not enable roles. If <guimenu>Use
         global roles</guimenu> and <guimenu>Use roles</guimenu> are
        checked, the role-based mode and all roles (defined under global and
        location) are enabled. If <guimenu>Use roles</guimenu> is checked
        and <guimenu>Use global roles</guimenu> is not checked, the
        role-based mode is enabled, but only the roles defined under the
        location are used. If <guimenu>Use roles</guimenu> is not checked,
-       roles are not enabled at all. </para>
+       roles are not enabled. </para>
      </listitem>
     </varlistentry>
     <varlistentry>
@@ -1132,7 +1132,7 @@ xsltproc -o <replaceable>newXMLFile</replaceable> /etc/SLEPOS/template/XML/SLEPO
       <para> To remove a template, select the template in the template list
        and click <guimenu>Remove template</guimenu>. </para>
       <para> When you are done, click <guimenu>Return</guimenu> to return
-       back to the previous configuration window. </para>
+       to the previous configuration window. </para>
      </listitem>
     </varlistentry>
     <varlistentry>
@@ -1235,7 +1235,7 @@ xsltproc -o <replaceable>newXMLFile</replaceable> /etc/SLEPOS/template/XML/SLEPO
      <guimenu>Update LDAP database</guimenu> button is enabled together
     with the <guimenu>Create Offline Initialization File after LDAP is
      updated</guimenu> check box. Using this you can directly update the
-    &slepos; LDAP with the new configured data and also create the
+    &slepos; LDAP with the new configured data and create the
     package for offline/automated &branchserv; configuration. If
     posAdmin-GUI is not running on the &admserv; or you don't want to
     update LDAP immediately, you can export the configured data as a
