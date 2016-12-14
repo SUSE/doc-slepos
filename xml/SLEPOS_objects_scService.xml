@@ -75,7 +75,7 @@
     </entry>
     <entry>
      <para>
-      Name of the service. Supported services are dns, dhcp, tftp, ftp and
+      Name of the service. Supported services are DNS, DHCP, TFTP, FTP and
       posleases.
      </para>
     </entry>
@@ -93,7 +93,7 @@
     </entry>
     <entry>
      <para>
-      Filename of the init script in <literal>/etc/init.d</literal>
+      File name of the init script in <literal>/etc/init.d</literal>
      </para>
     </entry>
    </row>
