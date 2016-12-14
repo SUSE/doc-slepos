@@ -96,8 +96,8 @@
       A semicolon-separated (;) list of partition entries. Each entry consists
       of three space-separated parameters: the size in megabytes, the partition
       type ID (82 or S for swap, 83 or L for a Linux partition), and the mount
-      point. If the mountpoint equals <literal>/</literal>, the partition is
-      assumed to be the root partition, and x means no mountpoint (for example
+      point. If the mount point equals <literal>/</literal>, the partition is
+      assumed to be the root partition, and x means no mount point (for example
       for swap). For the last partition, size can be specified as x which
       results in all remaining available space to be used.
      </para>
