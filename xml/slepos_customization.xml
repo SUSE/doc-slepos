@@ -1126,7 +1126,7 @@ posAdmin --base cn=<replaceable>sda</replaceable>,cn=<replaceable>cshr4152</repl
    <sect3 xml:id="usbpasswd">
     <title>Storing Passwords on a USB Flash Drive</title>
     <para>
-     It is recommended to create an USB flash drive to enable local boot with
+     It is recommended to create a USB flash drive to enable local boot with
      encrypted data partition without connection to the &branchserv;. The
      disk should be kept in a secure place. To create the disk, follow these
      steps:
