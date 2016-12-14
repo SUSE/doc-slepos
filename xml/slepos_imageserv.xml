@@ -346,7 +346,7 @@
     directory repository manually (for details see KIWI documentation). </para>
    <note>
     <title>Configuring Repositories in &yast; Image Creator</title>
-    <para> The repository configuration can also be changed in &yast;2
+    <para> The repository configuration can also be changed in &yast;
      Image Creator. In this case, the repository type is detected
      automatically. </para>
    </note>
