@@ -424,7 +424,7 @@
   </listitem>
   <listitem>
    <para> Below this <systemitem>scServerContainer</systemitem>, we search
-    for an an object of object class
+    for an object of object class
      <systemitem>scBranchServer</systemitem> with <literal>cn=bs</literal>.
    </para>
   </listitem>
