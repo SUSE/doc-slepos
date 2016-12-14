@@ -30,7 +30,7 @@
     admind does not provide strong authentication. Its level of security is
     adequate only for systems that boot from the network, thus relying on the
     integrity of the network infrastructure (DHCP and DNS in particular).
-    Authentication is provided through verification of the hostname and user
+    Authentication is provided through verification of the host name and user
     against a list in the configuration file.
    </para>
   </important>
@@ -91,7 +91,7 @@
        </entry>
        <entry colname="2">
         <para>
-         Does not require <command>admind</command> to verify the hostname.
+         Does not require <command>admind</command> to verify the host name.
          This option is not recommended because it poses a security risk to
          your system.
         </para>
@@ -170,7 +170,7 @@ X:r=/etc/init.d/rc/POSApplication restart
        </entry>
        <entry colname="2">
         <para>
-         Defines a valid username on the connecting machine.
+         Defines a valid user name on the connecting machine.
         </para>
        </entry>
       </row>
@@ -311,7 +311,7 @@ Node: 192.168.99.13   Exit Code: 0
  <sect2 role="General" xml:id="ad_bw1g5g1">
   <title>posGetIP</title>
   <para>
-   posGetIP is a helper script that is used in conjunction with adminc. It
+   posGetIP is a helper script that is used with adminc. It
    finds all addresses for &pos; terminals that are managed by the local
    &branchserv;. This tool must be run on the &branchserv;. The output is
    a list of addresses, one line each.
@@ -457,7 +457,7 @@ vi files-user/etc/SLEPOS/admind.conf
      <step xml:id="ad_bw1qubk">
       <para>
        Set the <replaceable>branch.local</replaceable> parameter to the fully
-       qualified hostname of the Administration or &branchserv;, on which
+       qualified host name of the Administration or &branchserv;, on which
        you want to run adminc. This allows the terminals to trust the
        designated box. If you are running adminc from multiple stations, they
        must be included in this list. For example:
