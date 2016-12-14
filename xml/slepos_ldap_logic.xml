@@ -67,7 +67,7 @@
     <para> posInitAdminserver initially creates an object of the type
       <systemitem>scHardware</systemitem>, for example
       <literal>cn=standards,&dnorg;</literal>. The purpose of this object
-     is to contain the default PXE boot filename (in the
+     is to contain the default PXE boot file name (in the
       <systemitem>scDhcpOptionsRemote</systemitem>, being
       <literal>/boot/pxelinux.0</literal>, by default). </para>
    </listitem>
@@ -87,7 +87,7 @@
      directory root. Other <systemitem>scRefObjectContainer</systemitem>
      objects can be added as needed. However, the
       <systemitem>scRefObjectContainer</systemitem> container objects
-     should always have <literal>cn=global</literal> and also appear only
+     should always have <literal>cn=global</literal> and appear only
      once per directory level. This provides great flexibility. For
      example, each server can be assigned its own reference objects and
      therefore its own hardware types. On the other hand, if all servers
@@ -160,7 +160,7 @@
    <listitem>
     <para>
      <systemitem>scConfigFileSyncTemplate</systemitem> objects are used
-     when running services, such as X Windows, which require
+     when running services, such as an X Window System, which require
      hardware-dependent configuration files. The
       <systemitem>scConfigFileSyncTemplate</systemitem> object points to
      the configuration file that a &pos; terminal needs to run a given
@@ -327,12 +327,12 @@
      specific to each &branchserv;. There must be a &branchserv; object for
      every &branchserv; in the &slepos; system. </para>
     <important>
-     <title>Defining the &branchserv; Hostname</title>
+     <title>Defining the &branchserv; Host Name</title>
      <para> The location of the <systemitem>scBranchServer</systemitem>
-      object in the LDAP directory must correspond to the hostname defined
+      object in the LDAP directory must correspond to the host name defined
       for the Admin/&branchserv; during installation. For example, if the
-      hostname is <literal>bs.mybranch.myorgunit.myorg.us</literal>, the DN
-      of the <systemitem>scBranchServer</systemitem> object has to be
+      host name is <literal>bs.mybranch.myorgunit.myorg.us</literal>, the DN
+      of the <systemitem>scBranchServer</systemitem> object needs to be
        <literal>cn=bs,cn=server,cn=mybranch,ou=myorgunit,o=myorg,c=us</literal>.
       You must create the <systemitem>scBranchServer</systemitem> object
       and its supporting organizational structure before you can run
