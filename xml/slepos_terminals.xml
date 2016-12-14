@@ -46,7 +46,7 @@
    following conditions must be met to complete it successfully: </para>
   <itemizedlist mark="bullet" spacing="normal">
    <listitem>
-    <para> The <filename>&hwmac;</filename> file must be present in the
+    <para> The <filename>&hwmac;</filename> file must be in the
       <filename>/srv/tftpboot/upload</filename> directory. </para>
     <note>
      <title>Configuration Without an External DHCP Server</title>
@@ -159,7 +159,7 @@ posAdmin --base cn=<replaceable>sda</replaceable>,cn=<replaceable>cshr4152</repl
       cn=<replaceable>myGraphical</replaceable>,cn=<replaceable>default</replaceable>,cn=global,&dnorg;
     </para>
     <para> (Note the <systemitem>scCashRegisterName</systemitem> name.) </para>
-    <para> When deploying to a harddisk of a generic machine, use these
+    <para> When deploying to a hard disk of a generic machine, use these
      commands: </para>
     <screen>
 posAdmin --base cn=<replaceable>cr-test-default</replaceable>,cn=<replaceable>global</replaceable>,&dnorg;
@@ -197,7 +197,7 @@ posAdmin --base cn=<replaceable>sda</replaceable>,cn=<replaceable>cr-test-defaul
     <systemitem>scService</systemitem> object in the
     <systemitem>scBranchserver</systemitem> in the relevant
     <systemitem>scLocation</systemitem>. </para>
-  <para> If deploying to a hard drive, the following lines should be
+  <para> If deploying to a hard disk, the following lines should be
    present: </para>
   <screen>
 IMAGE=/dev/sda2;myGraphical_test;3.1.4;192.168.90.1;8192
@@ -218,7 +218,7 @@ IMAGE=/dev/ram1;myGraphical_test;3.1.4;192.168.90.1;8192
   <title>Hardware</title>
   <para> &pos; terminals are implemented in a variety of hardware. The
    primary difference of &pos; hardware is whether the terminal has an
-   internal hard drive or other persistent media (such as a flash drive),
+   internal hard disk or other persistent media (such as a flash drive),
    or whether the terminal is diskless. A system that has a hard disk can
    be configured to store the image on a disk partition instead of a RAM
    disk so it can boot from the hard disk if it cannot boot over the
@@ -275,7 +275,7 @@ IMAGE=/dev/ram1;myGraphical_test;3.1.4;192.168.90.1;8192
       appropriate &pos; terminal at boot time. </para>
     </listitem>
    </itemizedlist>
-   <para> You do not have to do anything to initiate these processes except
+   <para> You do not need to do anything to initiate these processes except
     to start the <literal>posleases2ldap</literal> service on the
     &branchserv; after installation. </para>
    <para> However, if the terminal's hardware configuration information
@@ -308,13 +308,13 @@ IMAGE=/dev/ram1;myGraphical_test;3.1.4;192.168.90.1;8192
    <!--ok-->
    <title>Using a Terminal with Multiple Network Interfaces</title>
    <para> &slepos; supports terminals having more than one network
-    interface (for example WiFi and LAN or more than one LAN). During
+    interface (for example Wi-Fi and LAN or more than one LAN). During
     registration and subsequent boots, the list of all interfaces is
     retrieved and LDAP updated (attribute
      <systemitem>macAddress</systemitem> of the <systemitem>scWorkstation
      object</systemitem>). This ensures that
      <filename>config.MAC</filename> files, MAC directories and specific
-    pxe files are correctly created (or linked) for all interfaces, so the
+    PXE files are correctly created (or linked) for all interfaces, so the
     machine can freely use any of then to boot. </para>
    <para> MAC interfaces cannot be directly interchanged between
     workstations, because the workstation is identified by them. To
@@ -341,7 +341,7 @@ IMAGE=/dev/ram1;myGraphical_test;3.1.4;192.168.90.1;8192
     terminal) contain the parameters required to configure a specific &pos;
     terminal during a network PXE or hard disk boot. Each &pos; terminal
     has its own <filename>&confmac;</filename> file on the &branchserv;. </para>
-   <para> When the &branchserv; connects to the &admserv;, it logs into the
+   <para> When the &branchserv; connects to the &admserv;, it logs in to the
     LDAP directory, accesses the configuration parameters for its
     registered &pos; terminals, and stores the information locally as ASCII
     configuration files (<filename>&confmac;</filename>) in the
@@ -390,7 +390,7 @@ DISK=/dev/sda
         (<replaceable>version</replaceable>) and to which storage device
         (<replaceable>device</replaceable>) it should be linked. </para>
       <para> Multiple image downloads are possible, but the first listed
-       image must be the main system image. If the hard drive is used, a
+       image must be the main system image. If the hard disk is used, a
        corresponding partitioning must be performed. </para>
       <variablelist>
        <varlistentry>
@@ -410,7 +410,7 @@ DISK=/dev/sda
           and cannot be used as storage device for the system image. It is
           recommended to use <filename>/dev/ram1</filename> for the RAM
           disk. </para>
-         <para> When RAID is in use, devices have to be referenced as
+         <para> When RAID is in use, devices need to be referenced as
             <filename>/dev/md<replaceable>number</replaceable></filename>,
           starting from zero (not from one as usual when RAID is not used).
           The <command>posleases2ldap</command> script automatically takes
@@ -565,7 +565,7 @@ DISK=/dev/sda
         default, data partitions are formatted only when fsck fails with an
         uncorrectable error. If
          <systemitem>POS_FORMAT_DATA_PART=yes</systemitem>, data partitions
-        are also formatted if the requested filesystem type is changed. If
+        are also formatted if the requested file system type is changed. If
          <systemitem>POS_FORMAT_DATA_PART=force</systemitem>, data
         partitions are formatted during each boot. </para>
       </note>
@@ -615,11 +615,11 @@ DISK=/dev/sda
       <para> Specifies a journaling file system. The value for this
        parameter must be set to <literal>ext3</literal> because that is the
        only journaling file system &slepos; supports. </para>
-      <para> If you have an existing ext2 image, you can change the file
+      <para> If you have an existing Ext2 image, you can change the file
        system by setting a flag in the <literal>scCashRegister</literal> or
-       the <literal>scWorkstation</literal> objects rather than recreating
-       the image. If ext3 is specified in either of the LDAP objects, the
-       &pos; terminal extends the file system to ext3 when the image is
+       the <literal>scWorkstation</literal> objects rather than re-creating
+       the image. If Ext3 is specified in either of the LDAP objects, the
+       &pos; terminal extends the file system to Ext3 when the image is
        deployed. </para>
       <para> The <literal>JOURNAL=</literal> parameter is only evaluated if
        the <literal>DISK=</literal> parameter is set. </para>
@@ -725,7 +725,7 @@ DISK=/dev/sda
      <term><literal>WORKSTATION_LDAP_IP=</literal>
      </term>
      <listitem>
-      <para> IP of the workstation in the LDAP database when the config
+      <para> IP of the workstation in the LDAP database when the configuration
        file was created. </para>
      </listitem>
     </varlistentry>
@@ -789,8 +789,8 @@ DISK=/dev/sda
      <term><literal>SUSEMANAGER=</literal>
      </term>
      <listitem>
-      <para> Contains semicolon separated hostname to the SUSE Manager and
-       the terminal's SUSE manager registration key. </para>
+      <para> Contains semicolon separated host name to the SUSE Manager and
+       the terminal's SUSE Manager registration key. </para>
      </listitem>
     </varlistentry>
    </variablelist>
@@ -896,9 +896,9 @@ POS_ID=<replaceable>id selected on the terminal</replaceable></screen>
    </para>
   </important>
   <para> Typically, when you boot a &pos; terminal, it will first try to
-   boot from CD or USB-stick. If a CD or USB device is not available, the
-   terminal attempts a network PXE boot. If the network is not available,
-   it boots from the hard drive. You can override this order with the BIOS
+   boot from CD or USB flash drive. If a CD or USB device is not available, the
+   terminal attempts a network boot using PXE. If the network is not available,
+   it boots from the hard disk. You can override this order with the BIOS
    settings. </para>
   <para> The first time you boot the &pos; terminals, the
     <literal>posleases2ldap</literal> daemon creates a workstation object
@@ -995,7 +995,7 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
 </screen>
      <para> The naming scheme of the kernel is
         <filename>initrd-netboot-suse-SLES11.<replaceable>architecture</replaceable>-<replaceable>image_version</replaceable>.kernel.<replaceable>kernel_version</replaceable>-<replaceable>flavour</replaceable></filename>.
-      The Linux kernel is used to PXE boot the &pos; terminals. </para>
+      The Linux kernel is used to boot the &pos; terminals using PXE. </para>
     </listitem>
     <listitem>
      <para> Using PXE network boot or boot manager (GRUB), the &pos;
@@ -1054,7 +1054,7 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
     <listitem>
      <para> The TFTP server address is acquired. </para>
      <para> During this step, a check is made to determine whether the
-      hostname <filename>tftp.<replaceable>DOMAIN</replaceable></filename>
+      host name <filename>tftp.<replaceable>DOMAIN</replaceable></filename>
       can be resolved. If not, the DHCP server is used as the TFTP server. </para>
      <para> Forcing another TFTP server is possible with a kernel parameter
       such as
@@ -1130,7 +1130,7 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
      <itemizedlist mark="bullet" spacing="normal">
       <listitem>
        <para> If no system update is required, no image download occurs and
-        the &pos; terminal boots from the hard drive. </para>
+        the &pos; terminal boots from the hard disk. </para>
       </listitem>
       <listitem>
        <para> If a system update is required, the &pos; terminal's hard
@@ -1211,7 +1211,7 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
     </listitem>
     <listitem>
      <para> When linuxrc or the exec call terminates, the kernel initiates
-      the init process, which starts processing the boot scripts as
+      the initialization process, which starts processing the boot scripts as
       specified in <filename>/etc/inittab</filename>. </para>
     </listitem>
    </orderedlist>
@@ -1226,7 +1226,7 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
    <para> Kexec is used by default when the kernel version does not match.
     Kexec can also be forced by setting <literal>FORCE_KEXEC</literal> to a
     non-empty string on the boot kernel command line. For more information
-    about setting kernel command-line parameters, see <xref
+    about setting kernel command line parameters, see <xref
      linkend="terminal_kernel_options"/>. </para>
    <para> When using Kexec, the system image must contain the
      <systemitem>kexec-tools</systemitem> package.
@@ -1241,7 +1241,7 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
      <para> the system image is downloaded and deployed. </para>
     </step>
     <step>
-     <para> The configuration (initrd, grub) for the kernel from the system
+     <para> The configuration (initrd, GRUB) for the kernel from the system
       image is generated. </para>
     </step>
     <step>
@@ -1288,7 +1288,7 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
       <para> Init network </para>
      </step>
      <step>
-      <para> Download config from &branchserv;
+      <para> Download configuration from &branchserv;
       </para>
      </step>
      <step>
@@ -1314,20 +1314,20 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
     </procedure>
    </sect3>
    <sect3>
-    <title>WiFi boot (using a service partition)</title>
+    <title>Wi-Fi boot (using a service partition)</title>
     <para> It is possible to use wireless networks (Wi-Fi) to connect
      wireless &slepos; terminals. The wireless support must be added when
      building images. The wireless support is included only in the netboot
-     image &ndash; PXE booting via wireless networks is however not
+     image &ndash; booting using PXE via wireless networks is however not
      supported. The first boot of the wireless can be performed using a
-     preloaded image or an image on a USB stick. It is also possible to use
+     preloaded image or an image on a USB flash drive. It is also possible to use
      a temporary LAN connection. </para>
     <note>
      <title>Multiple Network Interfaces</title>
      <para> If a terminal uses multiple network interfaces (LAN and
       wireless, for example), a new record in LDAP and new
        <filename>config.MAC</filename> is created for each interface. All
-      interfaces have the same hostname and IP address assigned by DHCP.
+      interfaces have the same host name and IP address assigned by DHCP.
      </para>
     </note>
     <note>
@@ -1343,10 +1343,10 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
       <para> GRUB boot from service partition template </para>
      </step>
      <step>
-      <para> Init network (WiFi) </para>
+      <para> Init network (Wi-Fi) </para>
      </step>
      <step>
-      <para> Download config from the &branchserv;
+      <para> Download configuration from the &branchserv;
       </para>
      </step>
      <step>
@@ -1360,16 +1360,16 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
       <para> Image boot </para>
      </step>
     </procedure>
-    <para> A normal WiFi boot proceeds as follows: </para>
+    <para> A normal Wi-Fi boot proceeds as follows: </para>
     <procedure>
      <step>
       <para> GRUB boot from service partition </para>
      </step>
      <step>
-      <para> Init network (WiFi) </para>
+      <para> Initialize network (Wi-Fi) </para>
      </step>
      <step>
-      <para> Download config from the &branchserv;
+      <para> Download configuration from the &branchserv;
       </para>
      </step>
      <step>
@@ -1394,10 +1394,10 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
       <para> Boot from PXE or service partition </para>
      </step>
      <step>
-      <para> Init network (WiFi) </para>
+      <para> Initialize network (Wi-Fi) </para>
      </step>
      <step>
-      <para> Download config from the &branchserv;
+      <para> Download configuration from the &branchserv;
       </para>
      </step>
      <step>
@@ -1432,7 +1432,7 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
       <para> Network initialization fails </para>
      </step>
      <step>
-      <para> Download config from service partition template </para>
+      <para> Download configuration from service partition template </para>
      </step>
      <step>
       <para> Disk partitioning, the service partition template is copied to
@@ -1457,7 +1457,7 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
       <para> Network initialization fails </para>
      </step>
      <step>
-      <para> Download config from service partition </para>
+      <para> Download configuration from service partition </para>
      </step>
      <step>
       <para> Check deployed image </para>
@@ -1473,10 +1473,10 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
       <para> GRUB boot from service partition </para>
      </step>
      <step>
-      <para> Init network </para>
+      <para> Initialize network </para>
      </step>
      <step>
-      <para> Download config from the &branchserv;
+      <para> Download configuration from the &branchserv;
       </para>
      </step>
      <step>
@@ -1494,7 +1494,7 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
   </sect2>
   <sect2 xml:id="ad_bungoto">
    <title>Booting from CD (isoboot)</title>
-   <para> If you are unable to electronically distribute &pos; images over
+   <para> If you cannot electronically distribute &pos; images over
     your network, you must manually distribute the images using isoboot
     images. For more information on creating an isoboot image, see <xref
      linkend="cha.slepos_imgcreator"/>. </para>
@@ -1570,7 +1570,7 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
      <literal>scWorkstation</literal> object in LDAP and deletes the
       <filename><replaceable>bootversion</replaceable>.<replaceable>MAC</replaceable></filename>
     file. The notification string is extended to also contain time and md5
-    hash of the config file used (see <xref linkend="ad_b58oz2q"/>. </para>
+    hash of the configuration file used (see <xref linkend="ad_b58oz2q"/>. </para>
    <para> The
       <filename>/srv/tftpboot/upload/bootversion.<replaceable>MAC</replaceable></filename>
     file, in addition to image name (first line) and image version (second
@@ -1626,10 +1626,10 @@ POS_ROLLBACK=<replaceable>1</replaceable>
     is deleted if the number of rollback configurations exceeds the maximum
     number defined in <systemitem>scNotifiedImage</systemitem> under the
     relevant <systemitem>scWorkstation</systemitem>. </para>
-   <para> If a different kernel or initrd is present in the rollback data,
+   <para> If a different kernel or initrd is in the rollback data,
     it is not used immediatelly after this rollback is selected, but only
     after reboot after a bootversion file is uploaded back to the server.
-    The kernel parameters in the pxe file are included in the first boot,
+    The kernel parameters in the PXE file are included in the first boot,
     but only those used later in the booting process (after the rollback
     occurs) are applied. The associated configuration files are included
     and used, even during the first boot in which the rollback selection
