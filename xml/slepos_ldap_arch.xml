@@ -43,7 +43,7 @@
     activated when &admserv; is initialized by the
      <command>posInitAdminServer</command> command. </para>
    <para> ACL is stored in the LDAP dynamic <literal>cn=config</literal>
-    database and also in the <filename>/etc/openldap/acl.ldif</filename>
+    database and in the <filename>/etc/openldap/acl.ldif</filename>
     file. The file is used to preserve ACL during the OpenLDAP server
     restart. This file should be kept secure. </para>
    <para> Each &branchserv; has only access to its respective LDAP subtree.
@@ -55,7 +55,7 @@
     to the whole organizational unit (<systemitem>ou</systemitem>).
     <!--FIXME v rozporu s predchozi stati?--> LDAP replication is directly
     affected by this change. Now only the relevant subtree is replicated
-    (replication of general readonly items is preserved (for example
+    (replication of general read-only items is preserved (for example
      <literal>cn=global,&dnorg;</literal> and
      <literal>cn=standards,&dnorg;</literal>). &branchserv; may see other
     organizational units but sees them empty. </para>
@@ -143,7 +143,7 @@ syncprov-sessionlog 100</screen>
     restart the LDAP server after a crash. </para>
    <para> The <literal>syncprov-sessionlog 100</literal> statement tells
     the LDAP server to store up to 100 write operations in the dedicated
-    log, which is then used to ease the determining LDAP control
+    log, which is then used to simplify the determining LDAP control
     attributes. It is used primarily in <literal>refreshOnly</literal>
     synchronization mode, which is used while switching &branchserv; from
     online to offline mode. </para>
@@ -181,10 +181,10 @@ access to dn.base="cn=Subschema" by * read
    <note>
     <title>Modifying the Global LDAP Section on &branchserv;</title>
     <para> Using the &slepos; administrator user name and password on the
-     &branchserv; is unsupported due to the nature of LDAP subsystem
+     &branchserv; is unsupported because of the nature of LDAP subsystem
      organization. The only way to modify the
       <systemitem>cn=global</systemitem> LDAP subtree from the &branchserv;
-     is to use remote ssh to the &admserv;. </para>
+     is to use remote SSH to the &admserv;. </para>
    </note>
   </sect3>
   <sect3>
