@@ -58,7 +58,7 @@
     </entry>
     <entry>
      <para>
-      Filename of the initrd.gz placed in the <literal>/boot</literal>
+      File name of the initrd.gz placed in the <literal>/boot</literal>
       directory
      </para>
     </entry>
@@ -76,7 +76,7 @@
     </entry>
     <entry>
      <para>
-      Filename of the kernel placed in the <literal>/boot</literal> directory
+      File name of the kernel placed in the <literal>/boot</literal> directory
      </para>
     </entry>
    </row>
@@ -130,7 +130,7 @@
     </entry>
     <entry>
      <para>
-      Version string written to config file to indicate the version of this
+      Version string written to configuration file to indicate the version of this
       kernel
      </para>
     </entry>
