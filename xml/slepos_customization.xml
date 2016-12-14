@@ -55,7 +55,7 @@ posAdmin --DN &dnbranch; --modify --multival
   </para>
 
   <para>
-   Once the ID is selected for a given terminal, it is written under the
+   When the ID is selected for a given terminal, it is written under the
    respective <systemitem>scWorkstation</systemitem> object into the
    <systemitem>scId</systemitem> attribute.
   </para>
