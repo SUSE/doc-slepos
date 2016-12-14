@@ -41,7 +41,7 @@
     </entry>
     <entry>
      <para>
-      Name of pxe template
+      Name of PXE template
      </para>
     </entry>
    </row>
@@ -58,7 +58,7 @@
     </entry>
     <entry>
      <para>
-      Kernel parameters to append, to use in a custom pxe boot file
+      Kernel parameters to append, to use in a custom PXE boot file
      </para>
     </entry>
    </row>
