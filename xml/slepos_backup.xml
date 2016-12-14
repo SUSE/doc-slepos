@@ -205,7 +205,7 @@
     <para>
      In case the LDAP database has been corrupted, remove the database files in
      <filename>/var/lib/ldap/</filename> before restoring the online backup.
-     The LDAP server is able to run with an empty database.
+     The LDAP server can run with an empty database.
     </para>
    </step>
    <step xml:id="ad_bt0m7ck">
