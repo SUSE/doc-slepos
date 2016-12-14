@@ -73,7 +73,7 @@
   <listitem>
    <para>
     A new section on creating images for booting and offline installation from
-    USB sticks was added. See <xref linkend="sec.kiwi.specimages.usb"/>.
+    USB flash drives was added. See <xref linkend="sec.kiwi.specimages.usb"/>.
     (2013-05-07)
    </para>
   </listitem>
