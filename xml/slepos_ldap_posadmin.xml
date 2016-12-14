@@ -1066,7 +1066,7 @@ xsltproc -o <replaceable>newXMLFile</replaceable> /etc/SLEPOS/template/XML/SLEPO
       <para> Organization, country, organizational units and location
        details together create the LDAP Distinguished Name (DN) for the
        &branchserv;'s <systemitem>scLocation</systemitem> object.
-       To add organizational units, click on
+       To add organizational units, click
         <guimenu>Add nested OU</guimenu>. The DN is created by concatenating
        entered data "from the bottom" &mdash; location as the first up
        to the organization and the country. </para>
@@ -1080,14 +1080,14 @@ xsltproc -o <replaceable>newXMLFile</replaceable> /etc/SLEPOS/template/XML/SLEPO
         <literal>TRUE</literal> to disable the &slepos; managed DHCP
        service. </para>
       <para> To enable the role-based approach, <guimenu>Use
-        roles</guimenu> must be checked. Checking only <guimenu>Use global
+        roles</guimenu> must be activated. Activating only <guimenu>Use global
         roles</guimenu> does not enable roles. If <guimenu>Use
         global roles</guimenu> and <guimenu>Use roles</guimenu> are
-       checked, the role-based mode and all roles (defined under global and
-       location) are enabled. If <guimenu>Use roles</guimenu> is checked
-       and <guimenu>Use global roles</guimenu> is not checked, the
+       activated, the role-based mode and all roles (defined under global and
+       location) are enabled. If <guimenu>Use roles</guimenu> is activated
+       and <guimenu>Use global roles</guimenu> is not activated, the
        role-based mode is enabled, but only the roles defined under the
-       location are used. If <guimenu>Use roles</guimenu> is not checked,
+       location are used. If <guimenu>Use roles</guimenu> is not activated,
        roles are not enabled. </para>
      </listitem>
     </varlistentry>
@@ -1095,7 +1095,7 @@ xsltproc -o <replaceable>newXMLFile</replaceable> /etc/SLEPOS/template/XML/SLEPO
      <term>Roles configuration</term>
      <listitem>
       <para> Individual roles can be configured in the roles configuration
-       window accessible after clicking on the <guimenu>Roles
+       window accessible after clicking the <guimenu>Roles
         configuration</guimenu> button. The roles configuration window
        presents option to configure the ID pool (the
         <systemitem>scIdPool</systemitem> attribute). Individual IDs are
