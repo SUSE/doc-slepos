@@ -94,7 +94,7 @@
     <entry>
      <para>
       The mount point of the partition. Use <literal>/</literal> for the root
-      partition. Use x for a partition without a mountpoint (for example a swap
+      partition. Use x for a partition without a mount point (for example a swap
       partition)
      </para>
     </entry>
