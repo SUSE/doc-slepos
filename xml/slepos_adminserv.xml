@@ -1149,7 +1149,7 @@ cn=minimal,cn=default,cn=global,o=myorg,c=us
     <replaceable>path/to/image/file</replaceable> command. This generates delta files containing
     only the necessary changes and thus saving bandwidth when images on &branchserv; are updated
     via <command>possyncimages</command>. </para>
-   <para> System image names must follow the kiwi convention:
+   <para> System image names must follow the &kiwi; convention:
       <filename><replaceable>name</replaceable>.<replaceable>arch</replaceable>-<replaceable>N.N.N</replaceable></filename>
     and
       <filename><replaceable>name</replaceable>.<replaceable>arch</replaceable>-<replaceable>N.N.N</replaceable>.md5</filename>. </para>
@@ -1174,7 +1174,7 @@ registerImages [ --kernel http://remote_kernel_file --initrd http://remote_initr
    <para>
     The <command>ssh</command> command will ask for a password. Alternativelly it can be configured to use
     password-less login. For more information see the SSH documentation. </para>
-   <para> To use <command>registerImages</command> with directories or TAR archives (produced by Kiwi or
+   <para> To use <command>registerImages</command> with directories or TAR archives (produced by &kiwi; or
     SUSE Studio), use the following syntax: </para>
    <screen>
 registerImages [ --include-boot ] local_directory

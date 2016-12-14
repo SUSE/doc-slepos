@@ -161,7 +161,7 @@
    <title>Restoring an Offline Backup</title>
    <para>
     To restore offline backups, you need to stop the LDAP server and restart it
-    afterwards.
+    afterward.
    </para>
    <step xml:id="ad_bt0m4vu">
     <para>

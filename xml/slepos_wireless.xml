@@ -100,7 +100,7 @@
 &lt;!-- end wireless support --&gt;
 </screen>
   <para> The necessary lines are already present in the provided
-   configuration of the minimal image, they are just commented out. The
+   configuration of the minimal image, but they are commented out. The
    wireless configuration is contained in the
     <filename>/etc/wpa_supplicant/wpa_supplicant.conf</filename> file
    present in the <filename>wlan.tar.gz</filename> tarball and can be

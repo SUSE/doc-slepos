@@ -1163,7 +1163,7 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
      </para>
     </listitem>
     <listitem>
-     <para> All the userland processes based on the boot image
+     <para> All the user space processes based on the boot image
        (<command>dhcpcd -k</command>) are terminated. </para>
     </listitem>
     <listitem>
@@ -1671,14 +1671,14 @@ POS_ROLLBACK=<replaceable>1</replaceable>
     </step>
     <step>
      <para> Using the cursor keys, select <guimenu>Change ID/Role</guimenu>
-      from the menu and press <keycap>Enter</keycap>. </para>
+      from the menu and press <keycap function="enter"/>. </para>
     </step>
     <step>
      <para> Using the cursor keys, select the requested ID and press
-       <keycap>Enter</keycap>. </para>
+       <keycap function="enter"/>. </para>
     </step>
     <step>
-     <para> Press <keycap>Enter</keycap>. The booting sequence continues
+     <para> Press <keycap function="enter"/>. The booting sequence continues
       with the selected ID. </para>
     </step>
    </procedure>
@@ -1695,14 +1695,14 @@ POS_ROLLBACK=<replaceable>1</replaceable>
     </step>
     <step>
      <para> Using the cursor keys, select <guimenu>Change ID/Role</guimenu>
-      from the menu and press <keycap>Enter</keycap>. </para>
+      from the menu and press <keycap function="enter"/>. </para>
     </step>
     <step>
      <para> Using the cursor keys, select the requested role and press
-       <keycap>Enter</keycap>. </para>
+       <keycap function="enter"/>. </para>
     </step>
     <step>
-     <para> Press <keycap>Enter</keycap>. The booting sequence continues
+     <para> Press <keycap function="enter"/>. The booting sequence continues
       with the selected role. </para>
     </step>
    </procedure>
@@ -1722,14 +1722,14 @@ POS_ROLLBACK=<replaceable>1</replaceable>
     </step>
     <step>
      <para> Using the cursor keys, select <guimenu>Rollback</guimenu> from
-      the menu and press <keycap>Enter</keycap>. </para>
+      the menu and press <keycap function="enter"/>. </para>
     </step>
     <step>
      <para> Using the cursor keys, select the requested image and press
-       <keycap>Enter</keycap>. </para>
+       <keycap function="enter"/>. </para>
     </step>
     <step>
-     <para> Press <keycap>Enter</keycap>. The booting sequence continues
+     <para> Press <keycap function="enter"/>. The booting sequence continues
       with the selected image. </para>
     </step>
    </procedure>

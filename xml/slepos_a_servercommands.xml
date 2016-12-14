@@ -1150,7 +1150,7 @@
       <listitem>
        <para> Installs PXE menu. The <option>--imagespath</option> option contains the path to the
         directory containing files to add into menu, they will be copied into the
-         <filename>boot/ext</filename> subdirectory. If this option is not supplied, only bios boot
+         <filename>boot/ext</filename> subdirectory. If this option is not supplied, only BIOS boot
         images currently existing in <filename>boot/ext</filename> will be used. </para>
        <para> The <option>--force</option> option allows to overwrite existing backup files. </para>
        <para> In order for the PXE menu to not be reverted back, <command>posleases2ldap</command>

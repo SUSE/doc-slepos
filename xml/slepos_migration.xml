@@ -202,7 +202,7 @@
     <step>
      <para>
       On the &slepos; 11 SP1 &admserv;, save system and boot images excluding
-      PXE and Kiwi files:
+      PXE and &kiwi; files:
      </para>
 <screen>find /srv/SLEPOS/boot /srv/SLEPOS/image  \! -type d \! -path "*pxelinux*"  \
 -print |tar czf sp1-images.tar.gz -T-</screen>

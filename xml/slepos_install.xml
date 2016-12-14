@@ -200,7 +200,7 @@
    installation failure during the second installation stage because of DNS
    resolving failure. You can work around this limitation by switching to a
    second console
-   (<keycombo><keycap>Ctrl</keycap><keycap>F2</keycap></keycombo>), logging in
+   (<keycombo><keycap function="control"/><keycap>F2</keycap></keycombo>), logging in
    as root and starting DNS server manually with the <command>rcnamed
    start</command> command.
   </para>

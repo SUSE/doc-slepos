@@ -486,8 +486,8 @@ kiwi --prepare ./graphical-default --root ./chroot/graphical-default</screen>
         &lt;/drivers&gt;
 &lt;!-- end wireless support --&gt;
 </screen>
-   <para> The necessary lines are already in the provided configuration of the minimal image, they
-    are just commented out. The wireless configuration is contained in the
+   <para> The necessary lines are already in the provided configuration of the minimal image, but they
+    are commented out. The wireless configuration is contained in the
      <filename>/etc/wpa_supplicant/wpa_supplicant.conf</filename> file present in the
      <filename>wlan.tar.gz</filename> TAR archive and can be adjusted there. </para>
    <para> To create the initial boot image with &kiwi;, use the <command>kiwi
