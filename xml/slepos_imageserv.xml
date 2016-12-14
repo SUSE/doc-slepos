@@ -127,7 +127,8 @@
        Manager), and the ability to run Java programs. It supports
        console-based C/C++ applications, Java programs in a Java2 runtime
        environment, X11 applications, and basic browser-based applications. </para>
-      <para> Java web browser plugin must be explicitly enabled. To enable
+      
+      <para> The Java Web browser plugin must be explicitly enabled. To enable
        it, the following packages must be included:
         <systemitem>java-1_6_0-ibm-alsa</systemitem>,
         <systemitem>java-1_6_0-ibm-devel</systemitem>,
