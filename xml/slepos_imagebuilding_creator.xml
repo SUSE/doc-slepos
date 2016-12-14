@@ -40,7 +40,7 @@
  <note>
   <title>Login in as &rootuser; User</title>
   <para>
-   In order to be able to log in as &rootuser; on the terminal, you need to
+   To be able to log in as &rootuser; on the terminal, you need to
    create the &rootuser; user and assign a password to it in the
    <guimenu>Users</guimenu> tab.
   </para>
@@ -59,8 +59,8 @@
  <important>
   <title>Building 32-bit Images on 64-bit Machines</title>
   <para>
-   Terminals based on &slepos; 11 need 32bit images. If you want to build 32bit images on a
-   64bit machine, the Subscription Management Tool (SMT) must be used for
+   Terminals based on &slepos; 11 need 32-bit images. If you want to build 32-bit images on a
+   64-bit machine, the Subscription Management Tool (SMT) must be used for
    repository management. It is also recommended to use SMT for &sle; update
    repositories (SLES-11-Updates, SLE-11-POS-Updates). For SMT configuration,
    see &smtguide;.
@@ -72,8 +72,8 @@
    <literal>http://smt.mycompany.us/repo/$RCE/SLES11-Updates/sle-11-i586/</literal>.
   </para>
   <para>
-   The <command>linux32 kiwi</command> command has to be used when building
-   32bit images on 64bit machines.
+   The <command>linux32 kiwi</command> command needs to be used when building
+   32-bit images on 64-bit machines.
   </para>
  </important>
 
@@ -87,8 +87,8 @@
    <step>
     <para>
      Click <menuchoice><guimenu>Miscellaneous</guimenu>
-     <guimenu>&imgcreat;</guimenu></menuchoice> in the &yast; Control
-     Center.
+     <guimenu>&imgcreat;</guimenu></menuchoice> in the &yast; control
+     center.
     </para>
    </step>
    <step>
@@ -116,7 +116,7 @@
     <para>
      Select the <guimenu>Image Type</guimenu> you want to create. To create a
      bootable live CD with a system image, choose <guimenu>Live ISO
-     Image</guimenu>. To create a bootable USB stick with a system image,
+     Image</guimenu>. To create a bootable USB flash drive with a system image,
      choose <guimenu>USB Stick Image</guimenu>. If you need to boot clients
      from the network using PXE/DHCP and then download a system image from the
      network, select <guimenu>Network Boot Image</guimenu>.
@@ -302,7 +302,7 @@
   <title>Building Server Images in &imgcreat;</title>
   <para>
    For building server images (for &admserv;, &branchserv; or
-   &combserv;) with &imgcreat;, a 64bit &imgserv; is necessary. The
+   &combserv;) with &imgcreat;, a 64-bit &imgserv; is necessary. The
    <guimenu>32bit Architecture Image</guimenu> option in &imgcreat; should
    be unchecked when building these images.
   </para>
