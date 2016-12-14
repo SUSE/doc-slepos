@@ -99,11 +99,11 @@
    not have an associated object in the LDAP tree structure.
   </para>
   <important>
-   <title>Defining the &branchserv; Hostname</title>
+   <title>Defining the &branchserv; Host Name</title>
    <para>
     The location of the <systemitem>scBranchServer</systemitem> object in the
-    LDAP directory must correspond to the hostname defined for the
-    &branchserv; during installation. For example, if the hostname is
+    LDAP directory must correspond to the host name defined for the
+    &branchserv; during installation. For example, if the host name is
     <literal>bs.mybranch.myorgunit.myorg.us</literal>, the
     <literal>dn</literal> of the <systemitem>scBranchServer</systemitem> object
     is
@@ -348,7 +348,7 @@
   <title>scConfigFileSyncTemplate</title>
   <para>
    <systemitem>scConfigFileSyncTemplate</systemitem> objects are used when
-   running services, such as X Windows, which require hardware-dependent
+   running services, such as an X Window System, which require hardware-dependent
    configuration files. The <systemitem>scConfigFileSyncTemplate</systemitem>
    object points to the configuration file that a &pos; terminal needs to
    run a given service. This object differs from
@@ -980,7 +980,7 @@
    The default <systemitem>scDistributionContainer</systemitem> has
    <literal>scKernelName=linux</literal> and
    <literal>scInitrdName=initrd.gz</literal>. If a distribution container is
-   created with either one of those two names different, a specific pxe file is
+   created with either one of those two names different, a specific PXE file is
    then created under <filename>/srv/tftpboot/boot/pxelinux.cfg</filename> when
    a terminal registers. (See also <xref linkend="terminal_kernel_options"/>.)
    This ensures that the specific kernel and initrd get properly loaded.
@@ -2526,10 +2526,10 @@
   <note>
    <title>IP address of TFTP service</title>
    <para>
-    During &branchserv; initialization, the tftp configuration file
+    During &branchserv; initialization, the TFTP configuration file
     (<filename>/etc/sysconfig/atftpd</filename>) correctly assumes IP address
     of the TFTP service from the <systemitem>ipHostNumber</systemitem> of the
-    tftp <systemitem>scService</systemitem> object), and not simply the IP
+    TFTP<systemitem>scService</systemitem> object), and not simply the IP
     address of the &branchserv;.
    </para>
   </note>
