@@ -1285,7 +1285,7 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
       </para>
      </step>
      <step>
-      <para> Init network </para>
+      <para> Initialize network </para>
      </step>
      <step>
       <para> Download configuration from &branchserv;
@@ -1343,7 +1343,7 @@ initrd-netboot-suse-SLES11.i686-2.1.1.splash.md5
       <para> GRUB boot from service partition template </para>
      </step>
      <step>
-      <para> Init network (Wi-Fi) </para>
+      <para> Inititialize network (Wi-Fi) </para>
      </step>
      <step>
       <para> Download configuration from the &branchserv;
@@ -1596,7 +1596,7 @@ POS_ROLLBACK=<replaceable>1</replaceable>
     are saved to be used with rollback: </para>
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
-     <para> The associated configuration files (described in the CONF
+     <para> The associated configuration files (described in the configuration
       variable of the <filename>&confmac;</filename> file) are stored as
         <filename>/srv/tftpboot/KIWI/rollback/config/<replaceable>config_file</replaceable>.<replaceable>hash</replaceable></filename>.
      </para>
