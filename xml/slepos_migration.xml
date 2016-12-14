@@ -36,7 +36,7 @@
     </listitem>
     <listitem>
      <para>
-      &slepos; 11 Add-On product.
+      &slepos; 11 add-on product.
      </para>
     </listitem>
    </itemizedlist>
@@ -100,7 +100,7 @@
    <note>
     <title>Log Files Related to Migration</title>
     <para>
-     In case of any problems during migration, please see
+     In case of any problems during migration, see
      <filename>/var/log/YaST2/y2log</filename> and the
      <filename>/var/log/messages</filename> log files.
     </para>
@@ -135,7 +135,7 @@
      the &slepos; 10 LDAP database, migrating to &slepos; 11 with old images and an
      old kernel works correctly. The old images contain an old kernel with the
      naming scheme used in &slepos; 10. But when you assign newly-built &slepos; 11
-     images to the <systemitem>scCashRegister</systemitem> object, you have to
+     images to the <systemitem>scCashRegister</systemitem> object, you need to
      change <systemitem>scHarddisk</systemitem> accordingly.
      <remark>emap: Nothing new here. Is the earlier "Post-Migration" section needed? Redundant info can be convenient sometimes but this is extreme: identical text in the same chapter after a short time.</remark>
     </para>
@@ -202,7 +202,7 @@
     <step>
      <para>
       On the &slepos; 11 SP1 &admserv;, save system and boot images excluding
-      pxe and kiwi files:
+      PXE and Kiwi files:
      </para>
 <screen>find /srv/SLEPOS/boot /srv/SLEPOS/image  \! -type d \! -path "*pxelinux*"  \
 -print |tar czf sp1-images.tar.gz -T-</screen>
