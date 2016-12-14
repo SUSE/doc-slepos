@@ -291,7 +291,7 @@ scNetworkcard attribute
       <title>&branchserv;'s TFTP Port Must Be Open</title>
       <para>
        Make sure the TFTP port (usually 69) is open on the &branchserv;.
-       This port is not open in the default SLES11 installation. You have to
+       This port is not open in the default SLES11 installation. You need to
        add it by adding its number in the &yast; <guimenu>Firewall</guimenu>
        module under <menuchoice> <guimenu>Allowed Services</guimenu>
        <guimenu>Advanced</guimenu> <guimenu>TCP Ports</guimenu> </menuchoice>.
