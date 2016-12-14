@@ -23,7 +23,7 @@
  </para>
 
  <para>
-  To start the the posAdmin-GUI, use the <command>posAdmin-GUI</command> command. If
+  To start the posAdmin-GUI, use the <command>posAdmin-GUI</command> command. If
   you start it on an already configured &admserv;, the
   <filename>adminserver.conf</filename> configuration file is parsed and used
   to fill organization and country entries. You can also start posAdmin-GUI
