@@ -66,7 +66,7 @@
    example when wireless operation or offline deployment is used),
     <systemitem>grub</systemitem> must be included in
     <systemitem>initrd</systemitem>. This can be accomplished by adding
-    <literal>&lt;package name="grub" bootinclude="true"/&gt;</literal> to
+    <literal>&lt;package name="grub" bootinclude="true"/&gt;</literal> (or <literal>&lt;package name="grub" bootinclude="true"/&gt;</literal> for &slepos; 12) to
    the <filename>config.xml</filename> file or by adding
     <systemitem>grub</systemitem> to the list of packages to include in
    boot in via &imgcreat;. </para>
