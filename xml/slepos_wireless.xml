@@ -45,7 +45,7 @@
  <sect1>
   <title>Service Partition</title>
   <para> For the wireless operation of &slepos; terminals, a service
-   partiton on each terminal's hard drive is needed store the netboot
+   partition on each terminal's hard drive is needed for storing the netboot
    kernel and initrd. The service partition must be the first partition on
    the terminal's hard drive and mounted as
     <filename>/srv/SLEPOS</filename>. </para>
@@ -66,7 +66,7 @@
    example when wireless operation or offline deployment is used),
     <systemitem>grub</systemitem> must be included in
     <systemitem>initrd</systemitem>. This can be accomplished by adding
-    <literal>&lt;package name="grub" bootinclude="true"/&gt;</literal> to
+    <literal>&lt;package name="grub" bootinclude="true"/&gt;</literal> (or <literal>&lt;package name="grub2" bootinclude="true"/&gt;</literal> for &slepos; 12) to
    the <filename>config.xml</filename> file or by adding
     <systemitem>grub</systemitem> to the list of packages to include in
    boot in via &imgcreat;. </para>
