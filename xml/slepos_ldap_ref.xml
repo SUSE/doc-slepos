@@ -10,9 +10,11 @@
 
  <para>
   This section provides an alphabetical list of all &slepos; elements
-  represented in the LDAP directory. The <emphasis role="strong">must</emphasis> attributes for each element must
-  be defined when creating the element with posAdmin. The <emphasis role="strong">may</emphasis> attributes are
-  optional. All elements are structural.
+  represented in the LDAP directory. The
+  <emphasis role="strong">must</emphasis> attributes for each element must be
+  defined when creating the element with posAdmin. The
+  <emphasis role="strong">may</emphasis> attributes are optional. All elements
+  are structural.
  </para>
 
  <sect2 xml:id="b48rav2">
@@ -93,10 +95,10 @@
  <sect2 xml:id="ad_b58oz2b">
   <title>scBranchServer</title>
   <para>
-   The &branchserv; object stores configuration information that is specific
-   to each &branchserv;. There must be a &branchserv; object for every
-   &branchserv; in the &slepos; system. Note that the &admserv; does
-   not have an associated object in the LDAP tree structure.
+   The &branchserv; object stores configuration information that is specific to
+   each &branchserv;. There must be a &branchserv; object for every
+   &branchserv; in the &slepos; system. Note that the &admserv; does not have
+   an associated object in the LDAP tree structure.
   </para>
   <important>
    <title>Defining the &branchserv; Host Name</title>
@@ -348,13 +350,13 @@
   <title>scConfigFileSyncTemplate</title>
   <para>
    <systemitem>scConfigFileSyncTemplate</systemitem> objects are used when
-   running services, such as an X Window System, which require hardware-dependent
-   configuration files. The <systemitem>scConfigFileSyncTemplate</systemitem>
-   object points to the configuration file that a &pos; terminal needs to
-   run a given service. This object differs from
-   <systemitem>scConfigFileTemplate</systemitem> objects, because the
-   configuration data is not stored in the object; rather, the object points to
-   a configuration file outside the LDAP directory.
+   running services, such as an X Window System, which require
+   hardware-dependent configuration files. The
+   <systemitem>scConfigFileSyncTemplate</systemitem> object points to the
+   configuration file that a &pos; terminal needs to run a given service. This
+   object differs from <systemitem>scConfigFileTemplate</systemitem> objects,
+   because the configuration data is not stored in the object; rather, the
+   object points to a configuration file outside the LDAP directory.
   </para>
   <para>
    This element exists under Image Reference objects (class
@@ -1269,8 +1271,8 @@
   <title>scLocation</title>
   <para>
    An scLocation object represents a branch office, which is a site where a
-   &branchserv; and &pos; terminals are located. Location containers are
-   used to store information about the deployed &pos; terminals and the
+   &branchserv; and &pos; terminals are located. Location containers are used
+   to store information about the deployed &pos; terminals and the
    &branchserv;s. This and all other information that can be modified at the
    &branchserv; should be stored or referenced in the Location containers to
    limit the need to grant write privileges to subtrees.
@@ -1824,9 +1826,9 @@
   <title>scPosImage</title>
   <para>
    The Image Reference object stores information about an image stored on the
-   &admserv;. By default, an Image Reference object is created for the
-   Minimal client image. For information on adding this object class to the
-   LDAP directory, see <xref linkend="sec.slepos_term.ldap.posimage"/>.
+   &admserv;. By default, an Image Reference object is created for the Minimal
+   client image. For information on adding this object class to the LDAP
+   directory, see <xref linkend="sec.slepos_term.ldap.posimage"/>.
   </para>
   <xi:include href="SLEPOS_objects_scPosImage.xml" parse="xml"/>
 <!--<table>
@@ -2144,11 +2146,10 @@
   <para>
    <option>Global</option> (scRefObjectContainer, cn=global): All globally
    valid information for a chain or company&mdash;that is server hardware,
-   &pos; hardware, or client images&mdash;is stored in the Global
-   container of the class <systemitem>scRefObjectContainer</systemitem> in the
-   form of reference objects. These reference objects are linked to the actual
-   entries for the &pos; terminals and servers in the branches using unique
-   names.
+   &pos; hardware, or client images&mdash;is stored in the Global container of
+   the class <systemitem>scRefObjectContainer</systemitem> in the form of
+   reference objects. These reference objects are linked to the actual entries
+   for the &pos; terminals and servers in the branches using unique names.
   </para>
   <para>
    The initial LDAP structure after installation includes only one
@@ -2213,8 +2214,8 @@
   <title>scServerContainer</title>
   <para>
    <option>Server Container </option>(scServerContainer): A container for all
-   the &branchserv; objects for a given site. The information pertaining to
-   the &branchserv;s is stored in the Server container.
+   the &branchserv; objects for a given site. The information pertaining to the
+   &branchserv;s is stored in the Server container.
   </para>
   <para>
    To provide system redundancy and failover, there can be multiple
@@ -2543,8 +2544,8 @@
    (<systemitem>scCashRegister</systemitem>) and Image Reference object
    (<systemitem>scPosImage</systemitem>), <command>posleases2ldap</command>
    automatically creates a Workstation object in the LDAP directory for every
-   &pos; terminal that registers on the &branchserv;. For information on
-   this process, see <xref linkend="ad_cntrlhw"/>.
+   &pos; terminal that registers on the &branchserv;. For information on this
+   process, see <xref linkend="ad_cntrlhw"/>.
   </para>
   <xi:include href="SLEPOS_objects_scWorkstation.xml" parse="xml"/>
 <!--<table>
