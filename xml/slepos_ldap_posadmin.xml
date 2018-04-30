@@ -194,7 +194,7 @@
     <colspec colnum="1" colname="1"/>
     <colspec colnum="2" colname="2"/>
     <thead>
-     <row rowsep="1" xml:id="ad_buifnza">
+     <row rowsep="1">
       <entry colname="1">
        <para> Option </para>
       </entry>
@@ -204,7 +204,7 @@
      </row>
     </thead>
     <tbody>
-     <row rowsep="0" xml:id="ad_buifnzb">
+     <row rowsep="0">
       <entry colname="1">
        <para>
         <command>--user</command>
@@ -230,7 +230,7 @@
         line without password, you are prompted for a password. </para>
       </entry>
      </row>
-     <row rowsep="0" xml:id="ad_buifnzc">
+     <row rowsep="0">
       <entry colname="1">
        <para>
         <command>--base</command>
@@ -249,7 +249,7 @@
         one base is found), it exits with an error message. </para>
       </entry>
      </row>
-     <row rowsep="0" xml:id="ad_buifnzd">
+     <row rowsep="0">
       <entry colname="1">
        <para>
         <command>--help</command>
@@ -290,7 +290,7 @@
     <colspec colnum="2" colname="2"/>
     <colspec colnum="3" colname="3"/>
     <thead>
-     <row rowsep="1" xml:id="ad_bsxnjln">
+     <row rowsep="1">
       <entry colname="1">
        <para> Attribute </para>
       </entry>
@@ -303,7 +303,7 @@
      </row>
     </thead>
     <tbody>
-     <row rowsep="0" xml:id="ad_bsxnjlo">
+     <row rowsep="0">
       <entry colname="1">
        <para>
         <command>--DN</command>
@@ -316,7 +316,7 @@
        <para> Distinguished name of the element to modify. </para>
       </entry>
      </row>
-     <row rowsep="0" xml:id="ad_bsxnjlp">
+     <row rowsep="0">
       <entry colname="1">
        <para>
         <command>--</command>
@@ -331,7 +331,7 @@
         example: <systemitem>scWorkstation</systemitem>. </para>
       </entry>
      </row>
-     <row rowsep="0" xml:id="ad_bsxnjlq">
+     <row rowsep="0">
       <entry colname="1">
        <para>
         <command>--</command>
@@ -346,7 +346,7 @@
          <systemitem>scPosImageVersion</systemitem>. </para>
       </entry>
      </row>
-     <row rowsep="0" xml:id="ad_bsxnjlr">
+     <row rowsep="0">
       <entry colname="1">
        <para>
         <command>--</command>
@@ -474,7 +474,7 @@ posAdmin --DN &dnbranch; --modify --multival
     <colspec colnum="2" colname="2"/>
     <colspec colnum="3" colname="3"/>
     <thead>
-     <row rowsep="1" xml:id="ad_bsxnp30">
+     <row rowsep="1">
       <entry colname="1">
        <para> Option </para>
       </entry>
@@ -487,7 +487,7 @@ posAdmin --DN &dnbranch; --modify --multival
      </row>
     </thead>
     <tbody>
-     <row rowsep="0" xml:id="ad_bsxnp31">
+     <row rowsep="0">
       <entry colname="1">
        <para>
         <command>--DN</command>
@@ -500,7 +500,7 @@ posAdmin --DN &dnbranch; --modify --multival
        <para> Distinguished name of the object to delete. </para>
       </entry>
      </row>
-     <row rowsep="0" xml:id="ad_bsxnp32">
+     <row rowsep="0">
       <entry colname="1">
        <para>
         <command>--recursive</command>
@@ -573,7 +573,7 @@ posAdmin --DN &dnbranch; --modify --multival
     <colspec colnum="2" colname="2"/>
     <colspec colnum="3" colname="3"/>
     <thead>
-     <row rowsep="1" xml:id="ad_bsxnvii">
+     <row rowsep="1">
       <entry colname="1">
        <para> Option </para>
       </entry>
@@ -586,7 +586,7 @@ posAdmin --DN &dnbranch; --modify --multival
      </row>
     </thead>
     <tbody>
-     <row rowsep="0" xml:id="ad_bsxnvij">
+     <row rowsep="0">
       <entry colname="1">
        <para>
         <command>--base</command>
@@ -616,7 +616,7 @@ posAdmin --DN &dnbranch; --modify --multival
         element. </para>
       </entry>
      </row>
-     <row rowsep="0" xml:id="ad_bsxnvik">
+     <row rowsep="0">
       <entry colname="1">
        <para>
         <command>--</command>
@@ -631,7 +631,7 @@ posAdmin --DN &dnbranch; --modify --multival
          <systemitem>--scLocation</systemitem>. </para>
       </entry>
      </row>
-     <row rowsep="0" xml:id="ad_bsxnvil">
+     <row rowsep="0">
       <entry colname="1">
        <para>
         <command>--</command>

@@ -563,7 +563,7 @@
       <colspec colnum="1" colname="1"/>
       <colspec colnum="2" colname="2"/>
       <thead>
-       <row rowsep="1" xml:id="ad_bugrvl9">
+       <row rowsep="1">
         <entry colname="1">
          <para>
           Service
@@ -577,7 +577,7 @@
        </row>
       </thead>
       <tbody>
-       <row rowsep="1" xml:id="ad_bugrvla">
+       <row rowsep="1">
         <entry colname="1">
          <para>
           DNS
@@ -592,7 +592,7 @@
          </para>
         </entry>
        </row>
-       <row rowsep="1" xml:id="ad_bugrvlb">
+       <row rowsep="1">
         <entry colname="1">
          <para>
           DHCP
@@ -607,7 +607,7 @@
          </para>
         </entry>
        </row>
-       <row rowsep="1" xml:id="ad_bugrvlc">
+       <row rowsep="1">
         <entry colname="1">
          <para>
           TFTP
@@ -1112,7 +1112,7 @@
         SLEPOS 10 - taroth 071008: and what about update from SLES9 to SLES10??
        </remark>
        <para>If you are migrating from SLRS 8 to Novell Linux Point of Service 9, import the SLRS 8
-        LDAP directory from the backup copy you made in Step 1. 
+        LDAP directory from the backup copy you made in Step 1.
         <remark>taroth 071008: add link to migration chapter in old NLPOS 9
          doc?:
          http://www.novell.com/documentation/nlpos9/index.html?page=/documentation/nlpos9/nlpos9_install/data/bw0734d.html#bw0734d.html
@@ -1143,7 +1143,7 @@
       <step id="bwwsob8">
        <para>Define the location of the image source files. For detailed instructions, see <xref
          linkend="ad_bv7ycvs"/>. </para>
-      </step>      
+      </step>
       <step id="bwwsob9">
        <para>Build the Point of Service image files. For detailed instructions, see <xref linkend="cha.slepos_imgcreator"/> or <xref linkend="cha.slepos_kiwi"/>. </para>
       </step>
@@ -1213,7 +1213,7 @@
         control terminal running on Point of Service hardware.
        </para>
       </listitem>
-<!-- 
+<!--
           <remark>cihlarov 231007 not implemented in slepos 10</remark>
           <listitem>
        <para>If the &branchserv; is in a remote location where no onsite system expertise is
@@ -1279,7 +1279,7 @@
      <itemizedlist mark="bullet" spacing="normal">
       <listitem>
        <para>
-        If the &pos; terminals have access to the network, the terminals can boot 
+        If the &pos; terminals have access to the network, the terminals can boot
         using PXE and download their image files from the &branchserv;. This
         method is typically used for workstations that are not equipped with a
         hard disk. For more information on this process, see

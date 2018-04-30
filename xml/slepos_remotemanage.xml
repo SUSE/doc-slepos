@@ -55,7 +55,7 @@
      <colspec colnum="1" colname="1"/>
      <colspec colnum="2" colname="2"/>
      <thead>
-      <row rowsep="1" xml:id="ad_bsxmzyw">
+      <row rowsep="1">
        <entry colname="1">
         <para>
          Option
@@ -69,7 +69,7 @@
       </row>
      </thead>
      <tbody>
-      <row rowsep="0" xml:id="ad_bsxmzyx">
+      <row rowsep="0">
        <entry colname="1">
         <para>
          <option>-I</option> (uppercase i)
@@ -83,7 +83,7 @@
         </para>
        </entry>
       </row>
-      <row rowsep="0" xml:id="ad_bsxmzyy">
+      <row rowsep="0">
        <entry colname="1">
         <para>
          <option>-P</option>
@@ -97,7 +97,7 @@
         </para>
        </entry>
       </row>
-      <row rowsep="0" xml:id="ad_bsxmzyz">
+      <row rowsep="0">
        <entry colname="1">
         <para>
          <option>-v</option>
@@ -134,7 +134,7 @@ X:r=/etc/init.d/rc/POSApplication restart
      <colspec colnum="1" colname="1"/>
      <colspec colnum="2" colname="2"/>
      <thead>
-      <row rowsep="1" xml:id="ad_bsxn1kv">
+      <row rowsep="1">
        <entry colname="1">
         <para>
          Option
@@ -148,7 +148,7 @@ X:r=/etc/init.d/rc/POSApplication restart
       </row>
      </thead>
      <tbody>
-      <row rowsep="0" xml:id="ad_bsxn1kw">
+      <row rowsep="0">
        <entry colname="1">
         <para>
          <command>-S</command>
@@ -162,7 +162,7 @@ X:r=/etc/init.d/rc/POSApplication restart
         </para>
        </entry>
       </row>
-      <row rowsep="0" xml:id="ad_bsxn1kx">
+      <row rowsep="0">
        <entry colname="1">
         <para>
          <command>-U</command>
@@ -174,7 +174,7 @@ X:r=/etc/init.d/rc/POSApplication restart
         </para>
        </entry>
       </row>
-      <row rowsep="0" xml:id="ad_bsxn1ky">
+      <row rowsep="0">
        <entry colname="1">
         <para>
          <command>-X</command>
@@ -216,9 +216,9 @@ X:r=/etc/init.d/rc/POSApplication restart
    </para>
 <screen>adminc [--port] <replaceable>portno</replaceable>
        [--parallel] <replaceable>maxparallel</replaceable>
-       [--commands] <replaceable>keys</replaceable> IP [IP&ast;] 
+       [--commands] <replaceable>keys</replaceable> IP [IP&ast;]
 </screen>
-<screen>adminc [--wake] MAC [MAC&ast;] 
+<screen>adminc [--wake] MAC [MAC&ast;]
 </screen>
    <para>
     summarizes the available options for adminc.
@@ -230,7 +230,7 @@ X:r=/etc/init.d/rc/POSApplication restart
      <colspec colnum="1" colname="1"/>
      <colspec colnum="2" colname="2"/>
      <thead>
-      <row rowsep="1" xml:id="ad_bsxn36f">
+      <row rowsep="1">
        <entry colname="1">
         <para>
          Option
@@ -244,7 +244,7 @@ X:r=/etc/init.d/rc/POSApplication restart
       </row>
      </thead>
      <tbody>
-      <row rowsep="0" xml:id="ad_bsxn36g">
+      <row rowsep="0">
        <entry colname="1">
         <para>
          <command>--port</command>
@@ -256,7 +256,7 @@ X:r=/etc/init.d/rc/POSApplication restart
         </para>
        </entry>
       </row>
-      <row rowsep="0" xml:id="ad_bsxn36h">
+      <row rowsep="0">
        <entry colname="1">
         <para>
          <command>--parallel</command>
@@ -268,7 +268,7 @@ X:r=/etc/init.d/rc/POSApplication restart
         </para>
        </entry>
       </row>
-      <row rowsep="0" xml:id="ad_bsxn36i">
+      <row rowsep="0">
        <entry colname="1">
         <para>
          <command>--commands</command>
@@ -281,7 +281,7 @@ X:r=/etc/init.d/rc/POSApplication restart
         </para>
        </entry>
       </row>
-      <row rowsep="0" xml:id="ad_bsxn36j">
+      <row rowsep="0">
        <entry colname="1">
         <para>
          --<command>wake MAC</command> <replaceable>MACes</replaceable>
@@ -328,7 +328,7 @@ Node: 192.168.99.13   Exit Code: 0
    <para>
     posGetIP has the following command syntax:
    </para>
-<screen>posGetIP [--ip|noip] [--mac] 
+<screen>posGetIP [--ip|noip] [--mac]
 </screen>
    <para>
     <xref linkend="ad_b59a9kd" xrefstyle="TableXRef"/> summarizes the available
@@ -340,7 +340,7 @@ Node: 192.168.99.13   Exit Code: 0
      <colspec colnum="1" colname="1"/>
      <colspec colnum="2" colname="2"/>
      <thead>
-      <row rowsep="1" xml:id="ad_bw1gabb">
+      <row rowsep="1">
        <entry colname="1">
         <para>
          Option
@@ -354,7 +354,7 @@ Node: 192.168.99.13   Exit Code: 0
       </row>
      </thead>
      <tbody>
-      <row rowsep="0" xml:id="ad_bw1gabc">
+      <row rowsep="0">
        <entry colname="1">
         <para>
          <command>--ip</command>
@@ -370,7 +370,7 @@ Node: 192.168.99.13   Exit Code: 0
         </para>
        </entry>
       </row>
-      <row rowsep="0" xml:id="ad_bw1gc3i">
+      <row rowsep="0">
        <entry colname="1">
         <para>
          <command>--noip</command>
@@ -385,7 +385,7 @@ Node: 192.168.99.13   Exit Code: 0
         </para>
        </entry>
       </row>
-      <row rowsep="0" xml:id="ad_bw1gabd">
+      <row rowsep="0">
        <entry colname="1">
         <para>
          <command>--mac</command>
