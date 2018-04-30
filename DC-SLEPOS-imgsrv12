@@ -4,11 +4,10 @@
 ## ----------------------------
 ##
 ## Basics
-MAIN="MAIN.SLEPOS.xml"
-ROOTID="cha.slepos_buildingimages_sle12"
+MAIN="book_sle12_imgserver.xml"
 
 ## Profiling
-PROFOS="slepos"
+PROFOS="slepos;sles12"
 PROFARCH="x86;amd64;em64t"
 
 ## Provo

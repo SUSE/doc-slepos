@@ -8,7 +8,7 @@ MAIN="MAIN.SLEPOS.xml"
 ROOTID="book.slepos"
 
 ## Profiling
-PROFOS="slepos"
+PROFOS="slepo;sles11"
 PROFARCH="x86;amd64;em64t"
 
 ## Provo
