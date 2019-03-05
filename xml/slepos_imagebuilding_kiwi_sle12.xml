@@ -245,16 +245,16 @@
     &lt;package name="glibc-locale"/&gt;
   &lt;/packages&gt;
   &lt;repository type="rpm-md"&gt;<co xml:id="co.kiwi.repo"/>
-    &lt;source path="{SLEPOS 12 SP3 x86_64}"/&gt;
+    &lt;source path="{SLEPOS 12 SP4 x86_64}"/&gt;
   &lt;/repository&gt;
   &lt;repository type="rpm-md"&gt;
-    &lt;source path="{SLES 12 SP3 Updates x86_64}"/&gt;
+    &lt;source path="{SLES 12 SP4 Updates x86_64}"/&gt;
   &lt;/repository&gt;
   &lt;repository type="rpm-md"&gt;
-    &lt;source path="{SLEPOS 12 SP3 Updates x86_64}"/&gt;
+    &lt;source path="{SLEPOS 12 SP4 Updates x86_64}"/&gt;
   &lt;/repository&gt;
   &lt;repository type="rpm-md"&gt;
-    &lt;source path="{SLES 12 SP3 x86-64}"/&gt;
+    &lt;source path="{SLES 12 SP4 x86-64}"/&gt;
   &lt;/repository&gt;
   &lt;!--begin wireless support
         &lt;drivers type="drivers"&gt;<co xml:id="co.kiwi.drivers"/>
@@ -353,7 +353,7 @@
      <para>
       The <literal>repository</literal> element references any package sources
       used in building this image. Repositories are referenced using repository
-      aliases, for example <literal>{SLES 12 SP3 x86_64}</literal>. These
+      aliases, for example <literal>{SLES 12 SP4 x86_64}</literal>. These
       aliases are mapped to repository urls via the
       <filename>/etc/kiwi/repoalias</filename> file. You also need to specify
       the <literal>type</literal> of the repository, in this case
