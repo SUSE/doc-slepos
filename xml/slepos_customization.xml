@@ -93,17 +93,17 @@ posAdmin --DN &dnbranch; --modify --multival
     <tgroup cols="3">
      <thead>
       <row rowsep="1">
-       <entry colname="1">
+       <entry>
         <para>
          Name
         </para>
        </entry>
-       <entry colname="2">
+       <entry>
         <para>
          Role
         </para>
        </entry>
-       <entry colname="2">
+       <entry>
         <para>
          Description
         </para>
@@ -112,68 +112,68 @@ posAdmin --DN &dnbranch; --modify --multival
      </thead>
      <tbody>
       <row rowsep="0">
-       <entry colname="1">
+       <entry>
         <para>
          <literal>cn</literal>
         </para>
        </entry>
-       <entry colname="2">
+       <entry>
         <para>
          Must
         </para>
        </entry>
-       <entry colname="3">
+       <entry>
         <para>
          cn name.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry>
         <para>
          <literal>scRoleName</literal>
         </para>
        </entry>
-       <entry colname="2">
+       <entry>
         <para>
          Must
         </para>
        </entry>
-       <entry colname="3">
+       <entry>
         <para>
          Name of the role displayed in the list on terminal.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry>
         <para>
          <literal>scRoleDescription</literal>
         </para>
        </entry>
-       <entry colname="2">
+       <entry>
         <para>
          May
         </para>
        </entry>
-       <entry colname="3">
+       <entry>
         <para>
          Description of the role displayed in the list on terminal.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry>
         <para>
          <literal>scAllowedHwTypes</literal>
         </para>
        </entry>
-       <entry colname="2">
+       <entry>
         <para>
          May
         </para>
        </entry>
-       <entry colname="3">
+       <entry>
         <para>
          Multi-value parameter, marks role to be used only with given hardware
          types.
@@ -261,17 +261,17 @@ posAdmin --DN &dnbranch; --modify --multival
     <tgroup cols="3">
      <thead>
       <row rowsep="1">
-       <entry colname="1">
+       <entry>
         <para>
          <systemitem>scAllowRoles</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry>
         <para>
          <systemitem>scAllowGlobalRoles</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry>
         <para>
          Effect
         </para>
@@ -280,34 +280,34 @@ posAdmin --DN &dnbranch; --modify --multival
      </thead>
      <tbody>
       <row rowsep="0">
-       <entry colname="1">
+       <entry>
         <para>
          <literal>TRUE</literal>
         </para>
        </entry>
-       <entry colname="2">
+       <entry>
         <para>
          <literal>TRUE</literal>
         </para>
        </entry>
-       <entry colname="3">
+       <entry>
         <para>
          Role-based mode, all roles enabled.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry>
         <para>
          <literal>TRUE</literal>
         </para>
        </entry>
-       <entry colname="2">
+       <entry>
         <para>
          <literal>FALSE</literal>
         </para>
        </entry>
-       <entry colname="3">
+       <entry>
         <para>
          Role-based mode, only roles under <systemitem>scLocation</systemitem>
          are used.
@@ -315,34 +315,34 @@ posAdmin --DN &dnbranch; --modify --multival
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry>
         <para>
          <literal>FALSE</literal>
         </para>
        </entry>
-       <entry colname="2">
+       <entry>
         <para>
          <literal>TRUE</literal>
         </para>
        </entry>
-       <entry colname="3">
+       <entry>
         <para>
          Non-role-based legacy mode (SLEPOS10, NLPO9 like).
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry>
         <para>
          <literal>FALSE</literal>
         </para>
        </entry>
-       <entry colname="2">
+       <entry>
         <para>
          <literal>FALSE</literal>
         </para>
        </entry>
-       <entry colname="3">
+       <entry>
         <para>
          Non-role-based legacy mode (SLEPOS10, NLPO9 like).
         </para>

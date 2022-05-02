@@ -127,17 +127,17 @@
     <tgroup cols="3">
      <thead>
       <row rowsep="1">
-       <entry colname="1">
+       <entry >
         <para>
          Name
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Type
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Description
         </para>
@@ -146,51 +146,51 @@
      </thead>
      <tbody>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <literal>cn</literal>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Common name of an entity.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scRefServerDn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          DN of a <systemitem>scRefServer</systemitem>.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scPubKey</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Public key at server for the SSH client.
         </para>
@@ -223,17 +223,17 @@
     <tgroup cols="3">
      <thead>
       <row rowsep="1">
-       <entry colname="1">
+       <entry >
         <para>
          Name
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Type
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Description
         </para>
@@ -242,34 +242,34 @@
      </thead>
      <tbody>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>cn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
           The common name of the &pos; terminal.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scCashRegisterName</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-        <entry colname="3">
+        <entry >
          <para>
           The model type of the &pos; terminal.
          </para>
@@ -284,17 +284,17 @@
         </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scPosImageDn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
         The distinguished name of the default system image defined for
         this &pos; terminal type.
@@ -302,17 +302,17 @@
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scDiskJournal</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          This boolean field is set to TRUE if journaling should be enabled.
          Journaling is only added on disk-based machines.
@@ -320,17 +320,17 @@
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scRaidScheme</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Definition of RAID. Only RAID type 1 is supported.
          The format of the entry is:
@@ -373,17 +373,17 @@
     <tgroup cols="3">
      <thead>
       <row rowsep="1">
-       <entry colname="1">
+       <entry >
         <para>
          Name
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Type
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Description
         </para>
@@ -392,17 +392,17 @@
      </thead>
      <tbody>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>cn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
           The common name of the configuration file, also the name of the
           resulting configuration file on the &branchserv;.
@@ -410,17 +410,17 @@
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scMust</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
           The flag used to enable or disable the configuration file. Allowed
           values are TRUE to enable and FALSE to disable.
@@ -428,17 +428,17 @@
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scConfigFile</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
           Specifies the path where the configuration file is installed on
           the &pos; terminal, for example: <filename>/etc/ntp.conf
@@ -447,17 +447,17 @@
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scBsize</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
           Specifies the block size for the TFTP download. Due to internal
           limitations of atftp, the maximum block size is 65464 Bytes.
@@ -465,17 +465,17 @@
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scConfigFileLocalPath</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
           The local source path of the configuration file on the &admserv;,
           for example: <filename>/srv/SLEPOS/config/X11/xorg.conf.mydata</filename>. This
@@ -484,17 +484,17 @@
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scConfigMd5</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
           The MD5 checksum value of the configuration file is automatically
           generated by <command>posAdmin</command>.
@@ -502,17 +502,17 @@
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>description</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
         The description of the configuration file.
         </para>
@@ -543,17 +543,17 @@
     <tgroup cols="3">
      <thead>
       <row rowsep="1">
-       <entry colname="1">
+       <entry >
         <para>
          Name
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Type
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Description
         </para>
@@ -562,17 +562,17 @@
      </thead>
      <tbody>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>cn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
           The common name of the configuration file, also name of the
           resulting configuration file created on the &branchserv;.
@@ -580,17 +580,17 @@
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scMust</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
           This flag is used to enable or disable the configuration file.
           Allowed values are TRUE to enable and FALSE to disable the
@@ -599,17 +599,17 @@
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scConfigFile</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
           Specifies the path where the configuration file is installed on
           the &pos; terminal, for example:
@@ -619,17 +619,17 @@
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scBsize</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
           Specifies the block size for the TFTP download. Due to internal
           limitations of atftp, the maximum block size is 65464 Bytes.
@@ -637,17 +637,17 @@
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scConfigFileData</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
           The source path of the configuration file, for example:
           <filename>/tmp/xorg.conf.mydata</filename>.
@@ -655,68 +655,68 @@
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scConfigFileParser</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Name of the <systemitem>parserFunction</systemitem> to apply.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scConfigMd5</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          MD5sum of the configuration file.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>description</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          A description of the configuration file.
         </para>
        </entry>
       </row>
        <row rowsep="0" id="ad_b5udhl6">
-        <entry colname="1">
+        <entry >
          <para>
           <command>- -scConfigFileUpdateModel</command>
          </para>
         </entry>
-        <entry colname="2">
+        <entry >
          <para>
           may
          </para>
         </entry>
-        <entry colname="3">
+        <entry >
          <para>
           The update model for synchronizing configuration files. Allowed
           values are <literal>pulled</literal> and
@@ -745,17 +745,17 @@
    <tgroup cols="3">
     <thead>
      <row rowsep="1">
-      <entry colname="1">
+      <entry >
        <para>
         Name
        </para>
       </entry>
-      <entry colname="2">
+      <entry >
        <para>
         Type
        </para>
       </entry>
-      <entry colname="2">
+      <entry >
        <para>
         Description
        </para>
@@ -764,34 +764,34 @@
     </thead>
     <tbody>
      <row rowsep="0">
-      <entry colname="1">
+      <entry >
        <para>
         <systemitem>cn</systemitem>
        </para>
       </entry>
-      <entry colname="2">
+      <entry >
        <para>
         must
        </para>
       </entry>
-      <entry colname="3">
+      <entry >
        <para>
         cn name
        </para>
       </entry>
      </row>
      <row rowsep="0">
-      <entry colname="1">
+      <entry >
        <para>
         <systemitem>scMust</systemitem>
        </para>
       </entry>
-      <entry colname="2">
+      <entry >
        <para>
         must
        </para>
       </entry>
-      <entry colname="3">
+      <entry >
        <para>
         <literal>TRUE</literal> or <literal>FALSE</literal>, if
         <literal>TRUE</literal>, the object is used.
@@ -799,34 +799,34 @@
       </entry>
      </row>
      <row rowsep="0">
-      <entry colname="1">
+      <entry >
        <para>
         <systemitem>scKernelParameters</systemitem>
        </para>
       </entry>
-      <entry colname="2">
+      <entry >
        <para>
         must
        </para>
       </entry>
-      <entry colname="3">
+      <entry >
        <para>
         Line to append to the pxe file.
        </para>
       </entry>
      </row>
      <row rowsep="0">
-      <entry colname="1">
+      <entry >
        <para>
         <systemitem>Description</systemitem>
        </para>
       </entry>
-      <entry colname="2">
+      <entry >
        <para>
         may
        </para>
       </entry>
-      <entry colname="3">
+      <entry >
        <para>
         Description
        </para>
@@ -852,17 +852,17 @@
     <tgroup cols="3">
      <thead>
       <row rowsep="1">
-       <entry colname="1">
+       <entry >
         <para>
          Name
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Type
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Description
         </para>
@@ -871,51 +871,51 @@
      </thead>
      <tbody>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>cn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Common name for an entity.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scKernelName</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Filename of the kernel located under <filename>/boot</filename>.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scInitrdName</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Filename of the <filename>initrd.gz</filename> located under
          <filename>/boot</filename>.
@@ -923,34 +923,34 @@
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scKernelVersion</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Version string of the kernel written to the configuration file.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scKernelMatch</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Rule for matching <systemitem>scKernelVersion</systemitem> with the uname
          result.
@@ -958,17 +958,17 @@
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scKernelExpression</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Expression used to match the <systemitem>scKernelVersion</systemitem>
          against uname.
@@ -1002,17 +1002,17 @@
     <tgroup cols="3">
      <thead>
       <row rowsep="1">
-       <entry colname="1">
+       <entry >
         <para>
          Name
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Type
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Description
         </para>
@@ -1021,34 +1021,34 @@
      </thead>
      <tbody>
        <row rowsep="0" id="ad_bsy2am1">
-        <entry colname="1">
+        <entry >
          <para>
           <command>- -base</command>
          </para>
         </entry>
-        <entry colname="2">
+        <entry >
          <para>
           must
          </para>
         </entry>
-        <entry colname="3">
+        <entry >
          <para>
           The base distinguished name of the Hardware Reference object, e. g. <literal>cn=crtype3,cn=global,o=myorg,c=us</literal>.
          </para>
         </entry>
        </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>cn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
           The common name of the device, for example:
           <literal>sda</literal>.
@@ -1056,17 +1056,17 @@
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scDevice</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          The device of the hard disk, for example:
          <filename>/dev/sda</filename> or
@@ -1075,34 +1075,34 @@
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scHdSize</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Size of the hard disk in MB.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scPartitionsTable</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
          <para>
           A semicolon-separated (<literal>;</literal>) list of partition
           entries. Each entry consists of three space-separated parameters:
@@ -1142,17 +1142,17 @@
     <tgroup cols="3">
      <thead>
       <row rowsep="1">
-       <entry colname="1">
+       <entry >
         <para>
          Name
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Type
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Description
         </para>
@@ -1161,102 +1161,102 @@
      </thead>
      <tbody>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>cn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Common name for an entity.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scPosImageDn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Default image DN of a cash register.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scRefPcDn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          DN to PC hardware type, typically under global.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scRefMonitorDn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          DN of monitor type.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scRefServerDn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          DN of a reference server.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scSUSEManager</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Stores SUSE Manager host address.
         </para>
@@ -1287,17 +1287,17 @@
     <tgroup cols="3">
      <thead>
       <row rowsep="1">
-       <entry colname="1">
+       <entry >
         <para>
          Name
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Type
         </para>
        </entry>
-       <entry colname="2">
+       <entry>
         <para>
          Description
         </para>
@@ -1307,34 +1307,34 @@
      <tbody>
       <!--
        <row rowsep="0" id="ad_bsxkmq6">
-        <entry colname="1">
+        <entry >
          <para>
           <command>- -cn</command>
          </para>
         </entry>
-        <entry colname="2">
+        <entry >
          <para>
           must
          </para>
         </entry>
-        <entry colname="3">
+        <entry >
          <para>
           The common name of the location.
          </para>
         </entry>
        </row>
        <row rowsep="0" id="ad_bsxkmq7">
-        <entry colname="1">
+        <entry >
          <para>
           <command>- -ipNetworkNumber</command>
          </para>
         </entry>
-        <entry colname="2">
+        <entry >
          <para>
           must
          </para>
         </entry>
-        <entry colname="3">
+        <entry >
          <para>
           The network address of the subnet of the branch, for example:
           <literal>192.168.1.0</literal>.
@@ -1342,17 +1342,17 @@
         </entry>
        </row>
        <row rowsep="0" id="ad_bsxkmq8">
-        <entry colname="1">
+        <entry >
          <para>
           <command>- -ipNetmaskNumber</command>
          </para>
         </entry>
-        <entry colname="2">
+        <entry >
          <para>
           must
          </para>
         </entry>
-        <entry colname="3">
+        <entry >
          <para>
           The netmask of the subnet of the branch, for example:
           <literal>255.255.255.0</literal>.
@@ -1360,17 +1360,17 @@
         </entry>
        </row>
        <row rowsep="0" id="ad_bsxkmq9">
-        <entry colname="1">
+        <entry >
          <para>
           <command>- -scDhcpRange</command>
          </para>
         </entry>
-        <entry colname="2">
+        <entry >
          <para>
           must
          </para>
         </entry>
-        <entry colname="3">
+        <entry >
          <para>
           The dynamic IP address range of the DHCP server of the subnet.
           This is needed to register the &pos; terminals. It is a
@@ -1380,17 +1380,17 @@
         </entry>
        </row>
        <row rowsep="0" id="ad_bsxkmqa">
-        <entry colname="1">
+        <entry >
          <para>
           <command>- -scDhcpFixedRange</command>
          </para>
         </entry>
-        <entry colname="2">
+        <entry >
          <para>
           must
          </para>
         </entry>
-        <entry colname="3">
+        <entry >
          <para>
           The fixed IP address range of the DHCP server reserved for the
           &pos; terminals. It is also a comma-separated value pair, such as
@@ -1418,17 +1418,17 @@
         </entry>
        </row>
        <row rowsep="0" id="ad_bsxkmqb">
-        <entry colname="1">
+        <entry >
          <para>
           <command>- -scDefaultGw</command>
          </para>
         </entry>
-        <entry colname="2">
+        <entry >
          <para>
           must
          </para>
         </entry>
-        <entry colname="3">
+        <entry >
          <para>
           The default gateway for this location. This is normally a router
           to the corporate wide area network.
@@ -1436,17 +1436,17 @@
         </entry>
        </row>
        <row rowsep="0" id="ad_bsxkmqc">
-        <entry colname="1">
+        <entry >
          <para>
           <command>- -scDynamicIp</command>
          </para>
         </entry>
-        <entry colname="2">
+        <entry >
          <para>
           must
          </para>
         </entry>
-        <entry colname="3">
+        <entry >
          <para>
           This flag is used to enable or disable registration of new
           terminals on the &branchserv; when <option>scDhcpExtern</option>
@@ -1457,17 +1457,17 @@
         </entry>
        </row>
        <row rowsep="0" id="ad_bsxkmqd">
-        <entry colname="1">
+        <entry >
          <para>
           <command>- -scWorkstationBaseName</command>
          </para>
         </entry>
-        <entry colname="2">
+        <entry >
          <para>
           must
          </para>
         </entry>
-        <entry colname="3">
+        <entry >
          <para>
           The base name of the &pos; terminals of a branch used to create a
           unique name for each terminal. It is used in combination with the
@@ -1488,34 +1488,34 @@
         </entry>
        </row>
        <row rowsep="0" id="ad_bsxkmqe">
-        <entry colname="1">
+        <entry >
          <para>
           <command>- -scEnumerationMask</command>
          </para>
         </entry>
-        <entry colname="2">
+        <entry >
          <para>
           must
          </para>
         </entry>
-        <entry colname="3">
+        <entry >
          <para>
           Refers to <literal>scWorkstationBaseName</literal>.
          </para>
         </entry>
        </row>
        <row rowsep="0" id="ad_bsxkmqf">
-        <entry colname="1">
+        <entry >
          <para>
           <command>- -associatedDomain</command>
          </para>
         </entry>
-        <entry colname="2">
+        <entry >
          <para>
           may
          </para>
         </entry>
-        <entry colname="3">
+        <entry >
          <para>
           This optional entry configures the DNS domain and the domain part of
           the hostnames of the &pos; terminals to be in the stated domain. If
@@ -1526,17 +1526,17 @@
         </entry>
        </row>
        <row rowsep="0" id="ad_userpassword">
-        <entry colname="1">
+        <entry >
          <para>
           <command>- -userPassword</command>
          </para>
         </entry>
-        <entry colname="2">
+        <entry >
          <para>
           must
          </para>
         </entry>
-        <entry colname="3">
+        <entry >
          <para>
           This mandatory entry configures the &branchserv; password for
           security purposes. This password must be used when installing a
@@ -1546,17 +1546,17 @@
         </entry>
        </row>
        <row rowsep="0">
-        <entry colname="1">
+        <entry >
          <para>
           <command>- -scAllowRoles</command>
          </para>
         </entry>
-        <entry colname="2">
+        <entry >
          <para>
           may
          </para>
         </entry>
-        <entry colname="3">
+        <entry >
          <para>
           <literal>TRUE</literal> or <literal>FALSE</literal>. If
           <literal>TRUE</literal> and <command>scAllowGlobalRoles</command>
@@ -1570,17 +1570,17 @@
         </entry>
        </row>
        <row rowsep="0" >
-        <entry colname="1">
+        <entry >
          <para>
           <command>- -scAllowGlobalRoles</command>
          </para>
         </entry>
-        <entry colname="2">
+        <entry >
          <para>
           may
          </para>
         </entry>
-        <entry colname="3">
+        <entry >
          <para>
           <literal>TRUE</literal> or <literal>FALSE</literal>. If
           <literal>TRUE</literal> and <command>scAllowRoles</command> is
@@ -1594,17 +1594,17 @@
        <!-- enable this row again:
             https://bugzilla.suse.com/show_bug.cgi?id=1052337
        -->
-        <entry colname="1">
+        <entry >
          <para>
           <command>--scDnsMapFunc</command>
          </para>
         </entry>
-        <entry colname="2">
+        <entry >
          <para>
           may
          </para>
         </entry>
-        <entry colname="3">
+        <entry >
          <para>
           If it contains <literal>NONE</literal> or is empty,
           the terminal DNS name is independent of the ID, the
@@ -1623,17 +1623,17 @@
         </entry>
        </row>
        <row rowsep="0" >
-        <entry colname="1">
+        <entry >
          <para>
           <command>--scIpMapFunc</command>
          </para>
         </entry>
-        <entry colname="2">
+        <entry >
          <para>
           may
          </para>
         </entry>
-        <entry colname="3">
+        <entry >
          <para>
           If it contains <literal>NONE</literal> or is empty,
           the terminal IP is independent of the ID, a value
@@ -1695,17 +1695,17 @@ It can be added to LDAP with this posAdmin argument:
     <tgroup cols="3">
      <thead>
       <row rowsep="1">
-       <entry colname="1">
+       <entry >
         <para>
          Name
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Type
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Description
         </para>
@@ -1714,17 +1714,17 @@ It can be added to LDAP with this posAdmin argument:
      </thead>
      <tbody>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scDevice</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          The name of the network device of the card, for example:
          <literal>eth0</literal> or <literal>eth1</literal>.
@@ -1732,34 +1732,34 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>ipHostNumber</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          The IP address, for example: <literal>192.168.1.1</literal>.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>macAddress</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          MAC address in maximal, colon separated hex notation, for example:
          <literal>00:00:92:90:ee:e2</literal>.
@@ -1767,17 +1767,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scModul</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          The name of the Linux kernel module for the network interface
          card.
@@ -1785,17 +1785,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scModulOption</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          The module options for the network
          interface card to be passed to the kernel.
@@ -1803,17 +1803,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>ipNetmaskNumber</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          If the <literal>ipHostNumber</literal> is not inside the defined
          subnet of the location, add the netmask, which belongs to the IP
@@ -1840,17 +1840,17 @@ It can be added to LDAP with this posAdmin argument:
     <tgroup cols="3">
      <thead>
       <row rowsep="1">
-       <entry colname="1">
+       <entry >
         <para>
          Name
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Type
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Description
         </para>
@@ -1859,17 +1859,17 @@ It can be added to LDAP with this posAdmin argument:
      </thead>
      <tbody>
        <row rowsep="0" id="ad_bsy2v39">
-        <entry colname="1">
+        <entry >
          <para>
           <command>- -base</command>
          </para>
         </entry>
-        <entry colname="2">
+        <entry >
          <para>
           must
          </para>
         </entry>
-        <entry colname="3">
+        <entry >
          <para>
           The base distinguished name of the <literal>scPosImage</literal>
           object, for example:
@@ -1878,17 +1878,17 @@ It can be added to LDAP with this posAdmin argument:
         </entry>
        </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <literal>cn</literal>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          The common name of the system image, for example:
          <literal>mydesktop</literal>.
@@ -1896,17 +1896,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scImageName</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          The name of the system image, for example:
          <literal>mydesktop</literal>.
@@ -1914,17 +1914,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scPosImageVersion</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          The version number of the system image, followed by the flag
          <literal>passive</literal> or <literal>active</literal>, for
@@ -1942,17 +1942,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scDhcpOptionsRemote</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
           The boot option of the &pos; terminal. The mandatory value is
           <literal>/boot/pxelinux.0</literal>.
@@ -1960,34 +1960,34 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scDhcpOptionsLocal</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Additional DHCP options for local boot.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scImageFile</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          The name of the image file, which the terminal will download from
          the &branchserv;, for example:
@@ -1996,17 +1996,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scBsize</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Specifies the block size for the TFTP download of the system image.
          There is a limitation of the block counter of 32768 and therefore
@@ -2023,17 +2023,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scConfigFile</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Configuration file
         </para>
@@ -2060,17 +2060,17 @@ It can be added to LDAP with this posAdmin argument:
     <tgroup cols="3">
      <thead>
       <row rowsep="1">
-       <entry colname="1">
+       <entry >
         <para>
          Name
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Type
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Description
         </para>
@@ -2079,17 +2079,17 @@ It can be added to LDAP with this posAdmin argument:
      </thead>
      <tbody>
        <row rowsep="0" id="ad_bsy27ig">
-        <entry colname="1">
+        <entry >
          <para>
           <command>- -base</command>
          </para>
         </entry>
-        <entry colname="2">
+        <entry >
          <para>
           must
          </para>
         </entry>
-        <entry colname="3">
+        <entry >
          <para>
           The base distinguished name of the Hardware Reference object, for
           example: <literal>cn=crtype3, cn=global,o=myorg,c=us</literal>.
@@ -2097,17 +2097,17 @@ It can be added to LDAP with this posAdmin argument:
         </entry>
        </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>cn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
           The common name of the device, for example:
           <literal>ram</literal>.
@@ -2115,17 +2115,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scDevice</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
          <para>
           The RAM disk device.
          </para>
@@ -2174,17 +2174,17 @@ It can be added to LDAP with this posAdmin argument:
     <tgroup cols="3">
      <thead>
       <row rowsep="1">
-       <entry colname="1">
+       <entry >
         <para>
          Name
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Type
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Description
         </para>
@@ -2193,17 +2193,17 @@ It can be added to LDAP with this posAdmin argument:
      </thead>
      <tbody>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>cn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Common name for an entity.
         </para>
@@ -2235,17 +2235,17 @@ It can be added to LDAP with this posAdmin argument:
     <tgroup cols="3">
      <thead>
       <row rowsep="1">
-       <entry colname="1">
+       <entry >
         <para>
          Name
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Type
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Description
         </para>
@@ -2254,17 +2254,17 @@ It can be added to LDAP with this posAdmin argument:
      </thead>
      <tbody>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>cn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Common name for an entity.
         </para>
@@ -2292,17 +2292,17 @@ It can be added to LDAP with this posAdmin argument:
     <tgroup cols="3">
      <thead>
       <row rowsep="1">
-       <entry colname="1">
+       <entry >
         <para>
          Name
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Type
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Description
         </para>
@@ -2311,34 +2311,34 @@ It can be added to LDAP with this posAdmin argument:
      </thead>
      <tbody>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>cn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Common name of the service.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>ipHostNumber</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          The virtual IP address of the service.
          Since SLEPOS11 SP2, the ipHostNumber attribute can be omitted if the service is using the same IP address as the &branchserv;.
@@ -2346,17 +2346,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scDnsName</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          The name of an entry in the DNS table, under which the service is
          available.
@@ -2364,17 +2364,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scServiceName</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Name of the service being configured,
          for example: <literal>dns</literal>,
@@ -2384,17 +2384,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scServiceStartScript</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          The name of the init script in <filename>/etc/init.d</filename>
          used to start the service, such as atftp for the TFTP service.
@@ -2402,17 +2402,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scServiceStatus</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          The status of the service (TRUE or FALSE). FALSE disables the
          service, which is then ignored during the DNS record generation and
@@ -2421,34 +2421,34 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scServiceEmail</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Where should the service send an e-mail to?
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scPosleasesMaxNotify</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Maximum number of booted image notifications
          (maximum of scNotifiedImage entries).
@@ -2456,17 +2456,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scPosleasesChecktime</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          <command>posleases2ldap</command> pause before
          checking uploads.
@@ -2474,17 +2474,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scPosleasesTimeout</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Time spent by <command>posleases2ldap</command>
          on checking uploaded files.
@@ -2492,34 +2492,34 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scDhcpFixedLeaseTime</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          DHCP lease time for fixed leases (final registration), the default value is 14400.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scDhcpDynLeaseTime</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          DHCP lease time for dynamic leases (first boot), the default value is 300.
         </para>
@@ -2557,17 +2557,17 @@ It can be added to LDAP with this posAdmin argument:
     <tgroup cols="3">
      <thead>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          Name
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Type
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Description
         </para>
@@ -2576,34 +2576,34 @@ It can be added to LDAP with this posAdmin argument:
      </thead>
      <tbody>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>cn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Common name for an entity.
         </para>
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>macAddress</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          MAC address in maximal, colon-separated hexadecimal notation, for
          example: <literal>00:00:92:90:EE:E2</literal>. The attribute
@@ -2612,68 +2612,68 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>ipHostNumber</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          IPv4 addresses as a dotted decimal omitting leading zeros.
         </para>
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scRefPcDn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          DN to the used scCashRegister object.
         </para>
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scPosImageDn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Direct reference for image.
         </para>
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scPosImageVersion</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Direct image version setting, takes precedence over the image version
          set under the used <systemitem>scPosImage</systemitem> object.
@@ -2681,34 +2681,34 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scPosRegisterBiosVersion</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          BIOS version of a cash register.
         </para>
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scPosRegisterType</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          cashregister type, used to assign an
          <systemitem>scCashRegister</systemitem> object.
@@ -2716,51 +2716,51 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scId</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Contains ID assigned to the terminal.
         </para>
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scRoleDn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          DN of the used role assigned to the terminal.
         </para>
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scConfigFileDn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Reference for a configuration type object
          (<systemitem>scConfigFileTemplate</systemitem>,
@@ -2770,51 +2770,51 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scDiskJournal</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Turn on disk journaling.
         </para>
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scConfigUpdate</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          If set to TRUE, the workstation's config.MAC will be regenerated.
         </para>
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scNotifiedImage</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Contains image and version, the time of notification, and md5sum
          of the notified <filename>config.MAC</filename> file separated by
@@ -2823,17 +2823,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scAllowedRolesDn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Acts as a filter to only allow roles explicitly
          stated in this multivalue attribute. If it is left
@@ -2842,17 +2842,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scRoleBased</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          The workstation was registered in the role-based mode. Use
          role-based logic when recreating <filename>config.<replaceable>MAC</replaceable></filename>
@@ -2861,102 +2861,102 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scSerialNumber</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          deprecated
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Serial number of the used workstation.
         </para>
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scStandardPrinterDn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          deprecated
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          DN of the standard printer for a location or workstation.
         </para>
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>userPassword</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          deprecated
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Password of user.
         </para>
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scStandardPrinter</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          deprecated
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Name of the standard printer.
         </para>
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scPosGroupDn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          deprecated
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          DN of a CR group.
         </para>
        </entry>
       </row>
       <row>
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scLastBootTime</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Used to store time of the last boot in linux time format.
          If <systemitem>scLastBootTime</systemitem> is empty, the workstaton will
@@ -2995,17 +2995,17 @@ It can be added to LDAP with this posAdmin argument:
     <tgroup cols="3">
      <thead>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          Name
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Type
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Description
         </para>
@@ -3014,68 +3014,68 @@ It can be added to LDAP with this posAdmin argument:
      </thead>
      <tbody>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>cn</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Common name.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scRoleName</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Name of the role displayed in the list on the terminal.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scRoleDescription</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Description of the role displayed in the list on the terminal.
         </para>
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scAllowedHwTypes</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Multivalue parameter, marks the role to be used only with given
          hardware types.
@@ -3102,17 +3102,17 @@ It can be added to LDAP with this posAdmin argument:
     <tgroup cols="3">
      <thead>
       <row rowsep="1">
-       <entry colname="1">
+       <entry >
         <para>
          Name
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Type
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Description
         </para>
@@ -3121,17 +3121,17 @@ It can be added to LDAP with this posAdmin argument:
      </thead>
      <tbody>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scVersion</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Image version number
          (<replaceable>x</replaceable>.<replaceable>y</replaceable>.<replaceable>z</replaceable> format).
@@ -3139,17 +3139,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scDisabled</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Enables or disables this version for registration.
          Possible values are <literal>TRUE</literal> (disables
@@ -3167,17 +3167,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scPassword</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Image password.
         </para>
@@ -3204,17 +3204,17 @@ It can be added to LDAP with this posAdmin argument:
     <tgroup cols="3">
      <thead>
       <row rowsep="1">
-       <entry colname="1">
+       <entry >
         <para>
          Name
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Type
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          Description
         </para>
@@ -3223,17 +3223,17 @@ It can be added to LDAP with this posAdmin argument:
      </thead>
      <tbody>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scPartNum</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          must
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Defines the
          order of partitions (not the partition number shown by fdisk,
@@ -3242,17 +3242,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scPartType</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          The type of partition (<literal>82</literal> or <literal>S</literal> for
          swap, <literal>83</literal> or <literal>L</literal> for a Linux partition).
@@ -3260,17 +3260,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scPartMount</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          The mount point of the partition.
          Use <literal>/</literal> for the root partition.
@@ -3280,17 +3280,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scPartSize</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Size of partition in (binary) megabytes. For the last partition, size
          can be specified as <literal>x</literal>, which results in all
@@ -3299,17 +3299,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>scPassword</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Partition password. Specifying <literal>*</literal> as partition
          password means that a random password is generated on each boot. This
@@ -3318,17 +3318,17 @@ It can be added to LDAP with this posAdmin argument:
        </entry>
       </row>
       <row rowsep="0">
-       <entry colname="1">
+       <entry >
         <para>
          <systemitem>description</systemitem>
         </para>
        </entry>
-       <entry colname="2">
+       <entry >
         <para>
          may
         </para>
        </entry>
-       <entry colname="3">
+       <entry >
         <para>
          Some additional information, only for reference.
         </para>

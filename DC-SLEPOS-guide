@@ -18,5 +18,8 @@ HTMLROOT="slepos11"
 STYLEROOT="/usr/share/xml/docbook/stylesheet/suse2013-ns"
 FALLBACK_STYLEROOT="/usr/share/xml/docbook/stylesheet/suse-ns"
 
+# DOCBOOK5_RNG_URI="urn:x-suse:rng:v2:geekodoc-flat"
+DOCBOOK5_RNG_URI="http://docbook.org/xml/5.1/rng/docbookxi.rng"
+
 ## enable sourcing
 export DOCCONF=$BASH_SOURCE
